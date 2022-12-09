@@ -1,0 +1,24 @@
+.p{
+	font-size: 14px;
+    line-height: 20px;
+}
+
+.white{
+	color: var(--white);
+}
+
+.gray{
+	color: var(--dark-gray);
+}
+
+.black{
+	color: var(--black);
+}
+
+.inherit{
+	color: inherit;
+}
+
+.upperCase{
+	text-transform: uppercase;
+}

@@ -1,0 +1,9 @@
+.header{
+	font-weight: 500;
+	position: fixed;
+	width: 100%;
+}
+
+hr{
+	border-top: 1px solid var(--pearl-gray);
+}

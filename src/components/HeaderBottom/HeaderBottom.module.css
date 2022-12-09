@@ -1,0 +1,35 @@
+.headerBottom{
+	display: flex;
+	align-items: center;
+	height: 20px;
+	padding: 10px 0;
+
+}
+
+.HeaderBottomContainer{
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+	user-select: none; 
+	cursor: pointer;
+
+}
+
+.HeaderBottomSlider{
+	display: flex;
+	width: 100%;
+	white-space: nowrap;
+}
+
+.HeaderBottomSlide{
+	padding-right: 15px;
+}
+
+.HeaderBottomSlide:last-child{
+	margin-right: 0;
+}
+
+.HeaderBottomBtn{
+	margin: 0 10px;
+}

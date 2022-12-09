@@ -1,38 +1,126 @@
-.App {
-  text-align: center;
+:root {
+	--gray: #7e7e83;
+	--gray-hover: #535353;
+	--gray-click: #333;
+
+	--gray-suit: #8e8e93;
+	--pearl-gray: #b5b5b9;
+
+	/* --really-light-gray: #dfdee2; */
+
+	--light-gray: #babac0;
+	--light-gray-hover: #878792;
+	--light-gray-click: #64656a;
+
+	--dark-gray: #333;
+	--dark-gray-hover: #6b6b6b;
+	--dark-gray-click: #333;
+
+	--white: #fff;
+	--black: #000;
+
+	--red: #e31235;
+	--red-hover: #bd0f2c;
+	--red-click: #9c0c24;
+	--blue: #007aff;
+	--blue-hover: #0053ae;
+	--blue-click: #003672;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+	font-family: "Roboto";
+
+	height: 1000px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1,
+h2,
+h3,
+li,
+hr {
+	margin: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+hr{
+	border-bottom: none;
 }
 
-.App-link {
-  color: #61dafb;
+a {
+	text-decoration: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a:hover {
+	color: inherit;
+}
+
+p,
+ol,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+button {
+	border: none;
+}
+
+.svg-inline--fa {
+	margin: 0;
+	width: 20px;
+	height: 20px;
+}
+
+.wrapper {
+	max-width: 1500px;
+	margin: 0 auto;
+}
+
+.wrapperPadding {
+	padding-left: 35px;
+	padding-right: 35px;
+}
+
+.iconWithText {
+	display: flex;
+	grid-column-gap: 10px;
+	align-items: flex-end;
+}
+
+@media (max-width: 767px) {
+	.mobile {
+		display: none;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+	.tablet {
+		display: none;
+	}
+}
+
+@media (min-width: 991px) and (max-width: 1199px) {
+}
+
+@media (min-width: 1200px) {
+}
+
+.slick-track {
+	/* display: flex; */
+	/* white-space: nowrap; */
+	/* max-width: 1500px; */
+	
+}
+
+.slick-list {
+	/* max-width: 1500px; */
+	/* overflow: hidden; */
+}
+
+.slick-slider {
+	/* min-width: 0; */
+}
+
+.slick-slide {
+	/* width: 100px; */
+	/* max-width: 150px; */
 }

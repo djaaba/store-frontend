@@ -1,0 +1,46 @@
+.headerMiddle {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.headerMiddleContainer {
+	width: 100%;
+	max-width: 680px;
+	position: relative;
+}
+
+.headerMiddlePadding {
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+.headerMiddleWrapper {
+	display: flex;
+	column-gap: 20px;
+}
+
+.headerMiddleImage {
+	width: 117px;
+}
+
+.headerMiddleNavTab {
+	display: flex;
+	justify-content: space-between;
+	max-width: 465px;
+	min-width: 200px;
+	width: 100%;
+}
+
+.headerMiddleTab {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	min-width: 44px;
+	white-space: nowrap;
+}
+
+.headerMiddleColorWhite {
+	background-color: var(--white);
+}
