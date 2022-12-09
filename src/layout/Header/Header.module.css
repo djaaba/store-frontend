@@ -1,6 +1,6 @@
 .header{
 	font-weight: 500;
-	position: fixed;
+	/* position: sticky; */
 	width: 100%;
 }
 

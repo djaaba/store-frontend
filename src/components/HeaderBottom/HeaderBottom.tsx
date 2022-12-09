@@ -1,21 +1,14 @@
 import cn from "classnames";
-import Slider from "react-slick";
+import React from "react";
 import {
   ForwardedRef,
   forwardRef,
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
 } from "react";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
 
 import { HeaderBottomProps } from "./HeaderBottom.props";
 import styles from "./HeaderBottom.module.css";
 import { Ptag, SmoothText } from "..";
 import { getId } from "../../utils";
-import React from "react";
 
 export const HeaderBottom = forwardRef(({ ...props }: HeaderBottomProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
     
@@ -31,22 +24,53 @@ export const HeaderBottom = forwardRef(({ ...props }: HeaderBottomProps, ref: Fo
       "Холодильники",
     ];
 
-    const handleDown = (e: React.MouseEvent<HTMLDListElement>, ball: any) => {
-      // ball = ball.parentNode;
-      ball = ball.parentNode.parentNode;
+    const handleMove = (e: React.TouchEvent<HTMLDListElement>, el: any) => {
+      el = el.parentNode.parentNode;
 
-      if (ball.tagName === "DIV") return;
+      if (el.tagName === "DIV") return;
 
-      var coords = ball.getBoundingClientRect().left;
+      var coords = el.getBoundingClientRect().left;
+      var shiftX = e.changedTouches[0].pageX - coords;
+
+      
+      el.style.position = "absolute";
+      moveAt(e);
+      
+      function moveAt(e: any) {
+        // if (el.parentElement.offsetLeft < e.pageX - shiftX) return;
+        // if (el.parentElement.clientWidth > e.pageX + 30 - shiftX) return;
+        el.style.left = e.changedTouches[0].pageX - shiftX - 67 + "px";
+      }
+
+      document.ontouchmove = function (e) {
+        moveAt(e);
+      };
+
+      document.ontouchend = function () {
+        document.ontouchmove = null;
+        el.onmouseup = null;
+      };
+
+      el.ontouchstart = function () {
+        return false;
+      };
+    };
+
+    const handleDown = (e: React.MouseEvent<HTMLDListElement>, el: any) => {
+      el = el.parentNode.parentNode;
+
+      if (el.tagName === "DIV") return;
+
+      var coords = el.getBoundingClientRect().left;
       var shiftX = e.pageX - coords;
 
-      ball.style.position = "absolute";
+      el.style.position = "absolute";
       moveAt(e);
 
       function moveAt(e: any) {
-        // if (ball.parentElement.offsetLeft < e.pageX - shiftX) return;
-        // if (ball.parentElement.clientWidth > e.pageX + 30 - shiftX) return;
-        ball.style.left = e.pageX - shiftX - 67 + "px";
+        // if (el.parentElement.offsetLeft < e.pageX - shiftX) return;
+        // if (el.parentElement.clientWidth > e.pageX + 30 - shiftX) return;
+        el.style.left = e.pageX - shiftX - 67 + "px";
       }
 
       document.onmousemove = function (e) {
@@ -55,33 +79,34 @@ export const HeaderBottom = forwardRef(({ ...props }: HeaderBottomProps, ref: Fo
 
       document.onmouseup = function () {
         document.onmousemove = null;
-        ball.onmouseup = null;
+        el.onmouseup = null;
       };
 
-      ball.ondragstart = function () {
+      el.ondragstart = function () {
         return false;
       };
     };
 
     return (
       <>
-        <div className={cn(styles.headerBottom, "wrapper")} ref={ref}>
-          <p className={styles.HeaderBottomBtn}>-</p>
-          <div className={cn(styles.HeaderBottomContainer)}>
+        <div className={cn(styles.headerBottom, "wrapper", "wrapperPadding")} ref={ref}>
+          <p className={styles.headerBottomBtn}>-</p>
+          <div className={cn(styles.headerBottomContainer)}>
             <ul
-              className={styles.HeaderBottomSlider}
-              onMouseDown={(e) => handleDown(e, e.target)}
+              className={styles.headerBottomSlider}
+              onMouseDown={e => handleDown(e, e.target)}
+              onTouchStart={e => handleMove(e, e.target)}
             >
               {slides.map((title) => (
                 <SmoothText color="gray" key={getId()}>
-                  <Ptag upperCase className={styles.HeaderBottomSlide}>
+                  <Ptag upperCase className={styles.headerBottomSlide}>
                     {title}
                   </Ptag>
                 </SmoothText>
               ))}
             </ul>
           </div>
-          <div className={styles.HeaderBottomBtn}>+</div>
+          <div className={styles.headerBottomBtn}>+</div>
         </div>
       </>
     );

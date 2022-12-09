@@ -3,10 +3,10 @@
 	align-items: center;
 	height: 20px;
 	padding: 10px 0;
-
+    background: var(--white);
 }
 
-.HeaderBottomContainer{
+.headerBottomContainer{
 	width: 100%;
 	position: relative;
 	overflow: hidden;
@@ -16,20 +16,20 @@
 
 }
 
-.HeaderBottomSlider{
+.headerBottomSlider{
 	display: flex;
 	width: 100%;
 	white-space: nowrap;
 }
 
-.HeaderBottomSlide{
+.headerBottomSlide{
 	padding-right: 15px;
 }
 
-.HeaderBottomSlide:last-child{
+.headerBottomSlide:last-child{
 	margin-right: 0;
 }
 
-.HeaderBottomBtn{
+.headerBottomBtn{
 	margin: 0 10px;
 }

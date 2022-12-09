@@ -1,5 +1,5 @@
 import cn from "classnames";
-import { useEffect, useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 
 import { HeaderProps } from "./Header.props";
 import styles from "./Header.module.css";
@@ -26,7 +26,10 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
   }, []);
 
   return (
-    <header className={cn(className, styles.header)} {...props}>
+    <header
+      className={cn(className, styles.header, styles.wrapperPadding)}
+      {...props}
+    >
       <HeaderTop />
       <HeaderMiddle />
       <React.Fragment>
