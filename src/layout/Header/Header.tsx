@@ -15,13 +15,11 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
 
   useLayoutEffect(() => {
     window.onscroll = function () {
-      if (divRef.current) {
-        if (window.pageYOffset < 60) {
-          divRef.current.style.display = "flex";
-        } else {
-          divRef.current.style.display = "none";
+        if (window.pageYOffset < 1) {
+          divRef.current!.style.display = "flex";
+          return;
         }
-      }
+          divRef.current!.style.display = "none";
     };
   }, []);
 
