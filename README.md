@@ -1,9 +1,9 @@
 # МВидео – сайт для продажи электроники 
 
-Создание веб-приложения с использованием React, Typescript, mobX
+Создание веб-приложения с использованием React, Typescript, redux
 
 **Цель:**
-- Попробовать самостоятельно использовать React, Typescript, mobX
+- Попробовать самостоятельно использовать React, Typescript, Redux
 - Научиться использовать React Routing
 - Научиться использовать React lazy loading
 - Научиться использовать react-query
@@ -49,7 +49,6 @@ placeholder comments
 
 ## Изученный статьи
 https://rahuulmiishra.medium.com/react-worst-practices-bdf924efe470
-
 
 ### Структура проекта
 
