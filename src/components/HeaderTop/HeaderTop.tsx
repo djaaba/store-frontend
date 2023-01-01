@@ -24,7 +24,7 @@ export const HeaderTop = ({ ...props }: HeaderTopProps): JSX.Element => {
               <Ptag>Магазины</Ptag>
             </SmoothText>
           </Link>
-          <Link to="/">
+          <Link to="/counter1">
             <SmoothText color="white">
               <Ptag>Доставка</Ptag>
             </SmoothText>
