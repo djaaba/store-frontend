@@ -11,8 +11,7 @@ import {
     TopProduct,
 } from "../../components/modules";
 import { banners } from "../../layout/plug/banners";
-import { topProduct, bestsellers, brands } from "../../stubs";
-
+import { topProduct, bestsellers, brands, categories } from "../../stubs";
 
 export const Main = ({ className, ...props }: MainProps): JSX.Element => {
     return (
@@ -26,7 +25,7 @@ export const Main = ({ className, ...props }: MainProps): JSX.Element => {
             <div className={styles.content}>
                 <div className={cn(styles.fixPadding, "wrapper")}>
                     <Bestsellers items={bestsellers} />
-                    <Categories />
+                    <Categories categories={categories}/>
                     <Brands brands={brands} />
                 </div>
             </div>

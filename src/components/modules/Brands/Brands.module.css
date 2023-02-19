@@ -1,26 +1,58 @@
 .main {
     padding-bottom: 56px;
-}
-
-.wrapper {
-    max-width: 264px;
+    user-select: none;
 }
 
 .container {
-    /* display: flex; */
-    /* display: flex; */
-    /* grid-template-rows: repeat(2, 1fr); */
-    /* grid-template-columns: repeat(5, 1fr); */
-    /* flex-direction: column; */
-    /* gap: 20px; */
-    /* flex-wrap: wrap; */
+    width: 260px;
 }
-
-/* 
-.content > div {
-    width: 100%;
-} */
 
 .img {
     margin-bottom: 20px;
+    height: 72px;
+}
+
+.img img {
+    max-height: 40px;
+}
+
+.container .img:last-child {
+    margin-bottom: 0;
+}
+
+.main div[class~="react-horizontal-scrolling-menu--wrapper"] {
+    position: relative;
+}
+
+.main div[class~="react-horizontal-scrolling-menu--item"] {
+    margin-right: 20px;
+}
+
+.main div[class~="react-horizontal-scrolling-menu--item"]:last-child {
+    margin-right: 0;
+}
+
+.main div[class~="react-horizontal-scrolling-menu--scroll-container"] {
+    padding: 10px;
+}
+
+.main div[class~="react-horizontal-scrolling-menu--arrow-right"] {
+    right: -15px;
+}
+
+.main div[class~="react-horizontal-scrolling-menu--arrow-left"] {
+    left: -15px;
+}
+
+.main div[class~="react-horizontal-scrolling-menu--arrow-right"],
+.main div[class~="react-horizontal-scrolling-menu--arrow-left"] {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.main div[class~="react-horizontal-scrolling-menu--arrow-right"]>button,
+.main div[class~="react-horizontal-scrolling-menu--arrow-left"]>button {
+    box-shadow: rgb(0 0 0 / 23%) 0px 0px 10px;
 }

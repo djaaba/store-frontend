@@ -4,21 +4,30 @@ import styles from "./Categories.module.css";
 import { Htag, Image } from "../../UI/index";
 
 import { CategoriesProps } from "./Categories.props";
+import { getId } from "../../../utils";
+import { Scroll } from "../Scroll/Scroll";
 
-export const Categories = ({ ...props }: CategoriesProps): JSX.Element => {
+export const Categories = ({ categories, ...props }: CategoriesProps): JSX.Element => {
     return (
         <>
-            <main className={styles.main}>
+            <section {...props} className={styles.main}>
                 <Htag tag="h1">Популярные категории</Htag>
-                <div className={styles.wrapper}>
-                    <Image
-                        className={styles.img}
-                        alt="Картинка категории"
-                        imgUrl="/assets/categories/phone.webp"
-                    />
-                    <p className={styles.p}>Смартфоны</p>
-                </div>
-            </main>
+                <Scroll>
+                    {
+                        categories.map((item) => (
+                            <>
+                                <Image
+                                    key={getId()}
+                                    className={styles.img}
+                                    alt={`Картинка категории ${item.name}`}
+                                    imgUrl={item.imgUrl}
+                                />
+                                <p className={styles.p}>{item.name}</p>
+                            </>
+                        ))
+                    }
+                </Scroll>
+            </section>
         </>
     );
 };

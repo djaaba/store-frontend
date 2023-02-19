@@ -29,4 +29,20 @@ export const brands: IBrand[] = [
         name: 'HP',
         imgUrl: "/assets/brands/hp.webp"
     },
+    {
+        name: 'Hisense',
+        imgUrl: "/assets/brands/hisense.webp"
+    },
+    {
+        name: 'Kitchen',
+        imgUrl: "/assets/brands/kitchen.webp"
+    },
+    {
+        name: 'Kuchen',
+        imgUrl: "/assets/brands/kuchen.webp"
+    },
+    {
+        name: 'Braun',
+        imgUrl: "/assets/brands/braun.webp"
+    },
 ]

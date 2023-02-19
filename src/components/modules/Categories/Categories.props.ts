@@ -1,3 +1,8 @@
-import { ReactNode } from "react";
+import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
 
-export interface CategoriesProps {}
+import { ICategory } from "../../../shared";
+
+export interface CategoriesProps
+    extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+    categories: ICategory[];
+}
