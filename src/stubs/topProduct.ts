@@ -1,4 +1,6 @@
-export const data = [
+import { IProduct } from "../shared";
+
+export const topProduct: IProduct[] = [
     {
         id: 1,
         price: 1599,

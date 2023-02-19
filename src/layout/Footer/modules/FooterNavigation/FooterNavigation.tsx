@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 import styles from "./FooterNavigation.module.css";
 import { FooterNavigationProps } from "./FooterNavigation.props";
 
-import { aboutCompany, buyers, forBusiness } from "../../data/columns";
+import { aboutCompany, buyers, forBusiness } from "../../plug/columns";
 import { getId, scroll } from "../../../../utils";
-import { IColumnItem } from "../../../../interfaces/IColumn";
+import { IColumnItem } from "../../../../shared/IColumn";
 
 export const FooterNavigation = ({
     ...props

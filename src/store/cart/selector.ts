@@ -1,4 +1,4 @@
-import { IProduct } from "../../interfaces";
+import { IProduct } from "../../shared";
 import { getPrice } from "../../utils";
 
 export const selectCart = (state: any) => state.cart;

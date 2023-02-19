@@ -16,7 +16,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectFavorite } from "../../../store/favorite/selector";
 import { checkFavorite, toggleFavorite } from "../../../store/favorite/actions";
 import { addToCart } from "../../../store/cart/actions";
-import { IProduct } from "../../../interfaces";
+import { IProduct } from "../../../shared";
 
 import { check } from "./helpers/check";
 

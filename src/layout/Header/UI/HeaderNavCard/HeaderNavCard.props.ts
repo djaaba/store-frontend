@@ -1,6 +1,6 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
+import { DetailedHTMLProps, HTMLAttributes } from "react";
 
-export interface CardProps
+export interface HeaderNavCardProps
     extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
         title: string,
         itemId: number

@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./Breadcrumbs.module.css";
 import { BreadcrumbsProps } from "./Breadcrumbs.props";
 
-import { IBreadcrumb } from "../../../interfaces";
+import { IBreadcrumb } from "../../../shared";
 
 export const Breadcrumbs = ({ list }: BreadcrumbsProps): JSX.Element => {
     return (

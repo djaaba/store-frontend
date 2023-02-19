@@ -2,7 +2,7 @@ import {
     IProduct,
     CartAction,
     typesCartAction as types,
-} from "../../interfaces";
+} from "../../shared";
 
 export const cart = (state: IProduct[] = [], action: CartAction) => {
     switch (action.type) {

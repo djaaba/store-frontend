@@ -6,21 +6,22 @@ import { useSelector } from "react-redux";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import styles from "./TopProductSlider.module.css";
-import { TopProductSliderProps } from "./TopProductSlider.props";
+import styles from "./TopProduct.module.css";
+import { TopProductProps } from "./TopProduct.props";
 
 import { Htag } from "../../UI";
 import { selectCart } from "../../../store/cart/selector";
-import { TopProductItem } from "../TopProductItem/TopProductItem";
-import { IProduct } from "../../../interfaces";
+import { TopProductItem } from "../";
+import { IProduct } from "../../../shared";
 
-export const TopProductSlider = ({
+export const TopProduct = ({
+    items,
     ...props
-}: TopProductSliderProps): JSX.Element => {
+}: TopProductProps): JSX.Element => {
     const topProducts = useSelector(selectCart);
 
     return (
-        <main className={styles.main}>
+        <section {...props} className={styles.main}>
             <Htag tag="h2" className={cn(styles.title, styles.wrapper)}>
                 Товары дня
             </Htag>
@@ -32,7 +33,7 @@ export const TopProductSlider = ({
                 slidesPerView={1}
                 modules={[Navigation, Pagination]}
             >
-                {topProducts.map((item: IProduct) => (
+                {items.map((item: IProduct) => (
                     <SwiperSlide key={item.id}>
                         <TopProductItem
                             className={styles.wrapper}
@@ -41,6 +42,6 @@ export const TopProductSlider = ({
                     </SwiperSlide>
                 ))}
             </Swiper>
-        </main>
+        </section>
     );
 };

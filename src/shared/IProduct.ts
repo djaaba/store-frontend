@@ -1,4 +1,4 @@
-import { ICharacteristic } from "./";
+import { ICharacteristic } from ".";
 
 export enum typesFavoriteAction {
     CHECK_FAVORITE = "CHECK_FAVORITE",

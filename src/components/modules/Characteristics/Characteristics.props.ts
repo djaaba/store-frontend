@@ -1,5 +1,5 @@
 import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
-import { ICharacteristic } from "../../../interfaces";
+import { ICharacteristic } from "../../../shared";
 
 export interface CharacteristicsProps
     extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {

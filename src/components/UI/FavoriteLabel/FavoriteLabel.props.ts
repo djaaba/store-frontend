@@ -5,7 +5,7 @@ import {
     ReactNode,
 } from "react";
 
-import { IProduct } from "../../../interfaces";
+import { IProduct } from "../../../shared";
 export interface FavoriteLabelProps
     extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     product: IProduct;

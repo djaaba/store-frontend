@@ -3,15 +3,24 @@
 }
 
 .wrapper {
-    max-width: 250px;
+    max-width: 264px;
 }
 
-.content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.container {
+    /* display: flex; */
+    /* display: flex; */
+    /* grid-template-rows: repeat(2, 1fr); */
+    /* grid-template-columns: repeat(5, 1fr); */
+    /* flex-direction: column; */
+    /* gap: 20px; */
+    /* flex-wrap: wrap; */
 }
+
+/* 
+.content > div {
+    width: 100%;
+} */
 
 .img {
-    max-width: 120px;
+    margin-bottom: 20px;
 }

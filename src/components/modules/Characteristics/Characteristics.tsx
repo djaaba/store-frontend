@@ -1,5 +1,5 @@
 import cn from "classnames";
-import { ICharacteristic } from "../../../interfaces";
+import { ICharacteristic } from "../../../shared";
 import { getId } from "../../../utils";
 import { ItemWithDots } from "../../UI/index";
 

@@ -1,8 +1,4 @@
-import { IProduct, FavoriteAction } from "../../interfaces";
-import { data } from "./stub/dataStub";
-import { typesFavoriteAction as types } from "../../interfaces";
-
-export const initialsState = data;
+import { IProduct, FavoriteAction, typesFavoriteAction as types } from "../../shared";
 
 export const favorite = (state: IProduct[] = [], action: FavoriteAction) => {
     switch (action.type) {

@@ -1,7 +1,7 @@
-import { CardProps } from "./Card.props";
-import styles from './Card.module.css';
+import { HeaderNavCardProps } from "./HeaderNavCard.props";
+import styles from './HeaderNavCard.module.css';
 
-export const Card = ({title, itemId}: CardProps): JSX.Element => {
+export const HeaderNavCard = ({title, itemId}: HeaderNavCardProps): JSX.Element => {
 
     return (
         <div

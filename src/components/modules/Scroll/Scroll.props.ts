@@ -1,6 +1,6 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
+import { DetailedHTMLProps, HTMLAttributes, ReactElement, ReactFragment, ReactNode } from "react";
 
 export interface ScrollProps
     extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-    slides: string[];
+    children: ReactElement[];
 }

@@ -1,35 +1,35 @@
 import cn from "classnames";
-import React from "react";
-import {
-    Bestsellers,
-    Brands,
-    Categories,
-    Slider,
-    TopProductSlider,
-} from "../../components/modules";
-import { images } from "../../layout/helpers/images";
 
 import styles from "./Main.module.css";
 import { MainProps } from "./Main.props";
 
+import {
+    Bestsellers,
+    Brands,
+    Categories,
+    Banner,
+    TopProduct,
+} from "../../components/modules";
+import { banners } from "../../layout/plug/banners";
+import { topProduct, bestsellers, brands } from "../../stubs";
+
+
 export const Main = ({ className, ...props }: MainProps): JSX.Element => {
     return (
-        <React.Fragment {...props}>
-            <main>
-                <div className="wrapper">
-                    <div className={styles.sliders}>
-                        <Slider images={images} />
-                        <TopProductSlider />
-                    </div>
+        <main {...props}>
+            <div className="wrapper">
+                <div className={styles.sliders}>
+                    <Banner banners={banners} />
+                    <TopProduct items={topProduct} />
                 </div>
-                <div className={styles.content}>
-                    <div className={cn(styles.fixPadding, "wrapper")}>
-                        <Bestsellers />
-                        <Categories />
-                        <Brands />
-                    </div>
+            </div>
+            <div className={styles.content}>
+                <div className={cn(styles.fixPadding, "wrapper")}>
+                    <Bestsellers items={bestsellers} />
+                    <Categories />
+                    <Brands brands={brands} />
                 </div>
-            </main>
-        </React.Fragment>
+            </div>
+        </main>
     );
 };

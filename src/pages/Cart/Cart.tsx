@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import styles from "./Cart.module.css";
 import { CartProps } from "./Cart.props";
 
-import { IProduct } from "../../interfaces";
+import { IProduct } from "../../shared";
 import { OrderDetails } from "../../components/common/OrderDetails/OrderDetails";
 import {
     Htag,

@@ -1,4 +1,4 @@
-import { IApp } from "../../../../interfaces/IApp";
+import { IApp } from "../../../../shared/IApp";
 
 export const apps: IApp[] = [
     {

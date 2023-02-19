@@ -1,8 +1,11 @@
 .main {
     background: var(--background);
-    padding: 20px;
     border-radius: 10px;
-    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72px;
 }
 
 .img {

@@ -1,11 +1,10 @@
 export * from "./Bestsellers/Bestsellers";
-export * from "./Categories/Categories";
-export * from "./Socials/Socials";
-export * from "./TopProductSlider/TopProductSlider";
 export * from "./Brands/Brands";
-export * from "./Product/Product";
-export * from "./Slider/Slider";
+export * from "./Categories/Categories";
 export * from "./Characteristics/Characteristics";
-export * from "./TopProductSlider/TopProductSlider";
+export * from "./Product/Product";
 export * from "./Scroll/Scroll";
-// Заменить импорты из простых папок на импорты из баррель файла
+export * from "./Banner/Banner";
+export * from "./Socials/Socials";
+export * from './TopProductItem/TopProductItem';
+export * from "./TopProduct/TopProduct";

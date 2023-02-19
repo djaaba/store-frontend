@@ -8,7 +8,7 @@ import { FavoriteProps } from "./Favorite.props";
 import { FontAwesomeIcon, Htag, RegularHeartIcon } from "../../components/UI";
 import { FavoriteProduct } from "../../components/common/FavoriteProduct/FavoriteProduct";
 import { getId } from "../../utils";
-import { IProduct } from "../../interfaces";
+import { IProduct } from "../../shared";
 import { selectFavorite } from "../../store/favorite/selector";
 import { checkFavorite } from "../../store/favorite/actions";
 

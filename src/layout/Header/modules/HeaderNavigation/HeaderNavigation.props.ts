@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-import { INav } from "../../../../interfaces";
+import { INav } from "../../../../shared";
 
 export interface HeaderNavigationProps {
     navLinks: Array<INav>;

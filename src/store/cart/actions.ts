@@ -1,4 +1,4 @@
-import { IProduct, typesCartAction as type } from "../../interfaces";
+import { IProduct, typesCartAction as type } from "../../shared";
 
 export const addToCart = (body: IProduct) => ({
     type: type.ADD_TO_CART,

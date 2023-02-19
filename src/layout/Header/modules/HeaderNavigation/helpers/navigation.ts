@@ -5,7 +5,7 @@ import {
     SolidHeartIcon,
     CartShoppingIcon,
 } from "../../../../../components/UI";
-import { INav } from "../../../../../interfaces";
+import { INav } from "../../../../../shared";
 
 export const navigation: Array<INav> = [
     { link: "catalog", icon: BarsIcon, text: "Каталог" },

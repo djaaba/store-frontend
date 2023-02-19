@@ -6,3 +6,5 @@ export * from "./ISocial";
 export * from "./ICharacteristic";
 export * from "./IBreadcrumb";
 export * from "./IProduct";
+export * from './ICategory';
+export * from './IBrand';

@@ -6,7 +6,7 @@ import styles from "./HeaderMiddle.module.css";
 import { HeaderMiddleProps } from "./HeaderMiddle.props";
 
 import { Search } from "../../../../components/UI";
-import { INav } from "../../../../interfaces";
+import { INav } from "../../../../shared";
 import { navigation } from "../HeaderNavigation/helpers/navigation";
 import { HeaderNavigation } from "../HeaderNavigation/HeaderNavigation";
 

@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import { IApp } from "../../../interfaces/IApp";
-import { ISocial } from "../../../interfaces/ISocial";
+import { IApp } from "../../../shared/IApp";
+import { ISocial } from "../../../shared/ISocial";
 
 export interface SocialsProps {
     apps: IApp[];

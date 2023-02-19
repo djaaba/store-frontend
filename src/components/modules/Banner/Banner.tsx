@@ -1,17 +1,16 @@
-import cn from "classnames";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import styles from "./Slider.module.css";
-import { SliderProps } from "./Slider.props";
+import styles from "./Banner.module.css";
+import { BannerProps } from "./Banner.props";
 
-import { Navigation, Pagination } from "swiper";
 
-export const Slider = ({ images, ...props }: SliderProps): JSX.Element => {
+export const Banner = ({ banners, ...props }: BannerProps): JSX.Element => {
     return (
-        <main className={styles.main}>
+        <section {...props} className={styles.main}>
             <Swiper
                 spaceBetween={50}
                 pagination={{ clickable: true }}
@@ -22,12 +21,12 @@ export const Slider = ({ images, ...props }: SliderProps): JSX.Element => {
                 modules={[Navigation, Pagination]}
                 className={styles.swiper}
             >
-                {images.map((item) => (
+                {banners.map((item) => (
                     <SwiperSlide key={item.id}>
                         <img className={styles.img} src={item.imgUrl} />
                     </SwiperSlide>
                 ))}
             </Swiper>
-        </main>
+        </section>
     );
 };

@@ -7,13 +7,14 @@ export const Image = ({
     children,
     imgUrl,
     className,
+    alt,
     ...props
 }: ImageProps): JSX.Element => {
     return (
         <>
             <main {...props} className={cn(styles.main, className)}>
                 <picture>
-                    <img alt={props.alt} className={styles.img} src={imgUrl} />
+                    <img alt={alt} className={styles.img} src={imgUrl} />
                 </picture>
             </main>
         </>

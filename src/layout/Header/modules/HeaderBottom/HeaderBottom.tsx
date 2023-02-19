@@ -5,6 +5,8 @@ import { HeaderBottomProps } from "./HeaderBottom.props";
 import styles from "./HeaderBottom.module.css";
 
 import { Scroll } from "../../../../components/modules";
+import { getId } from "../../../../utils";
+import { HeaderNavCard } from "../../UI";
 
 export const HeaderBottom = forwardRef(
     (
@@ -15,7 +17,15 @@ export const HeaderBottom = forwardRef(
         return (
             <>
                 <section className={cn("wrapper", className)} ref={ref}>
-                    <Scroll slides={slides}/>
+                    <Scroll>
+                        {slides.map((item) => (
+                            <HeaderNavCard
+                                title={item}
+                                itemId={getId()}
+                                key={getId()}
+                            />
+                        ))}
+                    </Scroll>
                 </section>
             </>
         );

@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./HeaderNavigation.module.css";
 import { HeaderNavigationProps } from "./HeaderNavigation.props";
 
-import { INav } from "../../../../interfaces";
+import { INav } from "../../../../shared";
 import { getId } from "../../../../utils";
 import { Ptag, SmoothText } from "../../../../components/UI";
 
