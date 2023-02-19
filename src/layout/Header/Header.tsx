@@ -1,5 +1,5 @@
 import cn from "classnames";
-import React, { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 
 import { HeaderProps } from "./Header.props";
 import styles from "./Header.module.css";
@@ -13,7 +13,7 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
     useLayoutEffect(() => {
         window.onscroll = function () {
             if (window.pageYOffset < 1) {
-                divRef.current!.style.display = "flex";
+                divRef.current!.style.display = "block";
                 return;
             }
             divRef.current!.style.display = "none";
@@ -24,14 +24,12 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
         <header className={cn(className, styles.header)} {...props}>
             <HeaderTop />
             <HeaderMiddle />
-            <React.Fragment>
-                <HeaderBottom
-                    className={styles.bottom}
-                    slides={slides}
-                    ref={divRef}
-                />
-                <hr className={styles.hr} />
-            </React.Fragment>
+            <HeaderBottom
+                className={styles.bottom}
+                slides={slides}
+                ref={divRef}
+            />
+            <hr className={styles.hr} />
         </header>
     );
 };

@@ -1,7 +1,7 @@
 import cn from "classnames";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ScrollMenu } from "react-horizontal-scrolling-menu";
+import { Link } from "react-router-dom";
 
 import styles from "./Cart.module.css";
 import { CartProps } from "./Cart.props";
@@ -23,8 +23,6 @@ import {
     selectCart,
     sumCountCart,
 } from "../../store/cart/selector";
-import { Link } from "react-router-dom";
-import { Scroll } from "../../components/modules";
 
 export const Cart = ({ className, ...props }: CartProps): JSX.Element => {
     const [isChecked, setIsChecked] = useState<boolean>(false);
@@ -98,7 +96,6 @@ export const Cart = ({ className, ...props }: CartProps): JSX.Element => {
                         </div>
                     </div>
                 )}
-                <Scroll />
             </main>
         </React.Fragment>
     );

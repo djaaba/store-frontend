@@ -6,3 +6,11 @@
 .blue {
     border: solid var(--blue);
 }
+
+.red {
+    border: solid var(--red);
+}
+
+.red:hover {
+    border: solid var(--red-hover);
+}

@@ -1,0 +1,29 @@
+.arrow {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    right: 1%;
+    user-select: none;
+
+    border-radius: 50%;
+
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    align-items: center;
+
+    background-color: var(--white);
+}
+
+.arrow div {
+    display: flex;
+}
+
+.arrow i {
+    border-color: var(--red);
+}
+
+.arrow:hover i {
+    border-color: var(--red-hover);
+}

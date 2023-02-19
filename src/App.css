@@ -153,6 +153,14 @@ i {
     overflow-x: clip;
 }
 
+.react-horizontal-scrolling-menu--inner-wrapper{
+    overflow-x: hidden;
+}
+
+.react-horizontal-scrolling-menu--arrow-left, .react-horizontal-scrolling-menu--arrow-right {
+    align-items: center;
+}
+
 @media (max-width: 1024px) {
 }
 

@@ -2,7 +2,9 @@ import { useContext, useEffect, useState } from "react";
 import { VisibilityContext } from "react-horizontal-scrolling-menu";
 import { Arrow } from "../Arrow/Arrow";
 
-export const LeftArrow = ({}): JSX.Element => {
+import { Arrow as ArrowIcon } from '../../../../UI';
+
+export const LeftArrow = ({ }): JSX.Element => {
 
     const { isFirstItemVisible, scrollPrev, visibleElements, initComplete } =
         useContext(VisibilityContext);
@@ -19,7 +21,7 @@ export const LeftArrow = ({}): JSX.Element => {
 
     return (
         <Arrow disabled={disabled} onClick={() => scrollPrev()}>
-            Left
+            <ArrowIcon direction="left" />
         </Arrow>
     );
 }

@@ -1,4 +1,5 @@
 import { ArrowProps } from "./Arrow.props";
+import styles from './Arrow.module.css'
 
 export const Arrow = ({ children, disabled, onClick, }: ArrowProps): JSX.Element => {
 
@@ -6,15 +7,8 @@ export const Arrow = ({ children, disabled, onClick, }: ArrowProps): JSX.Element
         <button
             disabled={disabled}
             onClick={onClick}
-            style={{
-                cursor: "pointer",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                right: "1%",
-                opacity: disabled ? "0" : "1",
-                userSelect: "none",
-            }}
+            className={styles.arrow}
+            style={{ opacity: disabled ? 0 : 1 }}
         >
             {children}
         </button>

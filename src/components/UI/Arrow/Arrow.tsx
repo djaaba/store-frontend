@@ -5,7 +5,6 @@ import { ArrowProps } from "./Arrow.props";
 
 export const Arrow = ({
     children,
-    color = "white",
     direction = "down",
     ...props
 }: ArrowProps): JSX.Element => {

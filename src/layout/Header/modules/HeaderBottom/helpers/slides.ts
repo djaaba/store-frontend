@@ -1,4 +1,4 @@
-export const slides: String[] = [
+export const slides: string[] = [
     "Все акции",
     "Кэшбэк",
     "Телевизоры",
