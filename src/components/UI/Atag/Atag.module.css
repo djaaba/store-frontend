@@ -1,0 +1,44 @@
+.arrow {
+    width: 10px;
+    height: 10px;
+}
+
+.content {
+    display: flex;
+    column-gap: 6px;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.content:hover .a {
+    color: var(--blue-hover);
+}
+
+.content:hover .i i {
+    border-width: 0 2px 2px 0 !important;
+    border: solid var(--blue-hover);
+}
+
+.i i {
+    position: absolute;
+    border: solid var(--blue);
+    border-width: 0 2px 2px 0;
+}
+
+.a {
+    color: var(--blue);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .a {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 425px) {
+    .a {
+        font-size: 10px;
+    }
+}

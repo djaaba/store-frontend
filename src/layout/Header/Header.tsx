@@ -1,39 +1,37 @@
 import cn from "classnames";
-import { useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 
 import { HeaderProps } from "./Header.props";
 import styles from "./Header.module.css";
-import {
-  HeaderTop,
-  HeaderMiddle,
-  HeaderBottom,
-} from "./../../components/index";
-import React from "react";
+
+import { HeaderBottom, HeaderMiddle, HeaderTop } from "./modules";
+import { slides } from "./modules/HeaderBottom/helpers/slides";
 
 export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
-  const divRef = useRef<HTMLDivElement>(null);
+    const divRef = useRef<HTMLDivElement>(null);
 
-  useLayoutEffect(() => {
-    window.onscroll = function () {
-        if (window.pageYOffset < 1) {
-          divRef.current!.style.display = "flex";
-          return;
-        }
-          divRef.current!.style.display = "none";
-    };
-  }, []);
+    useLayoutEffect(() => {
+        window.onscroll = function () {
+            if (window.pageYOffset < 1) {
+                divRef.current!.style.display = "flex";
+                return;
+            }
+            divRef.current!.style.display = "none";
+        };
+    }, []);
 
-  return (
-    <header
-      className={cn(className, styles.header, styles.wrapperPadding)}
-      {...props}
-    >
-      <HeaderTop />
-      <HeaderMiddle />
-      <React.Fragment>
-        <HeaderBottom ref={divRef} />
-        <hr />
-      </React.Fragment>
-    </header>
-  );
+    return (
+        <header className={cn(className, styles.header)} {...props}>
+            <HeaderTop />
+            <HeaderMiddle />
+            <React.Fragment>
+                <HeaderBottom
+                    className={styles.bottom}
+                    slides={slides}
+                    ref={divRef}
+                />
+                <hr className={styles.hr} />
+            </React.Fragment>
+        </header>
+    );
 };

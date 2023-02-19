@@ -1,0 +1,23 @@
+.main {
+    max-width: 420px;
+    height: 285px;
+
+    background: #fff;
+    border-radius: 20px;
+}
+
+.title {
+    padding: 24px 0;
+}
+
+.main div[class="swiper-button-prev"],
+.main div[class="swiper-button-next"] {
+    top: 37%;
+}
+
+.wrapper {
+    max-width: 340px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}

@@ -1,0 +1,35 @@
+.body {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.body li a {
+    color: #686b6d;
+}
+
+.body li:not(:first-child) a::before {
+    margin: 0 15px;
+    content: "";
+    width: 1px;
+    height: 15px;
+    background: #686b6d;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.body li a:hover {
+    text-decoration: underline;
+}
+
+.active a {
+    pointer-events: none;
+    color: black !important;
+}
+
+@media (max-width: 768px) {
+    .body li a {
+        font-size: 14px;
+    }
+}

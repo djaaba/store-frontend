@@ -1,53 +1,46 @@
-# МВидео – сайт для продажи электроники 
+# МВидео – сайт для продажи электроники
 
 Создание веб-приложения с использованием React, Typescript, redux
 
 **Цель:**
-- Попробовать самостоятельно использовать React, Typescript, Redux
-- Научиться использовать React Routing
-- Научиться использовать React lazy loading
-- Научиться использовать react-query
-- Научиться использовать MobX Developer Tools
-- Научиться компонентной верстке
-- Создать package.json конфиг для SPA
-- Понять в чем удобство barrel exports
-- Попробовать nanoid
-- Попробовать использовать абсолютные пути к файлам
-- Медиа запросы React
+
+-   React, Typescript, Redux
+-   Использовать React Routing
+-   Использовать React lazy loading
+-   Использовать react-query
 
 ## Быстрый старт
 
-#### `npm i express` – установить зависимости проекта
+#### `npm i` – установить зависимости проекта
 
-#### `npm run start` – запуск devServer на http://localhost:3000/
+#### `npm run dev` – запуск devServer на http://localhost:3000/
 
 ## Скрипты
 
-#### `npm run start` – запуск devServer на http://localhost:3000/
+#### `npm run dev` – запуск devServer на http://localhost:3000/
 
 #### `npm run build` – production сборка проекта
 
 ## Используемые библиотеки
-- [classnames](https://github.com/JedWatson/classnames)
-- [normalize.css](https://github.com/necolas/normalize.css)
-- [fontawesome](https://github.com/FortAwesome/Font-Awesome)
-- [mobx](https://github.com/mobxjs/mobx)
-- [mobx-react-lite](https://github.com/mobxjs/mobx/tree/main/packages/mobx-react-lite)
-- [react-slick](https://github.com/akiran/react-slick)
-//- [react-responsive](https://github.com/yocontra/react-responsive)
-//- [slick-carousel](https://github.com/akiran/react-slick)
-- [react-router-dom](https://github.com/remix-run/react-router)
-- [react-error-boundary](https://github.com/bvaughn/react-error-boundary)
 
-date fns
-npm install -D eslint prettier
-npx eslint --init
-
-placeholder comments
+-   [classnames](https://github.com/JedWatson/classnames)
+-   [normalize.css](https://github.com/necolas/normalize.css)
+-   [fontawesome](https://github.com/FortAwesome/Font-Awesome)
+-   [react-router-dom](https://github.com/remix-run/react-router)
+-   [react-error-boundary](https://github.com/bvaughn/react-error-boundary)
+-   [react-redux](https://github.com/reduxjs/react-redux)
+-   [redux](https://github.com/reduxjs/redux)
+-   [swiper](https://github.com/nolimits4web/swiper)
+-   [react-speech-recognition](https://github.com/JamesBrill/react-speech-recognition)
+-   [react-countup](https://github.com/glennreyes/react-countup)
+-   [axios](https://github.com/axios/axios)
+-   [react-toastify]
+-   [react-horizontal-scrolling-menu](https://github.com/asmyshlyaev177/react-horizontal-scrolling-menu)
 
 ## Макеты
 
 ## Изученный статьи
+
 https://rahuulmiishra.medium.com/react-worst-practices-bdf924efe470
 
 ### Структура проекта
@@ -60,7 +53,7 @@ https://rahuulmiishra.medium.com/react-worst-practices-bdf924efe470
 │   │   └── index.ts                 # Файл экспорта всех компонентов UI-kit
 │   ├── store/                       # Папка с js файлом, позволяющим управлять состоянием
 │   │   └── store.js                 # Файл, управляющий состоянием приложения
-│   ├── layout/                      # 
+│   ├── layout/                      #
 │   │   ├── .../                     # Папки с компонентами
 │   │   ├── Layout.module.css        # Стили для макета
 │   │   ├── Layout.props.ts          # Входные данные для макета

@@ -1,0 +1,11 @@
+.card {
+    border: 1px solid;
+    display: inline-block;
+    margin: 0 10px;
+    width: 160px;
+    user-select: none;
+}
+
+.content {
+    height: 100%;
+}

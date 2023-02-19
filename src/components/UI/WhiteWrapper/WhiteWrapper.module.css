@@ -1,0 +1,17 @@
+.main {
+    padding: 32px 24px;
+    background: var(--white);
+    border-radius: 12px;
+}
+
+@media (max-width: 425px) {
+    .main {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        padding: 20px;
+    }
+}

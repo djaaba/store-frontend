@@ -1,10 +1,12 @@
 import { devToolsEnhancer } from "@redux-devtools/extension";
 import { combineReducers, createStore } from "redux";
 
-import { counter } from "./counter/counter-reducer"; 
+import { cart } from "./cart/reducer";
+import { favorite } from "./favorite/reducer";
 
 const rootReducer = combineReducers({
-    counter
-})
+    cart,
+    favorite,
+});
 
 export const rootStore = createStore(rootReducer, devToolsEnhancer());

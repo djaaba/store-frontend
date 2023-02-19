@@ -1,0 +1,38 @@
+.p {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.white {
+    color: var(--white);
+}
+
+.gray {
+    color: var(--dark-gray);
+}
+
+.black {
+    color: var(--black);
+}
+
+.inherit {
+    color: inherit;
+}
+
+.upperCase {
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .p {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+@media (max-width: 425px) {
+    .p {
+        font-size: 10px;
+        line-height: 14px;
+    }
+}

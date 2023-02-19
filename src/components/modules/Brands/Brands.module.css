@@ -1,0 +1,17 @@
+.main {
+    padding-bottom: 56px;
+}
+
+.wrapper {
+    max-width: 250px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.img {
+    max-width: 120px;
+}

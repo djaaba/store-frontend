@@ -1,0 +1,40 @@
+.wrapper {
+    background-color: var(--dark-gray);
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    white-space: nowrap;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav > a {
+    margin: 0 10px;
+}
+
+@media (max-width: 1025px) {
+    .mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper {
+        background: none;
+    }
+
+    .icon {
+        color: var(--pearl-gray);
+    }
+}
+
+@media (max-width: 1024px) {
+}

@@ -1,0 +1,67 @@
+.button {
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+
+    width: 100%;
+
+    transition: all 0.4s ease-out;
+}
+
+.buttonCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    white-space: nowrap;
+}
+
+.buttonCenter * {
+    color: white;
+}
+
+.bigButton {
+    padding: 13px 25px;
+}
+
+.mediumButton {
+    padding: 8px 20px;
+}
+
+.smallButton {
+    padding: 7px;
+}
+
+.red {
+    color: var(--white);
+    background: var(--red);
+}
+
+.red:hover {
+    background: var(--red-hover);
+}
+
+.red:active {
+    background: var(--red-click);
+}
+
+.gray {
+    background: var(--light-gray);
+}
+
+.gray:hover {
+    background: var(--light-gray-hover);
+}
+
+.gray:active {
+    background: var(--light-gray-click);
+}
+
+.dark {
+    background: var(--gray-border);
+}
+
+.dark:hover {
+    background: var(--light-gray-hover);
+}

@@ -1,0 +1,63 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: var(--white);
+    width: 100%;
+
+    position: absolute;
+    border-bottom: 1px solid var(--pearl-gray);
+}
+
+.container {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    user-select: none;
+    cursor: pointer;
+}
+
+.slider {
+    display: flex;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.elem {
+    padding-right: 15px;
+}
+
+.elem:last-child {
+    margin-right: 0;
+}
+
+.btn {
+    background-color: transparent;
+}
+
+.btn div {
+    display: flex;
+}
+
+.btn i {
+    border-color: var(--red);
+    border-width: 0 1px 1px 0;
+    padding: 2px;
+}
+
+.btn:first-child {
+    margin-right: 10px;
+}
+
+.btn:last-child {
+    margin-left: 10px;
+}
+
+@media (max-width: 425px) {
+    .btn {
+        display: none;
+    }
+}

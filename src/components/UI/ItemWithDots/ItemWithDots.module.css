@@ -1,0 +1,27 @@
+.row {
+    display: flex;
+    padding: 10px 0;
+    align-items: flex-end;
+}
+
+.width {
+    width: 100%;
+    border-bottom: 1px dashed var(--light-gray);
+    margin: 0 5px;
+}
+
+.text {
+    white-space: nowrap;
+    color: var(--dark-gray);
+}
+
+.title {
+    white-space: nowrap;
+    color: var(--gray-suit);
+}
+
+@media (max-width: 425px) {
+    .title {
+        white-space: normal;
+    }
+}

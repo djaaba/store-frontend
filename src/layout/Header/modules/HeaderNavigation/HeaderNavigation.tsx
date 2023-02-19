@@ -1,0 +1,32 @@
+import cn from "classnames";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import styles from "./HeaderNavigation.module.css";
+import { HeaderNavigationProps } from "./HeaderNavigation.props";
+
+import { INav } from "../../../../interfaces";
+import { getId } from "../../../../utils";
+import { Ptag, SmoothText } from "../../../../components/UI";
+
+export const HeaderNavigation = ({
+    navLinks,
+    ...props
+}: HeaderNavigationProps): JSX.Element => {
+    return (
+        <>
+            <ul {...props} className={cn(styles.nav, styles.mobile)}>
+                {navLinks.map((obj: INav) => (
+                    <li key={getId()}>
+                        <Link to={obj.link}>
+                            <SmoothText color="gray" className={styles.tab}>
+                                <FontAwesomeIcon icon={obj.icon} />
+                                <Ptag className={styles.hihe}>{obj.text}</Ptag>
+                            </SmoothText>
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </>
+    );
+};

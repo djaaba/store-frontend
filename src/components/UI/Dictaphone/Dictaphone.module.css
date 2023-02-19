@@ -1,0 +1,15 @@
+.on{
+    color: var(--red)
+}
+
+.off{
+    color: var(--pearl-gray)
+}
+
+.off:hover{
+    color: var(--gray-suit);
+}
+
+.on:hover{
+    color: var(--red-hover);
+}

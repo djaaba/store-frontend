@@ -1,0 +1,139 @@
+.section {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.description {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    width: 100%;
+}
+
+.img {
+    width: 128px;
+    height: 128px;
+}
+
+.link {
+    padding: 10px 0;
+    font-size: 14px;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.calculation {
+    display: flex;
+    justify-content: space-between;
+    grid-column-gap: 15px;
+    max-width: 350px;
+    width: 100%;
+    align-items: center;
+}
+
+.btn {
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    background: none;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.count {
+    margin: 0 10px;
+}
+
+.price {
+    white-space: nowrap;
+}
+
+.price {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 15px;
+}
+
+.prevPrice {
+    color: rgb(162, 154, 142);
+    text-decoration: line-through;
+}
+
+.curPrice {
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .price {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+
+    .curPrice {
+        margin-right: 0;
+    }
+
+    .calculation {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        flex-direction: column-reverse;
+    }
+
+    .curPrice {
+        font-size: 16px;
+    }
+
+    .prevPrice {
+        font-size: 12px;
+    }
+
+    .btn {
+        width: 20px;
+        height: 20px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 425px) {
+    .img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .section {
+        column-gap: 10px;
+    }
+
+    .calculation {
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .wrapper .btn {
+        border: none;
+        width: 20px;
+        height: 20px;
+        font-size: 15px;
+        border: none;
+    }
+    .wrapper {
+        border: 1px solid var(--light-gray);
+        border-radius: 5px;
+    }
+}

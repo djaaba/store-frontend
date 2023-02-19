@@ -1,0 +1,40 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    display: flex;
+    column-gap: 10px;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+}
+
+.content {
+    display: flex;
+    column-gap: 10px;
+}
+
+.img {
+    width: 117px;
+}
+
+@media (max-width: 768px) {
+    /* .mobile {
+        display: none;
+    } */
+}
+
+@media (max-width: 425px) {
+    .img {
+        display: none;
+    }
+
+    .wrapper {
+        column-gap: 0px;
+    }
+}

@@ -1,0 +1,35 @@
+.input {
+    width: 100%;
+    padding: 12px 112px 12px 16px;
+    box-sizing: border-box;
+    border: 1px solid var(--pearl-gray);
+    transition: border-color 0.2s;
+    border-radius: 4px;
+    min-width: 200px;
+}
+
+.inputMicro {
+    position: absolute;
+    right: 80px;
+    top: 12px;
+    cursor: pointer;
+}
+
+.inputCross {
+    position: absolute;
+    right: 55px;
+    top: 12px;
+    color: var(--pearl-gray);
+    cursor: pointer;
+}
+
+.inputCross:hover {
+    color: var(--gray-suit);
+}
+
+.inputButton {
+    position: absolute;
+    right: 6px;
+    top: 5px;
+    width: 40px;
+}
