@@ -7,7 +7,6 @@ import {
 export const cart = (state: IProduct[] = [], action: CartAction) => {
     switch (action.type) {
         case types.ADD_TO_CART: {
-            console.log(state);
             return state.filter((product) => product.id === action.body.id)
                 .length
                 ? state.filter((product) =>

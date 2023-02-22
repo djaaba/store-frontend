@@ -33,9 +33,9 @@ export const Dictaphone = ({
         return SpeechRecognition.stopListening();
     }
 
-    if (!browserSupportsSpeechRecognition) {
-        console.log("Browser doesn't support speech recognition");
-    }
+    // if (!browserSupportsSpeechRecognition) {
+    //     console.log("Browser doesn't support speech recognition");
+    // }
 
     return (
         <div {...props} className={className}>

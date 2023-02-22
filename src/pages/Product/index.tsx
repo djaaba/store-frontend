@@ -21,6 +21,9 @@ import { addToCart } from "../../store/cart/actions";
 import { selectCart } from "../../store/cart/selector";
 import { Characteristics } from "../../components/modules";
 
+import { IProduct } from "@/shared";
+import { bestsellers } from "@/plug";
+
 const breadcrumbs = [
     { id: 1, name: "Главная", href: "/", active: false },
     {
@@ -31,12 +34,12 @@ const breadcrumbs = [
     },
 ];
 
-const Product = ({ className, ...props }: ProductProps): JSX.Element => {
+const Product = ({ data = bestsellers, className, ...props }: ProductProps): JSX.Element => {
     const dispatch = useDispatch();
 
-    // const products = useSelector(selectCart);
-    // console.log(products);
-    // const product = products[0];
+    // const products: IProduct[] = useSelector(selectCart);
+    console.log(data);
+    const product = data[0];
 
     const slice = product.characteristics.slice(0, 5);
 
@@ -138,3 +141,14 @@ const Product = ({ className, ...props }: ProductProps): JSX.Element => {
 };
 
 export default Product;
+
+// export async function getServerSideProps() {
+//     const data = await getHelp();
+
+//     return {
+//         props: {
+//             data,
+//         },
+//     };
+// }
+
