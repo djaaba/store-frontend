@@ -1,10 +1,12 @@
+import React from "react";
 import cn from "classnames";
-import { ICharacteristic } from "../../../shared";
-import { getId } from "../../../utils";
-import { ItemWithDots } from "../../UI/index";
 
 import styles from "./Characteristics.module.css";
 import { CharacteristicsProps } from "./Characteristics.props";
+
+import { ICharacteristic } from "../../../shared";
+import { getId } from "../../../utils";
+import { ItemWithDots } from "../../UI/";
 
 export const Characteristics = ({
     characteristics,
@@ -14,7 +16,7 @@ export const Characteristics = ({
     const length = characteristics.length / 2;
 
     return (
-        <>
+        <React.Fragment {...props}>
             {characteristics.length > 5 ? (
                 <section className={cn(styles.container, className)}>
                     <div>
@@ -54,6 +56,6 @@ export const Characteristics = ({
                     ))}
                 </section>
             )}
-        </>
+        </React.Fragment>
     );
 };

@@ -9,11 +9,11 @@
     background: var(--white);
 }
 
-hr {
+/* hr {
     border-top: 1px solid var(--pearl-gray);
     border-left: none;
     border-right: none;
-}
+} */
 
 @media (max-width: 425px) {
     .header {

@@ -1,5 +1,6 @@
-import { DetailedHTMLProps, HTMLAttributes, ButtonHTMLAttributes } from "react";
+import { DetailedHTMLProps, HTMLAttributes } from "react";
 
-export interface DictaphoneProps extends DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>{
+export interface DictaphoneProps
+    extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     setText: Function;
 }

@@ -1,5 +1,3 @@
-import React from "react";
-
 import styles from "./Breadcrumbs.module.css";
 import { BreadcrumbsProps } from "./Breadcrumbs.props";
 

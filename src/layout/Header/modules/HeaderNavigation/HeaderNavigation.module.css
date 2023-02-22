@@ -47,4 +47,8 @@
     .tab p {
         display: none;
     }
+
+    .nav {
+        z-index: 1;
+    }
 }

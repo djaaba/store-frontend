@@ -1,3 +1,4 @@
+import React from "react";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 
 import styles from "./Scroll.module.css";
@@ -13,12 +14,12 @@ export const Scroll = ({ children, ...props }: ScrollProps): JSX.Element => {
     const { dragStart, dragStop, dragMove } = useDrag();
     const handleDrag =
         ({ scrollContainer }: scrollVisibilityApiType) =>
-            (ev: React.MouseEvent) =>
-                dragMove(ev, (posDiff) => {
-                    if (scrollContainer.current) {
-                        scrollContainer.current.scrollLeft += posDiff;
-                    }
-                });
+        (ev: React.MouseEvent) =>
+            dragMove(ev, (posDiff) => {
+                if (scrollContainer.current) {
+                    scrollContainer.current.scrollLeft += posDiff;
+                }
+            });
 
     return (
         <>

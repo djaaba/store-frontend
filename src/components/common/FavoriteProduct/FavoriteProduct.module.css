@@ -42,6 +42,7 @@
 .remove {
     cursor: pointer;
     transition: 0.2s ease-out;
+    white-space: nowrap;
 }
 
 .remove:hover {
@@ -50,4 +51,49 @@
 
 .icon {
     margin-right: 10px;
+}
+
+@media (max-width: 767px) {
+    .content {
+        grid-column-gap: 10px;
+    }
+    .container {
+        padding: 0;
+    }
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .price {
+        margin-bottom: 0;
+    }
+    .img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 425px) {
+    .container {
+        grid-column-gap: 6px;
+    }
+    .btn {
+        padding: 5px 10px;
+    }
+    .curPrice {
+        margin-right: 0;
+    }
+    .price {
+        flex-wrap: wrap;
+    }
+
+    .curPrice,
+    .prevPrice {
+        white-space: nowrap;
+    }
+
+    .btnText {
+        display: none;
+    }
 }

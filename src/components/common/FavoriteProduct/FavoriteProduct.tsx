@@ -1,4 +1,3 @@
-import cn from "classnames";
 import { useDispatch } from "react-redux";
 
 import styles from "./FavoriteProduct.module.css";
@@ -12,8 +11,7 @@ import {
     TrashIcon,
 } from "../../UI";
 import { getPrettyPrice, getPrice } from "../../../utils";
-import React from "react";
-// import { toggleFavorite } from "../../../store/cart/cart-actions";
+import { toggleFavorite } from "../../../store/favorite/actions";
 
 export const FavoriteProduct = ({
     product,
@@ -31,7 +29,7 @@ export const FavoriteProduct = ({
                         <Htag tag="h4">{product.name}</Htag>
                         <Htag
                             tag="h4"
-                            // onClick={() => dispatch(toggleFavorite(product))}
+                            onClick={() => dispatch(toggleFavorite(product))}
                             className={styles.remove}
                         >
                             <FontAwesomeIcon
@@ -41,7 +39,7 @@ export const FavoriteProduct = ({
                             Удалить
                         </Htag>
                     </div>
-                    <div>
+                    <div className={styles.wrapper}>
                         <div className={styles.price}>
                             <Htag tag="h2" className={styles.curPrice}>
                                 {getPrettyPrice(price)} &nbsp;
@@ -50,8 +48,14 @@ export const FavoriteProduct = ({
                                 {getPrettyPrice(product.price)}&nbsp;
                             </p>
                         </div>
-                        <Button color="red" size="big" icon>
-                            <FontAwesomeIcon icon={CartShoppingIcon} />В корзину
+                        <Button
+                            className={styles.btn}
+                            color="red"
+                            size="big"
+                            icon
+                        >
+                            <FontAwesomeIcon icon={CartShoppingIcon} />
+                            <p className={styles.btnText}>В корзину</p>
                         </Button>
                     </div>
                 </div>

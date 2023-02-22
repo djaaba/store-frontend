@@ -149,15 +149,17 @@ i {
     padding: 4px;
 }
 /* arrow */
+
 .react-horizontal-scrolling-menu--scroll-container {
     overflow-x: clip;
 }
 
-.react-horizontal-scrolling-menu--inner-wrapper{
+.react-horizontal-scrolling-menu--inner-wrapper {
     overflow-x: hidden;
 }
 
-.react-horizontal-scrolling-menu--arrow-left, .react-horizontal-scrolling-menu--arrow-right {
+.react-horizontal-scrolling-menu--arrow-left,
+.react-horizontal-scrolling-menu--arrow-right {
     align-items: center;
 }
 

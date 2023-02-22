@@ -13,17 +13,17 @@ export const HeaderBottom = forwardRef(
         { slides, className, ...props }: HeaderBottomProps,
         ref: ForwardedRef<any>
     ): JSX.Element => {
-
         return (
             <>
-                <section className={cn("wrapper", className)} ref={ref}>
+                <section
+                    {...props}
+                    className={cn("wrapper", className)}
+                    ref={ref}
+                >
                     <Scroll>
-                        {slides.map((item) => (
-                            <HeaderNavCard
-                                title={item}
-                                itemId={getId()}
-                                key={getId()}
-                            />
+                        {slides.map((item, index) => (
+                            // getId() key returns warn in console for no reason :/
+                            <HeaderNavCard title={item} key={index} />
                         ))}
                     </Scroll>
                 </section>

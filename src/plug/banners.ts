@@ -1,4 +1,4 @@
-import { IBanner } from "../../shared/IBanner";
+import { IBanner } from "../shared/IBanner";
 
 export const banners: IBanner[] = [
     {

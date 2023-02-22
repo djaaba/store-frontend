@@ -75,6 +75,18 @@
 }
 
 @media (max-width: 768px) {
+    .link {
+        padding: 5px;
+    }
+    .count {
+        margin: 0 5px;
+    }
+    .container {
+        row-gap: 0;
+    }
+    .section {
+        column-gap: 10px;
+    }
     .price {
         flex-direction: column;
         margin-bottom: 0;
@@ -88,6 +100,8 @@
         flex-wrap: wrap;
         justify-content: space-around;
         flex-direction: column-reverse;
+
+        align-items: end;
     }
 
     .curPrice {

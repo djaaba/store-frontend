@@ -1,3 +1,4 @@
-import { HTMLProps, ReactNode } from "react";
+import { DetailedHTMLProps, HTMLAttributes } from "react";
 
-export interface OrderDetailsProps extends HTMLProps<HTMLDivElement> {}
+export interface OrderDetailsProps
+    extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {}

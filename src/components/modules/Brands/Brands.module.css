@@ -1,9 +1,8 @@
-.main {
-    padding-bottom: 56px;
+.container {
     user-select: none;
 }
 
-.container {
+.content {
     width: 260px;
 }
 
@@ -14,45 +13,52 @@
 
 .img img {
     max-height: 40px;
+    max-width: 150px;
 }
 
-.container .img:last-child {
+.content .img:last-child {
     margin-bottom: 0;
 }
 
-.main div[class~="react-horizontal-scrolling-menu--wrapper"] {
+.container div[class~="react-horizontal-scrolling-menu--wrapper"] {
     position: relative;
 }
 
-.main div[class~="react-horizontal-scrolling-menu--item"] {
+.container div[class~="react-horizontal-scrolling-menu--item"] {
     margin-right: 20px;
 }
 
-.main div[class~="react-horizontal-scrolling-menu--item"]:last-child {
+.container div[class~="react-horizontal-scrolling-menu--item"]:last-child {
     margin-right: 0;
 }
 
-.main div[class~="react-horizontal-scrolling-menu--scroll-container"] {
+.container div[class~="react-horizontal-scrolling-menu--scroll-container"] {
     padding: 10px;
 }
 
-.main div[class~="react-horizontal-scrolling-menu--arrow-right"] {
+.container div[class~="react-horizontal-scrolling-menu--arrow-right"] {
     right: -15px;
 }
 
-.main div[class~="react-horizontal-scrolling-menu--arrow-left"] {
+.container div[class~="react-horizontal-scrolling-menu--arrow-left"] {
     left: -15px;
 }
 
-.main div[class~="react-horizontal-scrolling-menu--arrow-right"],
-.main div[class~="react-horizontal-scrolling-menu--arrow-left"] {
+.container div[class~="react-horizontal-scrolling-menu--arrow-right"],
+.container div[class~="react-horizontal-scrolling-menu--arrow-left"] {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
     z-index: 2;
 }
 
-.main div[class~="react-horizontal-scrolling-menu--arrow-right"]>button,
-.main div[class~="react-horizontal-scrolling-menu--arrow-left"]>button {
+.container div[class~="react-horizontal-scrolling-menu--arrow-right"] > button,
+.container div[class~="react-horizontal-scrolling-menu--arrow-left"] > button {
     box-shadow: rgb(0 0 0 / 23%) 0px 0px 10px;
+}
+
+@media (max-width: 425px) {
+    .container {
+        padding-bottom: 10px;
+    }
 }

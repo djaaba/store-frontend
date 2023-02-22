@@ -1,14 +1,12 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SpeechRecognition, {
     useSpeechRecognition,
 } from "react-speech-recognition";
 import { useLayoutEffect, useState } from "react";
-import cn from "classnames";
 
 import styles from "./Dictaphone.module.css";
 import { DictaphoneProps } from "./Dictaphone.props";
 
-import { MicrophoneIcon } from "../";
+import { MicrophoneIcon, FontAwesomeIcon } from "../";
 
 export const Dictaphone = ({
     className,
@@ -36,11 +34,11 @@ export const Dictaphone = ({
     }
 
     if (!browserSupportsSpeechRecognition) {
-        return <span>Browser doesn't support speech recognition.</span>;
+        console.log("Browser doesn't support speech recognition");
     }
 
     return (
-        <div className={className}>
+        <div {...props} className={className}>
             <FontAwesomeIcon
                 onClick={() => handleClick()}
                 className={listening ? styles.on : styles.off}

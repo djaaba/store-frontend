@@ -1,5 +1,5 @@
 import cn from "classnames";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import styles from "./HeaderNavigation.module.css";
@@ -15,18 +15,16 @@ export const HeaderNavigation = ({
 }: HeaderNavigationProps): JSX.Element => {
     return (
         <>
-            <ul {...props} className={cn(styles.nav, styles.mobile)}>
+            <nav {...props} className={cn(styles.nav, styles.mobile)}>
                 {navLinks.map((obj: INav) => (
-                    <li key={getId()}>
-                        <Link to={obj.link}>
-                            <SmoothText color="gray" className={styles.tab}>
-                                <FontAwesomeIcon icon={obj.icon} />
-                                <Ptag className={styles.hihe}>{obj.text}</Ptag>
-                            </SmoothText>
-                        </Link>
-                    </li>
+                    <Link key={getId()} href={obj.link}>
+                        <SmoothText color="gray" className={styles.tab}>
+                            <FontAwesomeIcon icon={obj.icon} />
+                            <Ptag className={styles.hihe}>{obj.text}</Ptag>
+                        </SmoothText>
+                    </Link>
                 ))}
-            </ul>
+            </nav>
         </>
     );
 };

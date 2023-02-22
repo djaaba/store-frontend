@@ -1,18 +1,25 @@
 .main {
     max-width: 420px;
-    height: 285px;
-
-    background: #fff;
-    border-radius: 20px;
+    width: 100%;
+    /* height: 285px; */
+    padding-top: 24px;
 }
 
 .title {
-    padding: 24px 0;
+    padding-bottom: 20px;
 }
 
 .main div[class="swiper-button-prev"],
 .main div[class="swiper-button-next"] {
-    top: 37%;
+    top: 40%;
+}
+
+.main div[class="swiper-button-prev"] {
+    left: 0;
+}
+
+.main div[class="swiper-button-next"] {
+    right: 0;
 }
 
 .wrapper {
@@ -20,4 +27,23 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
+}
+
+@media (max-width: 1200px) {
+    .main {
+        max-width: none;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 767px) {
+    .wrapper {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 425px) {
 }

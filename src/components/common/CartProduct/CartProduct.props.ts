@@ -1,6 +1,6 @@
-import { HTMLProps, ReactNode } from "react";
+import { DetailedHTMLProps, HTMLAttributes } from "react";
 import { IProduct } from "../../../shared/IProduct";
-
-export interface CartProductProps extends HTMLProps<HTMLDivElement> {
+export interface CartProductProps
+    extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     product: IProduct;
 }

@@ -36,3 +36,7 @@
     background-color: var(--white);
     border-right: 2px solid var(--red);
 }
+
+.link {
+    color: inherit;
+}

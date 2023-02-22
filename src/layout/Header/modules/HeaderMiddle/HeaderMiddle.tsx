@@ -1,31 +1,30 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import cn from "classnames";
-import { useMemo } from "react";
 
 import styles from "./HeaderMiddle.module.css";
 import { HeaderMiddleProps } from "./HeaderMiddle.props";
 
 import { Search } from "../../../../components/UI";
 import { INav } from "../../../../shared";
-import { navigation } from "../HeaderNavigation/helpers/navigation";
-import { HeaderNavigation } from "../HeaderNavigation/HeaderNavigation";
+import { HeaderNavigation } from "../";
 
 const inputPlaceholder: string = "Искать товары с кэшбэком до 100%";
 
-export const HeaderMiddle = ({ ...props }: HeaderMiddleProps): JSX.Element => {
-    const navLinks: Array<INav> = useMemo(() => navigation, []);
+export const HeaderMiddle = ({
+    navigation,
+    ...props
+}: HeaderMiddleProps): JSX.Element => {
+    const navLinks: Array<INav> = navigation;
 
     return (
         <section {...props} className={cn(styles.wrapper, "wrapper")}>
-            <div className={styles.content}>
-                <Link to="/">
-                    <img
-                        className={styles.img}
-                        src="/assets/header/logo.svg"
-                        alt="Логотип магазина"
-                    />
-                </Link>
-            </div>
+            <Link href="/">
+                <img
+                    className={styles.img}
+                    src="/assets/header/logo.svg"
+                    alt="Логотип магазина"
+                />
+            </Link>
             <div className={styles.container}>
                 <Search
                     className={styles.input}

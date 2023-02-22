@@ -1,0 +1,27 @@
+.sliders {
+    display: flex;
+    padding-bottom: 20px;
+    justify-content: space-between;
+    grid-gap: 20px;
+    align-items: center;
+}
+
+.container > section {
+    padding-bottom: 56px;
+}
+
+.container > section:last-child {
+    padding-bottom: 0;
+}
+
+@media (max-width: 1200px) {
+    .sliders {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 425px) {
+    .container > section {
+        padding-bottom: 28px;
+    }
+}

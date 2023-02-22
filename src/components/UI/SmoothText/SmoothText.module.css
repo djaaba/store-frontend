@@ -1,31 +1,31 @@
-.smooth{
-	transition: color .2s;
+.smooth {
+    transition: color 0.2s;
 }
 
-.white{
-	color: var(--white);
+.white {
+    color: var(--white);
 }
 
-.white:hover{
-	color: var(--pearl-gray);
+.white:hover {
+    color: var(--pearl-gray);
 }
 
-.gray{
-	color: var(--dark-gray);
+.gray {
+    color: var(--dark-gray);
 }
 
-.gray:hover{
-	color: var(--gray-suit);
+.gray:hover {
+    color: var(--gray-suit);
 }
 
-.upperCase{
-	text-transform: uppercase;
+.upperCase {
+    text-transform: uppercase;
 }
 
-a{
+/* a{
 	color: inherit;
-}
+} */
 
-a:hover{
-	color: inherit;
-}
+/* a:hover {
+    color: inherit;
+} */

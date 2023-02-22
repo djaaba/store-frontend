@@ -1,7 +1,6 @@
 import cn from "classnames";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
-import { useSelector } from "react-redux";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -9,28 +8,40 @@ import "swiper/css/pagination";
 import styles from "./TopProduct.module.css";
 import { TopProductProps } from "./TopProduct.props";
 
-import { Htag } from "../../UI";
-import { selectCart } from "../../../store/cart/selector";
+import { Htag, WhiteWrapper } from "../../UI";
 import { TopProductItem } from "../";
 import { IProduct } from "../../../shared";
+
+const breakpoints = {
+    320: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+    },
+    768: {
+        slidesPerView: 2,
+        spaceBetween: 0,
+    },
+    1200: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+    },
+};
 
 export const TopProduct = ({
     items,
     ...props
 }: TopProductProps): JSX.Element => {
-    const topProducts = useSelector(selectCart);
-
     return (
-        <section {...props} className={styles.main}>
-            <Htag tag="h2" className={cn(styles.title, styles.wrapper)}>
+        <WhiteWrapper {...props} className={styles.main}>
+            <Htag tag="h2" className={cn(styles.title)}>
                 Товары дня
             </Htag>
             <Swiper
                 spaceBetween={50}
+                breakpoints={breakpoints}
                 scrollbar={{ draggable: true }}
                 navigation
                 loop
-                slidesPerView={1}
                 modules={[Navigation, Pagination]}
             >
                 {items.map((item: IProduct) => (
@@ -42,6 +53,6 @@ export const TopProduct = ({
                     </SwiperSlide>
                 ))}
             </Swiper>
-        </section>
+        </WhiteWrapper>
     );
 };

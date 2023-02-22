@@ -1,4 +1,3 @@
-import cn from "classnames";
 import { useDispatch } from "react-redux";
 
 import styles from "./CartProduct.module.css";
@@ -11,7 +10,7 @@ import {
     toggleProduct,
 } from "../../../store/cart/actions";
 import { getPrettyPrice, getPrice } from "../../../utils";
-import { Atag, Checkbox, FavoriteLabel, Htag } from "../../UI/index";
+import { Atag, Checkbox, FavoriteLabel, Htag } from "../../UI";
 
 export const CartProduct = ({
     product,

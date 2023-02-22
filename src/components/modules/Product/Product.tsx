@@ -1,9 +1,10 @@
 import cn from "classnames";
+import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./Product.module.css";
 import { ProductProps } from "./Product.props";
 
-import { getPrettyPrice, getPrice } from "../../../utils/";
+import { getPrettyPrice, getPrice, checkFavorite } from "../../../utils/";
 import {
     Button,
     FontAwesomeIcon,
@@ -11,14 +12,11 @@ import {
     RegularHeartIcon,
     SignalIcon,
     SolidHeartIcon,
-} from "../../UI/index";
-import { useDispatch, useSelector } from "react-redux";
+} from "../../UI/";
 import { selectFavorite } from "../../../store/favorite/selector";
-import { checkFavorite, toggleFavorite } from "../../../store/favorite/actions";
+import { toggleFavorite } from "../../../store/favorite/actions";
 import { addToCart } from "../../../store/cart/actions";
 import { IProduct } from "../../../shared";
-
-import { check } from "./helpers/check";
 
 export const Product = ({ item, ...props }: ProductProps): JSX.Element => {
     const favorites = useSelector(selectFavorite);
@@ -51,7 +49,7 @@ export const Product = ({ item, ...props }: ProductProps): JSX.Element => {
             <main className={styles.main}>
                 <div>
                     <div className={styles.container}>
-                        <img src={imgUrl} />
+                        <img className={styles.img} src={imgUrl} />
                         <span className={styles.shadow}>
                             <div className={styles.discount}>
                                 <p className={styles.discountText}>
@@ -84,7 +82,7 @@ export const Product = ({ item, ...props }: ProductProps): JSX.Element => {
                             onClick={() => toggle(item)}
                             className={styles.iconBtn}
                             icon={
-                                check(item, favorites)
+                                checkFavorite(item, favorites)
                                     ? SolidHeartIcon
                                     : RegularHeartIcon
                             }

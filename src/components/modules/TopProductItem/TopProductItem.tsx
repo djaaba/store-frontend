@@ -1,4 +1,5 @@
 import cn from "classnames";
+import Link from "next/link";
 import { useDispatch } from "react-redux";
 
 import styles from "./TopProductItem.module.css";
@@ -16,15 +17,15 @@ export const TopProductItem = ({
     const dispatch = useDispatch();
 
     return (
-        <div {...props} className={className}>
-            <a>
+        <div {...props} className={cn(className, styles.wrapper)}>
+            <Link href={`/product/${0}`}>
                 <img
                     className={styles.img}
                     src={item.imgUrl}
                     alt="Изображение товара"
                     aria-label={`Узнать больше о ${item.description}`}
                 />
-            </a>
+            </Link>
             <div className={styles.container}>
                 <div className={styles.content}>
                     <div className={styles.discount}>
@@ -46,15 +47,15 @@ export const TopProductItem = ({
                     </div>
                     <p className={styles.description}>{item.name}</p>
                 </div>
-                <Button
-                    onClick={() => dispatch(addToCart(item))}
-                    size="medium"
-                    color={"red"}
-                    icon
-                >
-                    <FontAwesomeIcon icon={CartShoppingIcon} />В Корзину
-                </Button>
             </div>
+            <Button
+                onClick={() => dispatch(addToCart(item))}
+                size="medium"
+                color={"red"}
+                icon
+            >
+                <FontAwesomeIcon icon={CartShoppingIcon} />В Корзину
+            </Button>
         </div>
     );
 };

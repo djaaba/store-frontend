@@ -1,7 +1,7 @@
 import cn from "classnames";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 import styles from "./Cart.module.css";
 import { CartProps } from "./Cart.props";
@@ -24,7 +24,7 @@ import {
     sumCountCart,
 } from "../../store/cart/selector";
 
-export const Cart = ({ className, ...props }: CartProps): JSX.Element => {
+const Cart = ({ className, ...props }: CartProps): JSX.Element => {
     const [isChecked, setIsChecked] = useState<boolean>(false);
 
     const cart = useSelector(selectCart);
@@ -34,16 +34,16 @@ export const Cart = ({ className, ...props }: CartProps): JSX.Element => {
     const dispatch = useDispatch();
 
     return (
-        <React.Fragment {...props}>
-            <main className={styles.main}>
+        <>
+            <main {...props} className={cn(styles.main, "wrapper")}>
                 {!cart.length ? (
-                    <div className="wrapper">
+                    <>
                         <Htag tag="h1">Корзина пуста</Htag>
                         <p>
                             Акции и обзоры на главной странице
                             <br /> помогут вам найти подходящие товары
                         </p>
-                        <Link to="/">
+                        <Link href="/">
                             <Button
                                 className={styles.btn}
                                 size="big"
@@ -52,9 +52,9 @@ export const Cart = ({ className, ...props }: CartProps): JSX.Element => {
                                 На главную
                             </Button>
                         </Link>
-                    </div>
+                    </>
                 ) : (
-                    <div className="wrapper">
+                    <>
                         <div className={styles.title}>
                             <Htag tag="h1">Корзина</Htag>
                             <p className={styles.count}>{sumCount}</p>
@@ -94,9 +94,11 @@ export const Cart = ({ className, ...props }: CartProps): JSX.Element => {
                                 <OrderDetails />
                             </WhiteWrapper>
                         </div>
-                    </div>
+                    </>
                 )}
             </main>
-        </React.Fragment>
+        </>
     );
 };
+
+export default Cart;

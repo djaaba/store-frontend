@@ -14,19 +14,9 @@
     position: relative;
 }
 
-.content {
-    display: flex;
-    column-gap: 10px;
-}
-
 .img {
     width: 117px;
-}
-
-@media (max-width: 768px) {
-    /* .mobile {
-        display: none;
-    } */
+    height: 44px;
 }
 
 @media (max-width: 425px) {

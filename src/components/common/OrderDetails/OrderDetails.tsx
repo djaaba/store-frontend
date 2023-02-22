@@ -6,9 +6,7 @@ import { OrderDetailsProps } from "./OrderDetails.props";
 
 import { Button, Htag, ItemWithDots } from "../../UI";
 import {
-    countCart,
     discountCart,
-    hasSelected,
     sumCountCart,
     sumPriceCart,
 } from "../../../store/cart/selector";
@@ -28,7 +26,7 @@ export const OrderDetails = ({ ...props }: OrderDetailsProps): JSX.Element => {
                 <div className={styles.content}>
                     <ItemWithDots
                         size="h4"
-                        title={`${sumCount} ${getPostfix(sumCount)}`}
+                        title={`${sumCount}\xa0${getPostfix(sumCount)}`}
                         subtitle={getPrettyPrice(sum)}
                     />
                     <ItemWithDots

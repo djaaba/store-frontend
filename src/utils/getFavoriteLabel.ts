@@ -1,3 +1,3 @@
-export const getFavorite = (val: boolean): string => {
+export const getFavoriteLabel = (val: boolean): string => {
     return !val ? "В Избранное" : "В Избранном";
 };

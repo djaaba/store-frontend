@@ -1,18 +1,23 @@
 import styles from "./Bestsellers.module.css";
 import { BestsellersProps } from "./Bestsellers.props";
 
-import { Htag } from "../../UI/index";
-import { Product } from "../index";
+import { Htag } from "../../UI";
+import { Product, Scroll } from "..";
 
-export const Bestsellers = ({ items, ...props }: BestsellersProps): JSX.Element => {
+export const Bestsellers = ({
+    items,
+    ...props
+}: BestsellersProps): JSX.Element => {
     return (
         <>
-            <main {...props} className={styles.main}>
+            <section {...props} className={styles.container}>
                 <Htag tag="h1">Хиты продаж</Htag>
-                {items.map((item) => (
-                    <Product key={item.id} item={item} />
-                ))}
-            </main>
+                <Scroll>
+                    {items.map((item, index) => (
+                        <Product key={item.id} item={item} />
+                    ))}
+                </Scroll>
+            </section>
         </>
     );
 };

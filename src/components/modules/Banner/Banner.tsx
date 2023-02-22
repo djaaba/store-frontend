@@ -7,11 +7,11 @@ import "swiper/css/pagination";
 import styles from "./Banner.module.css";
 import { BannerProps } from "./Banner.props";
 
-
 export const Banner = ({ banners, ...props }: BannerProps): JSX.Element => {
     return (
-        <section {...props} className={styles.main}>
+        <div {...props} className={styles.container}>
             <Swiper
+                centeredSlides
                 spaceBetween={50}
                 pagination={{ clickable: true }}
                 scrollbar={{ draggable: true }}
@@ -27,6 +27,6 @@ export const Banner = ({ banners, ...props }: BannerProps): JSX.Element => {
                     </SwiperSlide>
                 ))}
             </Swiper>
-        </section>
+        </div>
     );
 };

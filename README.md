@@ -1,71 +1,38 @@
-# МВидео – сайт для продажи электроники
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-Создание веб-приложения с использованием React, Typescript, redux
+## Getting Started
 
-**Цель:**
+First, run the development server:
 
--   React, Typescript, Redux
--   Использовать React Routing
--   Использовать React lazy loading
--   Использовать react-query
-
-## Быстрый старт
-
-#### `npm i` – установить зависимости проекта
-
-#### `npm run dev` – запуск devServer на http://localhost:3000/
-
-## Скрипты
-
-#### `npm run dev` – запуск devServer на http://localhost:3000/
-
-#### `npm run build` – production сборка проекта
-
-## Используемые библиотеки
-
--   [classnames](https://github.com/JedWatson/classnames)
--   [normalize.css](https://github.com/necolas/normalize.css)
--   [fontawesome](https://github.com/FortAwesome/Font-Awesome)
--   [react-router-dom](https://github.com/remix-run/react-router)
--   [react-error-boundary](https://github.com/bvaughn/react-error-boundary)
--   [react-redux](https://github.com/reduxjs/react-redux)
--   [redux](https://github.com/reduxjs/redux)
--   [swiper](https://github.com/nolimits4web/swiper)
--   [react-speech-recognition](https://github.com/JamesBrill/react-speech-recognition)
--   [react-countup](https://github.com/glennreyes/react-countup)
--   [axios](https://github.com/axios/axios)
--   [react-toastify]
--   [react-horizontal-scrolling-menu](https://github.com/asmyshlyaev177/react-horizontal-scrolling-menu)
-
-## Макеты
-
-## Изученный статьи
-
-https://rahuulmiishra.medium.com/react-worst-practices-bdf924efe470
-
-### Структура проекта
-
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
 ```
-├── public/                          # Папка с HTML, определяющим шаблон приложения
-├── src/                             # Исходники
-│   ├── components/                  # Папка с используемыми элементами
-│   │   ├── ...                      # UI-kit для приложения
-│   │   └── index.ts                 # Файл экспорта всех компонентов UI-kit
-│   ├── store/                       # Папка с js файлом, позволяющим управлять состоянием
-│   │   └── store.js                 # Файл, управляющий состоянием приложения
-│   ├── layout/                      #
-│   │   ├── .../                     # Папки с компонентами
-│   │   ├── Layout.module.css        # Стили для макета
-│   │   ├── Layout.props.ts          # Входные данные для макета
-│   │   └── Layout.tsx               # Компонент макета
-│   ├── App.css                      # Файл глобальных стилей
-│   ├── App.tsx                      # Главный компонент
-│   ├── index.css                    # Файл стилей
-│   ├── index.tsx                    # Корневой компонент
-│   └── react-app-env.d.ts           # Файл добавляющий поддержку импортов
-├── .gitignore                       # Список исключённых файлов из Git
-├── package.json                     # Список модулей и прочей информации
-├── README.md                        # Документация шаблона
-├── tsconfig.json                    # Параметры компилятора TypeScript
 
-```
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

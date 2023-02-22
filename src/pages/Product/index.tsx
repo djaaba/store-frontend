@@ -1,4 +1,5 @@
 import cn from "classnames";
+import Link from "next/link";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import CountUp from "react-countup";
@@ -30,13 +31,16 @@ const breadcrumbs = [
     },
 ];
 
-export const Product = ({ className, ...props }: ProductProps): JSX.Element => {
+const Product = ({ className, ...props }: ProductProps): JSX.Element => {
     const dispatch = useDispatch();
 
-    const products = useSelector(selectCart);
-    const product = products[0];
+    // const products = useSelector(selectCart);
+    // console.log(products);
+    // const product = products[0];
 
     const slice = product.characteristics.slice(0, 5);
+
+    // Остановился на роутах для продуктов
 
     const {
         imgUrl,
@@ -132,3 +136,5 @@ export const Product = ({ className, ...props }: ProductProps): JSX.Element => {
         </React.Fragment>
     );
 };
+
+export default Product;

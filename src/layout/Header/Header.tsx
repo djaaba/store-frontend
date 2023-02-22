@@ -5,7 +5,7 @@ import { HeaderProps } from "./Header.props";
 import styles from "./Header.module.css";
 
 import { HeaderBottom, HeaderMiddle, HeaderTop } from "./modules";
-import { slides } from "./plug/slides";
+import { slides, navigation } from "./plug";
 
 export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
     const divRef = useRef<HTMLDivElement>(null);
@@ -23,7 +23,7 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
     return (
         <header className={cn(className, styles.header)} {...props}>
             <HeaderTop />
-            <HeaderMiddle />
+            <HeaderMiddle navigation={navigation} />
             <HeaderBottom
                 className={styles.bottom}
                 slides={slides}
