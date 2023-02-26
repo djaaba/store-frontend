@@ -1,47 +1,45 @@
-import cn from "classnames";
-import Link from "next/link";
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { GetServerSideProps } from "next";
+import { useDispatch } from "react-redux";
 import CountUp from "react-countup";
-
-import styles from "./Product.module.css";
-import { ProductProps } from "./Product.props";
-
-import {
-    Atag,
-    Breadcrumbs,
-    Button,
-    FavoriteLabel,
-    Htag,
-    Ptag,
-    WhiteWrapper,
-} from "../../components/UI";
-import { getPrettyPrice, getPrice } from "../../utils";
-import { addToCart } from "../../store/cart/actions";
-// import { selectCart } from "../../store/cart/selector";
-import { Characteristics } from "../../components/modules";
+import React from 'react'
+import cn from "classnames";
 
 import { IProduct } from "@/shared";
-import { bestsellers } from "@/plug";
-import { getAllDevice } from "../api/requests";
+import { getBrandBySlug, getTypeBySlug, getDeviceBySlug } from "../api/requests";
+import { getPrettyPrice, getPrice } from "@/utils";
+import { Atag, Breadcrumbs, Button, FavoriteLabel, Htag, Ptag, WhiteWrapper } from "@/components/UI";
 
-const breadcrumbs = [
-    { id: 1, name: "Главная", href: "/", active: false },
-    {
-        id: 2,
-        name: "Товар",
-        href: "/",
-        active: true,
-    },
-];
+import styles from "./Product.module.css";
+import { addToCart } from "@/store/cart/actions";
 
-const Product = ({ data = bestsellers, test, className, ...props }: ProductProps): JSX.Element => {
+const Item = ({ data, brand, type, ...props }: any) => {
     const dispatch = useDispatch();
     console.log(data);
-    const product = data[0];
+    const product = data
     // const slice = product.characteristics.slice(0, 5);
 
     // Остановился на роутах для продуктов
+    const breadcrumbs = [
+        { id: 1, name: "Главная", href: "/", active: false },
+        {
+            id: 2,
+            href: "/",
+            name: type.name,
+            active: false,
+        },
+        {
+            id: 3,
+            href: "/",
+            name: brand.name,
+            active: false,
+        },
+        {
+            id: 4,
+            href: "/",
+            name: data.name,
+            active: true,
+        },
+    ];
 
     const {
         imgUrl,
@@ -50,9 +48,7 @@ const Product = ({ data = bestsellers, test, className, ...props }: ProductProps
         count,
         discount,
         id,
-        // isSelected,
         price,
-        // characteristics,
     } = product;
 
     const curPrice = getPrice(price, discount);
@@ -135,17 +131,21 @@ const Product = ({ data = bestsellers, test, className, ...props }: ProductProps
             </main>
         </React.Fragment>
     );
-};
+}
 
-export default Product;
+export default Item;
 
-export async function getServerSideProps() {
-    const test = await getAllDevice();
+export const getServerSideProps: GetServerSideProps = async (context) => {
+    const id = context.params!.id;
+    const data = await getDeviceBySlug(id);
+    const brand = await getBrandBySlug(data.brandId);
+    const type = await getTypeBySlug(data.typeId);
 
     return {
         props: {
-            test,
+            data,
+            brand,
+            type
         },
     };
 }
-

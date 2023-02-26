@@ -13,13 +13,19 @@ import {
 import { WhiteWrapper } from "@/components/UI";
 import {
     banners,
-    bestsellers,
+    // bestsellers,
     brands,
     productCategories,
-    topProduct,
+    // topProduct,
 } from "@/plug";
+import { getAllDevice } from "./api/requests";
 
-export default function Main() {
+export default function Main({ data }: any) {
+    console.log(data.rows);
+    
+    const topProduct = data.rows;
+    const bestsellers = data.rows;
+
     return (
         <>
             <Head>
@@ -49,6 +55,17 @@ export default function Main() {
     );
 }
 
+
+export async function getServerSideProps() {
+    const data = await getAllDevice();
+
+    return {
+        props: {
+            data,
+        },
+    };
+}
+
 // ?Переписать pTag на норм, а то хуйня
 // написать компонент недавно просмотренных
 // Написать анализатор подходящих товаров
@@ -62,6 +79,14 @@ export default function Main() {
 // обнулить каунт при удалении, или запретить каунтер при покупке
 // обернуть брейкпоинт в usecallback
 // Страница сравнение
+// В следующий раз называть пропсы для компонентов variant
+// сделать стейт для селектед, дописать бэкенд для корзины и отзывы?
+// админка
+// сделать, чтобы происходила выборка по просмотрам.
+// как сделать, чтобы при нажатии на кнопку "купить", увеличивался счетчик покупки. А если массив?
+// в бестселлерах прикрутить фикс высоту, чтобы кнопка красиво смотрелась внизу.
+// может сделать прикол с красивой карточкой оплаты?
+
 
 // ФИКСТЬ
 // ptag фикс

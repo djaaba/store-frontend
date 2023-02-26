@@ -27,10 +27,7 @@ export const Product = ({ item, ...props }: ProductProps): JSX.Element => {
         count,
         discount,
         id,
-        isFavorite,
-        isSelected,
         price,
-        characteristics,
     } = item;
 
     const discountPrice = getPrice(price, discount);

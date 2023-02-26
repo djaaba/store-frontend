@@ -22,9 +22,9 @@ export type CartAction = {
 };
 
 export type FavoriteAction = {
-    favorite: any;
     type: typesFavoriteAction;
     body: IProduct;
+    favorite: any;
 };
 
 export interface IProduct {
@@ -34,8 +34,9 @@ export interface IProduct {
     name: string;
     description: string;
     imgUrl: string;
-    isSelected: boolean;
-    isFavorite: boolean;
     count: number;
-    characteristics: ICharacteristic[];
+    brandId: number;
+    typeId: number;
+    info?: [];
+    viewCount: number;
 }

@@ -8,7 +8,6 @@ export const bestsellers: IProduct[] = [
         name: "Триммер Remington MB3000 B3 Style Series",
         imgUrl: "/assets/topProduct/top-1.webp",
         isSelected: true,
-        isFavorite: false,
         count: 1,
         description:
             "Стиральная машина Haier HW70-BP12959AS – это сочетание компактности и широких возможностей. Глубина этой модели всего 37,3 см, что позволяет установить её даже в условиях ограниченного пространства, при этом она вмещает до 7 кг белья.",
@@ -82,7 +81,6 @@ export const bestsellers: IProduct[] = [
         name: "Утюг Timberk T-KSI01 ",
         imgUrl: "/assets/topProduct/top-3.webp",
         isSelected: false,
-        isFavorite: true,
         count: 1,
         description:
             "Стиральная машина Haier HW70-BP12959AS – это сочетание компактности и широких возможностей. Глубина этой модели всего 37,3 см, что позволяет установить её даже в условиях ограниченного пространства, при этом она вмещает до 7 кг белья.",
@@ -156,7 +154,6 @@ export const bestsellers: IProduct[] = [
         name: "Эпилятор Braun SES 9-705 ",
         imgUrl: "/assets/topProduct/top-2.webp",
         isSelected: false,
-        isFavorite: false,
         count: 1,
         description:
             "Стиральная машина Haier HW70-BP12959AS – это сочетание компактности и широких возможностей. Глубина этой модели всего 37,3 см, что позволяет установить её даже в условиях ограниченного пространства, при этом она вмещает до 7 кг белья.",
@@ -230,7 +227,6 @@ export const bestsellers: IProduct[] = [
         name: "Эпилятор Braun SES 9-705 ",
         imgUrl: "/assets/topProduct/top-2.webp",
         isSelected: false,
-        isFavorite: false,
         count: 1,
         description:
             "Стиральная машина Haier HW70-BP12959AS – это сочетание компактности и широких возможностей. Глубина этой модели всего 37,3 см, что позволяет установить её даже в условиях ограниченного пространства, при этом она вмещает до 7 кг белья.",
@@ -304,7 +300,6 @@ export const bestsellers: IProduct[] = [
         name: "Эпилятор Braun SES 9-705 ",
         imgUrl: "/assets/topProduct/top-2.webp",
         isSelected: false,
-        isFavorite: false,
         count: 1,
         description:
             "Стиральная машина Haier HW70-BP12959AS – это сочетание компактности и широких возможностей. Глубина этой модели всего 37,3 см, что позволяет установить её даже в условиях ограниченного пространства, при этом она вмещает до 7 кг белья.",
@@ -378,7 +373,6 @@ export const bestsellers: IProduct[] = [
         name: "Эпилятор Braun SES 9-705 ",
         imgUrl: "/assets/topProduct/top-2.webp",
         isSelected: false,
-        isFavorite: false,
         count: 1,
         description:
             "Стиральная машина Haier HW70-BP12959AS – это сочетание компактности и широких возможностей. Глубина этой модели всего 37,3 см, что позволяет установить её даже в условиях ограниченного пространства, при этом она вмещает до 7 кг белья.",

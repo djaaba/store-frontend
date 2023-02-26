@@ -28,17 +28,22 @@ export const TopProductItem = ({
             </Link>
             <div className={styles.container}>
                 <div className={styles.content}>
-                    <div className={styles.discount}>
-                        <p className={cn(styles.discountText, styles.count)}>
-                            Скидка
-                        </p>
-                        <p className={cn(styles.line, styles.count)}>
-                            -{item.discount}%
-                        </p>
-                    </div>
+                    {
+                        item.discount?
+                        <div className={styles.discount}>
+                            <p className={cn(styles.discountText, styles.count)}>
+                                Скидка
+                            </p>
+                            <p className={cn(styles.line, styles.count)}>
+                                -{item.discount}%
+                            </p>
+                        </div>
+                        :
+                        ''
+                    }
                     <div className={styles.price}>
                         <Htag tag="h2" className={styles.curPrice}>
-                            {getPrice(item.price, item.discount)}
+                            {getPrettyPrice(getPrice(item.price, item.discount))}
                             &nbsp;
                         </Htag>
                         <p className={styles.prevPrice}>
