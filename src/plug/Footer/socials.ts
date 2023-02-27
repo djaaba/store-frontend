@@ -1,5 +1,5 @@
-import { YoutubeIcon, VkIcon, OdnoklassnikiIcon } from "../../../components/UI";
-import { ISocial } from "../../../shared";
+import { YoutubeIcon, VkIcon, OdnoklassnikiIcon } from "@/components/UI";
+import { ISocial } from "@/shared";
 
 export const socials: ISocial[] = [
     {

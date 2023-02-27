@@ -1,4 +1,5 @@
 import cn from "classnames";
+import Link from "next/link";
 
 import styles from "./Footer.module.css";
 import { FooterProps } from "./Footer.props";
@@ -6,8 +7,7 @@ import { FooterProps } from "./Footer.props";
 import { FooterNavigation } from "./modules";
 import { Socials } from "../../components/modules";
 import { Button } from "../../components/UI";
-import { apps, socials } from "./plug";
-import Link from "next/link";
+import { apps, socials } from "@/plug/Footer";
 
 export const Footer = ({ ...props }: FooterProps): JSX.Element => {
     return (

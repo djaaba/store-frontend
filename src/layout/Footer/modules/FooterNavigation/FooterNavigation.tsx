@@ -5,9 +5,9 @@ import cn from "classnames";
 import styles from "./FooterNavigation.module.css";
 import { FooterNavigationProps } from "./FooterNavigation.props";
 
-import { aboutCompany, buyers, forBusiness } from "../../plug";
 import { getId, scroll } from "../../../../utils";
 import { IColumnItem } from "../../../../shared";
+import { aboutCompany, buyers, forBusiness } from "@/plug/Footer";
 
 export const FooterNavigation = ({
     ...props

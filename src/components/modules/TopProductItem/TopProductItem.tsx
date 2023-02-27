@@ -18,7 +18,7 @@ export const TopProductItem = ({
 
     return (
         <div {...props} className={cn(className, styles.wrapper)}>
-            <Link href={`/product/${0}`}>
+            <Link href={`/product/${item.id}`}>
                 <img
                     className={styles.img}
                     src={item.imgUrl}
@@ -29,26 +29,29 @@ export const TopProductItem = ({
             <div className={styles.container}>
                 <div className={styles.content}>
                     {
-                        item.discount?
-                        <div className={styles.discount}>
-                            <p className={cn(styles.discountText, styles.count)}>
-                                Скидка
-                            </p>
-                            <p className={cn(styles.line, styles.count)}>
-                                -{item.discount}%
-                            </p>
-                        </div>
-                        :
-                        ''
+                        item.discount ?
+                            <div className={styles.discount}>
+                                <p className={cn(styles.discountText, styles.count)}>
+                                    Скидка
+                                </p>
+                                <p className={cn(styles.line, styles.count)}>
+                                    -{item.discount}%
+                                </p>
+                            </div>
+                            : ""
                     }
                     <div className={styles.price}>
                         <Htag tag="h2" className={styles.curPrice}>
                             {getPrettyPrice(getPrice(item.price, item.discount))}
                             &nbsp;
                         </Htag>
-                        <p className={styles.prevPrice}>
-                            {getPrettyPrice(item.price)}&nbsp;
-                        </p>
+                        {
+                            item.discount ?
+                                <p className={styles.prevPrice}>
+                                    {getPrettyPrice(item.price)}&nbsp;
+                                </p>
+                                : ""
+                        }
                     </div>
                     <p className={styles.description}>{item.name}</p>
                 </div>

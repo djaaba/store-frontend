@@ -5,7 +5,7 @@ import { HeaderProps } from "./Header.props";
 import styles from "./Header.module.css";
 
 import { HeaderBottom, HeaderMiddle, HeaderTop } from "./modules";
-import { slides, navigation } from "./plug";
+import { slides, navigation } from "@/plug/Header";
 
 export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
     const divRef = useRef<HTMLDivElement>(null);

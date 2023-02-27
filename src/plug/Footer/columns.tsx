@@ -1,4 +1,4 @@
-import { IColumnItem } from "../../../shared";
+import { IColumnItem } from "@/shared";
 
 export const buyers: IColumnItem = {
     title: "Покупателям",

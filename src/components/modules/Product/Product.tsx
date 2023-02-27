@@ -48,11 +48,15 @@ export const Product = ({ item, ...props }: ProductProps): JSX.Element => {
                     <div className={styles.container}>
                         <img className={styles.img} src={imgUrl} />
                         <span className={styles.shadow}>
-                            <div className={styles.discount}>
-                                <p className={styles.discountText}>
-                                    -{discount}%
-                                </p>
-                            </div>
+                            {
+                                discount ?
+                                    <div className={styles.discount}>
+                                        <p className={styles.discountText}>
+                                            -{discount}%
+                                        </p>
+                                    </div>
+                                    : ""
+                            }
                         </span>
                     </div>
                     <p className={cn(styles.p, styles.title)}>{name}</p>
@@ -63,9 +67,13 @@ export const Product = ({ item, ...props }: ProductProps): JSX.Element => {
                         <p className={styles.curPrice}>
                             {getPrettyPrice(discountPrice)}
                         </p>
-                        <p className={styles.prevPrice}>
-                            {getPrettyPrice(price)}
-                        </p>
+                        {
+                            discount ?
+                                <p className={styles.prevPrice}>
+                                    {getPrettyPrice(price)}
+                                </p>
+                                : ""
+                        }
                     </div>
                     <div className={styles.btnGroup}>
                         <Button

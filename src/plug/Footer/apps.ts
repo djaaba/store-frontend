@@ -1,4 +1,4 @@
-import { IApp } from "../../../shared";
+import { IApp } from "@/shared";
 
 export const apps: IApp[] = [
     {
