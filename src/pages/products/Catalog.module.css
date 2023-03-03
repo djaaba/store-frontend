@@ -1,0 +1,27 @@
+.main {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    min-height: 100vh;
+}
+
+.aside {
+    max-width: 400px;
+    width: 100%;
+}
+
+.sliders {
+    display: flex;
+    align-items: center;
+}
+
+.separator {
+    font-weight: bold;
+    color: var(--pearl-gray);
+    margin: 0 5px;
+}
+
+@media (max-width: 425px) {
+    .main {
+        padding-bottom: 0;
+    }
+}

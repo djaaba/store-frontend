@@ -66,6 +66,9 @@ export async function getServerSideProps() {
     };
 }
 
+// Ptag заменить на p?
+// cardItem, cartItem, favoriteItem, productItem
+// any 
 // ?Переписать pTag на норм, а то хуйня
 // написать компонент недавно просмотренных
 // Написать анализатор подходящих товаров

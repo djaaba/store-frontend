@@ -1,9 +1,8 @@
+import { IProduct } from "@/shared";
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 
-export interface InputProps
+export interface ProductProps
     extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-    placeholder?: string;
-    type: 'text' | 'number';
-    value: number;
-    setValue: any;
-}
+        data: IProduct[];
+        test: any;
+    }
