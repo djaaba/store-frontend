@@ -25,14 +25,10 @@ const Products = ({ ...props }: any): JSX.Element => {
     const [isChecked, setIsChecked] = React.useState(false)
 
     const [value, setValue] = React.useState<number[]>([25, 75]);
-    const [minPrice, setMinPrice] = React.useState<number>(value[0])
-    const [maxPrice, setMaxPrice] = React.useState<number>(value[1])
+    // const [minPrice, setMinPrice] = React.useState<number>(value[0])
+    // const [maxPrice, setMaxPrice] = React.useState<number>(value[1])
 
-    React.useEffect(() => {
-        // setValue(() => [minPrice, maxPrice])
-        setValue((rest) => [rest[0]++, rest[1]++])
-        console.log(minPrice, maxPrice)
-    }, [minPrice, maxPrice])
+    // setValue((rest) => [rest[0]++, rest[1]++])
 
     return (
         <React.Fragment {...props}>
@@ -55,14 +51,11 @@ const Products = ({ ...props }: any): JSX.Element => {
                         </b>
                     </p>
                     <div className={styles.sliders}>
-
-                        <Input setValue={(e: any) => setMinPrice(e)} value={minPrice} type="number" />
+                        <Input setValue={(minVal: any) => setValue(minVal[0])} value={value[0]} type="text" />
                         <p className={styles.separator}>
-                        {value[1]}
                             —
-                        {value[0]}
                         </p>
-                        <Input setValue={(e: any) => setMaxPrice(e)} value={maxPrice} type="number" />
+                        <Input setValue={(maxVal: any) => setValue(maxVal[1])} value={value[1]} type="number" />
                     </div>
                     <Checkbox checked={isChecked} />
                     <Range range allowCross={false} onChange={(val) => setValue(val)} defaultValue={value} />
