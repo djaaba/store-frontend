@@ -1,8 +1,9 @@
-import axios from ".";
+// import $host from ".";
+import { $authHost, $host } from "./index"
 
 export const getAllDevices = async () => {
     try {
-        const response = await axios.get("device/");
+        const response = await $host.get("device/");
         return response.data;
     } catch (error) {
         return [];
@@ -11,7 +12,7 @@ export const getAllDevices = async () => {
 
 export const getDeviceBySlug = async (slug: any) => {
     try {
-        const response = await axios.get(`device/${slug}`);
+        const response = await $host.get(`device/${slug}`);
         return response.data;
     } catch {
         return false;
@@ -20,7 +21,7 @@ export const getDeviceBySlug = async (slug: any) => {
 
 export const getAllBrands = async () => {
     try {
-        const response = await axios.get("brand/");
+        const response = await $host.get("brand/");
         return response.data;
     } catch (error) {
         return [];
@@ -29,7 +30,7 @@ export const getAllBrands = async () => {
 
 export const getBrandBySlug = async (slug: any) => {
     try {
-        const response = await axios.get(`brand/${slug}`);
+        const response = await $host.get(`brand/${slug}`);
         return response.data;
     } catch {
         return false;
@@ -38,7 +39,7 @@ export const getBrandBySlug = async (slug: any) => {
 
 export const getAllTypes = async () => {
     try {
-        const response = await axios.get("type/");
+        const response = await $host.get("type/");
         return response.data;
     } catch (error) {
         return [];
@@ -47,7 +48,7 @@ export const getAllTypes = async () => {
 
 export const getTypeBySlug = async (slug: any) => {
     try {
-        const response = await axios.get(`type/${slug}`);
+        const response = await $host.get(`type/${slug}`);
         return response.data;
     } catch {
         return false;
@@ -56,7 +57,7 @@ export const getTypeBySlug = async (slug: any) => {
 
 // export const getAllBestsellers = async () => {
 //     try {
-//         const response = await axios.get("bestsellers/");
+//         const response = await $host.get("bestsellers/");
 //         return response.data;
 //     } catch {
 //         return [];

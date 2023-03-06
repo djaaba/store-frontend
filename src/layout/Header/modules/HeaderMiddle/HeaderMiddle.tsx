@@ -9,6 +9,7 @@ import { HeaderNavigation } from "../";
 import { Button, Search } from "@/components/UI";
 import { INav } from "@/shared";
 import { selectUser } from "@/store/user/selector";
+import { ADMIN_ROUTE, MAIN_ROUTE } from "@/utils";
 
 const inputPlaceholder: string = "Искать товары с кэшбэком до 100%";
 
@@ -22,7 +23,7 @@ export const HeaderMiddle = ({
 
     return (
         <section {...props} className={cn(styles.wrapper, "wrapper")}>
-            <Link href="/">
+            <Link href={MAIN_ROUTE}>
                 <img
                     className={styles.img}
                     src="/assets/header/logo.svg"
@@ -31,7 +32,7 @@ export const HeaderMiddle = ({
             </Link>
             {
                 userInfo.isAuth ?
-                    <Link href="/admin">
+                    <Link href={ADMIN_ROUTE}>
                         <Button className={styles.btn} size="big" color="red">
                             Панель администратора
                         </Button>

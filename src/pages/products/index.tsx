@@ -6,7 +6,7 @@ import Range from 'rc-slider';
 import styles from "./Catalog.module.css";
 // import { ProductProps } from "./Product.props";
 
-import { getAllTypes, getAllBrands, getAllDevices } from "../api/requests";
+import { getAllTypes, getAllBrands, getAllDevices } from "../../api/requests";
 import { Breadcrumbs, Checkbox, Input } from "@/components/UI";
 
 import 'rc-slider/assets/index.css';

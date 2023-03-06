@@ -12,12 +12,13 @@ import { REGISTRATION_ROUTE } from "@/utils/routes";
 const Login = ({ className, ...props }: LoginProps): JSX.Element => {
 
     const handleSubmit = async () => {
-        const response = await login(email, password);
-        console.log(response);
+        // if (isLogin) {
+        //     const response = await login()
+        // } else {
+        //     const response = await registation()
+        //     console.log(response)
+        // }
     }
-
-    const [password, setPassword] = React.useState<string>('')
-    const [email, setEmail] = React.useState<string>('')
 
     return (
         <React.Fragment {...props}>
@@ -25,25 +26,21 @@ const Login = ({ className, ...props }: LoginProps): JSX.Element => {
                 <div className={styles.content}>
                     <Htag tag="h2">Авторизация</Htag>
                     <form onSubmit={handleSubmit}>
-                        <Input
+                        <input
                             className={styles.input}
                             placeholder="Введите ваш email"
                             type="email"
-                            value={email}
-                            setValue={(email: string) => setEmail(email)}
                         />
-                        <Input
+                        <input
                             className={styles.input}
                             placeholder="Введите ваш пароль"
                             type="password"
-                            value={password}
-                            setValue={(pswd: string) => setPassword(pswd)}
                         />
                         <Button className={styles.btn} color="dark" size="big">
                             Продолжить
                         </Button>
                     </form>
-                    <div className={styles.option}>
+                    <div>
                         Нет аккаунта?&nbsp;
                         <span>
                             <Link href={REGISTRATION_ROUTE}>

@@ -18,7 +18,7 @@ import {
     productCategories,
     // topProduct,
 } from "@/plug";
-import { getAllDevices } from "./api/requests";
+import { getAllDevices } from "../api/requests";
 
 export default function Main({ data }: any) {
     console.log(data.rows);
@@ -65,6 +65,12 @@ export async function getServerSideProps() {
         },
     };
 }
+
+// Дальнейшие планы:
+// переименовать роуты в новые переменные
+// локал сторэйдж
+// форму создать, валидацию
+// 
 
 // Ptag заменить на p?
 // cardItem, cartItem, favoriteItem, productItem

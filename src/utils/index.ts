@@ -6,3 +6,4 @@ export * from "./getFavoriteLabel";
 export * from "./scroll";
 export * from "./cutArray";
 export * from "./checkFavorite";
+export * from "./routes";

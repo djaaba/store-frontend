@@ -5,12 +5,10 @@ import styles from "./Admin.module.css";
 import { AdminProps } from "./Admin.props";
 
 import { BrandModal, DeviceModal, TypeModal } from "@/components/modules";
-import { getAllBrands, getAllTypes } from "@/pages/api/requests";
+import { getAllBrands, getAllTypes } from "@/api/requests";
 
 
 const Admin = ({ types, brands, className, ...props }: AdminProps): JSX.Element => {
-
-    console.log(types)
 
     return (
         <React.Fragment {...props}>
@@ -28,13 +26,11 @@ export default Admin;
 export async function getServerSideProps() {
     const types = await getAllTypes();
     const brands = await getAllBrands();
-    // const devices = await getAllDevices();
 
     return {
         props: {
             types,
             brands,
-            // devices
         },
     };
 }
