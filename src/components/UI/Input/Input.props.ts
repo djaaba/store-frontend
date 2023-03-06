@@ -1,9 +1,9 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 
 export interface InputProps
-    extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+    extends DetailedHTMLProps<HTMLAttributes<HTMLInputElement>, HTMLInputElement> {
     placeholder?: string;
-    type: 'text' | 'number';
-    value: number;
-    setValue: any;
+    type?: any;
+    value: any;
+    setValue: React.Dispatch<React.SetStateAction<any>>;
 }

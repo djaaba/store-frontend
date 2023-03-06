@@ -77,6 +77,14 @@ button {
 
 /* default styles */
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -moz-appearance: textfield;
+    -webkit-appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 p {
     font-size: 14px;
     line-height: 20px;
@@ -131,13 +139,15 @@ p {
 
 .rc-slider>.rc-slider-rail,
 .rc-slider>.rc-slider-track {
-    height: 2px;
+    height: 1px;
 }
 
 .rc-slider>.rc-slider-handle {
-    margin-top: -6px;
+    margin-top: -10px;
     border: 1px solid var(--red);
     opacity: unset;
+    width: 21px;
+    height: 21px;
 }
 
 .rc-slider>.rc-slider-handle:hover,
@@ -151,8 +161,33 @@ p {
 
 /* rc-slider */
 
+/* hyper popup */
+
+.hm_hyperCloseIconWrapper.right.top{
+    transform: none;
+} 
+
+.hm_hyperModalContentWrapper > div.hm_hyperCloseIconWrapper{
+    width: 20px;
+    height: 20px;
+}
+
+.hm_hyperModalWrapper > div.hm_hyperModalContentWrapper {
+    height: 40%;
+    padding: 20px;
+    height: auto;
+    max-height: 400px;
+    width: 500px;
+}
+
+.hm_hyperModalWrapper.hm_visible{
+    z-index: 3;
+}
+
+/* hyper popup */
 
 /* arrow */
+
 .right {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
@@ -173,14 +208,45 @@ p {
     -webkit-transform: rotate(45deg);
 }
 
-i {
-    border: solid var(--white);
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 4px;
+div[class~="react-horizontal-scrolling-menu--wrapper"] {
+    position: relative;
 }
 
+div[class~="react-horizontal-scrolling-menu--item"] {
+    margin-right: 20px;
+}
+
+div[class~="react-horizontal-scrolling-menu--item"]:last-child {
+    margin-right: 0;
+}
+
+div[class~="react-horizontal-scrolling-menu--scroll-container"] {
+    padding: 10px;
+}
+
+div[class~="react-horizontal-scrolling-menu--arrow-right"] {
+    right: -15px;
+}
+
+div[class~="react-horizontal-scrolling-menu--arrow-left"] {
+    left: -15px;
+}
+
+div[class~="react-horizontal-scrolling-menu--arrow-right"],
+div[class~="react-horizontal-scrolling-menu--arrow-left"] {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+div[class~="react-horizontal-scrolling-menu--arrow-right"] > button,
+div[class~="react-horizontal-scrolling-menu--arrow-left"] > button {
+    box-shadow: rgb(0 0 0 / 23%) 0px 0px 10px;
+}
 /* arrow */
+
+/* scroll */
 
 .react-horizontal-scrolling-menu--scroll-container {
     overflow-x: clip;
@@ -194,6 +260,10 @@ i {
 .react-horizontal-scrolling-menu--arrow-right {
     align-items: center;
 }
+
+/* scroll */
+
+
 
 @media (max-width: 1024px) {}
 

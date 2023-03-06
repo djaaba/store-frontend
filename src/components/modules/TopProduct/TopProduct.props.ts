@@ -1,7 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 
-import { IProduct } from "../../../shared";
+import { IDevice } from "../../../shared";
 
 export interface TopProductProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-    items: IProduct[];
+    items: IDevice[];
 }

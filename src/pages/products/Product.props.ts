@@ -1,8 +1,8 @@
-import { IProduct } from "@/shared";
+import { IDevice } from "@/shared";
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 
 export interface ProductProps
     extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-        data: IProduct[];
+        data: IDevice[];
         test: any;
     }

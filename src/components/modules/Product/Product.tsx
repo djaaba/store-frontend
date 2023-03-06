@@ -16,7 +16,7 @@ import {
 import { selectFavorite } from "../../../store/favorite/selector";
 import { toggleFavorite } from "../../../store/favorite/actions";
 import { addToCart } from "../../../store/cart/actions";
-import { IProduct } from "../../../shared";
+import { IDevice } from "../../../shared";
 
 export const Product = ({ item, ...props }: ProductProps): JSX.Element => {
     const favorites = useSelector(selectFavorite);
@@ -33,11 +33,11 @@ export const Product = ({ item, ...props }: ProductProps): JSX.Element => {
     const discountPrice = getPrice(price, discount);
     const dispatch = useDispatch();
 
-    const toggle = (item: IProduct) => {
+    const toggle = (item: IDevice) => {
         dispatch(toggleFavorite(item));
     };
 
-    const add = (item: IProduct) => {
+    const add = (item: IDevice) => {
         dispatch(addToCart(item));
     };
 

@@ -1,10 +1,10 @@
 import {
-    IProduct,
+    IDevice,
     CartAction,
     typesCartAction as types,
 } from "../../shared";
 
-export const cart = (state: IProduct[] = [], action: CartAction) => {
+export const cart = (state: IDevice[] = [], action: CartAction) => {
     switch (action.type) {
         case types.ADD_TO_CART: {
             return state.filter((product) => product.id === action.body.id)

@@ -1,6 +1,6 @@
-import { IProduct } from "../shared";
+import { IDevice } from "../shared";
 
-export const topProduct: IProduct[] = [
+export const topProduct: IDevice[] = [
     {
         id: 1,
         price: 1599,

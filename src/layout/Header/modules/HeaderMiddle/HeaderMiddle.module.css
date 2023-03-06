@@ -19,6 +19,10 @@
     height: 44px;
 }
 
+.btn{
+    width: auto;
+}
+
 @media (max-width: 425px) {
     .img {
         display: none;

@@ -18,7 +18,7 @@ export const TopProductItem = ({
 
     return (
         <div {...props} className={cn(className, styles.wrapper)}>
-            <Link href={`/product/${item.id}`}>
+            <Link href={`/products/${item.id}`}>
                 <img
                     className={styles.img}
                     src={item.imgUrl}

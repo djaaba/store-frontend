@@ -1,26 +1,26 @@
-import { IProduct, typesCartAction as type } from "../../shared";
+import { IDevice, typesCartAction as type } from "../../shared";
 
-export const addToCart = (body: IProduct) => ({
+export const addToCart = (body: IDevice) => ({
     type: type.ADD_TO_CART,
     body,
 });
 
-export const toggleProduct = (body: IProduct) => ({
+export const toggleProduct = (body: IDevice) => ({
     type: "TOGGLE_PRODUCT",
     body,
 });
 
-export const incrementCount = (body: IProduct) => ({
+export const incrementCount = (body: IDevice) => ({
     type: type.INCREMENT_COUNT,
     body,
 });
 
-export const decrementCount = (body: IProduct) => ({
+export const decrementCount = (body: IDevice) => ({
     type: type.DECREMENT_COUNT,
     body,
 });
 
-export const removeFromCart = (body: IProduct) => ({
+export const removeFromCart = (body: IDevice) => ({
     type: type.REMOVE_FROM_CART,
     body,
 });

@@ -8,3 +8,4 @@ export * from "./Banner/Banner";
 export * from "./Socials/Socials";
 export * from './TopProductItem/TopProductItem';
 export * from "./TopProduct/TopProduct";
+export * from './Modals'

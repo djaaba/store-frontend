@@ -1,8 +1,9 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 
-import { IProduct } from "../../../shared";
+import { IDevice } from "@/shared";
+
 export interface FavoriteLabelProps
     extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-    product: IProduct;
+    product: IDevice;
     icon?: boolean;
 }

@@ -18,7 +18,7 @@ import {
     productCategories,
     // topProduct,
 } from "@/plug";
-import { getAllDevice } from "./api/requests";
+import { getAllDevices } from "./api/requests";
 
 export default function Main({ data }: any) {
     console.log(data.rows);
@@ -57,7 +57,7 @@ export default function Main({ data }: any) {
 
 
 export async function getServerSideProps() {
-    const data = await getAllDevice();
+    const data = await getAllDevices();
 
     return {
         props: {

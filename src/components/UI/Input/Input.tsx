@@ -6,22 +6,18 @@ import { InputProps } from "./Input.props";
 
 export const Input = ({
     placeholder,
-    type,
     value,
     setValue,
+    type,
     ...props
 }: InputProps): JSX.Element => {
-    // const [val, setVal] = useState<string|number>();
-
     return (
-        <>
-            <input
-                className={cn(styles.input, props.className, )}
-                type={type}
-                placeholder={placeholder}
-                onChange={(e) => setValue(e.target.value)}
-                value={value}
-            />
-        </>
+        <input
+            className={cn(styles.input, props.className)}
+            type={type}
+            placeholder={placeholder}
+            onChange={(e) => setValue(e.target.value)}
+            value={value}
+        />
     );
 };

@@ -10,7 +10,7 @@ import { TopProductProps } from "./TopProduct.props";
 
 import { Htag, WhiteWrapper } from "../../UI";
 import { TopProductItem } from "../";
-import { IProduct } from "../../../shared";
+import { IDevice } from "../../../shared";
 
 const breakpoints = {
     320: {
@@ -44,7 +44,7 @@ export const TopProduct = ({
                 loop
                 modules={[Navigation, Pagination]}
             >
-                {items.map((item: IProduct) => (
+                {items.map((item: IDevice) => (
                     <SwiperSlide key={item.id}>
                         <TopProductItem
                             className={styles.wrapper}

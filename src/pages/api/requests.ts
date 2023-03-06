@@ -1,6 +1,6 @@
 import axios from ".";
 
-export const getAllDevice = async () => {
+export const getAllDevices = async () => {
     try {
         const response = await axios.get("device/");
         return response.data;

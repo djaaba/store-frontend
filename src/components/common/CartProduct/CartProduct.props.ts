@@ -1,6 +1,8 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
-import { IProduct } from "../../../shared/IProduct";
+
+import { IDevice } from "@/shared";
+
 export interface CartProductProps
     extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-    product: IProduct;
+    product: IDevice;
 }

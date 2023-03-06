@@ -15,7 +15,7 @@ export const Arrow = ({
                     [direction]: direction,
                 })}
             >
-                <i />
+                <i className={styles.i}/>
             </div>
         </>
     );

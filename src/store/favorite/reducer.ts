@@ -1,6 +1,6 @@
-import { IProduct, FavoriteAction, typesFavoriteAction as types } from "../../shared";
+import { IDevice, FavoriteAction, typesFavoriteAction as types } from "../../shared";
 
-export const favorite = (state: IProduct[] = [], action: FavoriteAction) => {
+export const favorite = (state: IDevice[] = [], action: FavoriteAction) => {
     switch (action.type) {
         case types.TOGGLE_FAVORITE: {
             return state.filter((product) => product.id === action.body.id)

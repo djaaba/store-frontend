@@ -4,7 +4,7 @@ import CountUp from "react-countup";
 import React from 'react'
 import cn from "classnames";
 
-import { IProduct } from "@/shared";
+import { IDevice } from "@/shared";
 import { getBrandBySlug, getTypeBySlug, getDeviceBySlug } from "../api/requests";
 import { getPrettyPrice, getPrice } from "@/utils";
 import { Atag, Breadcrumbs, Button, FavoriteLabel, Htag, Ptag, WhiteWrapper } from "@/components/UI";

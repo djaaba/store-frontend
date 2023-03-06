@@ -6,7 +6,7 @@ import { FavoriteProps } from "./Favorite.props";
 import { FontAwesomeIcon, Htag, RegularHeartIcon } from "../../components/UI";
 import { FavoriteProduct } from "../../components/common/FavoriteProduct/FavoriteProduct";
 import { getId } from "../../utils";
-import { IProduct } from "../../shared";
+import { IDevice } from "../../shared";
 import { selectFavorite } from "../../store/favorite/selector";
 
 const Favorite = ({ className, ...props }: FavoriteProps): JSX.Element => {
@@ -36,7 +36,7 @@ const Favorite = ({ className, ...props }: FavoriteProps): JSX.Element => {
                                 </p>
                             </div>
                             <ul className={styles.ul}>
-                                {favorite.map((item: IProduct) => (
+                                {favorite.map((item: IDevice) => (
                                     <li className={styles.li} key={getId()}>
                                         <FavoriteProduct product={item} />
                                     </li>

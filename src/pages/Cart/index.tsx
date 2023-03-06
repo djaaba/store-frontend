@@ -6,7 +6,7 @@ import Link from "next/link";
 import styles from "./Cart.module.css";
 import { CartProps } from "./Cart.props";
 
-import { IProduct } from "../../shared";
+import { IDevice } from "../../shared";
 import { OrderDetails } from "../../components/common/OrderDetails/OrderDetails";
 import {
     Htag,
@@ -84,7 +84,7 @@ const Cart = ({ className, ...props }: CartProps): JSX.Element => {
                                     )}
                                 </WhiteWrapper>
 
-                                {cart.map((item: IProduct) => (
+                                {cart.map((item: IDevice) => (
                                     <WhiteWrapper key={item.id}>
                                         <CartProduct product={item} />
                                     </WhiteWrapper>

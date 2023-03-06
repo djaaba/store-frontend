@@ -1,7 +1,7 @@
-import { IProduct } from "../shared";
+import { IDevice } from "../shared";
 
-export const checkFavorite = (item: IProduct, favorites: IProduct[]) => {
-    const index = favorites.findIndex((elem: IProduct) => elem.id === item.id);
+export const checkFavorite = (item: IDevice, favorites: IDevice[]) => {
+    const index = favorites.findIndex((elem: IDevice) => elem.id === item.id);
     if (index < 0) {
         return false;
     }
