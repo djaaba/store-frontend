@@ -1,6 +1,8 @@
 import cn from "classnames";
 import React from "react";
 import Link from "next/link";
+// import { redirect } from 'next/navigation';
+import Router from 'next/router';
 import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./Registration.module.css";
@@ -8,17 +10,42 @@ import { RegistrationProps } from "./Registration.props";
 
 import { Button, Htag, Input } from "@/components/UI";
 import { login, registation } from "@/api/userAPI";
-import { LOGIN_ROUTE } from "@/utils/routes";
+import { LOGIN_ROUTE, MAIN_ROUTE } from "@/utils/routes";
 import { selectUser } from "@/store/user/selector";
 import { setUser, loginUser } from "@/store/user/actions";
-import { IUserInfo } from "@/shared";
+import { IUser, IUserInfo } from "@/shared";
+
+const useInput = (initialValue: any) => {
+    const [value, setValue] = React.useState();
+    const [isDirty, setDirty] = React.useState<boolean>(false);
+
+    const onChange = (e: any) => {
+        setValue(e.target.value)
+
+    }
+
+    const onBlur = (e: any) => {
+        setDirty(true)
+    }
+
+    return {
+        value,
+        onChange,
+        onBlur
+    }
+}
 
 const Registration = ({ className, ...props }: RegistrationProps): JSX.Element => {
     const [password, setPassword] = React.useState<string>('')
     const [email, setEmail] = React.useState<string>('')
     const [name, setName] = React.useState<string>('')
+
+    const [emailError, setEmailError] = React.useState<string>('')
+    const [nameError, setNameError] = React.useState<string>('')
+    const [passwordError, setPasswordError] = React.useState<string>('')
+
     
-    const user = useSelector(selectUser);
+    const user:IUser = useSelector(selectUser);
     const dispatch = useDispatch();
     
     const handleSubmit = async (e: any) => {
@@ -27,6 +54,7 @@ const Registration = ({ className, ...props }: RegistrationProps): JSX.Element =
         dispatch(setUser(response as IUserInfo ))
         dispatch(loginUser())
         console.log(user)
+        Router.push(MAIN_ROUTE)
     }
 
     return (
