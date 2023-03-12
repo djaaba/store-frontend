@@ -30,14 +30,14 @@ const Login = ({ className, ...props }: LoginProps): JSX.Element => {
                             placeholder="Введите ваш email"
                             type="email"
                             value={email}
-                            setValue={(email: string) => setEmail(email)}
+                            onChange={(email: string) => setEmail(email)}
                         />
                         <Input
                             className={styles.input}
                             placeholder="Введите ваш пароль"
                             type="password"
                             value={password}
-                            setValue={(pswd: string) => setPassword(pswd)}
+                            onChange={(pswd: string) => setPassword(pswd)}
                         />
                         <Button className={styles.btn} color="dark" size="big">
                             Продолжить

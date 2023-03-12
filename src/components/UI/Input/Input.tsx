@@ -7,7 +7,7 @@ import { InputProps } from "./Input.props";
 export const Input = ({
     placeholder,
     value,
-    setValue,
+    onChange,
     type,
     ...props
 }: InputProps): JSX.Element => {
@@ -17,7 +17,7 @@ export const Input = ({
             className={cn(styles.input, props.className)}
             type={type}
             placeholder={placeholder}
-            onChange={(e) => setValue(e.target.value)}
+            onChange={onChange}
             value={value}
         />
     );

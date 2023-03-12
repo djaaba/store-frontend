@@ -5,5 +5,5 @@ export interface InputProps
     placeholder?: string;
     type?: any;
     value: any;
-    setValue: React.Dispatch<React.SetStateAction<any>>;
+    onChange: any;
 }

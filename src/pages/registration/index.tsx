@@ -20,15 +20,6 @@ const Registration = ({ className, ...props }: RegistrationProps): JSX.Element =
     const name = useInput('', { isEmpty: true, minLength: 1 })
     const password = useInput('', { isEmpty: true, minLength: 5 })
 
-    // let isEmailCorrect: boolean = !(email.isDirty && !email.emailError);
-    // let isEmailEmpty: boolean = !(email.isDirty && email.isEmpty)
-
-    // let isEmailValid: boolean = isEmailCorrect && !isEmailEmpty;
-    // let isPasswordValid: boolean = !(password.isDirty && password.isEmpty);
-    // let isNameValid: boolean = !name.isDirty && !name.isEmpty;
-
-    const [isError, setError] = React.useState<boolean>(false)
-
     let nameError = name.isDirty && name.isEmpty;
     let emailError = email.isDirty && email.emailError;
     let passwordError = password.isDirty && password.isEmpty;
@@ -54,59 +45,36 @@ const Registration = ({ className, ...props }: RegistrationProps): JSX.Element =
             <div className={styles.content}>
                 <Htag tag="h2">Регистрация</Htag>
                 <form onSubmit={handleSubmit}>
-                    <input
-                        type="text"
-                        onBlur={name.onBlur}
-                        value={name.value}
-                        onChange={(e) => name.onChange(e)}
+                    <Input
+                        className={styles.input}
                         placeholder="Введите ваше Имя"
+                        onBlur={name.onBlur}
+                        type="text"
+                        value={name.value}
+                        onChange={(e: any) => name.onChange(e)}
                     />
                     {nameError && <div>name!!</div>}
-                    <input
-                        placeholder="Введите ваш email"
-                        onBlur={email.onBlur}
-                        type="email"
-                        value={email.value}
-                        onChange={(e) => email.onChange(e)}
-                    />
-                    {emailError && <div>email format</div>}
-                    <input
-                        placeholder="Введите ваш пароль"
-                        onBlur={password.onBlur}
-                        type="password"
-                        value={password.value}
-                        onChange={(e) => password.onChange(e)}
-                    />
-                    {/* <Input
-                            className={styles.input}
-                            placeholder="Введите ваш пароль"
-                            onBlur={password.onBlur}
-                            type="password"
-                            value={password.value}
-                            setValue={(e) => password.onChange(e)}
-                        /> */}
-                    {passwordError && <div>password!!</div>}
-
-                    {/* <Input
-                            className={styles.input}
-                            placeholder="Введите ваше Имя"
-                            onBlur={name.onBlur}
-                            type="text"
-                            value={name.value}
-                            setValue={(e) => name.onChange(e)}
-                        />
-                        <Input
+                    <Input
                             className={styles.input}
                             placeholder="Введите ваш email"
                             onBlur={email.onBlur}
                             type="email"
                             value={email.value}
-                            setValue={(e) => email.onChange(e)}
+                            onChange={(e: any) => email.onChange(e)}
                         />
-                         */}
+                   
+                    {emailError && <div>email format</div>}
+                    <Input
+                        className={styles.input}
+                        placeholder="Введите ваш пароль"
+                        onBlur={password.onBlur}
+                        type="password"
+                        value={password.value}
+                        onChange={(e: any) => password.onChange(e)}
+                    />
+                    {passwordError && <div>password!!</div>}
                     <div>
                         <button
-                            // disabled={nameError}
                             disabled={!email.inputValid || !name.inputValid || !password.inputValid}
                             type="submit">
                             Продолжить
