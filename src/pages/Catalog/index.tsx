@@ -33,7 +33,7 @@ const Catalog = ({
                         ))}
                     </ul>
                     <ul className={styles.subcategories}>
-                        {links.items.map((link) => (
+                        {links.items?.map((link) => (
                             <li
                                 className={styles.subcategoriesLi}
                                 key={getId()}

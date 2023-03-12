@@ -44,7 +44,7 @@ export const TopProduct = ({
                 loop
                 modules={[Navigation, Pagination]}
             >
-                {items.map((item: IDevice) => (
+                {items?.map((item: IDevice) => (
                     <SwiperSlide key={item.id}>
                         <TopProductItem
                             className={styles.wrapper}

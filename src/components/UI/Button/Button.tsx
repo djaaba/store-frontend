@@ -24,6 +24,7 @@ export const Button = ({
                 [styles.smallButton]: size === "small",
             })}
             title={title}
+            disabled={props.disabled}
             {...props}
         >
             <div

@@ -13,7 +13,7 @@ export const Bestsellers = ({
             <section {...props} className={styles.container}>
                 <Htag tag="h1">Хиты продаж</Htag>
                 <Scroll>
-                    {items.map((item, index) => (
+                    {items?.map((item, index) => (
                         <Product key={item.id} item={item} />
                     ))}
                 </Scroll>

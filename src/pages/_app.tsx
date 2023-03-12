@@ -15,7 +15,7 @@ import { Layout } from "@/layout/Layout";
 export default function App({ Component, pageProps }: AppProps) {
     return (
         <>
-            <React.StrictMode>
+            {/* <React.StrictMode> */}
                 {/* <NextNProgress
                     color="var(--red)"
                     options={{
@@ -30,7 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
                         <Component {...pageProps} />
                     </Layout>
                 </Provider>
-            </React.StrictMode>
+            {/* </React.StrictMode> */}
         </>
     );
 }

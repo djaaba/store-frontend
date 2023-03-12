@@ -13,6 +13,7 @@ export const Input = ({
 }: InputProps): JSX.Element => {
     return (
         <input
+            {...props}
             className={cn(styles.input, props.className)}
             type={type}
             placeholder={placeholder}

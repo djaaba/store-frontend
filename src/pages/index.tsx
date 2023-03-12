@@ -66,11 +66,17 @@ export async function getServerSideProps() {
     };
 }
 
+// next time use formik
+// next time use - cookie httponly secure token
+
 // Дальнейшие планы:
 // переименовать роуты в новые переменные
 // локал сторэйдж
 // форму создать, валидацию
-// 
+// стейт для каунтера? посмотрим
+// переписать компонент Input(на onChange), и доработать Button(на disabled)
+// any
+
 
 // Ptag заменить на p?
 // cardItem, cartItem, favoriteItem, productItem
