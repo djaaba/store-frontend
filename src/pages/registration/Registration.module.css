@@ -16,7 +16,21 @@
 }
 
 .input {
-    margin: 24px 0;
+    margin: 20px 0;
+}
+
+.container{
+    position: relative;
+}
+
+.message{
+    position: absolute;
+    color: var(--error);
+    top: 0px;
+}
+
+.indicator{
+    border: 1px solid var(--error);
 }
 
 .option{

@@ -31,6 +31,8 @@
     --blue: #007aff;
     --blue-hover: #0053ae;
     --blue-click: #003672;
+
+    --error: #c51f1f;
 }
 
 body {

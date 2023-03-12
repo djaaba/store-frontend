@@ -24,6 +24,8 @@ const Registration = ({ className, ...props }: RegistrationProps): JSX.Element =
     let emailError = email.isDirty && email.emailError;
     let passwordError = password.isDirty && password.isEmpty;
 
+    let isDisabled = !email.inputValid || !name.inputValid || !password.inputValid;
+
     const user: IUser = useSelector(selectUser);
     const dispatch = useDispatch();
 
@@ -45,47 +47,45 @@ const Registration = ({ className, ...props }: RegistrationProps): JSX.Element =
             <div className={styles.content}>
                 <Htag tag="h2">Регистрация</Htag>
                 <form onSubmit={handleSubmit}>
-                    <Input
-                        className={styles.input}
-                        placeholder="Введите ваше Имя"
-                        onBlur={name.onBlur}
-                        type="text"
-                        value={name.value}
-                        onChange={(e: any) => name.onChange(e)}
-                    />
-                    {nameError && <div>name!!</div>}
-                    <Input
-                            className={styles.input}
+                    <div className={styles.container}>
+                        <Input
+                            className={cn(styles.input, nameError ? styles.indicator : null)}
+                            placeholder="Введите ваше Имя"
+                            onBlur={name.onBlur}
+                            type="text"
+                            value={name.value}
+                            onChange={(e: any) => name.onChange(e)}
+                        />
+                        {nameError && <div className={styles.message}>Введите ваше имя</div>}
+                    </div>
+                    <div className={styles.container}>
+                        <Input
+                            className={cn(styles.input, emailError ? styles.indicator : null)}
                             placeholder="Введите ваш email"
                             onBlur={email.onBlur}
                             type="email"
                             value={email.value}
                             onChange={(e: any) => email.onChange(e)}
                         />
-                   
-                    {emailError && <div>email format</div>}
-                    <Input
-                        className={styles.input}
-                        placeholder="Введите ваш пароль"
-                        onBlur={password.onBlur}
-                        type="password"
-                        value={password.value}
-                        onChange={(e: any) => password.onChange(e)}
-                    />
-                    {passwordError && <div>password!!</div>}
-                    <div>
-                        <button
-                            disabled={!email.inputValid || !name.inputValid || !password.inputValid}
-                            type="submit">
-                            Продолжить
-                        </button>
+                        {emailError && <div className={styles.message}>Неверный формат почты</div>}
                     </div>
-                    {/* <Button
-                        disabled={!isEmailValid || !isNameValid || !isPasswordValid}
+                    <div className={styles.container}>
+                        <Input
+                            className={cn(styles.input, passwordError ? styles.indicator : null)}
+                            placeholder="Введите ваш пароль"
+                            onBlur={password.onBlur}
+                            type="password"
+                            value={password.value}
+                            onChange={(e: any) => password.onChange(e)}
+                        />
+                        {passwordError && <div className={styles.message}>Введите ваш пароль</div>}
+                    </div>
+                    <Button
+                        disabled={isDisabled}
                         type="submit"
-                        className={styles.btn} color="dark" size="big">
+                        className={styles.btn} color={isDisabled ? "gray" : "dark"} size="big">
                         Продолжить
-                    </Button> */}
+                    </Button>
                 </form>
                 <div className={styles.option}>
                     Уже усть аккаунт?&nbsp;

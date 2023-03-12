@@ -50,13 +50,13 @@
     background: var(--light-gray);
 }
 
-.gray:hover {
+/* .gray:hover {
     background: var(--light-gray-hover);
 }
 
 .gray:active {
     background: var(--light-gray-click);
-}
+} */
 
 .dark {
     background: var(--gray-border);
