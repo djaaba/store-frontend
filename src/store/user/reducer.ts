@@ -1,4 +1,4 @@
-import { IUser, UserAction, typesUserAction as types, IUserInfo } from "@/shared";
+import { IUser, UserAction, typesUserAction as types } from "@/shared";
 
 const initialState = {
     isAuth: false,
@@ -9,13 +9,12 @@ export const user = (state: IUser = initialState, action: UserAction) => {
     switch (action.type) {
         case types.LOGIN: {
             return Object.assign({}, state, {
+                _user: action.body,
                 isAuth: true
-              })
+            })
         }
-        case types.SET_USER: {
-            return Object.assign({}, state, {
-                _user: action.body
-              })
+        case types.LOGOUT: {
+            return Object.assign({}, initialState)
         }
         default:
             return state;

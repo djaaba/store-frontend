@@ -35,5 +35,3 @@ export const Atag = ({
         </>
     );
 };
-
-// мб переписать htag atag ptag

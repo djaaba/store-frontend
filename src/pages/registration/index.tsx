@@ -2,18 +2,19 @@ import cn from "classnames";
 import Link from "next/link";
 import React from 'react';
 import Router from 'next/router';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 
 import styles from "./Registration.module.css";
 import { RegistrationProps } from "./Registration.props";
 
 import { Button, Htag, Input } from "@/components/UI";
-import { login, registation } from "@/api/userAPI";
+import { registation } from "@/api/userAPI";
 import { LOGIN_ROUTE, MAIN_ROUTE } from "@/utils/routes";
-import { selectUser } from "@/store/user/selector";
-import { setUser, loginUser } from "@/store/user/actions";
-import { IUser, IUserInfo } from "@/shared";
+import { login } from "@/store/user/actions";
+import { IUserInfo } from "@/shared";
 import { useInput } from "@/hooks";
+import { error, success } from "@/utils";
 
 const Registration = ({ className, ...props }: RegistrationProps): JSX.Element => {
     const email = useInput('', { isEmpty: true, minLength: 3, isEmail: true })
@@ -26,19 +27,18 @@ const Registration = ({ className, ...props }: RegistrationProps): JSX.Element =
 
     let isDisabled = !email.inputValid || !name.inputValid || !password.inputValid;
 
-    const user: IUser = useSelector(selectUser);
     const dispatch = useDispatch();
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
         try {
             const response = await registation(name.value, email.value, password.value)
-            dispatch(setUser(response as IUserInfo))
-            dispatch(loginUser())
-            console.log(user)
+            dispatch(login(response as IUserInfo))
             Router.push(MAIN_ROUTE)
-        } catch (error: any) {
-            console.log(error.response.data.message)
+            toast.success('Вы авторизованы!', success);
+        } catch (err: any) {
+            console.log(err.response.data.message)
+            toast.error('Что-то пошло не так', error);
         }
     }
 

@@ -13,7 +13,6 @@ export const LeftArrow = ({ }): JSX.Element => {
         !initComplete || (initComplete && isFirstItemVisible)
     );
     useEffect(() => {
-        // NOTE: detect if whole component visible
         if (visibleElements.length) {
             setDisabled(isFirstItemVisible);
         }

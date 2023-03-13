@@ -14,11 +14,9 @@ import { addToCart } from "@/store/cart/actions";
 
 const Item = ({ data, brand, type, ...props }: any) => {
     const dispatch = useDispatch();
-    console.log(data);
     const product = data
     // const slice = product.characteristics.slice(0, 5);
 
-    // Остановился на роутах для продуктов
     const breadcrumbs = [
         { id: 1, name: "Главная", href: "/", active: false },
         {

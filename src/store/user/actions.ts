@@ -1,18 +1,10 @@
-import { IUser, IUserInfo, typesUserAction as type } from "@/shared";
-
-export const loginUser = () => ({
-    type: type.LOGIN
-});
+import { IUserInfo, typesUserAction as type } from "@/shared";
 
 export const logout = () => ({
-
+    type: type.LOGOUT,
 });
 
-export const register = () => ({
-
-})
-
-export const setUser = (body: IUserInfo) => ({
-    type: type.SET_USER,
+export const login = (body: IUserInfo) => ({
+    type: type.LOGIN,
     body
 })

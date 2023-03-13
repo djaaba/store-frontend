@@ -7,7 +7,7 @@ import styles from "./HeaderNavigation.module.css";
 import { HeaderNavigationProps } from "./HeaderNavigation.props";
 
 import { INav } from "@/shared";
-import { getId, LOGIN_ROUTE, MAIN_ROUTE } from "@/utils";
+import { getId, LOGIN_ROUTE, MAIN_ROUTE, PROFILE_ROUTE } from "@/utils";
 import { Ptag, SmoothText, UserIcon } from "@/components/UI";
 import { selectUser } from "@/store/user/selector";
 
@@ -25,7 +25,7 @@ export const HeaderNavigation = ({
             <nav {...props} className={cn(styles.nav, styles.mobile)}>
                 {
                     user.isAuth ?
-                        <Link href={MAIN_ROUTE}>
+                        <Link href={PROFILE_ROUTE}>
                             <SmoothText color="gray" className={styles.tab}>
                                 <FontAwesomeIcon icon={usr.icon} />
                                 <Ptag className={styles.hihe}>{user._user.name}</Ptag>

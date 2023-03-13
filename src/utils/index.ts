@@ -7,3 +7,5 @@ export * from "./scroll";
 export * from "./cutArray";
 export * from "./checkFavorite";
 export * from "./routes";
+export * from "./toasts";
+export * from "./getFromLocalStorage";

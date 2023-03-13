@@ -1,5 +1,7 @@
+import React from 'react';
 import cn from "classnames";
 import Head from "next/head";
+import { useDispatch } from "react-redux";
 
 import styles from "@/styles/Main.module.css";
 
@@ -19,10 +21,21 @@ import {
     // topProduct,
 } from "@/plug";
 import { getAllDevices } from "../api/requests";
+import { IUserInfo } from "@/shared";
+import { check } from "@/api/userAPI";
+import { login } from "@/store/user/actions";
 
-export default function Main({ data }: any) {
-    console.log(data.rows);
-    
+function Main({ data }: any) {
+    const dispatch = useDispatch();
+
+    React.useEffect(() => {
+        check().then(data => {
+            dispatch(login(data as IUserInfo))
+        }).catch(err => {
+            console.warn(err)
+        })
+    }, [])
+
     const topProduct = data.rows;
     const bestsellers = data.rows;
 
@@ -55,6 +68,7 @@ export default function Main({ data }: any) {
     );
 }
 
+export default Main;
 
 export async function getServerSideProps() {
     const data = await getAllDevices();
@@ -68,15 +82,16 @@ export async function getServerSideProps() {
 
 // next time use formik
 // next time use - cookie httponly secure token
+// next time export default
 
 // Дальнейшие планы:
+// сверстать страницу профиля
 // переименовать роуты в новые переменные
-// локал сторэйдж
-// форму создать, валидацию
 // стейт для каунтера? посмотрим
-// переписать компонент Input(на onChange), и доработать Button(на disabled)
 // any
-
+// корзина все еще пытается выдавать ошибки, надо чинить
+// в products написать пропсы для компонентов, и вообще архитектуру как-то изменить
+// Head во все страницы
 
 // Ptag заменить на p?
 // cardItem, cartItem, favoriteItem, productItem
@@ -111,6 +126,13 @@ export async function getServerSideProps() {
 // HTMLProps заменить на detailed
 
 // ГОТОВО:
+
+
+// локал сторэйдж
+// форму создать, валидацию
+// переписать компонент Input(на onChange), и доработать Button(на disabled)
+// сделать возможность выхода из аккаунта
+
 // добавить aria-label для всех ссылок и Atag, то же самое что-то с ннопками
 // h1, h2, h3, h4 заменить на htag
 // пофиксить все стили ${} на cn()

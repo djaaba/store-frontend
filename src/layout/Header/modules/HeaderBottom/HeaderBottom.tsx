@@ -22,7 +22,6 @@ export const HeaderBottom = forwardRef(
                 >
                     <Scroll>
                         {slides.map((item, index) => (
-                            // getId() key returns warn in console for no reason :/
                             <HeaderNavCard title={item} key={index} />
                         ))}
                     </Scroll>

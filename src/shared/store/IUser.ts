@@ -1,8 +1,6 @@
 export enum typesUserAction {
-    LOGIN = "LOGIN",
     LOGOUT = "LOGOUT",
-    REGISTER = "REGISTER",
-    SET_USER = "SET_USER"
+    LOGIN = "LOGIN",
 }
 
 export type UserAction = {

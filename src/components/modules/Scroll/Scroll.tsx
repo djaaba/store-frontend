@@ -10,16 +10,15 @@ import { useDrag } from "./hooks/useDrag";
 type scrollVisibilityApiType = React.ContextType<typeof VisibilityContext>;
 
 export const Scroll = ({ children, ...props }: ScrollProps): JSX.Element => {
-    // for drag by mouse
     const { dragStart, dragStop, dragMove } = useDrag();
     const handleDrag =
         ({ scrollContainer }: scrollVisibilityApiType) =>
-        (ev: React.MouseEvent) =>
-            dragMove(ev, (posDiff) => {
-                if (scrollContainer.current) {
-                    scrollContainer.current.scrollLeft += posDiff;
-                }
-            });
+            (ev: React.MouseEvent) =>
+                dragMove(ev, (posDiff) => {
+                    if (scrollContainer.current) {
+                        scrollContainer.current.scrollLeft += posDiff;
+                    }
+                });
 
     return (
         <>

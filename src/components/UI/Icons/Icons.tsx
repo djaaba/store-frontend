@@ -53,4 +53,3 @@ export const RegularHeartIcon = faRegularHeart;
 export const VkIcon = faVk;
 export const OdnoklassnikiIcon = faSquareOdnoklassniki;
 export const YoutubeIcon = faYoutube;
-// next time export default
