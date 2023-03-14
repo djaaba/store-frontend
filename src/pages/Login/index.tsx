@@ -9,8 +9,8 @@ import styles from "./Login.module.css";
 import { LoginProps } from "./Login.props";
 import 'react-toastify/dist/ReactToastify.css';
 
-import { Button, Htag, Input } from "../../components/UI";
-import { login } from "../../api/userAPI";
+import { Button, Htag, Input } from "@/components/UI";
+import { login } from "@/api";
 import { MAIN_ROUTE, REGISTRATION_ROUTE } from "@/utils/routes";
 import { useInput } from "@/hooks";
 import { IUserInfo } from "@/shared";
@@ -39,15 +39,6 @@ const Login = ({ className, ...props }: LoginProps): JSX.Element => {
             toast.error('Ошибка 1', error);
             console.warn(err);
         })
-        // try {
-        //     const response = await login(email.value, password.value);
-        //     dispatch(userLogin(response as IUserInfo))
-        //     Router.push(MAIN_ROUTE)
-        //     toast.success('Вы авторизованы!', success);
-        // } catch (err) {
-        //     toast.error('Что-то пошло не так', error);
-        //     console.warn(err);
-        // }
     }
 
     return (

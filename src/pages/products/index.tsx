@@ -6,7 +6,7 @@ import Range from 'rc-slider';
 import styles from "./Catalog.module.css";
 // import { ProductProps } from "./Product.props";
 
-import { getAllTypes, getAllBrands, getAllDevices } from "../../api/requests";
+import { getAllTypes, getAllBrands, getAllDevices } from "@/api";
 import { Breadcrumbs, Checkbox, Input } from "@/components/UI";
 
 import 'rc-slider/assets/index.css';
@@ -82,11 +82,11 @@ const Products = ({ types, brands, devices, ...props }: any): JSX.Element => {
                             </b>
                         </p>
                         <div className={styles.inputs}>
-                            <Input setValue={(minVal: number) => setValue([+minVal, value[1]])} value={value[0]} type="number" />
+                            <Input onChange={(minVal: number) => setValue([+minVal, value[1]])} value={value[0]} type="number" />
                             <p className={styles.separator}>
                                 —
                             </p>
-                            <Input setValue={(maxVal: number) => setValue([value[0], +maxVal])} value={value[1]} type="number" />
+                            <Input onChange={(maxVal: number) => setValue([value[0], +maxVal])} value={value[1]} type="number" />
                         </div>
                         <Range className={styles.range} range allowCross={false} onChange={(val: any) => setValue(val)} value={value} />
                     </aside>

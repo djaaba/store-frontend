@@ -5,7 +5,7 @@ import React from 'react'
 import cn from "classnames";
 
 import { IDevice } from "@/shared";
-import { getBrandBySlug, getTypeBySlug, getDeviceBySlug } from "../../api/requests";
+import { getBrandBySlug, getTypeBySlug, getDeviceBySlug } from "@/api";
 import { getPrettyPrice, getPrice } from "@/utils";
 import { Atag, Breadcrumbs, Button, FavoriteLabel, Htag, Ptag, WhiteWrapper } from "@/components/UI";
 

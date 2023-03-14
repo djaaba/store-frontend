@@ -5,7 +5,7 @@ import styles from "./Admin.module.css";
 import { AdminProps } from "./Admin.props";
 
 import { BrandModal, DeviceModal, TypeModal } from "@/components/modules";
-import { getAllBrands, getAllTypes } from "@/api/requests";
+import { getAllBrands, getAllTypes } from "@/api";
 
 
 const Admin = ({ types, brands, className, ...props }: AdminProps): JSX.Element => {

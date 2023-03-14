@@ -20,9 +20,8 @@ import {
     productCategories,
     // topProduct,
 } from "@/plug";
-import { getAllDevices } from "../api/requests";
+import { getAllDevices, check } from "@/api";
 import { IUserInfo } from "@/shared";
-import { check } from "@/api/userAPI";
 import { login } from "@/store/user/actions";
 
 function Main({ data }: any) {

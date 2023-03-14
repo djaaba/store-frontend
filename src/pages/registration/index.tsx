@@ -9,7 +9,7 @@ import styles from "./Registration.module.css";
 import { RegistrationProps } from "./Registration.props";
 
 import { Button, Htag, Input } from "@/components/UI";
-import { registation } from "@/api/userAPI";
+import { registation } from "@/api";
 import { LOGIN_ROUTE, MAIN_ROUTE } from "@/utils/routes";
 import { login } from "@/store/user/actions";
 import { IUserInfo } from "@/shared";
@@ -35,7 +35,7 @@ const Registration = ({ className, ...props }: RegistrationProps): JSX.Element =
             const response = await registation(name.value, email.value, password.value)
             dispatch(login(response as IUserInfo))
             Router.push(MAIN_ROUTE)
-            toast.success('Вы авторизованы!', success);
+            toast.success('Вы зарегистрировались!', success);
         } catch (err: any) {
             console.log(err.response.data.message)
             toast.error('Что-то пошло не так', error);
