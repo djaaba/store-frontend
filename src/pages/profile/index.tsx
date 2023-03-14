@@ -7,7 +7,8 @@ import Router from "next/router";
 
 import styles from "./Profile.module.css";
 import { ProfileProps } from "./Profile.props";
-import { ADMIN_ROUTE, LOGIN_ROUTE, MAIN_ROUTE, success } from "@/utils";
+
+import { ADMIN_ROUTE, LOGIN_ROUTE, success } from "@/utils";
 import { Button } from "@/components/UI";
 import { selectUser } from "@/store/user/selector";
 import { logout } from "@/store/user/actions";

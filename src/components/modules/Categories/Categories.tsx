@@ -14,7 +14,7 @@ export const Categories = ({
         <section {...props} className={styles.container}>
             <Htag tag="h1">Популярные категории</Htag>
             <Scroll>
-                {categories.map((item, index) => (
+                {categories?.map((item, index) => (
                     <React.Fragment key={index}>
                         <Image
                             className={styles.img}

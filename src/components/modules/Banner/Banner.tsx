@@ -21,7 +21,7 @@ export const Banner = ({ banners, ...props }: BannerProps): JSX.Element => {
                 modules={[Navigation, Pagination]}
                 className={styles.swiper}
             >
-                {banners.map((item) => (
+                {banners?.map((item) => (
                     <SwiperSlide key={item.id}>
                         <img className={styles.img} src={item.imgUrl} />
                     </SwiperSlide>

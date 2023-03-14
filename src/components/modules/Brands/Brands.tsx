@@ -13,7 +13,7 @@ export const Brands = ({ brands, ...props }: BrandsProps): JSX.Element => {
         <section {...props} className={styles.container}>
             <Htag tag="h1">Популярные бренды</Htag>
             <Scroll>
-                {brands.length > 10
+                {brands?.length > 10
                     ? items?.map((column: any, i: number) => (
                           <div key={i} className={styles.content}>
                               {column.map((item: IBrand, j: number) => (
@@ -26,7 +26,7 @@ export const Brands = ({ brands, ...props }: BrandsProps): JSX.Element => {
                               ))}
                           </div>
                       ))
-                    : brands.map((item: IBrand, i: number) => (
+                    : brands?.map((item: IBrand, i: number) => (
                           <div key={i} className={styles.content}>
                               <Image
                                   className={styles.img}

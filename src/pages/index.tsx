@@ -14,18 +14,21 @@ import {
 } from "@/components/modules";
 import { WhiteWrapper } from "@/components/UI";
 import {
-    banners,
+    // banners,
     // bestsellers,
-    brands,
-    productCategories,
+    // brands,
+    // productCategories,
     // topProduct,
 } from "@/plug";
-import { getAllDevices, check } from "@/api";
+import { getAllDevices, check, getAllTypes, getAllBrands, getAllBanners } from "@/api";
 import { IUserInfo } from "@/shared";
 import { login } from "@/store/user/actions";
 
-function Main({ data }: any) {
+function Main({ data, types, brands, banners }: any) {
     const dispatch = useDispatch();
+    // console.log(types)
+    // console.log(banners)
+    // console.log(brands)
 
     React.useEffect(() => {
         check().then(data => {
@@ -59,7 +62,7 @@ function Main({ data }: any) {
                 </section>
                 <WhiteWrapper className={cn(styles.container, "wrapper")}>
                     <Bestsellers items={bestsellers} />
-                    <Categories categories={productCategories} />
+                    <Categories categories={types} />
                     <Brands brands={brands} />
                 </WhiteWrapper>
             </>
@@ -71,10 +74,16 @@ export default Main;
 
 export async function getServerSideProps() {
     const data = await getAllDevices();
+    const types = await getAllTypes();
+    const brands = await getAllBrands();
+    const banners = await getAllBanners();
 
     return {
         props: {
             data,
+            types,
+            brands,
+            banners
         },
     };
 }
