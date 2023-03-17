@@ -5,10 +5,23 @@ import styles from "./Admin.module.css";
 import { AdminProps } from "./Admin.props";
 
 import { BrandModal, DeviceModal, TypeModal } from "@/components/modules";
-import { getAllBrands, getAllTypes } from "@/api";
+import { check, getAllBrands, getAllTypes } from "@/api";
+import { useDispatch } from "react-redux";
+import { IUserInfo } from "@/shared";
+import { login } from "@/store/user/actions";
 
 
 const Admin = ({ types, brands, className, ...props }: AdminProps): JSX.Element => {
+
+    const dispatch = useDispatch();
+
+    React.useEffect(() => {
+        check().then(data => {
+            dispatch(login(data as IUserInfo))
+        }).catch(err => {
+            console.warn(err)
+        })
+    }, [])
 
     return (
         <React.Fragment {...props}>

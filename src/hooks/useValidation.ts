@@ -5,6 +5,7 @@ export const useValidation = (value: any, validations: any) => {
     const [minLengthError, setMinLengthError] = React.useState<boolean>(false)
     const [emailError, setEmailError] = React.useState<boolean>(false)
     const [inputValid, setInputValid] = React.useState<boolean>(false)
+    const [numberError, setNumberError] = React.useState<boolean>(false)
 
     React.useEffect(() => {
         for (const validation in validations) {
@@ -19,6 +20,10 @@ export const useValidation = (value: any, validations: any) => {
                     const EMAIL_REGEXP: RegExp = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/iu;
                     EMAIL_REGEXP.test(String(value).toLowerCase()) ? setEmailError(false) : setEmailError(true)
                     break;
+                case 'isNumber': 
+                    const NUMBER_REGEXP: RegExp = /^\d+$/;
+                    NUMBER_REGEXP.test(String(value)) ? setNumberError(false) : setNumberError(true)
+                    break;
             }
         }
     }, [value])
@@ -29,12 +34,13 @@ export const useValidation = (value: any, validations: any) => {
         } else {
             setInputValid(true)
         }
-    }, [isEmpty, minLengthError, emailError])
+    }, [isEmpty, minLengthError, emailError, numberError])
 
     return {
         isEmpty,
         minLengthError,
         emailError,
-        inputValid
+        inputValid,
+        numberError
     }
 }

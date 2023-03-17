@@ -9,6 +9,7 @@ export * from "./Htag/Htag";
 export * from "./Icons/Icons";
 export * from "./Image/Image";
 export * from "./Input/Input";
+export * from "./Select/Select";
 export * from "./Ptag/Ptag";
 export * from "./Search/Search";
 export * from "./SmoothText/SmoothText";

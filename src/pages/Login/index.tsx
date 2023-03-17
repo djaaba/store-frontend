@@ -33,8 +33,8 @@ const Login = ({ className, ...props }: LoginProps): JSX.Element => {
 
         login(email.value, password.value).then(data => {
             dispatch(userLogin(data as IUserInfo))
-            Router.push(MAIN_ROUTE)
             toast.success('Вы авторизованы!', success);
+            Router.push(MAIN_ROUTE)
         }).catch(err => {
             toast.error('Ошибка 1', error);
             console.warn(err);
@@ -49,25 +49,25 @@ const Login = ({ className, ...props }: LoginProps): JSX.Element => {
                     <form onSubmit={handleSubmit}>
                         <div className={styles.container}>
                             <Input
-                                className={cn(styles.input, emailError ? styles.indicator : null)}
+                                className={cn(styles.input, emailError ? "errorIndicator" : null)}
                                 placeholder="Введите ваш email"
                                 onBlur={email.onBlur}
                                 type="email"
                                 value={email.value}
                                 onChange={(e: any) => email.onChange(e)}
                             />
-                            {emailError && <div className={styles.message}>Неверный формат почты</div>}
+                            {emailError && <div className={"errorMessage"}>Неверный формат почты</div>}
                         </div>
                         <div className={styles.container}>
                             <Input
-                                className={cn(styles.input, passwordError ? styles.indicator : null)}
+                                className={cn(styles.input, passwordError ? "errorIndicator" : null)}
                                 placeholder="Введите ваш пароль"
                                 onBlur={password.onBlur}
                                 type="password"
                                 value={password.value}
                                 onChange={(e: any) => password.onChange(e)}
                             />
-                            {passwordError && <div className={styles.message}>Введите ваш пароль</div>}
+                            {passwordError && <div className={"errorMessage"}>Введите ваш пароль</div>}
                         </div>
                         <Button
                             disabled={isDisabled}

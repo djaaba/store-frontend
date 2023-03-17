@@ -49,36 +49,36 @@ const Registration = ({ className, ...props }: RegistrationProps): JSX.Element =
                 <form onSubmit={handleSubmit}>
                     <div className={styles.container}>
                         <Input
-                            className={cn(styles.input, nameError ? styles.indicator : null)}
+                            className={cn(styles.input, nameError ?"errorIndicator" : null)}
                             placeholder="Введите ваше Имя"
                             onBlur={name.onBlur}
                             type="text"
                             value={name.value}
                             onChange={(e: any) => name.onChange(e)}
                         />
-                        {nameError && <div className={styles.message}>Введите ваше имя</div>}
+                        {nameError && <div className={"errorMessage"}>Введите ваше имя</div>}
                     </div>
                     <div className={styles.container}>
                         <Input
-                            className={cn(styles.input, emailError ? styles.indicator : null)}
+                            className={cn(styles.input, emailError ? "errorIndicator" : null)}
                             placeholder="Введите ваш email"
                             onBlur={email.onBlur}
                             type="email"
                             value={email.value}
                             onChange={(e: any) => email.onChange(e)}
                         />
-                        {emailError && <div className={styles.message}>Неверный формат почты</div>}
+                        {emailError && <div className={"errorMessage"}>Неверный формат почты</div>}
                     </div>
                     <div className={styles.container}>
                         <Input
-                            className={cn(styles.input, passwordError ? styles.indicator : null)}
+                            className={cn(styles.input, passwordError ? "errorIndicator" : null)}
                             placeholder="Введите ваш пароль"
                             onBlur={password.onBlur}
                             type="password"
                             value={password.value}
                             onChange={(e: any) => password.onChange(e)}
                         />
-                        {passwordError && <div className={styles.message}>Введите ваш пароль</div>}
+                        {passwordError && <div className={"errorMessage"}>Введите ваш пароль</div>}
                     </div>
                     <Button
                         disabled={isDisabled}

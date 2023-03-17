@@ -26,9 +26,6 @@ import { login } from "@/store/user/actions";
 
 function Main({ data, types, brands, banners }: any) {
     const dispatch = useDispatch();
-    // console.log(types)
-    // console.log(banners)
-    // console.log(brands)
 
     React.useEffect(() => {
         check().then(data => {

@@ -23,16 +23,6 @@
     position: relative;
 }
 
-.message{
-    position: absolute;
-    color: var(--error);
-    top: 0px;
-}
-
-.indicator{
-    border: 1px solid var(--error);
-}
-
 .option{
     margin-top: 24px;
 }

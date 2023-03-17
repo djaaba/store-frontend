@@ -1,8 +1,8 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 
-import { IBrand } from "@/shared";
+import { IBrand, IType } from "@/shared";
 
 export interface DeviceModalProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-    types: any;
+    types: IType[];
     brands: IBrand[];
 }
