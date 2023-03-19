@@ -88,6 +88,7 @@ export async function getServerSideProps() {
 // next time use formik
 // next time use - cookie httponly secure token
 // next time export default
+// next time props for components name "variant"
 
 // Дальнейшие планы:
 // сверстать страницу профиля
@@ -97,6 +98,9 @@ export async function getServerSideProps() {
 // корзина все еще пытается выдавать ошибки, надо чинить
 // в products написать пропсы для компонентов, и вообще архитектуру как-то изменить
 // Head во все страницы
+// чекбоксы для фильтров? че вообще..
+// количество товаров в корзине и избранном в хедере
+// В Скроллбар засунуть реальные ссылки 
 
 // Ptag заменить на p?
 // cardItem, cartItem, favoriteItem, productItem
@@ -114,7 +118,6 @@ export async function getServerSideProps() {
 // обнулить каунт при удалении, или запретить каунтер при покупке
 // обернуть брейкпоинт в usecallback
 // Страница сравнение
-// В следующий раз называть пропсы для компонентов variant
 // сделать стейт для селектед, дописать бэкенд для корзины и отзывы?
 // админка
 // сделать, чтобы происходила выборка по просмотрам.

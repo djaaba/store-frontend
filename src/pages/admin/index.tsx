@@ -10,7 +10,6 @@ import { useDispatch } from "react-redux";
 import { IUserInfo } from "@/shared";
 import { login } from "@/store/user/actions";
 
-
 const Admin = ({ types, brands, className, ...props }: AdminProps): JSX.Element => {
 
     const dispatch = useDispatch();
@@ -26,9 +25,9 @@ const Admin = ({ types, brands, className, ...props }: AdminProps): JSX.Element 
     return (
         <React.Fragment {...props}>
             <main className={cn(styles.main, "wrapper")}>
-                <BrandModal/>
-                <DeviceModal brands={brands} types={types}/>
-                <TypeModal/>
+                <BrandModal />
+                <DeviceModal brands={brands} types={types} />
+                <TypeModal />
             </main>
         </React.Fragment>
     );

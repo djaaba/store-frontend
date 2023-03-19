@@ -1,0 +1,8 @@
+.container {
+    padding: 5px;
+}
+
+.filter {
+    display: flex;
+    column-gap: 10px;
+}

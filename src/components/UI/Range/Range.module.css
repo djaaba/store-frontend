@@ -1,0 +1,14 @@
+.inputs {
+    display: flex;
+    align-items: center;
+}
+
+.separator {
+    font-weight: bold;
+    color: var(--pearl-gray);
+    margin: 0 5px;
+}
+
+.range {
+    margin-top: 20px;
+}

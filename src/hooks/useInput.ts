@@ -16,11 +16,17 @@ export const useInput = (initialValue: any, validation: any) => {
         setDirty(true)
     }
 
+    const reset = () => {
+        setValue('')
+        setDirty(false)
+    }
+
     return {
         value,
         isDirty,
         onChange,
         onBlur,
+        reset,
         ...valid
     }
 }

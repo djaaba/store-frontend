@@ -3,11 +3,13 @@ import type { AppProps } from "next/app";
 import { Provider } from "react-redux";
 import NextNProgress from "nextjs-progressbar";
 import "regenerator-runtime/runtime";
+import { ToastContainer } from "react-toastify";
 
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto";
 import "normalize.css";
 import "@/styles/globals.css";
+import 'react-toastify/dist/ReactToastify.css';
 
 import { rootStore } from "@/store/rootStore";
 import { Layout } from "@/layout/Layout";
@@ -30,6 +32,7 @@ export default function App({ Component, pageProps }: AppProps) {
                         <Component {...pageProps} />
                     </Layout>
                 </Provider>
+                <ToastContainer />
             </React.StrictMode>
         </>
     );

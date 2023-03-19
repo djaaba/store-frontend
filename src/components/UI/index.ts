@@ -11,7 +11,10 @@ export * from "./Image/Image";
 export * from "./Input/Input";
 export * from "./Select/Select";
 export * from "./Ptag/Ptag";
+export * from "./Pagination/Pagination";
 export * from "./Search/Search";
 export * from "./SmoothText/SmoothText";
 export * from "./WhiteWrapper/WhiteWrapper";
 export * from "./ItemWithDots/ItemWithDots";
+export * from "./ItemCounter/ItemCounter";
+export * from "./Range/Range"

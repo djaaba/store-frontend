@@ -22,32 +22,10 @@
     width: 100%;
 }
 
-.inputs {
+.display {
     display: flex;
     align-items: center;
-}
-
-.separator {
-    font-weight: bold;
-    color: var(--pearl-gray);
-    margin: 0 5px;
-}
-
-.filter {
-    display: flex;
-    column-gap: 10px;
-}
-
-.container {
-    padding: 5px;
-}
-
-.range {
-    margin-top: 20px;
-}
-
-.title {
-    padding-bottom: 16px;
+    justify-content: space-between;
 }
 
 @media (max-width: 1250px) {

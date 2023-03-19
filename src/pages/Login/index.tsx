@@ -3,11 +3,10 @@ import Link from "next/link";
 import React from 'react';
 import Router from 'next/router';
 import { useDispatch } from "react-redux";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 import styles from "./Login.module.css";
 import { LoginProps } from "./Login.props";
-import 'react-toastify/dist/ReactToastify.css';
 
 import { Button, Htag, Input } from "@/components/UI";
 import { login } from "@/api";
@@ -36,7 +35,7 @@ const Login = ({ className, ...props }: LoginProps): JSX.Element => {
             toast.success('Вы авторизованы!', success);
             Router.push(MAIN_ROUTE)
         }).catch(err => {
-            toast.error('Ошибка 1', error);
+            toast.error('Ошибка авторизации', error);
             console.warn(err);
         })
     }
@@ -72,10 +71,12 @@ const Login = ({ className, ...props }: LoginProps): JSX.Element => {
                         <Button
                             disabled={isDisabled}
                             type="submit"
-                            className={styles.btn} color={isDisabled ? "gray" : "dark"} size="big">
+                            className={styles.btn} 
+                            color={isDisabled ? "gray" : "dark"}
+                            size="big"
+                        >
                             Продолжить
                         </Button>
-                        <ToastContainer />
                     </form>
                     <div className={styles.option}>
                         Нет аккаунта?&nbsp;

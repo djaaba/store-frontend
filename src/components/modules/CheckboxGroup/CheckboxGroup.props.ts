@@ -2,8 +2,7 @@ import { DetailedHTMLProps, HTMLAttributes } from "react";
 
 import { IBrand, IType } from "@/shared";
 
-export interface AdminProps
+export interface CheckboxGroupProps
     extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-        types: IType[];
-        brands: IBrand[];
-    }
+        items: IType[] | IBrand[];
+}

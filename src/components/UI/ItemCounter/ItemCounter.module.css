@@ -1,0 +1,31 @@
+.main {
+    display: flex;
+}
+
+.item {
+    color: var(--light-gray-hover);
+    cursor: pointer;
+
+    border-right: 1px solid var(--black);
+    padding: 0 15px;
+
+    line-height: 14px;
+}
+
+.item:last-child{
+    border-right: none;
+}
+
+/* .item:not(:first-child)::before{
+    content: "";
+    margin: 0 15px;
+    width: 1px;
+    height: 15px;
+    background: #686b6d;
+    vertical-align: middle;
+    display: inline-block;
+} */
+
+.active{
+    color: var(--black);
+}

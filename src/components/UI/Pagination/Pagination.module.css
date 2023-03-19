@@ -1,0 +1,357 @@
+.main ul[class~="rc-pagination"] {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+/* .main > .rc-pagination ul, .main > .rc-pagination ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+} */
+.main ul[class~="rc-pagination"]::after {
+  display: block;
+  clear: both;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  content: ' ';
+}
+
+/* .main > .rc-pagination-total-text {
+  display: inline-block;
+  height: 28px;
+  margin-right: 8px;
+  line-height: 26px;
+  vertical-align: middle;
+} */
+.main li[class~="rc-pagination-item"] {
+  display: inline-block;
+  min-width: 28px;
+  height: 28px;
+  margin-right: 8px;
+  font-family: Arial;
+  line-height: 26px;
+  text-align: center;
+  vertical-align: middle;
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  outline: 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.main li[class~="rc-pagination-item"]>a {
+  display: block;
+  padding: 0 6px;
+  color: rgba(0, 0, 0, 0.85);
+  transition: none;
+
+}
+
+.main li[class~="rc-pagination-item"] a:hover {
+  text-decoration: none;
+}
+
+.main li[class~="rc-pagination-item"]:focus,
+.main li[class~="rc-pagination-item"]:hover {
+  border-color: var(--red);
+  transition: all 0.3s;
+}
+
+.main li[class~="rc-pagination-item"]:focus a,
+.main li[class~="rc-pagination-item"]:hover a {
+  color: var(--red);
+}
+
+.main li[class~="rc-pagination-item-active"] {
+  font-weight: 500;
+  background: #fff;
+  border-color: var(--red);
+}
+
+.main li[class~="rc-pagination-item-active"] a {
+  color: var(--red);
+}
+
+.main li[class~="rc-pagination-item-active"]:focus,
+.main li[class~="rc-pagination-item-active"]:hover {
+  border-color: var(--red-hover);
+}
+
+.main li[class~="rc-pagination-item-active"]:focus a,
+.main li[class~="rc-pagination-item-active"]:hover a {
+  color: var(--red-hover);
+}
+
+/* .main>.rc-pagination-jump-prev,
+.main>.rc-pagination-jump-next {
+  outline: 0;
+} */
+
+/* .main>.rc-pagination-jump-prev button,
+.main>.rc-pagination-jump-next button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #666;
+} */
+
+/* .main>.rc-pagination-jump-prev button:after,
+.main>.rc-pagination-jump-next button:after {
+  display: block;
+  content: '•••';
+} */
+
+/* .main>.rc-pagination-prev,
+.main>.rc-pagination-jump-prev,
+.main>.rc-pagination-jump-next {
+  margin-right: 8px;
+} */
+
+.main li[class~="rc-pagination-prev"] {
+  margin-right: 8px;
+}
+
+
+/* .main li[class~="rc-pagination-prev"],
+.main li[class~="rc-pagination-next"],
+.main>.rc-pagination-jump-prev,
+.main>.rc-pagination-jump-next {
+  display: inline-block;
+  min-width: 28px;
+  height: 28px;
+  color: rgba(0, 0, 0, 0.85);
+  font-family: Arial;
+  line-height: 28px;
+  text-align: center;
+  vertical-align: middle;
+  list-style: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+} */
+
+.main li[class~="rc-pagination-prev"],
+.main li[class~="rc-pagination-next"] {
+  display: inline-block;
+  min-width: 28px;
+  height: 28px;
+  color: rgba(0, 0, 0, 0.85);
+  font-family: Arial;
+  line-height: 28px;
+  text-align: center;
+  vertical-align: middle;
+  list-style: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.main li[class~="rc-pagination-prev"],
+.main li[class~="rc-pagination-next"] {
+  outline: 0;
+}
+
+.main li[class~="rc-pagination-prev"] button,
+.main li[class~="rc-pagination-next"] button {
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  user-select: none;
+}
+
+.main li[class~="rc-pagination-prev"]:hover button,
+.main li[class~="rc-pagination-next"]:hover button {
+  border-color: var(--red-hover);
+}
+
+.main li[class~="rc-pagination-prev"] button[class~="rc-pagination-item-link"],
+.main li[class~="rc-pagination-next"] button[class~="rc-pagination-item-link"] {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 12px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.main li[class~="rc-pagination-prev"]:focus button[class~="rc-pagination-item-link"],
+.main li[class~="rc-pagination-prev"]:hover button[class~="rc-pagination-item-link"],
+.main li[class~="rc-pagination-next"]:focus button[class~="rc-pagination-item-link"],
+.main li[class~="rc-pagination-next"]:hover button[class~="rc-pagination-item-link"] {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.main li[class~="rc-pagination-prev"] button:after {
+  content: '‹';
+  display: block;
+}
+
+.main li[class~="rc-pagination-next"] button:after {
+  content: '›';
+  display: block;
+}
+
+.main li[class~="rc-pagination-disabled"],
+.main li[class~="rc-pagination-disabled"]:hover,
+.main li[class~="rc-pagination-disabled"]:focus {
+  cursor: not-allowed;
+}
+
+.main li[class~="rc-pagination-disabled"] button[class~="rc-pagination-item-link"],
+.main li[class~="rc-pagination-disabled"]:hover button[class~="rc-pagination-item-link"],
+.main li[class~="rc-pagination-disabled"]:focus button[class~="rc-pagination-item-link"] {
+  color: rgba(0, 0, 0, 0.25);
+  border-color: #d9d9d9;
+  cursor: not-allowed;
+}
+
+
+
+
+
+
+
+
+
+
+/* .main>.rc-pagination-slash {
+  margin: 0 10px 0 5px;
+}
+
+.main>.rc-pagination-options {
+  display: inline-block;
+  margin-left: 16px;
+  vertical-align: middle;
+} */
+/* 
+@media all and (-ms-high-contrast: none) {
+
+  .main>.rc-pagination-options *::-ms-backdrop,
+  .main>.rc-pagination-options {
+    vertical-align: top;
+  }
+}
+
+.main>.rc-pagination-options-size-changer.main>.rc-select {
+  display: inline-block;
+  width: auto;
+  margin-right: 8px;
+}
+
+.main>.rc-pagination-options-quick-jumper {
+  display: inline-block;
+  height: 28px;
+  line-height: 28px;
+  vertical-align: top;
+}
+
+.main>.rc-pagination-options-quick-jumper input {
+  width: 50px;
+  margin: 0 8px;
+}
+
+.main>.rc-pagination-simple .main>.rc-pagination-prev,
+.main>.rc-pagination-simple .main>.rc-pagination-next {
+  height: 24px;
+  line-height: 24px;
+  vertical-align: top;
+}
+
+.main>.rc-pagination-simple .main>.rc-pagination-prev .main>.rc-pagination-item-link,
+.main>.rc-pagination-simple .main>.rc-pagination-next .main>.rc-pagination-item-link {
+  height: 24px;
+  background-color: transparent;
+  border: 0;
+}
+
+.main>.rc-pagination-simple .main>.rc-pagination-prev .main>.rc-pagination-item-link::after,
+.main>.rc-pagination-simple .main>.rc-pagination-next .main>.rc-pagination-item-link::after {
+  height: 24px;
+  line-height: 24px;
+}
+
+.main>.rc-pagination-simple .main>.rc-pagination-simple-pager {
+  display: inline-block;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.main>.rc-pagination-simple .main>.rc-pagination-simple-pager input {
+  box-sizing: border-box;
+  height: 100%;
+  margin-right: 8px;
+  padding: 0 6px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.main>.rc-pagination-simple .main>.rc-pagination-simple-pager input:hover {
+  border-color: var(--red);
+}
+
+.main>.rc-pagination.main>.rc-pagination-disabled {
+  cursor: not-allowed;
+}
+
+.main>.rc-pagination.main>.rc-pagination-disabled .main>.rc-pagination-item {
+  background: hsv(0, 0, 96%);
+  border-color: #d9d9d9;
+  cursor: not-allowed;
+}
+
+.main>.rc-pagination.main>.rc-pagination-disabled .main>.rc-pagination-item a {
+  color: rgba(0, 0, 0, 0.25);
+  background: transparent;
+  border: none;
+  cursor: not-allowed;
+}
+
+.main>.rc-pagination.main>.rc-pagination-disabled .main>.rc-pagination-item-active {
+  background: red;
+  border-color: transparent;
+}
+
+.main>.rc-pagination.main>.rc-pagination-disabled .main>.rc-pagination-item-active a {
+  color: #fff;
+}
+
+.main>.rc-pagination.main>.rc-pagination-disabled .main>.rc-pagination-item-link {
+  color: rgba(0, 0, 0, 0.25);
+  background: hsv(0, 0, 96%);
+  border-color: #d9d9d9;
+  cursor: not-allowed;
+}
+
+.main>.rc-pagination.main>.rc-pagination-disabled .main>.rc-pagination-item-link-icon {
+  opacity: 0;
+}
+
+.main>.rc-pagination.main>.rc-pagination-disabled .main>.rc-pagination-item-ellipsis {
+  opacity: 1;
+}
+
+@media only screen and (max-width: 992px) {
+
+  .main>.rc-pagination-item-after-jump-prev,
+  .main>.rc-pagination-item-before-jump-next {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .main>.rc-pagination-options {
+    display: none;
+  }
+} */

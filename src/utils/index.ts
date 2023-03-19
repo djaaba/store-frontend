@@ -9,4 +9,3 @@ export * from "./checkFavorite";
 export * from "./routes";
 export * from "./toasts";
 export * from "./getFromLocalStorage";
-export * from "./getIndex";
