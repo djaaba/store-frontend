@@ -7,7 +7,7 @@ import styles from "./Catalog.module.css";
 import { getAllTypes, getAllBrands, getAllDevices } from "@/api";
 import { Breadcrumbs, ItemCounter, PaginationBar, Range } from "@/components/UI";
 
-import { getId } from "@/utils";
+import { getId, getPrimitiveIdArray } from "@/utils";
 import { CheckboxGroup, Product } from "@/components/modules";
 import { toggleType } from "@/store/filter/types/actions";
 import { useSelector } from "react-redux";
@@ -39,12 +39,11 @@ const Products = ({ types, brands, device, ...props }: any): JSX.Element => {
     const brandsFilter = useSelector(selectBrandsFilter);
 
     React.useEffect(() => {
-        // console.log(device)
-        getAllDevices(undefined, undefined, page, itemsPerPage).then(data => { // type.id, brand.id
-            // console.log(data.rows)
+        console.log(types)
+        getAllDevices(getPrimitiveIdArray(typesFilter), getPrimitiveIdArray(brandsFilter), page, itemsPerPage).then(data => { // type.id, brand.id
             setDevices(data);
         })
-    }, [page, itemsPerPage])
+    }, [page, itemsPerPage, typesFilter.length, brandsFilter.length])
 
     return (
         <React.Fragment {...props}>

@@ -6,7 +6,7 @@ export const createDevice = async (device: any) => {
     return data;
 }
 
-export const getAllDevices = async (typeId?: number, brandId?: number, page?: number, limit: number = 5) => {
+export const getAllDevices = async (typeId?: string | number | number[], brandId?: string | number | number[], page?: number, limit: number = 5) => {
     try {
         const response = await $host.get("device/", {
             params: {
