@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styles from "./Product.module.css";
 import { ProductProps } from "./Product.props";
 
-import { getPrettyPrice, getPrice, checkFavorite } from "../../../utils/";
+import { getPrettyPrice, getPrice, searchById } from "../../../utils/";
 import {
     Button,
     FontAwesomeIcon,
@@ -87,7 +87,7 @@ export const Product = ({ item, ...props }: ProductProps): JSX.Element => {
                             onClick={() => toggle(item)}
                             className={styles.iconBtn}
                             icon={
-                                checkFavorite(item, favorites)
+                                searchById(item, favorites)
                                     ? SolidHeartIcon
                                     : RegularHeartIcon
                             }

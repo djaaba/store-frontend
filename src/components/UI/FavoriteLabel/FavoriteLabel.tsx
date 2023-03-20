@@ -5,7 +5,7 @@ import styles from "./FavoriteLabel.module.css";
 import { FavoriteLabelProps } from "./FavoriteLabel.props";
 
 import { Atag, FontAwesomeIcon, RegularHeartIcon, SolidHeartIcon } from "../";
-import { checkFavorite, getFavoriteLabel } from "../../../utils";
+import { searchById, getFavoriteLabel } from "../../../utils";
 import { toggleFavorite } from "@/store/favorite/actions";
 import { selectFavorite } from "@/store/favorite/selector";
 
@@ -18,7 +18,7 @@ export const FavoriteLabel = ({
     const dispatch = useDispatch();
 
     const favorites = useSelector(selectFavorite);
-    const isFaforite = checkFavorite(product, favorites);
+    const isFaforite = searchById(product, favorites);
 
     return (
         <div

@@ -9,6 +9,11 @@ import { Breadcrumbs, ItemCounter, PaginationBar, Range } from "@/components/UI"
 
 import { getId } from "@/utils";
 import { CheckboxGroup, Product } from "@/components/modules";
+import { toggleType } from "@/store/filter/types/actions";
+import { useSelector } from "react-redux";
+import { selectTypesFilter } from "@/store/filter/types/selector";
+import { selectBrandsFilter } from "@/store/filter/brands/selector";
+import { toggleBrand } from "@/store/filter/brands/actions";
 
 const breadcrumbs = [
     { id: 1, name: "Главная", href: "/", active: false },
@@ -30,10 +35,13 @@ const Products = ({ types, brands, device, ...props }: any): JSX.Element => {
     const [page, setPage] = React.useState<number>(1);
     const [itemsPerPage, setItemsPerPage] = React.useState<number>(items[0]);
 
+    const typesFilter = useSelector(selectTypesFilter);
+    const brandsFilter = useSelector(selectBrandsFilter);
+
     React.useEffect(() => {
-        console.log(device)
+        // console.log(device)
         getAllDevices(undefined, undefined, page, itemsPerPage).then(data => { // type.id, brand.id
-            console.log(data.rows)
+            // console.log(data.rows)
             setDevices(data);
         })
     }, [page, itemsPerPage])
@@ -47,11 +55,11 @@ const Products = ({ types, brands, device, ...props }: any): JSX.Element => {
                         <b>
                             Категория
                         </b>
-                        <CheckboxGroup items={types} />
+                        <CheckboxGroup items={types} filterByArr={typesFilter} filterByFunc={toggleType} />
                         <b>
                             Бренд
                         </b>
-                        <CheckboxGroup items={brands} />
+                        <CheckboxGroup items={brands} filterByArr={brandsFilter} filterByFunc={toggleBrand} />
                         <b>
                             Цена
                         </b>

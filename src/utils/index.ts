@@ -5,7 +5,7 @@ export * from "./getPrice";
 export * from "./getFavoriteLabel";
 export * from "./scroll";
 export * from "./cutArray";
-export * from "./checkFavorite";
+export * from "./searchById";
 export * from "./routes";
 export * from "./toasts";
 export * from "./getFromLocalStorage";
