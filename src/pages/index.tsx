@@ -20,11 +20,11 @@ import {
     // productCategories,
     // topProduct,
 } from "@/plug";
-import { getAllDevices, check, getAllTypes, getAllBrands, getAllBanners } from "@/api";
+import { getAllDevices, check, getAllTypes, getAllBrands, getAllBanners, getMostViewed, getBestsellers } from "@/api";
 import { IUserInfo } from "@/shared";
 import { login } from "@/store/user/actions";
 
-function Main({ data, types, brands, banners }: any) {
+function Main({ mostViewed, bestsellers, types, brands, banners }: any) {
     const dispatch = useDispatch();
 
     React.useEffect(() => {
@@ -34,9 +34,6 @@ function Main({ data, types, brands, banners }: any) {
             console.warn(err)
         })
     }, [])
-
-    const topProduct = data.rows;
-    const bestsellers = data.rows;
 
     return (
         <>
@@ -55,7 +52,7 @@ function Main({ data, types, brands, banners }: any) {
             <>
                 <section className={cn(styles.sliders, "wrapper")}>
                     <Banner banners={banners} />
-                    <TopProduct items={topProduct} />
+                    <TopProduct items={mostViewed} />
                 </section>
                 <WhiteWrapper className={cn(styles.container, "wrapper")}>
                     <Bestsellers items={bestsellers} />
@@ -70,17 +67,19 @@ function Main({ data, types, brands, banners }: any) {
 export default Main;
 
 export async function getServerSideProps() {
-    const data = await getAllDevices();
     const types = await getAllTypes();
     const brands = await getAllBrands();
     const banners = await getAllBanners();
+    const mostViewed = await getMostViewed();
+    const bestsellers = await getBestsellers();
 
     return {
         props: {
-            data,
             types,
             brands,
-            banners
+            banners,
+            mostViewed,
+            bestsellers
         },
     };
 }
@@ -91,14 +90,18 @@ export async function getServerSideProps() {
 // next time props for components name "variant"
 
 // Дальнейшие планы:
+// Добавить стейт для количества предметов на странице и номер страницы, чтобы при перезагрузке не потерялось все
+// Нужны характеристики еще
+// роут для товара по скидке, роут для бестселлеров, роут для самых просматриваемых 
+// что насчет отзывов и 
+// стейт для каунтера? посмотрим
+// Range slider выпендривается
 // сверстать страницу профиля
 // переименовать роуты в новые переменные
-// стейт для каунтера? посмотрим
 // any
 // корзина все еще пытается выдавать ошибки, надо чинить
 // в products написать пропсы для компонентов, и вообще архитектуру как-то изменить
 // Head во все страницы
-// чекбоксы для фильтров? че вообще..
 // количество товаров в корзине и избранном в хедере
 // В Скроллбар засунуть реальные ссылки
 // Как избавиться от колхоза в combine reducers? Как объединить стейт 
@@ -137,6 +140,7 @@ export async function getServerSideProps() {
 // ГОТОВО:
 
 
+// чекбоксы для фильтров? че вообще..
 // локал сторэйдж
 // форму создать, валидацию
 // переписать компонент Input(на onChange), и доработать Button(на disabled)

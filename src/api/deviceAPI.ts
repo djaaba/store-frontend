@@ -6,11 +6,29 @@ export const createDevice = async (device: any) => {
     return data;
 }
 
-export const getAllDevices = async (typeId?: string | number | number[], brandId?: string | number | number[], page?: number, limit: number = 5) => {
+export const getMostViewed = async () => {
+    try {
+        const response = await $host.get("device/mostviewed");
+        return response.data;
+    } catch (error) {
+        return [];
+    }
+}
+
+export const getBestsellers = async () => {
+    try {
+        const response = await $host.get("device/bestsellers");
+        return response.data;
+    } catch (error) {
+        return [];
+    }
+}
+
+export const getAllDevices = async (typeId?: string | number | number[], brandId?: string | number | number[], page?: number, minPrice?: number, maxPrice?: number, limit: number = 5) => {
     try {
         const response = await $host.get("device/", {
             params: {
-                typeId, brandId, page, limit
+                typeId, brandId, page, limit, minPrice, maxPrice
             }
         });
         return response.data;
@@ -18,6 +36,7 @@ export const getAllDevices = async (typeId?: string | number | number[], brandId
         return [];
     }
 }
+
 
 export const getDeviceBySlug = async (slug: any) => {
     try {

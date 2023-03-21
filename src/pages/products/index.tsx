@@ -7,13 +7,14 @@ import styles from "./Catalog.module.css";
 import { getAllTypes, getAllBrands, getAllDevices } from "@/api";
 import { Breadcrumbs, ItemCounter, PaginationBar, Range } from "@/components/UI";
 
-import { getId, getPrimitiveIdArray } from "@/utils";
+import { getId, getPrice, getPrimitiveIdArray } from "@/utils";
 import { CheckboxGroup, Product } from "@/components/modules";
 import { toggleType } from "@/store/filter/types/actions";
 import { useSelector } from "react-redux";
 import { selectTypesFilter } from "@/store/filter/types/selector";
 import { selectBrandsFilter } from "@/store/filter/brands/selector";
 import { toggleBrand } from "@/store/filter/brands/actions";
+import { IDevice } from "@/shared";
 
 const breadcrumbs = [
     { id: 1, name: "Главная", href: "/", active: false },
@@ -25,10 +26,10 @@ const breadcrumbs = [
     },
 ];
 
-const items: number[] = [2, 5, 10, 15]
+const items: number[] = [1, 2, 10, 15]
 
 const Products = ({ types, brands, device, ...props }: any): JSX.Element => {
-    const [value, setValue] = React.useState<number[]>([25, 75])
+    const [value, setValue] = React.useState<number[]>([0, 70000])
 
     const [devices, setDevices] = React.useState(device)
 
@@ -38,12 +39,28 @@ const Products = ({ types, brands, device, ...props }: any): JSX.Element => {
     const typesFilter = useSelector(selectTypesFilter);
     const brandsFilter = useSelector(selectBrandsFilter);
 
+    // React.useEffect(() => {
+        // const dev = devices.rows.filter((device: IDevice) => getPrice(device.price, device.discount) > value[0] && getPrice(device.price, device.discount) < value[1])
+        // setDevices({ ...devices, rows: dev });
+
+        // const sorted = devices.rows.sort((cur: IDevice, next: IDevice) => cur.price - next.price);
+        // const minVal = getPrice(sorted[0].price, sorted[0].discount);
+        // const maxVal = getPrice(sorted[sorted.length - 1].price, sorted[sorted.length - 1].discount);
+        // setValue([minVal, maxVal])
+
+    // }, [value[0], value[1]])
+
+
     React.useEffect(() => {
-        console.log(types)
-        getAllDevices(getPrimitiveIdArray(typesFilter), getPrimitiveIdArray(brandsFilter), page, itemsPerPage).then(data => { // type.id, brand.id
-            setDevices(data);
-        })
-    }, [page, itemsPerPage, typesFilter.length, brandsFilter.length])
+        getAllDevices(getPrimitiveIdArray(typesFilter), getPrimitiveIdArray(brandsFilter), page, 0, 100000, itemsPerPage)
+            .then(data => { 
+                const dev = data.rows?.filter((device: IDevice) => getPrice(device.price, device.discount) >= value[0] && getPrice(device.price, device.discount) <= value[1])
+                setDevices(data);
+                // console.log(dev)
+                // setDevices({ ...data, rows: dev });
+                console.log(value)
+            })
+    }, [page, itemsPerPage, typesFilter.length, brandsFilter.length, value[0], value[1]])
 
     return (
         <React.Fragment {...props}>
@@ -67,7 +84,7 @@ const Products = ({ types, brands, device, ...props }: any): JSX.Element => {
                     <div>
                         <div className={styles.products}>
                             {
-                                devices.rows.map((item: any) => (
+                                devices.rows?.map((item: any) => (
                                     <Product key={getId()} item={item} />
                                 ))
                             }
@@ -99,7 +116,7 @@ export async function getServerSideProps() {
         props: {
             types,
             brands,
-            device
+            device,
         },
     };
 }
