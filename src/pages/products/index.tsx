@@ -39,42 +39,26 @@ const Products = ({ types, brands, device, ...props }: any): JSX.Element => {
     const typesFilter = useSelector(selectTypesFilter);
     const brandsFilter = useSelector(selectBrandsFilter);
 
-    // React.useEffect(() => {
-        // const dev = devices.rows.filter((device: IDevice) => getPrice(device.price, device.discount) > value[0] && getPrice(device.price, device.discount) < value[1])
-        // setDevices({ ...devices, rows: dev });
-
-        // const sorted = devices.rows.sort((cur: IDevice, next: IDevice) => cur.price - next.price);
-        // const minVal = getPrice(sorted[0].price, sorted[0].discount);
-        // const maxVal = getPrice(sorted[sorted.length - 1].price, sorted[sorted.length - 1].discount);
-        // setValue([minVal, maxVal])
-
-    // }, [value[0], value[1]])
-
-
     React.useEffect(() => {
         getAllDevices(getPrimitiveIdArray(typesFilter), getPrimitiveIdArray(brandsFilter), page, value[0], value[1], itemsPerPage)
-            .then(data => { 
-                // const dev = data.rows?.filter((device: IDevice) => getPrice(device.price, device.discount) >= value[0] && getPrice(device.price, device.discount) <= value[1])
+            .then(data => {
                 setDevices(data);
-
-                if (typesFilter.length || brandsFilter.length){
+                if (typesFilter.length || brandsFilter.length) {
                     setPage(1)
                 }
-                // console.log(data)
-                // setDevices({ ...data, rows: dev });
-                // console.log(value)
+
             })
     }, [page, itemsPerPage, typesFilter.length, brandsFilter.length, value[0], value[1]])
 
-    // React.useEffect(() => {
-    //     getAllDevices(getPrimitiveIdArray(typesFilter), getPrimitiveIdArray(brandsFilter), page, value[0], value[1], itemsPerPage)
-    //         .then(data => { 
-    //             setDevices(data);
-    //             setPage(1)
-    //         })
-    // }, [itemsPerPage, typesFilter.length, brandsFilter.length, value[0], value[1]])
+    React.useEffect(() => {
+        getAllDevices(getPrimitiveIdArray(typesFilter), getPrimitiveIdArray(brandsFilter), page, value[0], value[1], itemsPerPage)
+            .then(data => {
+                setDevices(data);
+                setPage(1)
 
-    // Сейчас проблема в том, что не совсем правильно на сервере сортируются даннные по мин цене и макс цене
+            })
+    }, [itemsPerPage])
+
     return (
         <React.Fragment {...props}>
             <main className={cn(styles.main, "wrapper")}>
