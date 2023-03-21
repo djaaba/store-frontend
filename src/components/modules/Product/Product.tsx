@@ -1,10 +1,11 @@
 import cn from "classnames";
 import { useDispatch, useSelector } from "react-redux";
+import Link from "next/link";
 
 import styles from "./Product.module.css";
 import { ProductProps } from "./Product.props";
 
-import { getPrettyPrice, getPrice, searchById } from "../../../utils/";
+import { getPrettyPrice, getPrice, PRODUCT_ROUTE, searchById } from "@/utils";
 import {
     Button,
     FontAwesomeIcon,
@@ -12,11 +13,11 @@ import {
     RegularHeartIcon,
     SignalIcon,
     SolidHeartIcon,
-} from "../../UI/";
-import { selectFavorite } from "../../../store/favorite/selector";
-import { toggleFavorite } from "../../../store/favorite/actions";
-import { addToCart } from "../../../store/cart/actions";
-import { IDevice } from "../../../shared";
+} from "@/components/UI";
+import { selectFavorite } from "@/store/favorite/selector";
+import { toggleFavorite } from "@/store/favorite/actions";
+import { addToCart } from "@/store/cart/actions";
+import { IDevice } from "@/shared";
 
 export const Product = ({ item, ...props }: ProductProps): JSX.Element => {
     const favorites = useSelector(selectFavorite);
@@ -46,7 +47,9 @@ export const Product = ({ item, ...props }: ProductProps): JSX.Element => {
             <main className={styles.main}>
                 <div>
                     <div className={styles.container}>
-                        <img className={styles.img} src={imgUrl} />
+                        <Link href={`${PRODUCT_ROUTE}${id}`}>
+                            <img className={styles.img} src={imgUrl} />
+                        </Link>
                         <span className={styles.shadow}>
                             {
                                 discount ?

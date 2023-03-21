@@ -43,12 +43,12 @@ const Products = ({ types, brands, device, ...props }: any): JSX.Element => {
         getAllDevices(getPrimitiveIdArray(typesFilter), getPrimitiveIdArray(brandsFilter), page, value[0], value[1], itemsPerPage)
             .then(data => {
                 setDevices(data);
-                if (typesFilter.length || brandsFilter.length) {
-                    setPage(1)
-                }
+                // if (typesFilter.length || brandsFilter.length) {
+                //     setPage(1)
+                // }
 
             })
-    }, [page, itemsPerPage, typesFilter.length, brandsFilter.length, value[0], value[1]])
+    }, [page, value[0], value[1]/*, typesFilter.length, brandsFilter.length*/])
 
     React.useEffect(() => {
         getAllDevices(getPrimitiveIdArray(typesFilter), getPrimitiveIdArray(brandsFilter), page, value[0], value[1], itemsPerPage)
@@ -57,7 +57,7 @@ const Products = ({ types, brands, device, ...props }: any): JSX.Element => {
                 setPage(1)
 
             })
-    }, [itemsPerPage])
+    }, [itemsPerPage, typesFilter.length, brandsFilter.length])
 
     return (
         <React.Fragment {...props}>

@@ -5,9 +5,9 @@ import { useDispatch } from "react-redux";
 import styles from "./TopProductItem.module.css";
 import { TopProductItemProps } from "./TopProductItem.props";
 
-import { addToCart } from "../../../store/cart/actions";
-import { getPrettyPrice, getPrice } from "../../../utils";
-import { Button, CartShoppingIcon, FontAwesomeIcon, Htag } from "../../UI";
+import { addToCart } from "@/store/cart/actions";
+import { getPrettyPrice, getPrice, PRODUCT_ROUTE } from "@/utils";
+import { Button, CartShoppingIcon, FontAwesomeIcon, Htag } from "@/components/UI";
 
 export const TopProductItem = ({
     item,
@@ -18,7 +18,7 @@ export const TopProductItem = ({
 
     return (
         <div {...props} className={cn(className, styles.wrapper)}>
-            <Link href={`/products/${item.id}`}>
+            <Link href={`${PRODUCT_ROUTE}${item.id}`}>
                 <img
                     className={styles.img}
                     src={item.imgUrl}
