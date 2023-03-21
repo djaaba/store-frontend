@@ -13,21 +13,47 @@ export const Range = ({
     setValue,
     ...props
 }: RangeProps): JSX.Element => {
-    const [val, setVal] = React.useState<number[]>([0, 70000])
+    const [val, setVal] = React.useState<number[]>(value)
+
+    let max = 0;
+
+    const setMinVal = (num: number) => {
+        setValue([num, value[1]]);
+        setVal([num, value[1]]);
+    }
+
+    const setMaxVal = (num: number) => {
+        setValue([value[0], num]);
+        setVal([value[0], num]);
+    }
+
+    React.useEffect(() => {
+        if (value[0] > value[1]) setValue([value[1], value[0]])
+    }, [value[0], value[1]])
+
+    React.useEffect(() => {
+        const max = value[1];
+    }, [])
 
     return (
         <>
             <div className={styles.inputs}>
-                <Input onChange={(minVal: number) => setValue([+minVal, val[1]])} value={val[0]} type="number" />
-                {/* <Input onChange={(minVal: number) => setValue([+minVal, value[1]])} value={value[0]} type="number" /> */}
+                <Input onChange={(minVal: React.ChangeEvent<HTMLInputElement>) => setMinVal(+minVal.target.value)} value={value[0]} type="number" />
                 <p className={styles.separator}>
                     —
                 </p>
-                {/* <Input onChange={(maxVal: number) => setValue([value[0], +maxVal])} value={value[1]} type="number" /> */}
-                <Input onChange={(maxVal: number) => setValue([val[0], +maxVal])} value={val[1]} type="number" />
+                <Input onChange={(maxVal: React.ChangeEvent<HTMLInputElement>) => setMaxVal(+maxVal.target.value)} value={value[1]} type="number" />
             </div>
-            {/* <RangeSlider step={500} max={100000} className={styles.range} range allowCross={false} onChange={(v: any) => setVal(v)} value={value} /> */}
-            <RangeSlider onAfterChange={(v: any) => {setValue(v)}}step={500} max={100000} className={styles.range} range allowCross={false} onChange={(v: any) => setVal(v)} value={val} />
+            <RangeSlider
+                onAfterChange={(v: any) => { setValue(v) }}
+                step={500}
+                max={1000000}
+                className={styles.range}
+                range
+                allowCross={false}
+                onChange={(v: any) => setVal(v)}
+                value={val}
+            />
         </>
     );
 };
