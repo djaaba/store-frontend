@@ -35,7 +35,8 @@ export const DeviceModal = ({ types, brands, ...props }: DeviceModalProps): JSX.
 
     let isDisabled = !name.inputValid || !description.inputValid || !price.inputValid || !discount.inputValid || !file.inputValid;
 
-    const addInfo = () => {
+    const addInfo = (e: React.FormEvent) => {
+        e.preventDefault();
         setInfo([...info, { title: '', description: '', id: getId() }])
     }
 
@@ -142,7 +143,7 @@ export const DeviceModal = ({ types, brands, ...props }: DeviceModalProps): JSX.
                         className={styles.btn}
                         color="red"
                         size="medium"
-                        onClick={() => addInfo()}
+                        onClick={(e: React.FormEvent) => addInfo(e)}
                     >
                         Добавить новое свойство
                     </Button>

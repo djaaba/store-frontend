@@ -52,16 +52,29 @@ const Products = ({ types, brands, device, ...props }: any): JSX.Element => {
 
 
     React.useEffect(() => {
-        getAllDevices(getPrimitiveIdArray(typesFilter), getPrimitiveIdArray(brandsFilter), page, 0, 100000, itemsPerPage)
+        getAllDevices(getPrimitiveIdArray(typesFilter), getPrimitiveIdArray(brandsFilter), page, value[0], value[1], itemsPerPage)
             .then(data => { 
-                const dev = data.rows?.filter((device: IDevice) => getPrice(device.price, device.discount) >= value[0] && getPrice(device.price, device.discount) <= value[1])
+                // const dev = data.rows?.filter((device: IDevice) => getPrice(device.price, device.discount) >= value[0] && getPrice(device.price, device.discount) <= value[1])
                 setDevices(data);
-                // console.log(dev)
+
+                if (typesFilter.length || brandsFilter.length){
+                    setPage(1)
+                }
+                // console.log(data)
                 // setDevices({ ...data, rows: dev });
-                console.log(value)
+                // console.log(value)
             })
     }, [page, itemsPerPage, typesFilter.length, brandsFilter.length, value[0], value[1]])
 
+    // React.useEffect(() => {
+    //     getAllDevices(getPrimitiveIdArray(typesFilter), getPrimitiveIdArray(brandsFilter), page, value[0], value[1], itemsPerPage)
+    //         .then(data => { 
+    //             setDevices(data);
+    //             setPage(1)
+    //         })
+    // }, [itemsPerPage, typesFilter.length, brandsFilter.length, value[0], value[1]])
+
+    // Сейчас проблема в том, что не совсем правильно на сервере сортируются даннные по мин цене и макс цене
     return (
         <React.Fragment {...props}>
             <main className={cn(styles.main, "wrapper")}>
