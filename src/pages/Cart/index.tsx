@@ -6,8 +6,8 @@ import Link from "next/link";
 import styles from "./Cart.module.css";
 import { CartProps } from "./Cart.props";
 
-import { IDevice } from "../../shared";
-import { OrderDetails } from "../../components/common/OrderDetails/OrderDetails";
+import { IDevice } from "@/shared";
+import { OrderDetails } from "@/components/common/OrderDetails/OrderDetails";
 import {
     Htag,
     Atag,
@@ -15,14 +15,14 @@ import {
     WhiteWrapper,
     Checkbox,
     Button,
-} from "../../components/UI";
-import { removeSelected, selectAll } from "../../store/cart/actions";
-import { CartProduct } from "../../components/common/CartProduct/CartProduct";
+} from "@/components/UI";
+import { removeSelected, selectAll } from "@/store/cart/actions";
+import { CartProduct } from "@/components/common/CartProduct/CartProduct";
 import {
     hasSelected,
     selectCart,
     sumCountCart,
-} from "../../store/cart/selector";
+} from "@/store/cart/selector";
 
 const Cart = ({ className, ...props }: CartProps): JSX.Element => {
     const [isChecked, setIsChecked] = useState<boolean>(false);
@@ -32,6 +32,9 @@ const Cart = ({ className, ...props }: CartProps): JSX.Element => {
     const checked = useSelector(hasSelected);
 
     const dispatch = useDispatch();
+
+    const [selected, setSelected] = React.useState<IDevice[]>([])
+    console.log(selected)
 
     return (
         <>
@@ -86,7 +89,7 @@ const Cart = ({ className, ...props }: CartProps): JSX.Element => {
 
                                 {cart.map((item: IDevice) => (
                                     <WhiteWrapper key={item.id}>
-                                        <CartProduct product={item} />
+                                        <CartProduct value={selected} setValue={setSelected} product={item} />
                                     </WhiteWrapper>
                                 ))}
                             </div>

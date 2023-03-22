@@ -11,24 +11,31 @@ import {
     removeFromCart,
     toggleProduct,
 } from "@/store/cart/actions";
-import { getPrettyPrice, getPrice, PRODUCT_ROUTE } from "@/utils";
+import { getPrettyPrice, getPrice, searchById, PRODUCT_ROUTE } from "@/utils";
 import { Atag, Checkbox, FavoriteLabel, Htag } from "@/components/UI";
 
 export const CartProduct = ({
     product,
+    value,
+    setValue,
     ...props
 }: CartProductProps): JSX.Element => {
     const dispatch = useDispatch();
     const curPrice = getPrice(product.price, product.discount);
 
-    const [selected, setSelected] = React.useState<number[]>([])
-
     return (
         <>
             <section {...props} className={styles.section}>
                 <Checkbox
-                    onChange={() => dispatch(toggleProduct(product))}
-                    checked={product.isSelected}
+                    onChange={() => setValue((prev: any) => {
+                        if (searchById(product, prev)) {
+                            return prev.filter((item: any) => item.id !== product.id)
+                        }
+                        else {
+                            return [...prev, product]
+                        }
+                    })}
+                    checked={searchById(product, value)}
                 />
                 <Link href={`${PRODUCT_ROUTE}${product.id}`}>
                     <img className={styles.img} src={product.imgUrl} />

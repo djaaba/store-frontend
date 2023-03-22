@@ -20,9 +20,3 @@ export const sumPriceCart = (state: any) =>
 
 export const sumCountCart = (state: any) =>
     state.cart.reduce((acc: number, cur: IDevice) => acc + cur.count, 0);
-
-export const hasSelected = (state: any) =>
-    state.cart.findIndex((product: IDevice) => product.isSelected === true);
-
-export const hasFavorited = (state: any) =>
-    state.cart.filter((product: IDevice) => product.isFavorite === true);
