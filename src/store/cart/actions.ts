@@ -5,11 +5,6 @@ export const addToCart = (body: IDevice) => ({
     body,
 });
 
-export const toggleProduct = (body: IDevice) => ({
-    type: "TOGGLE_PRODUCT",
-    body,
-});
-
 export const incrementCount = (body: IDevice) => ({
     type: type.INCREMENT_COUNT,
     body,
@@ -23,13 +18,4 @@ export const decrementCount = (body: IDevice) => ({
 export const removeFromCart = (body: IDevice) => ({
     type: type.REMOVE_FROM_CART,
     body,
-});
-
-export const selectAll = (flag: boolean) => ({
-    type: type.SELECT_ALL,
-    flag,
-});
-
-export const removeSelected = () => ({
-    type: type.REMOVE_SELECTED,
 });

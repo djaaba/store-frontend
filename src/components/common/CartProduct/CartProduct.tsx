@@ -9,7 +9,6 @@ import {
     decrementCount,
     incrementCount,
     removeFromCart,
-    toggleProduct,
 } from "@/store/cart/actions";
 import { getPrettyPrice, getPrice, searchById, PRODUCT_ROUTE } from "@/utils";
 import { Atag, Checkbox, FavoriteLabel, Htag } from "@/components/UI";

@@ -1,5 +1,5 @@
 import cn from "classnames";
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 
@@ -16,25 +16,22 @@ import {
     Checkbox,
     Button,
 } from "@/components/UI";
-import { removeSelected, selectAll } from "@/store/cart/actions";
 import { CartProduct } from "@/components/common/CartProduct/CartProduct";
 import {
-    hasSelected,
     selectCart,
     sumCountCart,
 } from "@/store/cart/selector";
+import { removeFromCart } from "@/store/cart/actions";
 
 const Cart = ({ className, ...props }: CartProps): JSX.Element => {
-    const [isChecked, setIsChecked] = useState<boolean>(false);
-
+    const dispatch = useDispatch();
     const cart = useSelector(selectCart);
     const sumCount = useSelector(sumCountCart);
-    const checked = useSelector(hasSelected);
-
-    const dispatch = useDispatch();
 
     const [selected, setSelected] = React.useState<IDevice[]>([])
-    console.log(selected)
+
+    console.log('selected', selected)
+    console.log('cart', cart)
 
     return (
         <>
@@ -67,19 +64,19 @@ const Cart = ({ className, ...props }: CartProps): JSX.Element => {
                                 <WhiteWrapper className={styles.wrapper}>
                                     <div className={styles.container}>
                                         <Checkbox
-                                            onChange={() => {
-                                                dispatch(selectAll(!isChecked));
-                                                setIsChecked(!isChecked);
-                                            }}
-                                            checked={isChecked}
+                                            onChange={() => selected.length === cart.length === false ? setSelected(cart) : setSelected([])}
+                                            checked={selected.length === cart.length}
                                         />
                                         <Ptag>Выбрать все</Ptag>
                                     </div>
-                                    {checked !== -1 && (
+                                    {selected.length > 0 && (
                                         <Atag
                                             aria-label="Удалить товары из избранного"
                                             onClick={() =>
-                                                dispatch(removeSelected())
+                                                selected.map(product => {
+                                                    dispatch(removeFromCart(product))
+                                                    setSelected((prev: any) => prev.filter((item: any) => item.id !== product.id));
+                                                })
                                             }
                                         >
                                             <Ptag>Удалить выбранные</Ptag>
