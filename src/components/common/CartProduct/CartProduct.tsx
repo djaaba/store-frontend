@@ -1,4 +1,6 @@
 import { useDispatch } from "react-redux";
+import React from "react";
+import Link from "next/link";
 
 import styles from "./CartProduct.module.css";
 import { CartProductProps } from "./CartProduct.props";
@@ -8,17 +10,18 @@ import {
     incrementCount,
     removeFromCart,
     toggleProduct,
-} from "../../../store/cart/actions";
-import { getPrettyPrice, getPrice } from "../../../utils";
-import { Atag, Checkbox, FavoriteLabel, Htag } from "../../UI";
+} from "@/store/cart/actions";
+import { getPrettyPrice, getPrice, PRODUCT_ROUTE } from "@/utils";
+import { Atag, Checkbox, FavoriteLabel, Htag } from "@/components/UI";
 
 export const CartProduct = ({
     product,
     ...props
 }: CartProductProps): JSX.Element => {
     const dispatch = useDispatch();
-
     const curPrice = getPrice(product.price, product.discount);
+
+    const [selected, setSelected] = React.useState<number[]>([])
 
     return (
         <>
@@ -27,13 +30,11 @@ export const CartProduct = ({
                     onChange={() => dispatch(toggleProduct(product))}
                     checked={product.isSelected}
                 />
-                <a aria-label="Открыть товар" href="">
+                <Link href={`${PRODUCT_ROUTE}${product.id}`}>
                     <img className={styles.img} src={product.imgUrl} />
-                </a>
+                </Link>
                 <div className={styles.container}>
-                    <a aria-label="Открыть товар" href="">
-                        <Htag tag="h3">{product.name}</Htag>
-                    </a>
+                    <Htag tag="h3">{product.name}</Htag>
                     <div className={styles.description}>
                         <div className={styles.mobile}>
                             <Atag

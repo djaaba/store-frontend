@@ -1,4 +1,5 @@
 import { useDispatch } from "react-redux";
+import Link from "next/link";
 
 import styles from "./FavoriteProduct.module.css";
 import { FavoriteProductProps } from "./FavoriteProduct.props";
@@ -9,9 +10,9 @@ import {
     FontAwesomeIcon,
     Htag,
     TrashIcon,
-} from "../../UI";
-import { getPrettyPrice, getPrice } from "../../../utils";
-import { toggleFavorite } from "../../../store/favorite/actions";
+} from "@/components/UI";
+import { getPrettyPrice, getPrice, PRODUCT_ROUTE } from "@/utils";
+import { toggleFavorite } from "@/store/favorite/actions";
 
 export const FavoriteProduct = ({
     product,
@@ -23,7 +24,9 @@ export const FavoriteProduct = ({
     return (
         <>
             <div {...props} className={styles.content}>
-                <img className={styles.img} src={product.imgUrl} />
+                <Link href={`${PRODUCT_ROUTE}${product.id}`}>
+                    <img className={styles.img} src={product.imgUrl} />
+                </Link>
                 <div className={styles.container}>
                     <div className={styles.info}>
                         <Htag tag="h4">{product.name}</Htag>
