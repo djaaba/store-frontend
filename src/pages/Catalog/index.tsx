@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { getId } from "../../utils";
 
 import styles from "./Catalog.module.css";
-import { CatalogProps } from "./Catalog.props";
+// import { CatalogProps } from "./Catalog.props";
 
 import { catalogCategories } from "@/plug";
 
@@ -55,3 +55,7 @@ const Catalog = ({
 };
 
 export default Catalog;
+
+interface CatalogProps
+    extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+}

@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
 import styles from "./Favorite.module.css";
-import { FavoriteProps } from "./Favorite.props";
+// import { FavoriteProps } from "./Favorite.props";
 
 import { FontAwesomeIcon, Htag, RegularHeartIcon } from "../../components/UI";
 import { FavoriteProduct } from "../../components/common/FavoriteProduct/FavoriteProduct";
@@ -51,3 +51,6 @@ const Favorite = ({ className, ...props }: FavoriteProps): JSX.Element => {
 };
 
 export default Favorite;
+
+interface FavoriteProps
+    extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> { }

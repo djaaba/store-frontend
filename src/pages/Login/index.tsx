@@ -1,12 +1,12 @@
 import cn from "classnames";
 import Link from "next/link";
 import React from 'react';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 
 import styles from "./Login.module.css";
-import { LoginProps } from "./Login.props";
+// import { LoginProps } from "./Login.props";
 
 import { Button, Htag, Input } from "@/components/UI";
 import { login } from "@/api";
@@ -26,6 +26,7 @@ const Login = ({ className, ...props }: LoginProps): JSX.Element => {
     let isDisabled = !email.inputValid || !password.inputValid;
 
     const dispatch = useDispatch();
+    const router = useRouter()
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -33,7 +34,7 @@ const Login = ({ className, ...props }: LoginProps): JSX.Element => {
         login(email.value, password.value).then(data => {
             dispatch(userLogin(data as IUserInfo))
             toast.success('Вы авторизованы!', success);
-            Router.push(MAIN_ROUTE)
+            router.push(MAIN_ROUTE)
         }).catch(err => {
             toast.error('Ошибка авторизации', error);
             console.warn(err);
@@ -71,7 +72,7 @@ const Login = ({ className, ...props }: LoginProps): JSX.Element => {
                         <Button
                             disabled={isDisabled}
                             type="submit"
-                            className={styles.btn} 
+                            className={styles.btn}
                             color={isDisabled ? "gray" : "dark"}
                             size="big"
                         >
@@ -93,3 +94,6 @@ const Login = ({ className, ...props }: LoginProps): JSX.Element => {
 };
 
 export default Login;
+
+export interface LoginProps
+    extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> { }

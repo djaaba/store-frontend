@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 
 import styles from "./Cart.module.css";
-import { CartProps } from "./Cart.props";
+// import { CartProps } from "./Cart.props";
 
 import { IDevice } from "@/shared";
 import { OrderDetails } from "@/components/common/OrderDetails/OrderDetails";
@@ -100,3 +100,6 @@ const Cart = ({ className, ...props }: CartProps): JSX.Element => {
 };
 
 export default Cart;
+
+interface CartProps
+    extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> { }

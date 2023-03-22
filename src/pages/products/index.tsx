@@ -1,8 +1,9 @@
 import React from "react";
 import cn from "classnames";
+import { useSelector } from "react-redux";
 
 import styles from "./Product.module.css";
-import { ProductProps } from "./Product.props";
+// import { ProductProps } from "./Product.props";
 
 import { getAllTypes, getAllBrands, getAllDevices } from "@/api";
 import { Breadcrumbs, ItemCounter, PaginationBar, Range } from "@/components/UI";
@@ -10,11 +11,10 @@ import { Breadcrumbs, ItemCounter, PaginationBar, Range } from "@/components/UI"
 import { getId, getPrimitiveIdArray } from "@/utils";
 import { CheckboxGroup, Product } from "@/components/modules";
 import { toggleType } from "@/store/filter/types/actions";
-import { useSelector } from "react-redux";
 import { selectTypesFilter } from "@/store/filter/types/selector";
 import { selectBrandsFilter } from "@/store/filter/brands/selector";
 import { toggleBrand } from "@/store/filter/brands/actions";
-import { IDevice } from "@/shared";
+import { IBrand, IDevice, IPaginationDevice, IType } from "@/shared";
 
 const breadcrumbs = [
     { id: 1, name: "Главная", href: "/", active: false },
@@ -102,7 +102,6 @@ const Products = ({ types, brands, device, ...props }: ProductProps): JSX.Elemen
     );
 };
 
-export default Products;
 
 export async function getServerSideProps() {
     const types = await getAllTypes();
@@ -118,3 +117,13 @@ export async function getServerSideProps() {
     };
 }
 
+
+export default Products;
+
+interface ProductProps
+    extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+    data: IDevice[];
+    types: IType[];
+    brands: IBrand[];
+    device: IPaginationDevice;
+}

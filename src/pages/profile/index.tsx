@@ -3,10 +3,10 @@ import React from "react";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-toastify";
-import Router from "next/router";
+import { useRouter } from "next/router";
 
 import styles from "./Profile.module.css";
-import { ProfileProps } from "./Profile.props";
+// import { ProfileProps } from "./Profile.props";
 
 import { ADMIN_ROUTE, LOGIN_ROUTE, success } from "@/utils";
 import { Button } from "@/components/UI";
@@ -16,8 +16,12 @@ import { logout } from "@/store/user/actions";
 const Profile = ({ className, ...props }: ProfileProps): JSX.Element => {
     const userInfo = useSelector(selectUser);
     const dispatch = useDispatch();
+    const router = useRouter();
 
-    if (!userInfo.isAuth) Router.push(LOGIN_ROUTE)
+    React.useEffect(() => {
+        if (!userInfo.isAuth) router.push(LOGIN_ROUTE)
+    }, [userInfo.isAuth])
+
 
     const handleLogout = () => {
         localStorage.removeItem('token');
@@ -49,3 +53,6 @@ const Profile = ({ className, ...props }: ProfileProps): JSX.Element => {
 };
 
 export default Profile;
+
+interface ProfileProps
+    extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> { }

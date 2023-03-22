@@ -5,8 +5,9 @@ import React from 'react'
 import cn from "classnames";
 
 import styles from "./Catalog.module.css";
-import { CatalogProps } from "./Catalog.props";
+// import { CatalogProps } from "./Catalog.props";
 
+import { IBrand, IDevice, IType } from "@/shared";
 import { getBrandBySlug, getTypeBySlug, getDeviceBySlug } from "@/api";
 import { getPrettyPrice, getPrice } from "@/utils";
 import { Atag, Breadcrumbs, Button, FavoriteLabel, Htag, Ptag, WhiteWrapper } from "@/components/UI";
@@ -132,14 +133,13 @@ const Item = ({ device, brand, type, ...props }: CatalogProps) => {
     );
 }
 
-export default Item;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const id = context.params!.id;
     const device = await getDeviceBySlug(String(id));
     const brand = await getBrandBySlug(device.brandId);
     const type = await getTypeBySlug(device.typeId);
-
+    
     return {
         props: {
             device,
@@ -148,3 +148,12 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         },
     };
 }
+
+export default Item;
+
+interface CatalogProps
+    extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+        device: IDevice;
+        brand: IBrand;
+        type: IType;
+    }

@@ -37,13 +37,13 @@ export const HeaderBottom = forwardRef(({ className, ...props }: HeaderBottomPro
                         <Scroll>
                             <>
                                 {types.map((item) => (
-                                    <Link href={PRODUCT_ROUTE} onClick={() => dispatch(toggleType(item))}>
-                                        <HeaderNavCard title={item.name} key={item.id} />
+                                    <Link key={item.id} href={PRODUCT_ROUTE} onClick={() => dispatch(toggleType(item))}>
+                                        <HeaderNavCard title={item.name} />
                                     </Link>
                                 ))}
                                 {brands.map((item) => (
-                                    <Link href={PRODUCT_ROUTE} onClick={() => dispatch(toggleBrand(item))}>
-                                        <HeaderNavCard title={item.name} key={item.id} />
+                                    <Link key={item.id} href={PRODUCT_ROUTE} onClick={() => dispatch(toggleBrand(item))}>
+                                        <HeaderNavCard title={item.name} />
                                     </Link>
                                 ))}
                             </>

@@ -1,12 +1,12 @@
 import cn from "classnames";
 import Link from "next/link";
 import React from 'react';
-import Router from 'next/router';
+import { useRouter } from 'next/router';
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 
 import styles from "./Registration.module.css";
-import { RegistrationProps } from "./Registration.props";
+// import { RegistrationProps } from "./Registration.props";
 
 import { Button, Htag, Input } from "@/components/UI";
 import { registation } from "@/api";
@@ -28,13 +28,14 @@ const Registration = ({ className, ...props }: RegistrationProps): JSX.Element =
     let isDisabled = !email.inputValid || !name.inputValid || !password.inputValid;
 
     const dispatch = useDispatch();
+    const router = useRouter();
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
             const response = await registation(name.value, email.value, password.value)
             dispatch(login(response as IUserInfo))
-            Router.push(MAIN_ROUTE)
+            router.push(MAIN_ROUTE)
             toast.success('Вы зарегистрировались!', success);
         } catch (err) {
             console.log(err.response.data.message)
@@ -49,7 +50,7 @@ const Registration = ({ className, ...props }: RegistrationProps): JSX.Element =
                 <form onSubmit={(e) => handleSubmit(e)}>
                     <div className={styles.container}>
                         <Input
-                            className={cn(styles.input, nameError ?"errorIndicator" : null)}
+                            className={cn(styles.input, nameError ? "errorIndicator" : null)}
                             placeholder="Введите ваше Имя"
                             onBlur={name.onBlur}
                             type="text"
@@ -101,3 +102,6 @@ const Registration = ({ className, ...props }: RegistrationProps): JSX.Element =
 };
 
 export default Registration;
+
+interface RegistrationProps
+    extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> { }
