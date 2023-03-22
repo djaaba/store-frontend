@@ -45,7 +45,7 @@ export const Range = ({
                 <Input onChange={(maxVal: React.ChangeEvent<HTMLInputElement>) => setMaxVal(+maxVal.target.value)} value={value[1]} type="number" />
             </div>
             <RangeSlider
-                onAfterChange={(v: any) => { setValue(v) }}
+                onAfterChange={(v: any) => setValue(v) }
                 step={500}
                 max={1000000}
                 className={styles.range}

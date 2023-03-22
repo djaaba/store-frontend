@@ -3,7 +3,6 @@ import { IDevice } from "../IDevice";
 export type FavoriteAction = {
     type: typesFavoriteAction;
     body: IDevice;
-    favorite: any;
 };
 
 export enum typesFavoriteAction {

@@ -5,8 +5,8 @@ import cn from "classnames";
 import styles from "./FooterNavigation.module.css";
 import { FooterNavigationProps } from "./FooterNavigation.props";
 
-import { getId, scroll } from "../../../../utils";
-import { IColumnItem } from "../../../../shared";
+import { getId, scroll } from "@/utils";
+import { IColumnItem } from "@/shared";
 import { aboutCompany, buyers, forBusiness } from "@/plug/Footer";
 
 export const FooterNavigation = ({

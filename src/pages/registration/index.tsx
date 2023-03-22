@@ -29,14 +29,14 @@ const Registration = ({ className, ...props }: RegistrationProps): JSX.Element =
 
     const dispatch = useDispatch();
 
-    const handleSubmit = async (e: any) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         try {
             const response = await registation(name.value, email.value, password.value)
             dispatch(login(response as IUserInfo))
             Router.push(MAIN_ROUTE)
             toast.success('Вы зарегистрировались!', success);
-        } catch (err: any) {
+        } catch (err) {
             console.log(err.response.data.message)
             toast.error('Что-то пошло не так', error);
         }
@@ -46,7 +46,7 @@ const Registration = ({ className, ...props }: RegistrationProps): JSX.Element =
         <main {...props} className={cn(styles.main, "wrapper")}>
             <div className={styles.content}>
                 <Htag tag="h2">Регистрация</Htag>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={(e) => handleSubmit(e)}>
                     <div className={styles.container}>
                         <Input
                             className={cn(styles.input, nameError ?"errorIndicator" : null)}
@@ -54,7 +54,7 @@ const Registration = ({ className, ...props }: RegistrationProps): JSX.Element =
                             onBlur={name.onBlur}
                             type="text"
                             value={name.value}
-                            onChange={(e: any) => name.onChange(e)}
+                            onChange={(e: React.FormEvent<HTMLInputElement>) => name.onChange(e)}
                         />
                         {nameError && <div className={"errorMessage"}>Введите ваше имя</div>}
                     </div>
@@ -65,7 +65,7 @@ const Registration = ({ className, ...props }: RegistrationProps): JSX.Element =
                             onBlur={email.onBlur}
                             type="email"
                             value={email.value}
-                            onChange={(e: any) => email.onChange(e)}
+                            onChange={(e: React.FormEvent<HTMLInputElement>) => email.onChange(e)}
                         />
                         {emailError && <div className={"errorMessage"}>Неверный формат почты</div>}
                     </div>
@@ -76,7 +76,7 @@ const Registration = ({ className, ...props }: RegistrationProps): JSX.Element =
                             onBlur={password.onBlur}
                             type="password"
                             value={password.value}
-                            onChange={(e: any) => password.onChange(e)}
+                            onChange={(e: React.FormEvent<HTMLInputElement>) => password.onChange(e)}
                         />
                         {passwordError && <div className={"errorMessage"}>Введите ваш пароль</div>}
                     </div>

@@ -1,6 +1,6 @@
 import { IBrand } from "../shared";
 
-export const brands: IBrand[] = [
+export const brands = [
     {
         name: "Mi",
         imgUrl: "/assets/brands/mi.webp",

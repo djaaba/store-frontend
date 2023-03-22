@@ -1,20 +1,20 @@
 import React from "react";
 
-import styles from "./Categories.module.css";
-import { CategoriesProps } from "./Categories.props";
+import styles from "./Types.module.css";
+import { TypesProps } from "./Types.props";
 
-import { Htag, Image } from "../../UI";
+import { Htag, Image } from "@/components/UI";
 import { Scroll } from "../";
 
-export const Categories = ({
-    categories,
+export const Types = ({
+    types,
     ...props
-}: CategoriesProps): JSX.Element => {
+}: TypesProps): JSX.Element => {
     return (
         <section {...props} className={styles.container}>
             <Htag tag="h1">Популярные категории</Htag>
             <Scroll>
-                {categories?.map((item, index) => (
+                {types?.map((item, index) => (
                     <React.Fragment key={index}>
                         <Image
                             className={styles.img}

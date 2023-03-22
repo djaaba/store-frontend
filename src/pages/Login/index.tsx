@@ -53,7 +53,7 @@ const Login = ({ className, ...props }: LoginProps): JSX.Element => {
                                 onBlur={email.onBlur}
                                 type="email"
                                 value={email.value}
-                                onChange={(e: any) => email.onChange(e)}
+                                onChange={(e: React.FormEvent<HTMLInputElement>) => email.onChange(e)}
                             />
                             {emailError && <div className={"errorMessage"}>Неверный формат почты</div>}
                         </div>
@@ -64,7 +64,7 @@ const Login = ({ className, ...props }: LoginProps): JSX.Element => {
                                 onBlur={password.onBlur}
                                 type="password"
                                 value={password.value}
-                                onChange={(e: any) => password.onChange(e)}
+                                onChange={(e: React.FormEvent<HTMLInputElement>) => password.onChange(e)}
                             />
                             {passwordError && <div className={"errorMessage"}>Введите ваш пароль</div>}
                         </div>

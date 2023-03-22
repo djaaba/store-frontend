@@ -9,22 +9,15 @@ import {
     Banner,
     Bestsellers,
     Brands,
-    Categories,
+    Types,
     TopProduct,
 } from "@/components/modules";
 import { WhiteWrapper } from "@/components/UI";
-import {
-    // banners,
-    // bestsellers,
-    // brands,
-    // productCategories,
-    // topProduct,
-} from "@/plug";
-import { getAllDevices, check, getAllTypes, getAllBrands, getAllBanners, getMostViewed, getBestsellers } from "@/api";
-import { IUserInfo } from "@/shared";
+import { check, getAllTypes, getAllBrands, getAllBanners, getMostViewed, getBestsellers } from "@/api";
+import { IBanner, IBrand, IDevice, IType, IUserInfo } from "@/shared";
 import { login } from "@/store/user/actions";
 
-function Main({ mostViewed, bestsellers, types, brands, banners }: any) {
+function Main({ mostViewed, bestsellers, types, brands, banners }: MainProps) {
     const dispatch = useDispatch();
 
     React.useEffect(() => {
@@ -56,7 +49,7 @@ function Main({ mostViewed, bestsellers, types, brands, banners }: any) {
                 </section>
                 <WhiteWrapper className={cn(styles.container, "wrapper")}>
                     <Bestsellers items={bestsellers} />
-                    <Categories categories={types} />
+                    <Types types={types} />
                     <Brands brands={brands} />
                 </WhiteWrapper>
             </>
@@ -84,6 +77,14 @@ export async function getServerSideProps() {
     };
 }
 
+interface MainProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+    mostViewed: IDevice[];
+    bestsellers: IDevice[];
+    types: IType[];
+    brands: IBrand[];
+    banners: IBanner[];
+}
+
 // next time use formik
 // next time use - cookie httponly secure token
 // next time export default
@@ -95,21 +96,16 @@ export async function getServerSideProps() {
 // Добавить стейт для количества предметов на странице и номер страницы, чтобы при перезагрузке не потерялось все
 // Нужны характеристики еще
 // роут для товара по скидке, роут для бестселлеров, роут для самых просматриваемых 
-// что насчет отзывов и 
+// что насчет отзывов и рейтинга
 // стейт для каунтера? посмотрим
-// Range slider выпендривается
 // сверстать страницу профиля
-// переименовать роуты в новые переменные
-// any
 // в products написать пропсы для компонентов, и вообще архитектуру как-то изменить
 // Head во все страницы
 // количество товаров в корзине и избранном в хедере
 // В Скроллбар засунуть реальные ссылки
-// Как избавиться от колхоза в combine reducers? Как объединить стейт 
 
 // Ptag заменить на p?
 // cardItem, cartItem, favoriteItem, productItem
-// any 
 // ?Переписать pTag на норм, а то хуйня
 // написать компонент недавно просмотренных
 // Написать анализатор подходящих товаров
@@ -122,14 +118,12 @@ export async function getServerSideProps() {
 // Добавить хлебные крошки, дело хорошее
 // обнулить каунт при удалении, или запретить каунтер при покупке
 // обернуть брейкпоинт в usecallback
-// Страница сравнение
-// сделать стейт для селектед, дописать бэкенд для корзины и отзывы?
+// сделать стейт для селектед
 // админка
 // сделать, чтобы происходила выборка по просмотрам.
 // как сделать, чтобы при нажатии на кнопку "купить", увеличивался счетчик покупки. А если массив?
 // в бестселлерах прикрутить фикс высоту, чтобы кнопка красиво смотрелась внизу.
 // может сделать прикол с красивой карточкой оплаты?
-
 
 // ФИКСТЬ
 // ptag фикс
@@ -137,9 +131,13 @@ export async function getServerSideProps() {
 // деструктуризировать все массивы на переменные
 // a теги заменить на Link
 // HTMLProps заменить на detailed
+// Как избавиться от колхоза в combine reducers? Как объединить стейт 
 
 // ГОТОВО:
 
+// переименовать роуты в новые переменные
+// Range slider выпендривается
+// any
 // корзина все еще пытается выдавать ошибки, надо чинить
 // чекбоксы для фильтров? че вообще..
 // локал сторэйдж

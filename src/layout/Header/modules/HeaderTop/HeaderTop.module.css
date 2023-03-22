@@ -11,12 +11,18 @@
     white-space: nowrap;
 }
 
+.iconWithText {
+    display: flex;
+    align-items: flex-end;
+    align-items: center;
+}
+
 .nav {
     display: flex;
     align-items: center;
 }
 
-.nav > a {
+.nav p {
     margin: 0 10px;
 }
 

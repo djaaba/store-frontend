@@ -26,9 +26,9 @@ export const CartProduct = ({
         <>
             <section {...props} className={styles.section}>
                 <Checkbox
-                    onChange={() => setValue((prev: any) => {
+                    onChange={() => setValue(prev => {
                         if (searchById(product, prev)) {
-                            return prev.filter((item: any) => item.id !== product.id)
+                            return prev.filter(item => item.id !== product.id)
                         }
                         else {
                             return [...prev, product]

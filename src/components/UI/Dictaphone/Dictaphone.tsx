@@ -1,7 +1,5 @@
-import SpeechRecognition, {
-    useSpeechRecognition,
-} from "react-speech-recognition";
-import { useLayoutEffect, useState } from "react";
+import SpeechRecognition, { useSpeechRecognition } from "react-speech-recognition";
+import React from "react";
 
 import styles from "./Dictaphone.module.css";
 import { DictaphoneProps } from "./Dictaphone.props";
@@ -13,12 +11,12 @@ export const Dictaphone = ({
     setText,
     ...props
 }: DictaphoneProps): JSX.Element => {
-    const [isListening, setIsListening] = useState<boolean>(false);
+    const [isListening, setIsListening] = React.useState<boolean>(false);
 
     const { transcript, listening, browserSupportsSpeechRecognition } =
         useSpeechRecognition();
 
-    useLayoutEffect(() => {
+    React.useEffect(() => {
         setText(transcript);
         setIsListening(!isListening);
     }, [transcript]);

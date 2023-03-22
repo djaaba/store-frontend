@@ -12,11 +12,11 @@ export const useFile = (initialValue: any, validation: any) => {
         setValue(e.target.files[0])
     }
 
-    const onBlur = (e: any) => {
+    const onBlur = () => {
         setDirty(true)
     }
 
-    const reset = (e: any) => {
+    const reset = () => {
         setDirty(false)
     }
 

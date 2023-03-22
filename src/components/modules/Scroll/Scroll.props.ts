@@ -2,5 +2,5 @@ import { DetailedHTMLProps, HTMLAttributes, ReactElement, ReactFragment, ReactNo
 
 export interface ScrollProps
     extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-    children: ReactElement[];
+    children: ReactElement;
 }

@@ -6,37 +6,132 @@
 
 .content {
     display: flex;
-    grid-gap: 20px;
+    grid-gap: 60px;
 }
 
-.aside {
-    max-width: 340px;
-    min-width: 240px;
-    width: 100%;
-}
-
-.products {
-    display: grid;
-    grid-gap: 40px;
-    grid-template-columns: repeat(4, 1fr);
-    width: 100%;
-}
-
-.display {
+.discount {
     display: flex;
     align-items: center;
+    grid-column-gap: 15px;
+}
+
+.description {
+    margin-top: 60px;
+}
+
+.count {
+    font-weight: bold;
+}
+
+.wrapper {
+    margin: 15px 0;
+    grid-gap: 15px;
+    display: flex;
+    width: 100%;
     justify-content: space-between;
 }
 
-@media (max-width: 1250px) {
-    .products {
-        grid-template-columns: repeat(3, 1fr);
+.characteristics {
+    margin: 15px 0;
+}
 
+.img {
+    max-width: 500px;
+    max-height: 500px;
+    width: 100%;
+    height: 100%;
+}
+
+.svg {
+    width: 40px;
+    height: 40px;
+}
+
+.p {
+    line-height: 20px;
+}
+
+.price {
+    white-space: nowrap;
+}
+.price {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 15px;
+}
+
+.prevPrice {
+    color: rgb(162, 154, 142);
+    text-decoration: line-through;
+}
+
+.curPrice {
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .characteristics {
+        display: none;
+    }
+
+    .content {
+        grid-gap: 35px;
+    }
+
+    .mobileMenu {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        bottom: 50px;
+        box-shadow: 0 0.1rem 2rem #04061c1a;
+
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 0%;
+
+        z-index: 2;
+    }
+
+    .mobileMenu button {
+        width: auto;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .wrapper {
+        flex-direction: column;
     }
 }
 
 @media (max-width: 425px) {
     .main {
         padding-bottom: 0;
+    }
+
+    .wrapper {
+        margin: 0;
+    }
+
+    .img {
+        max-width: 300px;
+        max-height: 300px;
+        margin: 0 auto;
+    }
+
+    .content {
+        flex-direction: column-reverse;
+        grid-gap: 10px;
+    }
+
+    .mobileMenu {
+        bottom: 41px;
+    }
+
+    .description {
+        margin-top: 20px;
     }
 }

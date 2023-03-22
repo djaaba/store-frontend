@@ -1,6 +1,6 @@
 import { ICatalogCategory } from "../shared";
 
-export const catalogCategories: ICatalogCategory[] = [
+export const catalogCategories = [
     {
         id: 1,
         title: "Акции, скидки и распродажи",

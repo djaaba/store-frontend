@@ -1,15 +1,20 @@
 export interface IDevice {
-    id: number;
     price: number;
     discount: number;
-    discountPrice: number;
     name: string;
     description: string;
     imgUrl: string;
-    count: number;
     brandId: number;
     typeId: number;
+    count: number;
+    id: number;
     info?: [];
-    viewCount: number;
-    purchasesCount: number;
+    viewCount?: number;
+    discountPrice?: number;
+    purchasesCount?: number;
+}
+
+export interface IPaginationDevice {
+    count: number;
+    rows: IDevice[];
 }

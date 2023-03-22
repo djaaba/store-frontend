@@ -44,7 +44,7 @@ export const DeviceModal = ({ types, brands, ...props }: DeviceModalProps): JSX.
         setInfo(info.filter(item => item.id !== id))
     }
 
-    const changeInfo = (key: any, value: any, id: number) => {
+    const changeInfo = (key: string, value: string, id: number) => {
         setInfo(info.map((i) => i.id === id ? { ...i, [key]: value } : i))
     }
 
@@ -86,13 +86,13 @@ export const DeviceModal = ({ types, brands, ...props }: DeviceModalProps): JSX.
                     <Select
                         items={types}
                         value={type.value}
-                        onChange={(e: any) => type.onChange(e)}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => type.onChange(e)}
                     />
                     <h2>Выберите бренд</h2>
                     <Select
                         items={brands}
                         value={brand.value}
-                        onChange={(e: any) => brand.onChange(e)}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => brand.onChange(e)}
                     />
                     <h2>Выберите изображение</h2>
                     <div>
@@ -100,7 +100,7 @@ export const DeviceModal = ({ types, brands, ...props }: DeviceModalProps): JSX.
                             className={cn(styles.input, fileError ? "errorIndicator" : null)}
                             onBlur={file.onBlur}
                             type="file"
-                            onChange={(e: any) => file.onChange(e)}
+                            onChange={(e: React.ChangeEvent<HTMLInputElement>) => file.onChange(e)}
                         />
                     </div>
                     <h2>Введите название товара</h2>
@@ -110,7 +110,7 @@ export const DeviceModal = ({ types, brands, ...props }: DeviceModalProps): JSX.
                         onBlur={name.onBlur}
                         type="text"
                         value={name.value}
-                        onChange={(e: any) => name.onChange(e)}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => name.onChange(e)}
                     />
                     <h2>Введите описание товара</h2>
                     <Input
@@ -119,7 +119,7 @@ export const DeviceModal = ({ types, brands, ...props }: DeviceModalProps): JSX.
                         onBlur={description.onBlur}
                         type="text"
                         value={description.value}
-                        onChange={(e: any) => description.onChange(e)}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => description.onChange(e)}
                     />
                     <h2>Введите цену товара</h2>
                     <Input
@@ -128,7 +128,7 @@ export const DeviceModal = ({ types, brands, ...props }: DeviceModalProps): JSX.
                         onBlur={price.onBlur}
                         type="number"
                         value={price.value}
-                        onChange={(e: any) => price.onChange(e)}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => price.onChange(e)}
                     />
                     <h2>Введите скидку на товар</h2>
                     <Input
@@ -137,7 +137,7 @@ export const DeviceModal = ({ types, brands, ...props }: DeviceModalProps): JSX.
                         onBlur={discount.onBlur}
                         type="number"
                         value={discount.value}
-                        onChange={(e: any) => discount.onChange(e)}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => discount.onChange(e)}
                     />
                     <Button
                         className={styles.btn}
@@ -150,8 +150,8 @@ export const DeviceModal = ({ types, brands, ...props }: DeviceModalProps): JSX.
                     {
                         info.map((item) => (
                             <div className={styles.properties} key={item.id}>
-                                <input type="text" value={item.title} onChange={(e: any) => changeInfo('title', e.target.value, item.id)} placeholder="Введите название свойства" />
-                                <input type="text" value={item.description} onChange={(e: any) => changeInfo('description', e.target.value, item.id)} placeholder="Введите описание свойства" />
+                                <input type="text" value={item.title} onChange={(e: React.ChangeEvent<HTMLInputElement>) => changeInfo('title', e.target.value, item.id)} placeholder="Введите название свойства" />
+                                <input type="text" value={item.description} onChange={(e: React.ChangeEvent<HTMLInputElement>) => changeInfo('description', e.target.value, item.id)} placeholder="Введите описание свойства" />
                                 <Button onClick={() => removeInfo(item.id)} className={styles.btn} size="small" color="dark">
                                     <FontAwesomeIcon
                                         icon={TrashIcon}

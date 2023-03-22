@@ -6,6 +6,5 @@ export interface CartProductProps
     extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     product: IDevice;
     value: IDevice[];
-    setValue: any;
-    // setValue: React.Dispatch<React.SetStateAction<IDevice[]>>;
+    setValue: React.Dispatch<React.SetStateAction<IDevice[]>>;
 }

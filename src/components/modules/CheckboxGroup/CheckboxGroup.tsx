@@ -22,7 +22,7 @@ export const CheckboxGroup = ({
                 className={cn(styles.container, props.className)}
             >
                 {
-                    items?.map(item => (
+                    items?.map((item: any) => (
                         <div key={item.id} className={styles.filter}>
                             <Checkbox
                                 onChange={() => dispatch(filterByFunc(item))}

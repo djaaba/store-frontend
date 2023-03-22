@@ -1,23 +1,25 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import cn from "classnames";
+import Link from "next/link";
 
 import { HeaderTopProps } from "./HeaderTop.props";
 import styles from "./HeaderTop.module.css";
+
 import {
     CompassIcon,
     PhoneIcon,
     Ptag,
     SmoothText,
-} from "../../../../components/UI";
-import Link from "next/link";
+    FontAwesomeIcon
+} from "@/components/UI";
+import { MAIN_ROUTE } from "@/utils";
 
 export const HeaderTop = ({ ...props }: HeaderTopProps): JSX.Element => {
     return (
         <section {...props} className={styles.wrapper}>
             <div className={cn(styles.top, "wrapper")}>
                 <div className={styles.nav}>
-                    <Link href="/">
-                        <SmoothText color="white" className="iconWithText">
+                    <Link href={MAIN_ROUTE}>
+                        <SmoothText color="white" className={styles.iconWithText}>
                             <FontAwesomeIcon
                                 className={styles.icon}
                                 icon={CompassIcon}
@@ -50,7 +52,7 @@ export const HeaderTop = ({ ...props }: HeaderTopProps): JSX.Element => {
                         </SmoothText>
                         {/* </Link> */}
                     </div>
-                    <SmoothText color="white" className="iconWithText">
+                    <SmoothText color="white" className={styles.iconWithText}>
                         <FontAwesomeIcon
                             className={styles.icon}
                             icon={PhoneIcon}

@@ -1,6 +1,6 @@
 import { IBanner } from "../shared/IBanner";
 
-export const banners: IBanner[] = [
+export const banners = [
     {
         id: 1,
         imgUrl: "/assets/banners/banner-1.webp",

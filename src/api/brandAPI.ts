@@ -1,5 +1,5 @@
 import { $authHost, $host } from "./"
-import jwt_decode from "jwt-decode";
+// import { IBrand } from "@/shared";
 
 export const createBrand = async (brand: any) => {
     const { data } = await $authHost.post('brand', brand)
@@ -15,7 +15,7 @@ export const getAllBrands = async () => {
     }
 }
 
-export const getBrandBySlug = async (slug: any) => {
+export const getBrandBySlug = async (slug: number) => {
     try {
         const response = await $host.get(`brand/${slug}`);
         return response.data;

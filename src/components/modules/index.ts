@@ -1,6 +1,5 @@
 export * from "./Bestsellers/Bestsellers";
 export * from "./Brands/Brands";
-export * from "./Categories/Categories";
 export * from "./Characteristics/Characteristics";
 export * from "./Product/Product";
 export * from "./Scroll/Scroll";
@@ -10,3 +9,4 @@ export * from './TopProductItem/TopProductItem';
 export * from "./TopProduct/TopProduct";
 export * from './Modals';
 export * from './CheckboxGroup/CheckboxGroup';
+export * from "./Types/Types";

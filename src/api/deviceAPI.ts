@@ -1,5 +1,5 @@
 import { $authHost, $host } from "./"
-import jwt_decode from "jwt-decode";
+// import { IDevice } from "@/shared";
 
 export const createDevice = async (device: any) => {
     const { data } = await $authHost.post('device', device)
@@ -38,7 +38,7 @@ export const getAllDevices = async (typeId?: string | number | number[], brandId
 }
 
 
-export const getDeviceBySlug = async (slug: any) => {
+export const getDeviceBySlug = async (slug: string) => {
     try {
         const response = await $host.get(`device/${slug}`);
         return response.data;

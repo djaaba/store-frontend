@@ -4,17 +4,18 @@ import CountUp from "react-countup";
 import React from 'react'
 import cn from "classnames";
 
-import { IDevice } from "@/shared";
+import styles from "./Catalog.module.css";
+import { CatalogProps } from "./Catalog.props";
+
 import { getBrandBySlug, getTypeBySlug, getDeviceBySlug } from "@/api";
 import { getPrettyPrice, getPrice } from "@/utils";
 import { Atag, Breadcrumbs, Button, FavoriteLabel, Htag, Ptag, WhiteWrapper } from "@/components/UI";
 
-import styles from "./Product.module.css";
 import { addToCart } from "@/store/cart/actions";
 
-const Item = ({ data, brand, type, ...props }: any) => {
+const Item = ({ device, brand, type, ...props }: CatalogProps) => {
     const dispatch = useDispatch();
-    const product = data
+    const product = device
     // const slice = product.characteristics.slice(0, 5);
 
     const breadcrumbs = [
@@ -34,7 +35,7 @@ const Item = ({ data, brand, type, ...props }: any) => {
         {
             id: 4,
             href: "/",
-            name: data.name,
+            name: device.name,
             active: true,
         },
     ];
@@ -135,13 +136,13 @@ export default Item;
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const id = context.params!.id;
-    const data = await getDeviceBySlug(id);
-    const brand = await getBrandBySlug(data.brandId);
-    const type = await getTypeBySlug(data.typeId);
+    const device = await getDeviceBySlug(String(id));
+    const brand = await getBrandBySlug(device.brandId);
+    const type = await getTypeBySlug(device.typeId);
 
     return {
         props: {
-            data,
+            device,
             brand,
             type
         },

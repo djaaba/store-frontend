@@ -1,5 +1,5 @@
 import { $authHost, $host } from "./"
-import jwt_decode from "jwt-decode";
+// import { IType } from "@/shared";
 
 export const createType = async (type: any) => {
     const { data } = await $authHost.post('type', type)
@@ -15,7 +15,7 @@ export const getAllTypes = async () => {
     }
 }
 
-export const getTypeBySlug = async (slug: any) => {
+export const getTypeBySlug = async (slug: number) => {
     try {
         const response = await $host.get(`type/${slug}`);
         return response.data;

@@ -1,6 +1,6 @@
-import { IProductCategory } from "../shared";
+import { IType } from "@/shared";
 
-export const productCategories: IProductCategory[] = [
+export const productCategories = [
     {
         name: "Смартфоны",
         imgUrl: "/assets/categories/phone.webp",

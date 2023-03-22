@@ -1,7 +1,7 @@
 import { $authHost, $host } from "./"
-import jwt_decode from "jwt-decode";
+import { IBanner } from "@/shared";
 
-export const createBanner = async (banner: any) => {
+export const createBanner = async (banner: IBanner) => {
     const { data } = await $authHost.post('banners', banner)
     return data;
 }

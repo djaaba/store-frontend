@@ -1,13 +1,13 @@
 import React from "react";
 import cn from "classnames";
 
-import styles from "./Catalog.module.css";
-// import { ProductProps } from "./Product.props";
+import styles from "./Product.module.css";
+import { ProductProps } from "./Product.props";
 
 import { getAllTypes, getAllBrands, getAllDevices } from "@/api";
 import { Breadcrumbs, ItemCounter, PaginationBar, Range } from "@/components/UI";
 
-import { getId, getPrice, getPrimitiveIdArray } from "@/utils";
+import { getId, getPrimitiveIdArray } from "@/utils";
 import { CheckboxGroup, Product } from "@/components/modules";
 import { toggleType } from "@/store/filter/types/actions";
 import { useSelector } from "react-redux";
@@ -28,7 +28,7 @@ const breadcrumbs = [
 
 const items: number[] = [1, 2, 10, 15]
 
-const Products = ({ types, brands, device, ...props }: any): JSX.Element => {
+const Products = ({ types, brands, device, ...props }: ProductProps): JSX.Element => {
     const [value, setValue] = React.useState<number[]>([0, 70000])
 
     const [devices, setDevices] = React.useState(device)
@@ -81,7 +81,7 @@ const Products = ({ types, brands, device, ...props }: any): JSX.Element => {
                     <div>
                         <div className={styles.products}>
                             {
-                                devices.rows?.map((item: any) => (
+                                devices.rows?.map((item: IDevice) => (
                                     <Product key={getId()} item={item} />
                                 ))
                             }

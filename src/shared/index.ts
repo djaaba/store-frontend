@@ -5,10 +5,9 @@ export * from "./IApp";
 export * from "./ISocial";
 export * from "./ICharacteristic";
 export * from "./IBreadcrumb";
-export * from "./IProductCategory";
+export * from "./IType";
 export * from "./ICatalogCategory";
 export * from "./IBrand";
 export * from "./IDevice";
 export * from "./IDeviceInfo"
 export * from "./store";
-export * from "./IType";

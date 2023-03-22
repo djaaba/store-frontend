@@ -1,6 +1,6 @@
 import { IDevice } from "../shared";
 
-export const bestsellers: IDevice[] = [
+export const bestsellers = [
     {
         id: 1,
         price: 1599,

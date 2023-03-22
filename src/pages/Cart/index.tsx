@@ -22,6 +22,7 @@ import {
     sumCountCart,
 } from "@/store/cart/selector";
 import { removeFromCart } from "@/store/cart/actions";
+import { MAIN_ROUTE } from "@/utils";
 
 const Cart = ({ className, ...props }: CartProps): JSX.Element => {
     const dispatch = useDispatch();
@@ -29,9 +30,6 @@ const Cart = ({ className, ...props }: CartProps): JSX.Element => {
     const sumCount = useSelector(sumCountCart);
 
     const [selected, setSelected] = React.useState<IDevice[]>([])
-
-    console.log('selected', selected)
-    console.log('cart', cart)
 
     return (
         <>
@@ -43,7 +41,7 @@ const Cart = ({ className, ...props }: CartProps): JSX.Element => {
                             Акции и обзоры на главной странице
                             <br /> помогут вам найти подходящие товары
                         </p>
-                        <Link href="/">
+                        <Link href={MAIN_ROUTE}>
                             <Button
                                 className={styles.btn}
                                 size="big"
@@ -75,7 +73,7 @@ const Cart = ({ className, ...props }: CartProps): JSX.Element => {
                                             onClick={() =>
                                                 selected.map(product => {
                                                     dispatch(removeFromCart(product))
-                                                    setSelected((prev: any) => prev.filter((item: any) => item.id !== product.id));
+                                                    setSelected((prev) => prev.filter((item) => item.id !== product.id));
                                                 })
                                             }
                                         >

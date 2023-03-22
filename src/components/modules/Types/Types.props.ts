@@ -1,8 +1,8 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 
-import { IProductCategory } from "../../../shared";
+import { IType } from "@/shared";
 
-export interface CategoriesProps
+export interface TypesProps
     extends DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLDivElement> {
-    categories: IProductCategory[];
+    types: IType[];
 }

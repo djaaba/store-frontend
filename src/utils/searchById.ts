@@ -1,3 +1,3 @@
-export const searchById = (item: any, array: any[]) => {
-    return array?.filter((i: any) => i.id === item.id).length ? true : false;
+export const searchById = <Type extends { id: number }>(item: Type, array: Type[]) => {
+    return array?.filter((i: Type) => i.id === item.id).length ? true : false;
 }

@@ -1,8 +1,9 @@
-import { IDevice } from "@/shared";
+import { IBrand, IDevice, IType } from "@/shared";
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 
-export interface ProductProps
+export interface CatalogProps
     extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-        data: IDevice[];
-        test: any;
+        device: IDevice;
+        brand: IBrand;
+        type: IType;
     }

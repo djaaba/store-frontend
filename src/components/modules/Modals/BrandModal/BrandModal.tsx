@@ -53,14 +53,14 @@ export const BrandModal = ({ ...props }: BrandModalProps): JSX.Element => {
                         onBlur={name.onBlur}
                         type="text"
                         value={name.value}
-                        onChange={(e: any) => name.onChange(e)}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => name.onChange(e)}
                     />
                     <h2>Выберите изображение</h2>
                     <input
                         className={cn(styles.input, fileError ? "errorIndicator" : null)}
                         onBlur={file.onBlur}
                         type="file"
-                        onChange={(e: any) => file.onChange(e)}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => file.onChange(e)}
                     />
                     <Button
                         disabled={isDisabled}

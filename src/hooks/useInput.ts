@@ -12,7 +12,7 @@ export const useInput = (initialValue: any, validation: any) => {
         setValue(e.target.value)
     }
 
-    const onBlur = (e: any) => {
+    const onBlur = () => {
         setDirty(true)
     }
 
