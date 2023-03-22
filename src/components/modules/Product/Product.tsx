@@ -95,10 +95,6 @@ export const Product = ({ item, ...props }: ProductProps): JSX.Element => {
                                     : RegularHeartIcon
                             }
                         />
-                        <FontAwesomeIcon
-                            className={styles.iconBtn}
-                            icon={SignalIcon}
-                        />
                     </div>
                 </div>
             </main>
