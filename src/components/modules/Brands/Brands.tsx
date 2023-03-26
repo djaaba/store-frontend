@@ -28,7 +28,7 @@ export const Brands = ({ brands, ...props }: BrandsProps): JSX.Element => {
                                         alt={`Лого бренда ${item.name}`}
                                         imgUrl={item.imgUrl}
                                         width={90}
-                                        height={20}
+                                        height={20} 
                                     />
                                 </Link>
                             ))}
