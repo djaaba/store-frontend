@@ -1,7 +1,7 @@
 import styles from "./Breadcrumbs.module.css";
 import { BreadcrumbsProps } from "./Breadcrumbs.props";
 
-import { IBreadcrumb } from "../../../shared";
+import { IBreadcrumb } from "@/shared";
 
 export const Breadcrumbs = ({ list }: BreadcrumbsProps): JSX.Element => {
     return (

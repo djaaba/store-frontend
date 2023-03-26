@@ -7,7 +7,7 @@ export * from "./Dictaphone/Dictaphone";
 export * from "./FavoriteLabel/FavoriteLabel";
 export * from "./Htag/Htag";
 export * from "./Icons/Icons";
-export * from "./Image/Image";
+export * from "./Picture/Picture";
 export * from "./Input/Input";
 export * from "./Select/Select";
 export * from "./Ptag/Ptag";
@@ -17,4 +17,5 @@ export * from "./SmoothText/SmoothText";
 export * from "./WhiteWrapper/WhiteWrapper";
 export * from "./ItemWithDots/ItemWithDots";
 export * from "./ItemCounter/ItemCounter";
-export * from "./Range/Range"
+export * from "./Range/Range";
+export * from "./Spinner/Spinner";

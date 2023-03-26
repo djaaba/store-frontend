@@ -1,6 +1,7 @@
 import cn from "classnames";
 import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
+import Image from "next/image";
 
 import styles from "./Product.module.css";
 import { ProductProps } from "./Product.props";
@@ -48,7 +49,15 @@ export const Product = ({ item, ...props }: ProductProps): JSX.Element => {
                 <div>
                     <div className={styles.container}>
                         <Link href={`${PRODUCT_ROUTE}${id}`}>
-                            <img className={styles.img} src={imgUrl} />
+                            <Image
+                                alt={name}
+                                height={200}
+                                width={200}
+                                loader={() => imgUrl}
+                                className={styles.img}
+                                src={imgUrl}
+                            />
+                            {/* <img className={styles.img} src={imgUrl} /> */}
                         </Link>
                         <span className={styles.shadow}>
                             {

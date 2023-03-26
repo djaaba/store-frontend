@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import styles from "./CartProduct.module.css";
 import { CartProductProps } from "./CartProduct.props";
@@ -37,7 +38,14 @@ export const CartProduct = ({
                     checked={searchById(product, value)}
                 />
                 <Link href={`${PRODUCT_ROUTE}${product.id}`}>
-                    <img className={styles.img} src={product.imgUrl} />
+                    <Image
+                        alt={product.name}
+                        height={128}
+                        width={128}
+                        loader={() => product.imgUrl}
+                        className={styles.img}
+                        src={product.imgUrl}
+                    />
                 </Link>
                 <div className={styles.container}>
                     <Htag tag="h3">{product.name}</Htag>

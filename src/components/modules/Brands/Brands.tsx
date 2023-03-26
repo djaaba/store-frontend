@@ -5,12 +5,12 @@ import styles from "./Brands.module.css";
 import { BrandsProps } from "./Brands.props";
 
 import { cutArray, PRODUCT_ROUTE } from "@/utils";
-import { Image, Htag } from "@/components/UI";
+import { Picture, Htag } from "@/components/UI";
 import { IBrand } from "@/shared";
 import { Scroll } from "../";
 import { toggleBrand } from "@/store/filter/brands/actions";
 
-export const Brands = ({ brands, ...props }: BrandsProps): JSX.Element => {
+const Brands = ({ brands, ...props }: BrandsProps): JSX.Element => {
     const items = cutArray(brands);
     const dispatch = useDispatch();
 
@@ -22,12 +22,13 @@ export const Brands = ({ brands, ...props }: BrandsProps): JSX.Element => {
                     ? items?.map((column: IBrand[], i: number) => (
                         <div key={i} className={styles.content}>
                             {column.map((item: IBrand, j: number) => (
-                                <Link href={PRODUCT_ROUTE} onClick={() => dispatch(toggleBrand(item))}>
-                                    <Image
-                                        key={j}
+                                <Link key={j} href={PRODUCT_ROUTE} onClick={() => dispatch(toggleBrand(item))}>
+                                    <Picture
                                         className={styles.img}
                                         alt={`Лого бренда ${item.name}`}
                                         imgUrl={item.imgUrl}
+                                        width={90}
+                                        height={25}
                                     />
                                 </Link>
                             ))}
@@ -36,10 +37,12 @@ export const Brands = ({ brands, ...props }: BrandsProps): JSX.Element => {
                     : brands?.map((item: IBrand, i: number) => (
                         <div key={i} className={styles.content}>
                             <Link href={PRODUCT_ROUTE} onClick={() => dispatch(toggleBrand(item))}>
-                                <Image
+                                <Picture
                                     className={styles.img}
                                     alt={`Лого бренда ${item.name}`}
                                     imgUrl={item.imgUrl}
+                                    width={90}
+                                    height={25}
                                 />
                             </Link>
                         </div>
@@ -48,3 +51,5 @@ export const Brands = ({ brands, ...props }: BrandsProps): JSX.Element => {
         </section>
     );
 };
+
+export default Brands;

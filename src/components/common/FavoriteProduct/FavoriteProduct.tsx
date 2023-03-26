@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
 import Link from "next/link";
+import Image from "next/image";
 
 import styles from "./FavoriteProduct.module.css";
 import { FavoriteProductProps } from "./FavoriteProduct.props";
@@ -25,7 +26,15 @@ export const FavoriteProduct = ({
         <>
             <div {...props} className={styles.content}>
                 <Link href={`${PRODUCT_ROUTE}${product.id}`}>
-                    <img className={styles.img} src={product.imgUrl} />
+                    {/* <img className={styles.img} src={product.imgUrl} /> */}
+                    <Image
+                        alt={product.name}
+                        height={188}
+                        width={188}
+                        loader={() => product.imgUrl}
+                        className={styles.img}
+                        src={product.imgUrl}
+                    />
                 </Link>
                 <div className={styles.container}>
                     <div className={styles.info}>

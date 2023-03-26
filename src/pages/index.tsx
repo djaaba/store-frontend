@@ -2,17 +2,44 @@ import React from 'react';
 import cn from "classnames";
 import Head from "next/head";
 import { useDispatch } from "react-redux";
+import dynamic from 'next/dynamic';
 
 import styles from "@/styles/Main.module.css";
 
 import {
-    Banner,
-    Bestsellers,
-    Brands,
-    Types,
-    TopProduct,
+    // Banner,
+    // Bestsellers,
+    // Brands,
+    // Types,
+    // TopProduct,
 } from "@/components/modules";
-import { WhiteWrapper } from "@/components/UI";
+
+const Banner = dynamic(() => import('../components/modules/Banner/Banner'), {
+    ssr: false,
+    loading: () => <Spinner />
+});
+
+const Bestsellers = dynamic(() => import('../components/modules/Bestsellers/Bestsellers'), {
+    ssr: false,
+    loading: () => <Spinner />
+});
+
+const Brands = dynamic(() => import('../components/modules/Brands/Brands'), {
+    ssr: false,
+    loading: () => <Spinner />
+});
+
+const Types = dynamic(() => import('../components/modules/Types/Types'), {
+    ssr: false,
+    loading: () => <Spinner />
+});
+
+const TopProduct = dynamic(() => import('../components/modules/TopProduct/TopProduct'), {
+    ssr: false,
+    loading: () => <Spinner />
+});
+
+import { Spinner, WhiteWrapper } from "@/components/UI";
 import { check, getAllTypes, getAllBrands, getAllBanners, getMostViewed, getBestsellers } from "@/api";
 import { IBanner, IBrand, IDevice, IType, IUserInfo } from "@/shared";
 import { login } from "@/store/user/actions";
@@ -91,6 +118,7 @@ interface MainProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDiv
 // next time props for components name "variant"
 
 // Дальнейшие планы:
+// Есть теги a, надо заменить
 // добавить логику в бэкенд для роутов с фильтрами
 // В админке для типов и брендов добавить юзЭффект, чтобы подтягивал данные
 // Добавить стейт для количества предметов на странице и номер страницы, чтобы при перезагрузке не потерялось все

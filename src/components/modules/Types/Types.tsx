@@ -5,12 +5,12 @@ import { useDispatch } from "react-redux";
 import styles from "./Types.module.css";
 import { TypesProps } from "./Types.props";
 
-import { Htag, Image } from "@/components/UI";
+import { Htag, Picture } from "@/components/UI";
 import { Scroll } from "../";
 import { PRODUCT_ROUTE } from "@/utils";
 import { toggleType } from "@/store/filter/types/actions";
 
-export const Types = ({
+const Types = ({
     types,
     ...props
 }: TypesProps): JSX.Element => {
@@ -22,10 +22,12 @@ export const Types = ({
                 {types?.map((item, index) => (
                     <React.Fragment key={index}>
                         <Link href={PRODUCT_ROUTE} onClick={() => dispatch(toggleType(item))}>
-                            <Image
+                            <Picture
                                 className={styles.img}
                                 alt={`Картинка категории ${item.name}`}
                                 imgUrl={item.imgUrl}
+                                width={120}
+                                height={120}
                             />
                         </Link>
                         <p className={styles.p}>{item.name}</p>
@@ -35,3 +37,5 @@ export const Types = ({
         </section>
     );
 };
+
+export default Types;

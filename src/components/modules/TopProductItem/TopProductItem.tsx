@@ -1,6 +1,7 @@
 import cn from "classnames";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
+import Image from "next/image";
 
 import styles from "./TopProductItem.module.css";
 import { TopProductItemProps } from "./TopProductItem.props";
@@ -19,11 +20,19 @@ export const TopProductItem = ({
     return (
         <div {...props} className={cn(className, styles.wrapper)}>
             <Link href={`${PRODUCT_ROUTE}${item.id}`}>
-                <img
+                {/* <img
                     className={styles.img}
                     src={item.imgUrl}
                     alt="Изображение товара"
                     aria-label={`Узнать больше о ${item.description}`}
+                /> */}
+                <Image
+                    alt={`Изображение товара ${item.name}`}
+                    height={200}
+                    width={200}
+                    loader={() => item.imgUrl}
+                    className={styles.img}
+                    src={item.imgUrl}
                 />
             </Link>
             <div className={styles.container}>
