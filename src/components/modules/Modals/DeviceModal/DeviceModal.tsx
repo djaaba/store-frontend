@@ -72,7 +72,6 @@ export const DeviceModal = ({ types, brands, ...props }: DeviceModalProps): JSX.
                 setInfo([])
             })
             .catch(err => {
-                console.warn(err)
                 toast.error('Ошибка добавления товара', error);
             })
     }

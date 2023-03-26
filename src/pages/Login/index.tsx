@@ -37,7 +37,6 @@ const Login = ({ className, ...props }: LoginProps): JSX.Element => {
             router.push(MAIN_ROUTE)
         }).catch(err => {
             toast.error('Ошибка авторизации', error);
-            console.warn(err);
         })
     }
 

@@ -10,7 +10,7 @@ import { Scroll } from "../";
 import { PRODUCT_ROUTE } from "@/utils";
 import { toggleType } from "@/store/filter/types/actions";
 
-const Types = ({
+export const Types = ({
     types,
     ...props
 }: TypesProps): JSX.Element => {
@@ -37,5 +37,3 @@ const Types = ({
         </section>
     );
 };
-
-export default Types;

@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import styles from "./Banner.module.css";
 import { BannerProps } from "./Banner.props";
 
-const Banner = ({ banners, ...props }: BannerProps): JSX.Element => {
+export const Banner = ({ banners, ...props }: BannerProps): JSX.Element => {
     return (
         <div {...props} className={styles.container}>
             <Swiper
@@ -30,5 +30,3 @@ const Banner = ({ banners, ...props }: BannerProps): JSX.Element => {
         </div>
     );
 };
-
-export default Banner;

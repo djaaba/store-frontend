@@ -27,7 +27,7 @@ const breakpoints = {
     },
 };
 
-const TopProduct = ({
+export const TopProduct = ({
     items,
     ...props
 }: TopProductProps): JSX.Element => {
@@ -56,5 +56,3 @@ const TopProduct = ({
         </WhiteWrapper>
     );
 };
-
-export default TopProduct;

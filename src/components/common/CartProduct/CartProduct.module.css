@@ -65,7 +65,7 @@
 }
 
 .prevPrice {
-    color: rgb(162, 154, 142);
+    color: var(--light-gray-hover);
     text-decoration: line-through;
 }
 

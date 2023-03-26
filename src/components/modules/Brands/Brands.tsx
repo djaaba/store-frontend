@@ -10,7 +10,7 @@ import { IBrand } from "@/shared";
 import { Scroll } from "../";
 import { toggleBrand } from "@/store/filter/brands/actions";
 
-const Brands = ({ brands, ...props }: BrandsProps): JSX.Element => {
+export const Brands = ({ brands, ...props }: BrandsProps): JSX.Element => {
     const items = cutArray(brands);
     const dispatch = useDispatch();
 
@@ -28,7 +28,7 @@ const Brands = ({ brands, ...props }: BrandsProps): JSX.Element => {
                                         alt={`Лого бренда ${item.name}`}
                                         imgUrl={item.imgUrl}
                                         width={90}
-                                        height={25}
+                                        height={20}
                                     />
                                 </Link>
                             ))}
@@ -51,5 +51,3 @@ const Brands = ({ brands, ...props }: BrandsProps): JSX.Element => {
         </section>
     );
 };
-
-export default Brands;

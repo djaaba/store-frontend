@@ -19,7 +19,6 @@ const Admin = ({ types, brands, className, ...props }: AdminProps): JSX.Element 
         check().then(data => {
             dispatch(login(data as IUserInfo))
         }).catch(err => {
-            console.warn(err)
         })
     }, [])
 

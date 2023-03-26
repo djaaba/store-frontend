@@ -20,12 +20,6 @@ export const TopProductItem = ({
     return (
         <div {...props} className={cn(className, styles.wrapper)}>
             <Link href={`${PRODUCT_ROUTE}${item.id}`}>
-                {/* <img
-                    className={styles.img}
-                    src={item.imgUrl}
-                    alt="Изображение товара"
-                    aria-label={`Узнать больше о ${item.description}`}
-                /> */}
                 <Image
                     alt={`Изображение товара ${item.name}`}
                     height={200}

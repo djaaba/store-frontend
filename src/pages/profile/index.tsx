@@ -26,7 +26,6 @@ const Profile = ({ className, ...props }: ProfileProps): JSX.Element => {
     const handleLogout = () => {
         localStorage.removeItem('token');
         dispatch(logout());
-        console.log(userInfo)
         toast.success('Вы вышли из аккаунта!', success);
     }
 

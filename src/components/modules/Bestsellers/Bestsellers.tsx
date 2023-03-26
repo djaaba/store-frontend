@@ -4,7 +4,7 @@ import { BestsellersProps } from "./Bestsellers.props";
 import { Htag } from "../../UI";
 import { Product, Scroll } from "..";
 
-const Bestsellers = ({
+export const Bestsellers = ({
     items,
     ...props
 }: BestsellersProps): JSX.Element => {
@@ -21,5 +21,3 @@ const Bestsellers = ({
         </>
     );
 };
-
-export default Bestsellers;

@@ -36,7 +36,6 @@ export const TypeModal = ({ ...props }: TypeModalProps): JSX.Element => {
                 name.reset();
             })
             .catch(err => {
-                console.warn(err)
                 toast.error('Ошибка добавления типа', error);
             })
     }

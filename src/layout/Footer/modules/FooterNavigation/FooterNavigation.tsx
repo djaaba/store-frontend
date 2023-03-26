@@ -17,7 +17,7 @@ export const FooterNavigation = ({
 
     return (
         <>
-            <div {...props} className={styles.content}>
+            <ul {...props} className={styles.content}>
                 {data.map((item) => (
                     <li className={styles.elem} key={getId()}>
                         <div
@@ -38,9 +38,9 @@ export const FooterNavigation = ({
                                 <i />
                             </div>
                         </div>
-                        <div className={styles.mobile}>
+                        <ul className={styles.mobile}>
                             {openedItem === item.title && (
-                                <div>
+                                <>
                                     {item.links.map((obj) => (
                                         <li key={getId()} className={styles.li}>
                                             <Link
@@ -52,9 +52,9 @@ export const FooterNavigation = ({
                                             </Link>
                                         </li>
                                     ))}
-                                </div>
+                                </>
                             )}
-                        </div>
+                        </ul>
                         <ul className={cn(styles.ul, styles.desk)}>
                             {item.links.map((obj) => (
                                 <li key={getId()} className={styles.li}>
@@ -71,7 +71,7 @@ export const FooterNavigation = ({
                         </ul>
                     </li>
                 ))}
-            </div>
+            </ul>
         </>
     );
 };

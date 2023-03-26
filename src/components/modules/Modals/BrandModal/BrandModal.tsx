@@ -35,7 +35,6 @@ export const BrandModal = ({ ...props }: BrandModalProps): JSX.Element => {
                 name.reset();
             })
             .catch(err => {
-                console.warn(err)
                 toast.error('Ошибка добавления бренда', error);
             })
     }

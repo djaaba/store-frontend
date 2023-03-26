@@ -38,7 +38,6 @@ const Registration = ({ className, ...props }: RegistrationProps): JSX.Element =
             router.push(MAIN_ROUTE)
             toast.success('Вы зарегистрировались!', success);
         } catch (err) {
-            console.log(err.response.data.message)
             toast.error('Что-то пошло не так', error);
         }
     }
