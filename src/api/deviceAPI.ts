@@ -15,6 +15,19 @@ export const getMostViewed = async () => {
     }
 }
 
+export const getByMatch = async (word: string) => {
+    try {
+        const response = await $host.get("device/match", {
+            params: {
+                word
+            }
+        });
+        return response.data;
+    } catch (error) {
+        return [];
+    }
+}
+
 export const getBestsellers = async () => {
     try {
         const response = await $host.get("device/bestsellers");

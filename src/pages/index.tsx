@@ -15,14 +15,17 @@ import {
 } from "@/components/modules";
 
 import { WhiteWrapper } from "@/components/UI";
-import { check, getAllTypes, getAllBrands, getAllBanners, getMostViewed, getBestsellers } from "@/api";
+import { check, getAllTypes, getAllBrands, getAllBanners, getMostViewed, getBestsellers, getByMatch } from "@/api";
 import { IBanner, IBrand, IDevice, IType, IUserInfo } from "@/shared";
 import { login } from "@/store/user/actions";
 
-function Main({ mostViewed, bestsellers, types, brands, banners }: MainProps) {
+function Main({ mostViewed, bestsellers, types, brands, banners, match }: MainProps) {
     const dispatch = useDispatch();
 
+    
     React.useEffect(() => {
+        console.log(bestsellers)
+        console.log(match)
         check().then(data => {
             dispatch(login(data as IUserInfo))
         }).catch(err => {
@@ -66,6 +69,7 @@ export async function getServerSideProps() {
     const banners = await getAllBanners();
     const mostViewed = await getMostViewed();
     const bestsellers = await getBestsellers();
+    const match = await(getByMatch("описани"));
 
     return {
         props: {
@@ -73,7 +77,8 @@ export async function getServerSideProps() {
             brands,
             banners,
             mostViewed,
-            bestsellers
+            bestsellers,
+            match
         },
     };
 }
