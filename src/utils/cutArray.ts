@@ -5,8 +5,8 @@ export const cutArray = <Type>(items: Type[]) => {
     const newArr = [];
 
     do {
-        newArr.push(items.slice(i, i + 2))
+        newArr.push(items?.slice(i, i + 2))
         i += 2;
-    } while (i < items.length)
+    } while (i < items?.length)
     return newArr;
 }

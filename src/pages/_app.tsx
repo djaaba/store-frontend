@@ -1,20 +1,25 @@
 import React from "react";
 import type { AppProps } from "next/app";
+import { Roboto } from '@next/font/google';
 import { Provider } from "react-redux";
 import NextNProgress from "nextjs-progressbar";
 import "regenerator-runtime/runtime";
 import { ToastContainer } from "react-toastify";
 
-import "@fontsource/roboto/500.css";
-import "@fontsource/roboto";
 import "normalize.css";
 import "@/styles/globals.css";
 import 'react-toastify/dist/ReactToastify.css';
 
 import { rootStore } from "@/store/rootStore";
-import { Layout } from "@/layout/Layout";
+import { Layout } from "@/components/layout/Layout";
+
+const roboto = Roboto({
+    weight: ['400', '500', '700'],
+    subsets: ['latin'],
+})
 
 export default function App({ Component, pageProps }: AppProps) {
+
     return (
         <>
             <React.StrictMode>
@@ -28,7 +33,7 @@ export default function App({ Component, pageProps }: AppProps) {
                     // showAfterMs={300}
                 /> */}
                 <Provider store={rootStore}>
-                    <Layout>
+                    <Layout style={roboto.style}>
                         <Component {...pageProps} />
                     </Layout>
                 </Provider>

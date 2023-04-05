@@ -7,15 +7,15 @@ import { Header } from "./Header/Header";
 import { Footer } from "./Footer/Footer";
 
 export const Layout = ({
-    className,
     children,
+    style,
     ...props
 }: LayoutProps): JSX.Element => {
     return (
-        <React.Fragment {...props}>
+        <div style={style}>
             <Header />
             <main className={styles.main}>{children}</main>
             <Footer />
-        </React.Fragment>
+        </div>
     );
 };
