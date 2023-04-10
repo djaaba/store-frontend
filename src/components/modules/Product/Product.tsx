@@ -22,17 +22,8 @@ import { IDevice } from "@/shared";
 
 export const Product = ({ item, ...props }: ProductProps): JSX.Element => {
     const favorites = useSelector(selectFavorite);
-    const {
-        imgUrl,
-        name,
-        description,
-        count,
-        discount,
-        id,
-        price,
-    } = item;
 
-    const discountPrice = getPrice(price, discount);
+    const discountPrice = getPrice(item.price, item.discount);
     const dispatch = useDispatch();
 
     const toggle = (item: IDevice) => {
@@ -48,30 +39,30 @@ export const Product = ({ item, ...props }: ProductProps): JSX.Element => {
             <main className={styles.main}>
                 <div>
                     <div className={styles.container}>
-                        <Link href={`${PRODUCT_ROUTE}${id}`}>
+                        <Link href={`${PRODUCT_ROUTE}${item.id}`}>
                             <Image
-                                alt={name}
+                                alt={item.name}
                                 height={200}
                                 width={200}
-                                loader={() => imgUrl}
+                                loader={() => item.imgUrl}
                                 className={styles.img}
-                                src={imgUrl}
+                                src={item.imgUrl}
                             />
                             {/* <img className={styles.img} src={imgUrl} /> */}
                         </Link>
                         <span className={styles.shadow}>
                             {
-                                discount ?
+                                item.discount ?
                                     <div className={styles.discount}>
                                         <p className={styles.discountText}>
-                                            -{discount}%
+                                            -{item.discount}%
                                         </p>
                                     </div>
                                     : ""
                             }
                         </span>
                     </div>
-                    <p className={cn(styles.p, styles.title)}>{name}</p>
+                    <p className={cn(styles.p, styles.title)}>{item.name}</p>
                 </div>
                 <div>
                     {/* <p className={styles.rating}>4,4</p> */}
@@ -80,9 +71,9 @@ export const Product = ({ item, ...props }: ProductProps): JSX.Element => {
                             {getPrettyPrice(discountPrice)}
                         </p>
                         {
-                            discount ?
+                            item.discount ?
                                 <p className={styles.prevPrice}>
-                                    {getPrettyPrice(price)}
+                                    {getPrettyPrice(item.price)}
                                 </p>
                                 : ""
                         }

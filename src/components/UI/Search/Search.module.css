@@ -8,6 +8,11 @@
     min-width: 200px;
 }
 
+.input:focus {
+    outline-color: var(--gray);
+    outline-width: 1px;
+}
+
 .inputMicro {
     position: absolute;
     right: 80px;
@@ -32,4 +37,27 @@
     right: 6px;
     top: 5px;
     width: 40px;
+}
+
+.container {
+    position: relative;
+}
+
+.resultList {
+    position: absolute;
+    background: var(--white);
+    z-index: 1;
+    box-shadow: 0 0px 10px #0000003a;
+    border-radius: 4px;
+    width: 100%;
+    max-height: 126px;
+    overflow-y: auto;
+}
+
+.result {
+    padding: 12px 16px;
+}
+
+.result:hover {
+    background-color: var(--light-gray);
 }

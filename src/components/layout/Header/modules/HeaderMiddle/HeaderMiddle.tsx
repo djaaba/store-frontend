@@ -1,5 +1,6 @@
 import Link from "next/link";
 import cn from "classnames";
+import React from 'react';
 
 import styles from "./HeaderMiddle.module.css";
 import { HeaderMiddleProps } from "./HeaderMiddle.props";
@@ -16,6 +17,9 @@ export const HeaderMiddle = ({
     ...props
 }: HeaderMiddleProps): JSX.Element => {
     const navLinks: Array<INav> = navigation;
+    const [query, setQuery] = React.useState<string>("");
+
+    
 
     return (
         <section {...props} className={cn(styles.wrapper, "wrapper")}>
@@ -30,6 +34,8 @@ export const HeaderMiddle = ({
                 <Search
                     className={styles.input}
                     placeholder={inputPlaceholder}
+                    value={query}
+                    setValue={setQuery}
                 />
             </div>
             <HeaderNavigation navLinks={navLinks} />

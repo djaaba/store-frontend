@@ -11,3 +11,4 @@ export * from "./IBrand";
 export * from "./IDevice";
 export * from "./IDeviceInfo"
 export * from "./store";
+export * from "./IMeta";

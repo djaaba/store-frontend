@@ -54,10 +54,15 @@ hr {
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 a:hover {
     color: inherit;
+}
+
+a:visited {
+    color: black;
 }
 
 p,
@@ -164,16 +169,16 @@ p {
 
 /* hyper popup */
 
-.hm_hyperCloseIconWrapper.right.top{
+.hm_hyperCloseIconWrapper.right.top {
     transform: none;
-} 
+}
 
-.hm_hyperModalContentWrapper > div.hm_hyperCloseIconWrapper{
+.hm_hyperModalContentWrapper>div.hm_hyperCloseIconWrapper {
     width: 20px;
     height: 20px;
 }
 
-.hm_hyperModalWrapper > div.hm_hyperModalContentWrapper {
+.hm_hyperModalWrapper>div.hm_hyperModalContentWrapper {
     height: 40%;
     padding: 20px;
     height: auto;
@@ -181,7 +186,7 @@ p {
     width: 500px;
 }
 
-.hm_hyperModalWrapper.hm_visible{
+.hm_hyperModalWrapper.hm_visible {
     z-index: 3;
 }
 
@@ -241,10 +246,11 @@ div[class~="react-horizontal-scrolling-menu--arrow-left"] {
     z-index: 2;
 }
 
-div[class~="react-horizontal-scrolling-menu--arrow-right"] > button,
-div[class~="react-horizontal-scrolling-menu--arrow-left"] > button {
+div[class~="react-horizontal-scrolling-menu--arrow-right"]>button,
+div[class~="react-horizontal-scrolling-menu--arrow-left"]>button {
     box-shadow: rgb(0 0 0 / 23%) 0px 0px 10px;
 }
+
 /* arrow */
 
 /* scroll */
@@ -266,13 +272,13 @@ div[class~="react-horizontal-scrolling-menu--arrow-left"] > button {
 
 /* error */
 
-.errorMessage{
+.errorMessage {
     position: absolute;
     color: var(--error);
     top: 0px;
 }
 
-input.errorIndicator{
+input.errorIndicator {
     border: 1px solid var(--error);
 }
 

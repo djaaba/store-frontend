@@ -10,6 +10,7 @@ import { check, getAllBrands, getAllTypes } from "@/api";
 import { IBrand, IType, IUserInfo } from "@/shared";
 
 import { login } from "@/store/user/actions";
+import { Meta } from "@/components/seo/Meta";
 
 const Admin = ({ types, brands, className, ...props }: AdminProps): JSX.Element => {
 
@@ -24,6 +25,7 @@ const Admin = ({ types, brands, className, ...props }: AdminProps): JSX.Element 
 
     return (
         <React.Fragment {...props}>
+            <Meta title={"Панель администратора"}/>
             <main className={cn(styles.main, "wrapper")}>
                 <BrandModal />
                 <DeviceModal brands={brands} types={types} />

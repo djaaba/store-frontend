@@ -20,14 +20,12 @@ import { login } from "@/store/user/actions";
 export const Home = ({ mostViewed, bestsellers, types, brands, banners, match }: HomeProps) => {
     const dispatch = useDispatch();
 
-
     React.useEffect(() => {
         console.log(bestsellers)
         console.log(match)
         check().then(data => {
             dispatch(login(data as IUserInfo))
-        }).catch(err => {
-        })
+        }).catch(err => { })
     }, [])
 
     return (
