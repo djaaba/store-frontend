@@ -19,3 +19,4 @@ export * from "./ItemWithDots/ItemWithDots";
 export * from "./ItemCounter/ItemCounter";
 export * from "./Range/Range";
 export * from "./Spinner/Spinner";
+export * from "./Discount/Discount";

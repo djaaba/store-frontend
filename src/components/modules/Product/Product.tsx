@@ -48,7 +48,6 @@ export const Product = ({ item, ...props }: ProductProps): JSX.Element => {
                                 className={styles.img}
                                 src={item.imgUrl}
                             />
-                            {/* <img className={styles.img} src={imgUrl} /> */}
                         </Link>
                         <span className={styles.shadow}>
                             {

@@ -19,7 +19,7 @@ export const HeaderMiddle = ({
     const navLinks: Array<INav> = navigation;
     const [query, setQuery] = React.useState<string>("");
 
-    
+
 
     return (
         <section {...props} className={cn(styles.wrapper, "wrapper")}>

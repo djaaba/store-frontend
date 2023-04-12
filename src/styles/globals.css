@@ -54,15 +54,11 @@ hr {
 
 a {
     text-decoration: none;
-    color: black;
+    /* color: black; */
 }
 
 a:hover {
     color: inherit;
-}
-
-a:visited {
-    color: black;
 }
 
 p,

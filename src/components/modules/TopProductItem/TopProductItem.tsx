@@ -8,7 +8,7 @@ import { TopProductItemProps } from "./TopProductItem.props";
 
 import { addToCart } from "@/store/cart/actions";
 import { getPrettyPrice, getPrice, PRODUCT_ROUTE } from "@/utils";
-import { Button, CartShoppingIcon, FontAwesomeIcon, Htag } from "@/components/UI";
+import { Button, CartShoppingIcon, Discount, FontAwesomeIcon, Htag } from "@/components/UI";
 
 export const TopProductItem = ({
     item,
@@ -31,18 +31,7 @@ export const TopProductItem = ({
             </Link>
             <div className={styles.container}>
                 <div className={styles.content}>
-                    {
-                        item.discount ?
-                            <div className={styles.discount}>
-                                <p className={cn(styles.discountText, styles.count)}>
-                                    Скидка
-                                </p>
-                                <p className={cn(styles.line, styles.count)}>
-                                    -{item.discount}%
-                                </p>
-                            </div>
-                            : ""
-                    }
+                    <Discount item={item} />
                     <div className={styles.price}>
                         <Htag tag="h2" className={styles.curPrice}>
                             {getPrettyPrice(getPrice(item.price, item.discount))}
@@ -64,6 +53,7 @@ export const TopProductItem = ({
                 size="medium"
                 color={"red"}
                 icon
+                className={styles.btn}
             >
                 <FontAwesomeIcon icon={CartShoppingIcon} />В Корзину
             </Button>

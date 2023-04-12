@@ -60,7 +60,6 @@ export const Search = ({ placeholder, value, setValue }: SearchProps): JSX.Eleme
                         className={styles.inputCross}
                     />
                     <Button
-                        onClick={() => console.log(value)}
                         size="small"
                         color="red"
                         className={styles.inputButton}

@@ -4,9 +4,9 @@ import cn from "classnames";
 import styles from "./Characteristics.module.css";
 import { CharacteristicsProps } from "./Characteristics.props";
 
-import { ICharacteristic } from "../../../shared";
-import { getId } from "../../../utils";
-import { ItemWithDots } from "../../UI/";
+import { ICharacteristic } from "@/shared";
+import { getId } from "@/utils";
+import { ItemWithDots } from "@/components/UI";
 
 export const Characteristics = ({
     characteristics,
@@ -17,17 +17,17 @@ export const Characteristics = ({
 
     return (
         <React.Fragment {...props}>
-            {characteristics.length > 5 ? (
+            {characteristics?.length > 5 ? (
                 <section className={cn(styles.container, className)}>
                     <div>
                         {characteristics
                             .slice(0, length)
                             .map((item: ICharacteristic) => (
                                 <ItemWithDots
-                                    key={getId()}
+                                    key={item.id}
                                     size="p"
                                     title={item.title}
-                                    subtitle={item.subtitle}
+                                    subtitle={item.description}
                                 />
                             ))}
                     </div>
@@ -36,22 +36,22 @@ export const Characteristics = ({
                             .slice(length)
                             .map((item: ICharacteristic) => (
                                 <ItemWithDots
-                                    key={getId()}
+                                    key={item.id}
                                     size="p"
                                     title={item.title}
-                                    subtitle={item.subtitle}
+                                    subtitle={item.description}
                                 />
                             ))}
                     </div>
                 </section>
             ) : (
                 <section className={className}>
-                    {characteristics.map((item: ICharacteristic) => (
+                    {characteristics?.map((item: ICharacteristic) => (
                         <ItemWithDots
-                            key={getId()}
+                            key={item.id}
                             size="p"
                             title={item.title}
-                            subtitle={item.subtitle}
+                            subtitle={item.description}
                         />
                     ))}
                 </section>

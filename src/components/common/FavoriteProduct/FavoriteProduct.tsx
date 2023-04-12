@@ -26,7 +26,6 @@ export const FavoriteProduct = ({
         <>
             <div {...props} className={styles.content}>
                 <Link href={`${PRODUCT_ROUTE}${product.id}`}>
-                    {/* <img className={styles.img} src={product.imgUrl} /> */}
                     <Image
                         alt={product.name}
                         height={188}

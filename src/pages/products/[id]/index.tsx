@@ -4,20 +4,19 @@ import CountUp from "react-countup";
 import React from 'react'
 import cn from "classnames";
 
-import styles from "./Catalog.module.css";
+import styles from "./Product.module.css";
 // import { CatalogProps } from "./Catalog.props";
 
 import { IBrand, IDevice, IType } from "@/shared";
-import { getBrandBySlug, getTypeBySlug, getDeviceBySlug } from "@/api";
+import { getBrandBySlug, getTypeBySlug, getDeviceBySlug, getAllDevices } from "@/api";
 import { getPrettyPrice, getPrice } from "@/utils";
 import { Atag, Breadcrumbs, Button, FavoriteLabel, Htag, Ptag, WhiteWrapper } from "@/components/UI";
-
 import { addToCart } from "@/store/cart/actions";
+import { Characteristics } from "@/components/modules";
 
 const Item = ({ device, brand, type, ...props }: CatalogProps) => {
     const dispatch = useDispatch();
-    const product = device
-    // const slice = product.characteristics.slice(0, 5);
+    const product = device;
 
     const breadcrumbs = [
         { id: 1, name: "Главная", href: "/", active: false },
@@ -105,10 +104,10 @@ const Item = ({ device, brand, type, ...props }: CatalogProps) => {
                                 </div>
                             </WhiteWrapper>
                         </div>
-                        {/* <Characteristics
+                        <Characteristics
                             className={styles.characteristics}
-                            characteristics={slice}
-                        /> */}
+                            characteristics={device.info}
+                        />
                         <Atag
                             aria-label="Узнать подробнее обо всех характеристиках"
                             className={styles.mobile}
@@ -126,7 +125,7 @@ const Item = ({ device, brand, type, ...props }: CatalogProps) => {
                 </div>
                 <div className={styles.description}>
                     <Htag tag="h1">Характеристики</Htag>
-                    {/* <Characteristics characteristics={characteristics} /> */}
+                    <Characteristics characteristics={device.info} />
                 </div>
             </main>
         </React.Fragment>
@@ -139,7 +138,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     const device = await getDeviceBySlug(String(id));
     const brand = await getBrandBySlug(device.brandId);
     const type = await getTypeBySlug(device.typeId);
-    
+
     return {
         props: {
             device,
@@ -153,7 +152,7 @@ export default Item;
 
 interface CatalogProps
     extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-        device: IDevice;
-        brand: IBrand;
-        type: IType;
-    }
+    device: IDevice;
+    brand: IBrand;
+    type: IType;
+}

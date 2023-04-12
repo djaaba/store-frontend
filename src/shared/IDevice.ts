@@ -1,3 +1,5 @@
+import { ICharacteristic } from "./ICharacteristic";
+
 export interface IDevice {
     price: number;
     discount: number;
@@ -8,10 +10,10 @@ export interface IDevice {
     typeId: number;
     count: number;
     id: number;
-    info?: [];
-    viewCount?: number;
-    discountPrice?: number;
-    purchasesCount?: number;
+    info: ICharacteristic[];
+    viewCount: number;
+    discountPrice: number;
+    purchasesCount: number;
 }
 
 export interface IPaginationDevice {

@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import styles from "./Admin.module.css";
 // import { AdminProps } from "./Admin.props";
 
-import { BrandModal, DeviceModal, TypeModal } from "@/components/modules";
+import { BrandModal, DeviceModal, TypeModal, BannerModal } from "@/components/modules";
 import { check, getAllBrands, getAllTypes } from "@/api";
 import { IBrand, IType, IUserInfo } from "@/shared";
 
@@ -21,15 +21,17 @@ const Admin = ({ types, brands, className, ...props }: AdminProps): JSX.Element 
             dispatch(login(data as IUserInfo))
         }).catch(err => {
         })
+
     }, [])
 
     return (
         <React.Fragment {...props}>
-            <Meta title={"Панель администратора"}/>
+            <Meta title={"Панель администратора"} />
             <main className={cn(styles.main, "wrapper")}>
                 <BrandModal />
                 <DeviceModal brands={brands} types={types} />
                 <TypeModal />
+                <BannerModal />
             </main>
         </React.Fragment>
     );

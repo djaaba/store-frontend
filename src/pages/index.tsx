@@ -45,6 +45,7 @@ export async function getServerSideProps() {
 // next time export default
 // next time props for components name "variant"
 // next time aria-label="Aria Name" for buttons
+// next time use Omit, Record and etc
 
 // Дальнейшие планы:
 // img => Image
