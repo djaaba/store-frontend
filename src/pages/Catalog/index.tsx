@@ -9,6 +9,7 @@ import styles from "./Catalog.module.css";
 import { IBrand, IDevice, IType } from "@/shared";
 import { getAllBrands, getAllDevices, getAllTypes } from "@/api";
 import { getId, PRODUCT_ROUTE } from "../../utils";
+import { Meta } from "@/components/seo/Meta";
 
 const Catalog = ({
     className,
@@ -29,6 +30,7 @@ const Catalog = ({
 
     return (
         <React.Fragment {...props}>
+            <Meta title="Каталог" description="Страница каталога" />
             <main className={cn(styles.main, "wrapper")}>
                 <div className={styles.content}>
                     <ul className={styles.categories}>

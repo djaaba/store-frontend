@@ -15,6 +15,7 @@ import { useInput } from "@/hooks";
 import { IUserInfo } from "@/shared";
 import { login as userLogin } from "@/store/user/actions";
 import { error, success } from "@/utils";
+import { Meta } from "@/components/seo/Meta";
 
 const Login = ({ className, ...props }: LoginProps): JSX.Element => {
     const email = useInput('', { isEmpty: true, minLength: 3, isEmail: true })
@@ -42,6 +43,7 @@ const Login = ({ className, ...props }: LoginProps): JSX.Element => {
 
     return (
         <React.Fragment {...props}>
+            <Meta title="Войти в аккаунт" description="Страница логина" />
             <main className={cn(styles.main, "wrapper")}>
                 <div className={styles.content}>
                     <Htag tag="h2">Авторизация</Htag>

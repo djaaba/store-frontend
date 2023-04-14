@@ -8,12 +8,14 @@ import { FavoriteProduct } from "../../components/common/FavoriteProduct/Favorit
 import { getId } from "../../utils";
 import { IDevice } from "../../shared";
 import { selectFavorite } from "../../store/favorite/selector";
+import { Meta } from "@/components/seo/Meta";
 
 const Favorite = ({ className, ...props }: FavoriteProps): JSX.Element => {
     const favorite = useSelector(selectFavorite);
 
     return (
         <>
+            <Meta title="Избранное" description="Страница Избранного" />
             <main {...props} className={styles.main}>
                 <div className="wrapper">
                     {!favorite.length ? (

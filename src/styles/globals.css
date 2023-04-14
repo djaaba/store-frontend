@@ -25,9 +25,15 @@
     --white: #fff;
     --black: #000;
 
-    --red: #e31235;
-    --red-hover: #bd0f2c;
-    --red-click: #9c0c24;
+    --like: #e31235;
+
+    /* --red: #e31235; */
+    /* --red-hover: #bd0f2c; */
+    /* --red-click: #9c0c24; */
+    --red: #0053ae;
+    --red-hover: #0053ae;
+    --red-click: #003672;
+
     --blue: #007aff;
     --blue-hover: #0053ae;
     --blue-click: #003672;

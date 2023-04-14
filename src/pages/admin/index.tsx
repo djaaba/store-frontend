@@ -26,7 +26,7 @@ const Admin = ({ types, brands, className, ...props }: AdminProps): JSX.Element 
 
     return (
         <React.Fragment {...props}>
-            <Meta title={"Панель администратора"} />
+            <Meta title="Панель администратора" description="Панель администратора" />
             <main className={cn(styles.main, "wrapper")}>
                 <BrandModal />
                 <DeviceModal brands={brands} types={types} />

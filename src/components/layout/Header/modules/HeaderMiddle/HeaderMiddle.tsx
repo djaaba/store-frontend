@@ -19,14 +19,12 @@ export const HeaderMiddle = ({
     const navLinks: Array<INav> = navigation;
     const [query, setQuery] = React.useState<string>("");
 
-
-
     return (
         <section {...props} className={cn(styles.wrapper, "wrapper")}>
             <Link href={MAIN_ROUTE}>
                 <img
                     className={styles.img}
-                    src="/assets/header/logo.svg"
+                    src="/logo.png"
                     alt="Логотип магазина"
                 />
             </Link>

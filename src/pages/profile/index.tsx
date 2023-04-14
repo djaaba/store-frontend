@@ -12,6 +12,7 @@ import { ADMIN_ROUTE, LOGIN_ROUTE, success } from "@/utils";
 import { Button } from "@/components/UI";
 import { selectUser } from "@/store/user/selector";
 import { logout } from "@/store/user/actions";
+import { Meta } from "@/components/seo/Meta";
 
 const Profile = ({ className, ...props }: ProfileProps): JSX.Element => {
     const userInfo = useSelector(selectUser);
@@ -31,6 +32,7 @@ const Profile = ({ className, ...props }: ProfileProps): JSX.Element => {
 
     return (
         <React.Fragment {...props}>
+            <Meta title={`Профиль ${userInfo._user.name}`} description="Информация об аккаунте"/>
             <main className={cn(styles.main, "wrapper")}>
                 {
                     userInfo._user?.role === "ADMIN" ?

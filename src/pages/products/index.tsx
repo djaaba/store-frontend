@@ -15,6 +15,7 @@ import { selectTypesFilter } from "@/store/filter/types/selector";
 import { selectBrandsFilter } from "@/store/filter/brands/selector";
 import { toggleBrand } from "@/store/filter/brands/actions";
 import { IBrand, IDevice, IPaginationDevice, IType } from "@/shared";
+import { Meta } from "@/components/seo/Meta";
 
 const breadcrumbs = [
     { id: 1, name: "Главная", href: "/", active: false },
@@ -26,16 +27,13 @@ const breadcrumbs = [
     },
 ];
 
-const items: number[] = [1, 2, 10, 15]
+const items: number[] = [1, 2, 10]
 
 const Products = ({ types, brands, device, ...props }: ProductProps): JSX.Element => {
     const [value, setValue] = React.useState<number[]>([0, 70000])
-
     const [devices, setDevices] = React.useState(device)
-
     const [page, setPage] = React.useState<number>(1);
     const [itemsPerPage, setItemsPerPage] = React.useState<number>(items[0]);
-
     const typesFilter = useSelector(selectTypesFilter);
     const brandsFilter = useSelector(selectBrandsFilter);
 
@@ -43,12 +41,8 @@ const Products = ({ types, brands, device, ...props }: ProductProps): JSX.Elemen
         getAllDevices(getPrimitiveIdArray(typesFilter), getPrimitiveIdArray(brandsFilter), page, value[0], value[1], itemsPerPage)
             .then(data => {
                 setDevices(data);
-                // if (typesFilter.length || brandsFilter.length) {
-                //     setPage(1)
-                // }
-
             })
-    }, [page, value[0], value[1]/*, typesFilter.length, brandsFilter.length*/])
+    }, [page, value[0], value[1]])
 
     React.useEffect(() => {
         getAllDevices(getPrimitiveIdArray(typesFilter), getPrimitiveIdArray(brandsFilter), page, value[0], value[1], itemsPerPage)
@@ -61,6 +55,7 @@ const Products = ({ types, brands, device, ...props }: ProductProps): JSX.Elemen
 
     return (
         <React.Fragment {...props}>
+            <Meta title="Товары" description="Список товаров"/>
             <main className={cn(styles.main, "wrapper")}>
                 <Breadcrumbs list={breadcrumbs} />
                 <div className={styles.content}>
@@ -82,7 +77,7 @@ const Products = ({ types, brands, device, ...props }: ProductProps): JSX.Elemen
                         <div className={styles.products}>
                             {
                                 devices.rows?.map((item: IDevice) => (
-                                    <Product key={getId()} item={item} />
+                                    <Product className={styles.card} key={getId()} item={item} />
                                 ))
                             }
                         </div>
@@ -102,6 +97,7 @@ const Products = ({ types, brands, device, ...props }: ProductProps): JSX.Elemen
     );
 };
 
+export default Products;
 
 export async function getServerSideProps() {
     const types = await getAllTypes();
@@ -116,9 +112,6 @@ export async function getServerSideProps() {
         },
     };
 }
-
-
-export default Products;
 
 interface ProductProps
     extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {

@@ -15,14 +15,28 @@
 }
 
 .img {
-    width: 117px;
-    height: 44px;
+    width: 320px;
+    height: 25px;
 }
 
 .btn{
     width: auto;
 }
 
+@media (max-width: 1024px) {
+    .img {
+        width: 205px;
+        height: 16px;
+    }
+}
+
+
+@media (max-width: 767px) {
+    .img {
+        width: 165px;
+        height: 13px;
+    }
+}
 @media (max-width: 425px) {
     .img {
         display: none;

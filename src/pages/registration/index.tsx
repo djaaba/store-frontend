@@ -15,6 +15,7 @@ import { login } from "@/store/user/actions";
 import { IUserInfo } from "@/shared";
 import { useInput } from "@/hooks";
 import { error, success } from "@/utils";
+import { Meta } from "@/components/seo/Meta";
 
 const Registration = ({ className, ...props }: RegistrationProps): JSX.Element => {
     const email = useInput('', { isEmpty: true, minLength: 3, isEmail: true })
@@ -44,6 +45,7 @@ const Registration = ({ className, ...props }: RegistrationProps): JSX.Element =
 
     return (
         <main {...props} className={cn(styles.main, "wrapper")}>
+            <Meta title="Регистрация" description="Страница регистрации"/>
             <div className={styles.content}>
                 <Htag tag="h2">Регистрация</Htag>
                 <form onSubmit={(e) => handleSubmit(e)}>

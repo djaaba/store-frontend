@@ -91,6 +91,7 @@
 @media (max-width: 425px) {
     .img {
         max-width: 116px;
+        max-height: 116px;
     }
     .prices {
         white-space: nowrap;

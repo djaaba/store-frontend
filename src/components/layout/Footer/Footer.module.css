@@ -39,23 +39,35 @@
 }
 
 .img {
-    height: 56px;
-    width: 124px;
+    /* height: 56px; */
+    /* width: 124px; */
+}
+
+@media (max-width: 1024px) {
+    .img {
+        width: 205px;
+        height: 16px;
+    }
 }
 
 @media (max-width: 768px) {
     .footer {
         padding-bottom: 60px;
     }
+
     .main {
         padding-bottom: 64px;
+    }
+
+    .img {
+        width: 165px;
+        height: 13px;
     }
 }
 
 @media (max-width: 425px) {
-    .img {
-        width: 120px;
-        height: 40px;
+    .btn{
+        display: none;
     }
 
     .footer {

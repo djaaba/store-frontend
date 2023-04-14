@@ -18,19 +18,21 @@ export const Footer = ({ ...props }: FooterProps): JSX.Element => {
                         <img
                             className={styles.img}
                             alt="Логотип магазина"
-                            src="/assets/footer/logo.svg"
+                            src="/logo-w.png"
                         />
                     </Link>
-                    <Button className={styles.btn} color="dark" size="big">
-                        Карта магазинов
-                    </Button>
+                    <Link href={MAIN_ROUTE}>
+                        <Button className={styles.btn} color="dark" size="big">
+                            Карта магазинов
+                        </Button>
+                    </Link>
                 </section>
                 <section>
                     <FooterNavigation />
                     <Socials apps={apps} socials={socials} />
                 </section>
                 <section className={styles.bottom}>
-                    <p>© «М.Видео», 2023</p>
+                    <p>© «Электроника», 2023</p>
                 </section>
             </div>
         </footer>

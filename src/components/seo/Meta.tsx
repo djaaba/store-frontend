@@ -6,6 +6,7 @@ export const Meta = ({ title, description }: IMeta): JSX.Element => {
     return (
         <Head>
             <title>{title}</title>
+            <link rel="icon" href="/logo.svg" />
             {description ?
                 <>
                     <meta name='description' content={description} />

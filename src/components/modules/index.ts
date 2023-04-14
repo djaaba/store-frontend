@@ -10,3 +10,4 @@ export * from "./TopProduct/TopProduct";
 export * from './Modals';
 export * from './CheckboxGroup/CheckboxGroup';
 export * from "./Types/Types";
+export * from "./Counter/Counter";

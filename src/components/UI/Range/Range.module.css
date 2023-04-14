@@ -9,6 +9,7 @@
     margin: 0 5px;
 }
 
-.range {
-    margin-top: 20px;
+div.range {
+    margin: 20px auto;
+    width: 93%;
 }

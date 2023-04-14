@@ -16,6 +16,7 @@ import { WhiteWrapper } from "@/components/UI";
 import { check } from "@/api";
 import { IBanner, IBrand, IDevice, IType, IUserInfo } from "@/shared";
 import { login } from "@/store/user/actions";
+import { Meta } from '@/components/seo/Meta';
 
 export const Home = ({ mostViewed, bestsellers, types, brands, banners, match }: HomeProps) => {
     const dispatch = useDispatch();
@@ -28,6 +29,7 @@ export const Home = ({ mostViewed, bestsellers, types, brands, banners, match }:
 
     return (
         <>
+            {/* 
             <Head>
                 <title>Create Next App</title>
                 <meta
@@ -38,8 +40,10 @@ export const Home = ({ mostViewed, bestsellers, types, brands, banners, match }:
                     name="viewport"
                     content="width=device-width, initial-scale=1"
                 />
-                {/* <link rel="icon" href="/favicon.ico" /> */}
-            </Head>
+                {/* <link rel="icon" href="/favicon.ico" /> 
+        </Head> 
+        */}
+            <Meta title="Главная страница" description="Главная страница магазина" />
             <>
                 <section className={cn(styles.sliders, "wrapper")}>
                     <Banner banners={banners} />

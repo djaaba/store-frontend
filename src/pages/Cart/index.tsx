@@ -23,6 +23,7 @@ import {
 } from "@/store/cart/selector";
 import { removeFromCart } from "@/store/cart/actions";
 import { MAIN_ROUTE } from "@/utils";
+import { Meta } from "@/components/seo/Meta";
 
 const Cart = ({ className, ...props }: CartProps): JSX.Element => {
     const dispatch = useDispatch();
@@ -33,6 +34,7 @@ const Cart = ({ className, ...props }: CartProps): JSX.Element => {
 
     return (
         <>
+            <Meta title="Корзина" description="Страница корзины" />
             <main {...props} className={cn(styles.main, "wrapper")}>
                 {!cart.length ? (
                     <>

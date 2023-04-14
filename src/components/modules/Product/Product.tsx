@@ -12,7 +12,6 @@ import {
     FontAwesomeIcon,
     CartShoppingIcon,
     RegularHeartIcon,
-    SignalIcon,
     SolidHeartIcon,
 } from "@/components/UI";
 import { selectFavorite } from "@/store/favorite/selector";
@@ -36,7 +35,7 @@ export const Product = ({ item, ...props }: ProductProps): JSX.Element => {
 
     return (
         <>
-            <main className={styles.main}>
+            <main className={cn(styles.main, props.className)}>
                 <div>
                     <div className={styles.container}>
                         <Link href={`${PRODUCT_ROUTE}${item.id}`}>

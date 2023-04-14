@@ -1,0 +1,28 @@
+.discount {
+    display: flex;
+    align-items: center;
+    grid-column-gap: 15px;
+}
+
+.svg {
+    width: 40px;
+    height: 40px;
+}
+
+.p {
+    line-height: 20px;
+}
+
+@media (max-width: 768px) {
+    .mobile {
+        display: none;
+    }
+}
+
+@media (max-width: 425px) {
+    .img {
+        max-width: 300px;
+        max-height: 300px;
+        margin: 0 auto;
+    }
+}
