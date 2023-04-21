@@ -45,7 +45,7 @@ export const Socials = ({
                             styles.desk
                         )}
                     >
-                        М.Видео в соцсетях
+                        Электроника в соцсетях
                     </p>
                     <ul className={cn(styles.apps)}>
                         {socials.map((item) => (

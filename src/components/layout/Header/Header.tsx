@@ -6,9 +6,11 @@ import styles from "./Header.module.css";
 
 import { HeaderBottom, HeaderMiddle, HeaderTop } from "./modules";
 import { navigation } from "@/plug/Header";
+import { useDispatch } from "react-redux";
 
 export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
     const divRef = useRef<HTMLDivElement>(null);
+    const dispatch = useDispatch();
 
     React.useEffect(() => {
         window.onscroll = function () {
@@ -20,7 +22,6 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
                 divRef.current.style.display = "none";
                 return;
             }
-
         };
     }, []);
 

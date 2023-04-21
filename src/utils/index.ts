@@ -10,3 +10,4 @@ export * from "./routes";
 export * from "./toasts";
 export * from "./getFromLocalStorage";
 export * from "./getPrimitiveIdArray";
+export * from "./getPrettyPhone";

@@ -8,21 +8,24 @@ import { useRouter } from "next/router";
 import styles from "./Profile.module.css";
 // import { ProfileProps } from "./Profile.props";
 
-import { ADMIN_ROUTE, LOGIN_ROUTE, success } from "@/utils";
-import { Button } from "@/components/UI";
+import { ADMIN_ROUTE, CART_ROUTE, FAVORITE_ROUTE, LOGIN_ROUTE, success } from "@/utils";
+import { Button, CartShoppingIcon, FontAwesomeIcon, Htag, SolidHeartIcon, WhiteWrapper } from "@/components/UI";
 import { selectUser } from "@/store/user/selector";
+import { selectFavorite } from "@/store/favorite/selector";
+import { selectCart } from "@/store/cart/selector";
 import { logout } from "@/store/user/actions";
 import { Meta } from "@/components/seo/Meta";
 
 const Profile = ({ className, ...props }: ProfileProps): JSX.Element => {
     const userInfo = useSelector(selectUser);
+    const favorite = useSelector(selectFavorite);
+    const cart = useSelector(selectCart);
     const dispatch = useDispatch();
     const router = useRouter();
 
     React.useEffect(() => {
         if (!userInfo.isAuth) router.push(LOGIN_ROUTE)
-    }, [userInfo.isAuth])
-
+    }, [])
 
     const handleLogout = () => {
         localStorage.removeItem('token');
@@ -32,22 +35,63 @@ const Profile = ({ className, ...props }: ProfileProps): JSX.Element => {
 
     return (
         <React.Fragment {...props}>
-            <Meta title={`Профиль ${userInfo._user.name}`} description="Информация об аккаунте"/>
+            <Meta title={`Личный кабинет`} description="Информация об аккаунте" />
             <main className={cn(styles.main, "wrapper")}>
-                {
-                    userInfo._user?.role === "ADMIN" ?
-                        <Link href={ADMIN_ROUTE}>
-                            <Button className={styles.btn} size="big" color="red">
-                                Панель администратора
+                <Htag tag="h1">
+                    Личный кабинет
+                </Htag>
+                <WhiteWrapper className={cn(styles.options, styles.padding)}>
+                    <p className={styles.title}>
+                        Здравствуйте, <strong>{userInfo._user.name} </strong>, добро пожаловать в ваш личный кабинет.
+                    </p>
+                    <div className={styles.grid}>
+                        {
+                            userInfo._user?.role === "ADMIN" ?
+                                <Link href={ADMIN_ROUTE}>
+                                    <Button className={styles.btn} size="big" color="red">
+                                        Администрирование
+                                    </Button>
+                                </Link>
+                                : ''
+                        }
+                        <Link href={LOGIN_ROUTE}>
+                            <Button onClick={handleLogout} className={styles.btn} size="big" color="red">
+                                Выйти из аккаунта
                             </Button>
                         </Link>
-                        : ''
-                }
-                <Link href={LOGIN_ROUTE}>
-                    <Button onClick={handleLogout} className={styles.btn} size="big" color="red">
-                        Выйти из аккаунта
-                    </Button>
-                </Link>
+                    </div>
+                </WhiteWrapper>
+                <div className={cn(styles.wrapper, styles.padding)}>
+                    <WhiteWrapper className={styles.container}>
+                        <div className={styles.content}>
+                            <FontAwesomeIcon className={styles.icon} icon={SolidHeartIcon} />
+                            <Htag tag="h3">Избранное</Htag>
+                            <p className={styles.count}>
+                                {favorite.length}
+                            </p>
+                        </div>
+                        <Link href={FAVORITE_ROUTE}>
+                            <Button className={styles.btn} color="dark" size="big">
+                                Изменить
+                            </Button>
+                        </Link>
+                    </WhiteWrapper>
+                    <WhiteWrapper className={styles.container}>
+                        <div className={styles.content}>
+                            <FontAwesomeIcon className={styles.icon} icon={CartShoppingIcon} />
+                            <Htag tag="h3">Корзина</Htag>
+                            <p className={styles.count}>
+                                {cart.length}
+                            </p>
+                        </div>
+                        <Link href={CART_ROUTE}>
+                            <Button className={styles.btn} color="dark" size="big">
+                                Изменить
+                            </Button>
+                        </Link>
+                    </WhiteWrapper>
+                </div>
+
             </main>
         </React.Fragment>
     );

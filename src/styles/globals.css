@@ -83,6 +83,10 @@ button {
     border: none;
 }
 
+strong {
+    color: var(--dark-gray)
+}
+
 /* default styles */
 
 input[type="number"]::-webkit-inner-spin-button,

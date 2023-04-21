@@ -21,7 +21,7 @@ export const forBusiness: IColumnItem = {
 export const aboutCompany: IColumnItem = {
     title: "О компании",
     links: [
-        { id: 1, name: "Про М.Видео", href: "/about-company" },
+        { id: 1, name: "Про Электронику", href: "/about-company" },
         { id: 2, name: "Политика компании", href: "/policy" },
     ],
 };

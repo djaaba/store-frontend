@@ -1,6 +1,7 @@
 import cn from "classnames";
 import React from "react";
 import HyperModal from 'react-hyper-modal';
+import { toast } from "react-toastify";
 
 import styles from "./TypeModal.module.css";
 import { TypeModalProps } from "./TypeModal.props";
@@ -8,7 +9,6 @@ import { TypeModalProps } from "./TypeModal.props";
 import { useFile, useInput } from "@/hooks";
 import { Button, Input } from "@/components/UI";
 import { createType } from "@/api";
-import { toast } from "react-toastify";
 import { error, success } from "@/utils";
 
 export const TypeModal = ({ ...props }: TypeModalProps): JSX.Element => {
@@ -45,6 +45,13 @@ export const TypeModal = ({ ...props }: TypeModalProps): JSX.Element => {
             <button onClick={() => setIsOpen(true)}>Добавить тип</button>
             <HyperModal requestClose={() => setIsOpen(false)} isOpen={isOpen}>
                 <form onSubmit={handleSubmit}>
+                    <h2>Выберите изображение</h2>
+                    <input
+                        className={cn(styles.input, fileError ? "errorIndicator" : null)}
+                        onBlur={file.onBlur}
+                        type="file"
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => file.onChange(e)}
+                    />
                     <Input
                         className={cn(styles.input, nameError ? "errorIndicator" : null)}
                         placeholder="Введите название типа"
@@ -52,13 +59,6 @@ export const TypeModal = ({ ...props }: TypeModalProps): JSX.Element => {
                         type="name"
                         value={name.value}
                         onChange={(e: React.ChangeEvent<HTMLInputElement>) => name.onChange(e)}
-                    />
-                    <h2>Выберите изображение</h2>
-                    <input
-                        className={cn(styles.input, fileError ? "errorIndicator" : null)}
-                        onBlur={file.onBlur}
-                        type="file"
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => file.onChange(e)}
                     />
                     <Button
                         disabled={isDisabled}

@@ -18,13 +18,13 @@ export const Footer = ({ ...props }: FooterProps): JSX.Element => {
                         <img
                             className={styles.img}
                             alt="Логотип магазина"
-                            src="/logo-w.png"
+                            src="/logo.png"
                         />
                     </Link>
                     <Link href={MAIN_ROUTE}>
                         <Button className={styles.btn} color="dark" size="big">
                             Карта магазинов
-                        </Button>
+                        </Button> 
                     </Link>
                 </section>
                 <section>

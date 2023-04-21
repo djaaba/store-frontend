@@ -1,6 +1,6 @@
 import cn from "classnames";
 import Link from "next/link";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import styles from "./HeaderNavigation.module.css";
@@ -17,7 +17,7 @@ export const HeaderNavigation = ({
     navLinks,
     ...props
 }: HeaderNavigationProps): JSX.Element => {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
     const user = useSelector(selectUser)
 
     return (

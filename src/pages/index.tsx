@@ -12,12 +12,11 @@ function Main({ mostViewed, bestsellers, types, brands, banners, match }: any) {
                 banners={banners}
                 mostViewed={mostViewed}
                 bestsellers={bestsellers}
-                match={match}
             />
         </>
     );
 }
-
+ 
 export default Main;
 
 export async function getServerSideProps() {
@@ -26,7 +25,6 @@ export async function getServerSideProps() {
     const banners = await getAllBanners();
     const mostViewed = await getMostViewed();
     const bestsellers = await getBestsellers();
-    const match = await(getByMatch("описани"));
 
     return {
         props: {
@@ -35,7 +33,6 @@ export async function getServerSideProps() {
             banners,
             mostViewed,
             bestsellers,
-            match
         },
     };
 }
