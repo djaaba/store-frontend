@@ -8,9 +8,8 @@ import { HeaderBottom, HeaderMiddle, HeaderTop } from "./modules";
 import { navigation } from "@/plug/Header";
 import { useDispatch } from "react-redux";
 
-export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
+export const Header = ({ className, data, ...props }: HeaderProps): JSX.Element => {
     const divRef = useRef<HTMLDivElement>(null);
-    const dispatch = useDispatch();
 
     React.useEffect(() => {
         window.onscroll = function () {
@@ -27,8 +26,8 @@ export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
 
     return (
         <header className={cn(className, styles.header)} {...props}>
-            <HeaderTop />
-            <HeaderMiddle navigation={navigation} />
+            <HeaderTop data={data}/>
+            <HeaderMiddle data={data} navigation={navigation} />
             <HeaderBottom
                 className={styles.bottom}
                 ref={divRef}

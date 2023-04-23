@@ -11,9 +11,9 @@ import {
     SmoothText,
     FontAwesomeIcon
 } from "@/components/UI";
-import { MAIN_ROUTE } from "@/utils";
+import { getPrettyPhone, MAIN_ROUTE } from "@/utils";
 
-export const HeaderTop = ({ ...props }: HeaderTopProps): JSX.Element => {
+export const HeaderTop = ({ data, ...props }: HeaderTopProps): JSX.Element => {
     return (
         <section {...props} className={styles.wrapper}>
             <div className={cn(styles.top, "wrapper")}>
@@ -24,7 +24,7 @@ export const HeaderTop = ({ ...props }: HeaderTopProps): JSX.Element => {
                             icon={CompassIcon}
                         />
                         <Ptag className={styles.mobile}>
-                            Ростов-на-Дону
+                            {data?.address}
                         </Ptag>
                     </SmoothText>
                 </Link>
@@ -33,7 +33,7 @@ export const HeaderTop = ({ ...props }: HeaderTopProps): JSX.Element => {
                         className={styles.icon}
                         icon={PhoneIcon}
                     />
-                    <Ptag className={styles.mobile}>8-800-600-7775</Ptag>
+                    <Ptag className={styles.mobile}>{getPrettyPhone(data?.phone)}</Ptag>
                 </SmoothText>
             </div>
         </section>

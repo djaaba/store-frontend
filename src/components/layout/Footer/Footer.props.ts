@@ -1,3 +1,5 @@
-import { ReactNode } from "react";
+import { IStoreInfo } from "@/shared";
 
-export interface FooterProps {}
+export interface FooterProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+    data: IStoreInfo
+}

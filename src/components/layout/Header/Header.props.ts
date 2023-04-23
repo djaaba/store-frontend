@@ -1,5 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
 
-export interface HeaderProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+import { IStoreInfo } from "@/shared";
 
+export interface HeaderProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
+    data: IStoreInfo;
 }

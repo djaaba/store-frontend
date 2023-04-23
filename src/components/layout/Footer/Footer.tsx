@@ -9,7 +9,9 @@ import { Button } from "@/components/UI";
 import { apps, socials } from "@/plug/Footer";
 import { MAIN_ROUTE } from "@/utils";
 
-export const Footer = ({ ...props }: FooterProps): JSX.Element => {
+export const Footer = ({ data, ...props }: FooterProps): JSX.Element => {
+    const date = new Date;
+
     return (
         <footer {...props} className={styles.footer}>
             <div className="wrapper">
@@ -18,7 +20,7 @@ export const Footer = ({ ...props }: FooterProps): JSX.Element => {
                         <img
                             className={styles.img}
                             alt="Логотип магазина"
-                            src="/logo.png"
+                            src={data?.imgUrl}
                         />
                     </Link>
                     <Link href={MAIN_ROUTE}>
@@ -32,7 +34,9 @@ export const Footer = ({ ...props }: FooterProps): JSX.Element => {
                     <Socials apps={apps} socials={socials} />
                 </section>
                 <section className={styles.bottom}>
-                    <p>© «Электроника», 2023</p>
+                    <p>
+                        {`© «${data?.name}», ${date.getFullYear()}`}
+                    </p>
                 </section>
             </div>
         </footer>

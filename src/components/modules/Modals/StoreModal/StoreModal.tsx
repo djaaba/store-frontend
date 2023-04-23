@@ -55,10 +55,10 @@ export const StoreModal = ({ storeInfo, ...props }: StoreModalProps): JSX.Elemen
             <Button color="red" size="big" onClick={() => setIsOpen(true)}>Изменить информацию о магазине</Button>
             <HyperModal requestClose={() => setIsOpen(false)} isOpen={isOpen}>
                 <form onSubmit={handleSubmit}>
-                <h2>Введите название товара</h2>
+                <h2>Введите название магазина</h2>
                     <Input
                         className={cn(styles.input, nameError ? "errorIndicator" : null)}
-                        placeholder="Введите название товара"
+                        placeholder="Введите название магазина"
                         onBlur={name.onBlur}
                         type="text"
                         value={name.value}

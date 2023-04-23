@@ -1,9 +1,10 @@
 import React from 'react';
 
 import { Home } from '@/screens/home/Home';
-import { getAllBanners, getAllBrands, getAllTypes, getBestsellers, getByMatch, getMostViewed } from '@/api';
+import { getAllBanners, getAllBrands, getAllTypes, getBestsellers, getMostViewed } from '@/api';
 
-function Main({ mostViewed, bestsellers, types, brands, banners, match }: any) {
+function Main({ mostViewed, bestsellers, types, brands, banners }: any) {
+
     return (
         <>
             <Home

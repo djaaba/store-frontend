@@ -14,6 +14,7 @@ const inputPlaceholder: string = "Искать товары с кэшбэком 
 
 export const HeaderMiddle = ({
     navigation,
+    data,
     ...props
 }: HeaderMiddleProps): JSX.Element => {
     const navLinks: Array<INav> = navigation;
@@ -24,7 +25,7 @@ export const HeaderMiddle = ({
             <Link href={MAIN_ROUTE}>
                 <img
                     className={styles.img}
-                    src="/logo.png"
+                    src={data?.imgUrl}
                     alt="Логотип магазина"
                 />
             </Link>

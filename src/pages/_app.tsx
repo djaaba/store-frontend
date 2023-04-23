@@ -19,7 +19,7 @@ const roboto = Roboto({
 })
 
 export default function App({ Component, pageProps }: AppProps) {
-
+    
     return (
         <>
             <React.StrictMode>
