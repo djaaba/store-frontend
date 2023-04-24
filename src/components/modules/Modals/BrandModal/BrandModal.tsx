@@ -42,7 +42,7 @@ export const BrandModal = ({ ...props }: BrandModalProps): JSX.Element => {
 
     return (
         <>
-            <button onClick={() => setIsOpen(true)}>Добавить бренд</button>
+            <Button color="red" size="big" onClick={() => setIsOpen(true)}>Добавить бренд</Button>
             <HyperModal requestClose={() => setIsOpen(false)} isOpen={isOpen}>
                 <form onSubmit={handleSubmit}>
                     <h2>Введите название бренда</h2>

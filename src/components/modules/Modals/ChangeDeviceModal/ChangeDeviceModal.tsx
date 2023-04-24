@@ -3,29 +3,30 @@ import React from "react";
 import HyperModal from 'react-hyper-modal';
 import { toast } from "react-toastify";
 
-import styles from "./DeviceModal.module.css";
-import { DeviceModalProps } from "./DeviceModal.props";
+import styles from "./ChangeDeviceModal.module.css";
+import { ChangeDeviceModalProps } from "./ChangeDeviceModal.props";
 
 import { getId, error, success } from "@/utils";
-import { IBrand, IDeviceInfo, IType } from "@/shared";
-import { Button, FontAwesomeIcon, Input, Select, TrashIcon } from "@/components/UI";
+import { IBrand, IDevice, IDeviceInfo, IType } from "@/shared";
+import { Button, FontAwesomeIcon, Input, RewriteIcon, Select, TrashIcon } from "@/components/UI";
 import { useInput, useFile } from "@/hooks";
-import { createDevice } from "@/api";
+import { updateDevice } from "@/api";
 
-export const DeviceModal = ({ types, brands, ...props }: DeviceModalProps): JSX.Element => {
+export const ChangeDeviceModal = ({ data, types, brands, setDevice, ...props }: ChangeDeviceModalProps): JSX.Element => {
     const [isOpen, setIsOpen] = React.useState(false);
 
-    const name = useInput('', { isEmpty: true, minLength: 1 })
-    const description = useInput('', { isEmpty: true, minLength: 1 })
-    const price = useInput('', { isEmpty: true, minLength: 1 })
-    const discount = useInput('0', { isEmpty: true, minLength: 1 })
-    // const type = useInput(types[0].name, { isEmpty: true })
-    // const brand = useInput(brands[0].name, { isEmpty: true })
-    const type = useInput('', { isEmpty: true })
-    const brand = useInput('', { isEmpty: true })
+    const brandName = brands.filter(brand => brand.id == data.brandId)[0].name;
+    const typeName = types.filter(type => type.id == data.typeId)[0].name;
+
+    const name = useInput(data.name || '', { isEmpty: true, minLength: 1 })
+    const description = useInput(data.description || '', { isEmpty: true, minLength: 1 })
+    const price = useInput(data.price || '', { isEmpty: true, minLength: 1 })
+    const discount = useInput(data.discount || '0', { isEmpty: true, minLength: 1 })
+    const brand = useInput(brandName || '', { isEmpty: true })
+    const type = useInput(typeName || '', { isEmpty: true })
     const file = useFile('', { isEmpty: true });
 
-    const [info, setInfo] = React.useState<IDeviceInfo[]>([])
+    const [info, setInfo] = React.useState<IDeviceInfo[]>(data.info)
 
     let nameError = name.isDirty && name.isEmpty;
     let descriptionError = description.isDirty && description.isEmpty;
@@ -51,6 +52,7 @@ export const DeviceModal = ({ types, brands, ...props }: DeviceModalProps): JSX.
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         const formData = new FormData();
+        formData.append('id', `${data.id}`);
         formData.append('imgUrl', file.value);
         formData.append('description', description.value);
         formData.append('name', name.value);
@@ -60,25 +62,22 @@ export const DeviceModal = ({ types, brands, ...props }: DeviceModalProps): JSX.
         formData.append('brandId', String(brands.find((item: IBrand) => item.name === brand.value)?.id))
         formData.append('info', JSON.stringify(info));
 
-        createDevice(formData)
-            .then(() => {
+        updateDevice(formData)
+            .then((dev) => {
                 setIsOpen(false)
-                toast.success('Вы добавили товар!', success);
-                name.reset();
-                description.reset();
-                price.reset();
-                discount.reset();
-                // file.reset();
-                setInfo([])
+                toast.success('Вы изменили информацию!', success);
+                setDevice(dev)
             })
             .catch(err => {
-                toast.error('Ошибка добавления товара', error);
+                toast.error('Ошибка изменения товара', error);
             })
     }
 
     return (
         <>
-            <Button color="red" size="big" onClick={() => setIsOpen(true)}>Добавить устройство</Button>
+            <Button onClick={() => setIsOpen(true)} className={props.className} size="big" color="red">
+                <FontAwesomeIcon icon={RewriteIcon} />
+            </Button>
             <HyperModal requestClose={() => setIsOpen(false)} isOpen={isOpen}>
                 <form onSubmit={handleSubmit}>
                     <h2>Выберите тип</h2>

@@ -26,7 +26,7 @@ export const StoreModal = ({ storeInfo, ...props }: StoreModalProps): JSX.Elemen
     let addressError = address.isDirty && address.isEmpty;
     let emailError = email.isDirty && email.isEmpty;
 
-    let isDisabled = !name.inputValid || !file.inputValid;
+    let isDisabled = !name.inputValid || !file.inputValid || !phone.inputValid|| !address.inputValid|| !email.inputValid;
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();

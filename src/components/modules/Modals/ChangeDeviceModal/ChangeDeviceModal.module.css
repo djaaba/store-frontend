@@ -1,0 +1,8 @@
+.properties{
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn{
+    width: auto;
+}

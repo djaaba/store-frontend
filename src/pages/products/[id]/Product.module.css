@@ -9,6 +9,14 @@
     grid-gap: 60px;
 }
 
+.container{
+    position: relative;
+    max-width: 500px;
+    max-height: 500px;
+    width: 100%;
+    height: 100%;
+}
+
 .description {
     margin-top: 60px;
 }
@@ -20,8 +28,27 @@
     height: 100%;
 }
 
+.btn{
+    
+    /* max-width: 20px; */
+    box-sizing: content-box;
+}
+
+.btnGroup{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    grid-column-gap: 10px;
+}
+
 .count {
     font-weight: bold;
+}
+
+.mobile{
+    display: flex;
+    
 }
 
 .wrapper {
@@ -37,13 +64,10 @@
 }
 
 .price {
-    white-space: nowrap;
-}
-
-.price {
     display: flex;
     align-items: flex-end;
     margin-bottom: 15px;
+    white-space: nowrap;
 }
 
 .prevPrice {
@@ -63,6 +87,10 @@
 
     .content {
         grid-gap: 35px;
+    }
+
+    .mobile{
+        display: none;
     }
 
     .mobileMenu {

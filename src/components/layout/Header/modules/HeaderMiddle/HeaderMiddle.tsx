@@ -10,7 +10,7 @@ import { Search } from "@/components/UI";
 import { INav } from "@/shared";
 import { MAIN_ROUTE } from "@/utils";
 
-const inputPlaceholder: string = "Искать товары с кэшбэком до 100%";
+const inputPlaceholder: string = "Я ищу...";
 
 export const HeaderMiddle = ({
     navigation,

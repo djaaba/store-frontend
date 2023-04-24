@@ -44,6 +44,7 @@ export async function getServerSideProps() {
 // next time props for components name "variant"
 // next time aria-label="Aria Name" for buttons
 // next time use Omit, Record and etc
+// next time use primary root style
 
 // Дальнейшие планы:
 // img => Image
@@ -53,10 +54,7 @@ export async function getServerSideProps() {
 // роут для товара по скидке, роут для бестселлеров, роут для самых просматриваемых 
 // что насчет отзывов и рейтинга
 // стейт для каунтера? посмотрим
-// сверстать страницу профиля
-// Head во все страницы
 // количество товаров в корзине и избранном в хедере
-// В Скроллбар засунуть реальные ссылки
 
 // Ptag заменить на p?
 // cardItem, cartItem, favoriteItem, productItem
@@ -89,6 +87,9 @@ export async function getServerSideProps() {
 
 // ГОТОВО:
 
+// Head во все страницы
+// В Скроллбар засунуть реальные ссылки
+// сверстать страницу профиля
 // добавить логику в бэкенд для роутов с фильтрами
 // Нужны характеристики еще
 // в products написать пропсы для компонентов, и вообще архитектуру как-то изменить

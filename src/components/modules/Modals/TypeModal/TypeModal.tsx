@@ -42,7 +42,7 @@ export const TypeModal = ({ ...props }: TypeModalProps): JSX.Element => {
 
     return (
         <>
-            <button onClick={() => setIsOpen(true)}>Добавить тип</button>
+            <Button color="red" size="big" onClick={() => setIsOpen(true)}>Добавить тип</Button>
             <HyperModal requestClose={() => setIsOpen(false)} isOpen={isOpen}>
                 <form onSubmit={handleSubmit}>
                     <h2>Выберите изображение</h2>

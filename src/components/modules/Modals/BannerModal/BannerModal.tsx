@@ -46,7 +46,7 @@ export const BannerModal = ({ ...props }: BannerModalProps): JSX.Element => {
 
     return (
         <>
-            <button onClick={() => setIsOpen(true)}>Добавить баннер</button>
+            <Button color="red" size="big" onClick={() => setIsOpen(true)}>Добавить баннер</Button>
             <HyperModal requestClose={() => setIsOpen(false)} isOpen={isOpen}>
                 <form onSubmit={handleSubmit}>
                     <Input

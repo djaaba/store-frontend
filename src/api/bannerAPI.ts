@@ -1,7 +1,7 @@
 import { $authHost, $host } from "./"
 import { IBanner } from "@/shared";
 
-export const createBanner = async (banner: IBanner) => {
+export const createBanner = async (banner: FormData) => {
     const { data } = await $authHost.post('banners', banner)
     return data;
 }

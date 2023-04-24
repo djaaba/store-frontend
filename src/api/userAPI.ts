@@ -18,3 +18,8 @@ export const check = async () => {
     localStorage.setItem('token', data.token)
     return jwt_decode(data.token);
 }
+
+export const changeInfo = async (info: FormData) => {
+    const { data } = await $host.post('user/update', info)
+    return jwt_decode(data.token);
+}

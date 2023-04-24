@@ -22,16 +22,16 @@ export const Counter = ({
                 <p className={styles.p}>
                     Цена&nbsp;на&nbsp;товар&nbsp;снижена
                     на&nbsp;
+                    <strong>
+                        <CountUp
+                            separator=" "
+                            useEasing
+                            start={0}
+                            end={price - curPrice}
+                        />
+                        &nbsp;₽
+                    </strong>
                 </p>
-                <div className={styles.count}>
-                    <CountUp
-                        separator=" "
-                        useEasing
-                        start={price}
-                        end={curPrice}
-                    />
-                    &nbsp;₽
-                </div>
                 <p className={styles.p}>Успейте купить</p>
             </div>
         </div>

@@ -19,5 +19,6 @@ export interface IUserInfo {
     iat: number;
     id: number;
     name: string;
+    address: string;
     role: string;
 }

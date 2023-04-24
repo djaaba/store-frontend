@@ -17,7 +17,6 @@ export const HeaderNavigation = ({
     navLinks,
     ...props
 }: HeaderNavigationProps): JSX.Element => {
-    // const dispatch = useDispatch();
     const user = useSelector(selectUser)
 
     return (

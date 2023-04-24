@@ -13,7 +13,7 @@ export const Characteristics = ({
     className,
     ...props
 }: CharacteristicsProps): JSX.Element => {
-    const length = characteristics.length / 2;
+    const length = characteristics?.length / 2;
 
     return (
         <React.Fragment {...props}>
@@ -33,7 +33,7 @@ export const Characteristics = ({
                     </div>
                     <div>
                         {characteristics
-                            .slice(length)
+                            ?.slice(length)
                             .map((item: ICharacteristic) => (
                                 <ItemWithDots
                                     key={item.id}

@@ -15,6 +15,7 @@ import { selectFavorite } from "@/store/favorite/selector";
 import { selectCart } from "@/store/cart/selector";
 import { logout } from "@/store/user/actions";
 import { Meta } from "@/components/seo/Meta";
+import { ChangeInfoModal } from "@/components/modules";
 
 const Profile = ({ className, ...props }: ProfileProps): JSX.Element => {
     const userInfo = useSelector(selectUser);
@@ -42,7 +43,7 @@ const Profile = ({ className, ...props }: ProfileProps): JSX.Element => {
                 </Htag>
                 <WhiteWrapper className={cn(styles.options, styles.padding)}>
                     <p className={styles.title}>
-                        Здравствуйте, <strong>{userInfo._user.name} </strong>, добро пожаловать в ваш личный кабинет.
+                        Здравствуйте, <strong>{userInfo?._user?.name} </strong>, добро пожаловать в ваш личный кабинет.
                     </p>
                     <div className={styles.grid}>
                         {
@@ -52,13 +53,15 @@ const Profile = ({ className, ...props }: ProfileProps): JSX.Element => {
                                         Администрирование
                                     </Button>
                                 </Link>
-                                : ''
+                                : 
+                                ''
                         }
                         <Link href={LOGIN_ROUTE}>
                             <Button onClick={handleLogout} className={styles.btn} size="big" color="red">
                                 Выйти из аккаунта
                             </Button>
                         </Link>
+                        <ChangeInfoModal data={userInfo} className={styles.btn}/>
                     </div>
                 </WhiteWrapper>
                 <div className={cn(styles.wrapper, styles.padding)}>

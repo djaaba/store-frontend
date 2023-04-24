@@ -20,6 +20,7 @@ import {
     faClock,
     faCompass,
     faTrashCan,
+    faPenToSquare,
     faSun as faScrew,
 } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -49,6 +50,7 @@ export const MicrophoneIcon = faMicrophone;
 export const SignalIcon = faSignal;
 export const SolidHeartIcon = faSolidHeart;
 export const RegularHeartIcon = faRegularHeart;
+export const RewriteIcon = faPenToSquare;
 
 export const VkIcon = faVk;
 export const OdnoklassnikiIcon = faSquareOdnoklassniki;
