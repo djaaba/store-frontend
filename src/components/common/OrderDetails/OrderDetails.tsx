@@ -1,21 +1,38 @@
 import cn from "classnames";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 import styles from "./OrderDetails.module.css";
 import { OrderDetailsProps } from "./OrderDetails.props";
 
-import { Button, Htag, ItemWithDots } from "../../UI";
 import {
     discountCart,
     sumCountCart,
     sumPriceCart,
-} from "../../../store/cart/selector";
-import { getPrettyPrice, getPostfix } from "../../../utils/";
+    selectCart
+} from "@/store/cart/selector";
+import { selectUser } from "@/store/user/selector";
+import { getPrettyPrice, getPostfix, success } from "@/utils/";
+import { Button, Htag, ItemWithDots } from "@/components/UI";
+import { createCart } from "@/api";
+import { IDevice } from "@/shared";
+import { removeFromCart } from "@/store/cart/actions";
 
 export const OrderDetails = ({ ...props }: OrderDetailsProps): JSX.Element => {
+    const dispatch = useDispatch();
     const sum = useSelector(sumPriceCart);
+    const user = useSelector(selectUser);
+    const cart = useSelector(selectCart);
     const discount = useSelector(discountCart);
     const sumCount = useSelector(sumCountCart);
+
+    const handleClick = () => {
+        createCart(cart, user._user.id)
+        toast.success('Спасибо за покупку!', success);
+        cart.forEach((item: IDevice) => {
+            dispatch(removeFromCart(item))
+        })
+    }
 
     return (
         <>
@@ -40,7 +57,7 @@ export const OrderDetails = ({ ...props }: OrderDetailsProps): JSX.Element => {
                         subtitle={getPrettyPrice(sum - discount)}
                     />
                 </div>
-                <Button size="big" color="red">
+                <Button onClick={() => handleClick()}size="big" color="red">
                     Купить!
                 </Button>
             </section>

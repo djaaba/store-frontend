@@ -3,11 +3,11 @@ import { useSelector } from "react-redux";
 import styles from "./Favorite.module.css";
 // import { FavoriteProps } from "./Favorite.props";
 
-import { FontAwesomeIcon, Htag, RegularHeartIcon } from "../../components/UI";
-import { FavoriteProduct } from "../../components/common/FavoriteProduct/FavoriteProduct";
-import { getId } from "../../utils";
-import { IDevice } from "../../shared";
-import { selectFavorite } from "../../store/favorite/selector";
+import { FontAwesomeIcon, Htag, RegularHeartIcon } from "@/components/UI";
+import { FavoriteProduct } from "@/components/common/FavoriteProduct/FavoriteProduct";
+import { getId } from "@/utils";
+import { IDevice } from "@/shared";
+import { selectFavorite } from "@/store/favorite/selector";
 import { Meta } from "@/components/seo/Meta";
 
 const Favorite = ({ className, ...props }: FavoriteProps): JSX.Element => {
