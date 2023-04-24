@@ -59,8 +59,11 @@
 }
 
 .iconBtn {
-    padding: 10px;
+    /* padding: 5px; */
+    padding-left: 10px;
     cursor: pointer;
+    width: 30px;
+    height: 30px;
 }
 
 .prices {
@@ -81,6 +84,19 @@
     font-size: 24px;
 }
 
+.active {
+    background: var(--white);
+    border: 1px solid var(--red);
+}
+
+.active svg {
+    color: var(--red);
+}
+
+.active:hover svg {
+    color: var(--white);
+}
+
 @media (max-width: 767px) {
     .img {
         width: 160px;
@@ -93,6 +109,7 @@
         max-width: 116px;
         max-height: 116px;
     }
+
     .prices {
         white-space: nowrap;
     }

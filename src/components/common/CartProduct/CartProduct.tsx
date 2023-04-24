@@ -9,10 +9,11 @@ import { CartProductProps } from "./CartProduct.props";
 import {
     decrementCount,
     incrementCount,
-    removeFromCart,
+    toggleCart,
 } from "@/store/cart/actions";
 import { getPrettyPrice, getPrice, searchById, PRODUCT_ROUTE } from "@/utils";
 import { Atag, Checkbox, FavoriteLabel, Htag } from "@/components/UI";
+import { IDevice } from "@/shared";
 
 export const CartProduct = ({
     product,
@@ -23,18 +24,34 @@ export const CartProduct = ({
     const dispatch = useDispatch();
     const curPrice = getPrice(product.price, product.discount);
 
+    const handleDelete = (product: IDevice) => {
+        dispatch(toggleCart(product))
+    }
+
+    const handleChange = () => {
+        setValue(prev => {
+            if (searchById(product, prev)) {
+                return prev.filter(item => item.id !== product.id)
+            }
+            else {
+                return [...prev, product]
+            }
+        })
+    }
+
+    const handleIncrement = (product: IDevice) => {
+        dispatch(incrementCount(product))
+    }
+
+    const handleDecrement = (product: IDevice) => {
+        dispatch(decrementCount(product))
+    }
+
     return (
         <>
             <section {...props} className={styles.section}>
                 <Checkbox
-                    onChange={() => setValue(prev => {
-                        if (searchById(product, prev)) {
-                            return prev.filter(item => item.id !== product.id)
-                        }
-                        else {
-                            return [...prev, product]
-                        }
-                    })}
+                    onChange={() => handleChange()}
                     checked={searchById(product, value)}
                 />
                 <Link href={`${PRODUCT_ROUTE}${product.id}`}>
@@ -60,9 +77,7 @@ export const CartProduct = ({
                             </Atag>
                             <Atag
                                 aria-label="Удалить товар"
-                                onClick={() =>
-                                    dispatch(removeFromCart(product))
-                                }
+                                onClick={() => handleDelete(product)}
                                 className={styles.link}
                             >
                                 Удалить
@@ -75,9 +90,7 @@ export const CartProduct = ({
                         <div className={styles.calculation}>
                             <div className={styles.wrapper}>
                                 <button
-                                    onClick={() =>
-                                        dispatch(decrementCount(product))
-                                    }
+                                    onClick={() => handleDecrement(product)}
                                     className={styles.btn}
                                 >
                                     &mdash;
@@ -86,9 +99,7 @@ export const CartProduct = ({
                                     {product.count}
                                 </Htag>
                                 <button
-                                    onClick={() =>
-                                        dispatch(incrementCount(product))
-                                    }
+                                    onClick={() => handleIncrement(product)}
                                     className={styles.btn}
                                 >
                                     &#43;

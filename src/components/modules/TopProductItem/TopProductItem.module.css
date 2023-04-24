@@ -17,6 +17,28 @@
     align-self: end;
 }
 
+.active {
+    background: var(--white);
+    border: 1px solid var(--red);
+    color: var(--red);
+}
+
+.active svg {
+    color: var(--red);
+}
+
+.active:hover svg {
+    color: var(--white);
+}
+
+.active:hover div {
+    color: var(--white);
+}
+
+.active div {
+    color: var(--red)
+}
+
 .price {
     display: flex;
     align-items: flex-end;

@@ -21,7 +21,7 @@ import {
     selectCart,
     sumCountCart,
 } from "@/store/cart/selector";
-import { removeFromCart } from "@/store/cart/actions";
+import { toggleCart } from "@/store/cart/actions";
 import { MAIN_ROUTE } from "@/utils";
 import { Meta } from "@/components/seo/Meta";
 
@@ -31,6 +31,13 @@ const Cart = ({ className, ...props }: CartProps): JSX.Element => {
     const sumCount = useSelector(sumCountCart);
 
     const [selected, setSelected] = React.useState<IDevice[]>([])
+
+    const handleClick = () => {
+        selected.map(product => {
+            dispatch(toggleCart(product))
+            setSelected((prev) => prev.filter((item) => item.id !== product.id));
+        })
+    }
 
     return (
         <>
@@ -72,12 +79,7 @@ const Cart = ({ className, ...props }: CartProps): JSX.Element => {
                                     {selected.length > 0 && (
                                         <Atag
                                             aria-label="Удалить товары из избранного"
-                                            onClick={() =>
-                                                selected.map(product => {
-                                                    dispatch(removeFromCart(product))
-                                                    setSelected((prev) => prev.filter((item) => item.id !== product.id));
-                                                })
-                                            }
+                                            onClick={() => handleClick()}
                                         >
                                             <Ptag>Удалить выбранные</Ptag>
                                         </Atag>

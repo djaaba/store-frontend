@@ -8,24 +8,12 @@ import {
 
 export const cart = (state: IDevice[] = [], action: CartAction) => {
     switch (action.type) {
-        case types.ADD_TO_CART: {
+        case types.TOGGLE_CART: {
             return state.filter((product) => product.id === action.body.id)
                 .length
-                ? state.filter((product) =>
-                    product.id === action.body.id
-                        ? {
-                            ...product,
-                            count: ++product.count,
-                        }
-                        : product
-                )
+                ?
+                state.filter((product) => product.id !== action.body.id)
                 : [...state, action.body];
-
-            // return [...state, action.body];
-            // чиним корзину, чтобы при повторном клике увеличивалось количество
-        }
-        case types.REMOVE_FROM_CART: {
-            return state.filter((product) => product.id !== action.body.id);
         }
 
         case types.INCREMENT_COUNT: {

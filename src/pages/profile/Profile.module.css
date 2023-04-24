@@ -25,7 +25,9 @@
 .options {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
+    grid-row-gap: 20px;
 }
 
 .grid {
@@ -36,7 +38,7 @@
 }
 
 .title {
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
     margin-right: 20px;
 }
 

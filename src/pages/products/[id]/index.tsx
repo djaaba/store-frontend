@@ -11,7 +11,7 @@ import { IBrand, IDevice, IType } from "@/shared";
 import { getAllTypes, getAllBrands, getDeviceBySlug, deleteDevice } from "@/api";
 import { getPrettyPrice, getPrice, MAIN_ROUTE, success } from "@/utils";
 import { Atag, Breadcrumbs, Button, FavoriteLabel, FontAwesomeIcon, Htag, Ptag, TrashIcon, WhiteWrapper } from "@/components/UI";
-import { addToCart } from "@/store/cart/actions";
+import { toggleCart } from "@/store/cart/actions";
 import { ChangeDeviceModal, Characteristics, Counter } from "@/components/modules";
 import { Meta } from "@/components/seo/Meta";
 import { selectUser } from "@/store/user/selector";
@@ -101,7 +101,7 @@ const Item = ({ data, brands, types, ...props }: CatalogProps) => {
                                     }
                                 </div>
                                 <Button
-                                    onClick={() => dispatch(addToCart(device))}
+                                    onClick={() => dispatch(toggleCart(device))}
                                     color="red"
                                     size="big"
                                 >

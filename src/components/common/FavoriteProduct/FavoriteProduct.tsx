@@ -1,6 +1,7 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 import Image from "next/image";
+import cn from "classnames";
 
 import styles from "./FavoriteProduct.module.css";
 import { FavoriteProductProps } from "./FavoriteProduct.props";
@@ -12,15 +13,27 @@ import {
     Htag,
     TrashIcon,
 } from "@/components/UI";
-import { getPrettyPrice, getPrice, PRODUCT_ROUTE } from "@/utils";
+import { getPrettyPrice, getPrice, PRODUCT_ROUTE, searchById } from "@/utils";
 import { toggleFavorite } from "@/store/favorite/actions";
+import { IDevice } from "@/shared";
+import { toggleCart } from "@/store/cart/actions";
+import { selectCart } from "@/store/cart/selector";
 
 export const FavoriteProduct = ({
     product,
     ...props
 }: FavoriteProductProps): JSX.Element => {
     const dispatch = useDispatch();
+    const cart = useSelector(selectCart);
     const price = getPrice(product.price, product.discount);
+
+    const handleClick = (product: IDevice) => {
+        dispatch(toggleCart(product));
+    }
+
+    const handleDelete = (product: IDevice) => {
+        dispatch(toggleFavorite(product))
+    }
 
     return (
         <>
@@ -40,7 +53,7 @@ export const FavoriteProduct = ({
                         <Htag tag="h4">{product.name}</Htag>
                         <Htag
                             tag="h4"
-                            onClick={() => dispatch(toggleFavorite(product))}
+                            onClick={() => handleDelete(product)}
                             className={styles.remove}
                         >
                             <FontAwesomeIcon
@@ -60,13 +73,18 @@ export const FavoriteProduct = ({
                             </p>
                         </div>
                         <Button
-                            className={styles.btn}
+                            className={cn(styles.btn, searchById(product, cart) ? styles.active : '')}
+                            onClick={() => handleClick(product)}
                             color="red"
                             size="big"
                             icon
                         >
                             <FontAwesomeIcon icon={CartShoppingIcon} />
-                            <p className={styles.btnText}>В корзину</p>
+                            <p className={styles.btnText}>
+                                {
+                                    searchById(product, cart) ? 'Удалить' : 'В корзину'
+                                }
+                            </p>
                         </Button>
                     </div>
                 </div>

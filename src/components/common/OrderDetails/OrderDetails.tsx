@@ -16,7 +16,7 @@ import { getPrettyPrice, getPostfix, success } from "@/utils/";
 import { Button, Htag, ItemWithDots } from "@/components/UI";
 import { createCart } from "@/api";
 import { IDevice } from "@/shared";
-import { removeFromCart } from "@/store/cart/actions";
+import { toggleCart } from "@/store/cart/actions";
 
 export const OrderDetails = ({ ...props }: OrderDetailsProps): JSX.Element => {
     const dispatch = useDispatch();
@@ -27,10 +27,11 @@ export const OrderDetails = ({ ...props }: OrderDetailsProps): JSX.Element => {
     const sumCount = useSelector(sumCountCart);
 
     const handleClick = () => {
-        createCart(cart, user._user.id)
+        const order = String(Date.parse(String(new Date())))
+        createCart(cart, user._user.id, order)
         toast.success('Спасибо за покупку!', success);
         cart.forEach((item: IDevice) => {
-            dispatch(removeFromCart(item))
+            dispatch(toggleCart(item))
         })
     }
 

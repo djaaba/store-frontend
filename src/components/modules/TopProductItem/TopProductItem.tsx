@@ -1,14 +1,15 @@
 import cn from "classnames";
 import Link from "next/link";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Image from "next/image";
 
 import styles from "./TopProductItem.module.css";
 import { TopProductItemProps } from "./TopProductItem.props";
 
-import { addToCart } from "@/store/cart/actions";
-import { getPrettyPrice, getPrice, PRODUCT_ROUTE } from "@/utils";
+import { toggleCart } from "@/store/cart/actions";
+import { getPrettyPrice, getPrice, PRODUCT_ROUTE, searchById } from "@/utils";
 import { Button, CartShoppingIcon, Discount, FontAwesomeIcon, Htag } from "@/components/UI";
+import { selectCart } from "@/store/cart/selector";
 
 export const TopProductItem = ({
     item,
@@ -16,6 +17,7 @@ export const TopProductItem = ({
     ...props
 }: TopProductItemProps): JSX.Element => {
     const dispatch = useDispatch();
+    const cart = useSelector(selectCart);
 
     return (
         <div {...props} className={cn(className, styles.wrapper)}>
@@ -49,13 +51,17 @@ export const TopProductItem = ({
                 </div>
             </div>
             <Button
-                onClick={() => dispatch(addToCart(item))}
+                onClick={() => dispatch(toggleCart(item))}
                 size="medium"
                 color={"red"}
                 icon
-                className={styles.btn}
+                className={cn(styles.btn, searchById(item, cart) ? styles.active : '')}
             >
-                <FontAwesomeIcon icon={CartShoppingIcon} />В Корзину
+                <FontAwesomeIcon icon={CartShoppingIcon} />
+                {
+                    searchById(item, cart) ? 'Удалить' : 'В Корзину'
+                }
+
             </Button>
         </div>
     );

@@ -49,6 +49,28 @@
     color: var(--gray-hover);
 }
 
+.active {
+    background: var(--white);
+    border: 1px solid var(--red);
+    color: var(--red)
+}
+
+.active .btnText{
+    color: var(--red)
+}
+
+.active svg {
+    color: var(--red);
+}
+
+.active:hover svg {
+    color: var(--white);
+}
+
+.active:hover .btnText{
+    color: var(--white);
+}
+
 .icon {
     margin-right: 10px;
 }
@@ -57,17 +79,21 @@
     .content {
         grid-column-gap: 10px;
     }
+
     .container {
         padding: 0;
     }
+
     .wrapper {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
+
     .price {
         margin-bottom: 0;
     }
+
     .img {
         width: 100px;
         height: 100px;
@@ -78,12 +104,15 @@
     .container {
         grid-column-gap: 6px;
     }
+
     .btn {
         padding: 5px 10px;
     }
+
     .curPrice {
         margin-right: 0;
     }
+
     .price {
         flex-wrap: wrap;
     }

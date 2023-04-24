@@ -16,11 +16,13 @@ import {
 } from "@/components/UI";
 import { selectFavorite } from "@/store/favorite/selector";
 import { toggleFavorite } from "@/store/favorite/actions";
-import { addToCart } from "@/store/cart/actions";
+import { toggleCart } from "@/store/cart/actions";
 import { IDevice } from "@/shared";
+import { selectCart } from "@/store/cart/selector";
 
 export const Product = ({ item, ...props }: ProductProps): JSX.Element => {
     const favorites = useSelector(selectFavorite);
+    const cart = useSelector(selectCart);
 
     const discountPrice = getPrice(item.price, item.discount);
     const dispatch = useDispatch();
@@ -30,7 +32,7 @@ export const Product = ({ item, ...props }: ProductProps): JSX.Element => {
     };
 
     const add = (item: IDevice) => {
-        dispatch(addToCart(item));
+        dispatch(toggleCart(item));
     };
 
     return (
@@ -81,6 +83,7 @@ export const Product = ({ item, ...props }: ProductProps): JSX.Element => {
                             color="red"
                             size="medium"
                             onClick={() => add(item)}
+                            className={searchById(item, cart)? styles.active : ''}
                         >
                             <FontAwesomeIcon icon={CartShoppingIcon} />
                         </Button>
