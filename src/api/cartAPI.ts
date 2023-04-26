@@ -1,10 +1,19 @@
 import { $authHost, $host } from "./"
 
-import { IDevice, IUserInfo } from "@/shared";
+import { IDevice } from "@/shared";
 
-export const createCart = async (devices: IDevice[], cartId: number, order: string) => {
-    const { data } = await $authHost.post('cart', {devices, cartId, order})
+export const createCart = async (devices: IDevice[], userId: number, order: string) => {
+    const { data } = await $authHost.post('cart', {devices, userId, order})
     return data;
+}
+
+export const getAllCarts = async () => {
+    try {
+        const response = await $host.get("cart/");
+        return response.data;
+    } catch (error) {
+        return [];
+    }
 }
 
 // export const updateDevice = async (device: FormData) => {

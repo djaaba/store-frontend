@@ -6,7 +6,6 @@ import styles from "./Header.module.css";
 
 import { HeaderBottom, HeaderMiddle, HeaderTop } from "./modules";
 import { navigation } from "@/plug/Header";
-import { useDispatch } from "react-redux";
 
 export const Header = ({ className, data, ...props }: HeaderProps): JSX.Element => {
     const divRef = useRef<HTMLDivElement>(null);

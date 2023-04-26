@@ -52,7 +52,7 @@ export const StoreModal = ({ storeInfo, ...props }: StoreModalProps): JSX.Elemen
 
     return (
         <>
-            <Button color="red" size="big" onClick={() => setIsOpen(true)}>Изменить информацию о магазине</Button>
+            <Button color="red" size="big" onClick={() => setIsOpen(true)}>Управление информацией о магазине</Button>
             <HyperModal requestClose={() => setIsOpen(false)} isOpen={isOpen}>
                 <form onSubmit={handleSubmit}>
                 <h2>Введите название магазина</h2>

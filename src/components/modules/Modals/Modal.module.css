@@ -1,0 +1,14 @@
+.title{
+    text-align: center;
+}
+.container > *{
+    margin-bottom: 15px;
+}
+
+.container{
+    margin-top: 10px;
+}
+
+/* .container:nth-child(1n):last-child{
+    margin-bottom: 0px;
+} */

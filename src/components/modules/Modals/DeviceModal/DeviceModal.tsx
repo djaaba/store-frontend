@@ -19,11 +19,16 @@ export const DeviceModal = ({ types, brands, ...props }: DeviceModalProps): JSX.
     const description = useInput('', { isEmpty: true, minLength: 1 })
     const price = useInput('', { isEmpty: true, minLength: 1 })
     const discount = useInput('0', { isEmpty: true, minLength: 1 })
-    // const type = useInput(types[0].name, { isEmpty: true })
-    // const brand = useInput(brands[0].name, { isEmpty: true })
-    const type = useInput('', { isEmpty: true })
-    const brand = useInput('', { isEmpty: true })
+    const type = useInput(types[0]?.name, { isEmpty: true })
+    const brand = useInput(brands[0]?.name, { isEmpty: true })
+    // const type = useInput('', { isEmpty: true })
+    // const brand = useInput('', { isEmpty: true })
     const file = useFile('', { isEmpty: true });
+
+    React.useEffect(() => {
+        console.log(type.value)
+        console.log(brand.value)
+    }, [type.value, brand.value])
 
     const [info, setInfo] = React.useState<IDeviceInfo[]>([])
 
@@ -78,7 +83,7 @@ export const DeviceModal = ({ types, brands, ...props }: DeviceModalProps): JSX.
 
     return (
         <>
-            <Button color="red" size="big" onClick={() => setIsOpen(true)}>Добавить устройство</Button>
+            <Button color="red" size="big" onClick={() => setIsOpen(true)}>Управление устройствами</Button>
             <HyperModal requestClose={() => setIsOpen(false)} isOpen={isOpen}>
                 <form onSubmit={handleSubmit}>
                     <h2>Выберите тип</h2>

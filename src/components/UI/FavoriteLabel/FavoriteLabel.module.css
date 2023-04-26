@@ -22,19 +22,19 @@
 }
 
 .favorite > .i {
-    color: var(--red);
+    color: var(--like);
 }
 
 .favorite:hover > .i {
-    color: var(--red-hover);
+    color: var(--like-hover);
 }
 
 .favorite > .a a {
-    color: var(--red);
+    color: var(--like);
 }
 
 .favorite:hover > .a a {
-    color: var(--red-hover);
+    color: var(--like-hover);
 }
 
 @media (max-width: 768px) {

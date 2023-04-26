@@ -6,7 +6,7 @@ import styles from "./Product.module.css";
 // import { ProductProps } from "./Product.props";
 
 import { getAllTypes, getAllBrands, getAllDevices } from "@/api";
-import { Breadcrumbs, ItemCounter, PaginationBar, Range } from "@/components/UI";
+import { Breadcrumbs, Htag, ItemCounter, PaginationBar, Range } from "@/components/UI";
 
 import { getId, getPrimitiveIdArray } from "@/utils";
 import { CheckboxGroup, Product } from "@/components/modules";
@@ -55,23 +55,23 @@ const Products = ({ types, brands, device, ...props }: ProductProps): JSX.Elemen
 
     return (
         <React.Fragment {...props}>
-            <Meta title="Товары" description="Список товаров"/>
+            <Meta title="Товары" description="Список товаров" />
             <main className={cn(styles.main, "wrapper")}>
                 <Breadcrumbs list={breadcrumbs} />
                 <div className={styles.content}>
                     <aside className={styles.aside}>
-                        <b>
+                        <Htag tag="h2">
                             Категория
-                        </b>
+                        </Htag>
                         <CheckboxGroup items={types} filterByArr={typesFilter} filterByFunc={toggleType} />
-                        <b>
+                        <Htag tag="h2">
                             Бренд
-                        </b>
+                        </Htag>
                         <CheckboxGroup items={brands} filterByArr={brandsFilter} filterByFunc={toggleBrand} />
-                        <b>
+                        <Htag tag="h2">
                             Цена
-                        </b>
-                        <Range value={value} setValue={setValue} />
+                        </Htag>
+                        <Range className={styles.range} value={value} setValue={setValue} />
                     </aside>
                     <div>
                         <div className={styles.products}>

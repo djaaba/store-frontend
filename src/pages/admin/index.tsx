@@ -6,7 +6,7 @@ import styles from "./Admin.module.css";
 // import { AdminProps } from "./Admin.props";
 
 import { BrandModal, DeviceModal, TypeModal, BannerModal, StoreModal } from "@/components/modules";
-import { check, getAllBrands, getAllTypes, getStore } from "@/api";
+import { check, getAllBrands, getAllCarts, getAllTypes, getStore } from "@/api";
 import { IBrand, IStoreInfo, IType, IUserInfo } from "@/shared";
 
 import { login } from "@/store/user/actions";
@@ -16,6 +16,7 @@ const Admin = ({ types, brands, info, className, ...props }: AdminProps): JSX.El
     const dispatch = useDispatch();
 
     React.useEffect(() => {
+        getAllCarts().then(data => console.log(data))
         check().then(data => {
             dispatch(login(data as IUserInfo))
         }).catch(err => {
@@ -42,7 +43,7 @@ export async function getServerSideProps() {
     const types = await getAllTypes();
     const brands = await getAllBrands();
     const info = await getStore();
-
+    
     return {
         props: {
             types,

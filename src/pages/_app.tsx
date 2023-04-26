@@ -23,7 +23,7 @@ export default function App({ Component, pageProps }: AppProps) {
     return (
         <>
             <React.StrictMode>
-                {/* <NextNProgress
+                <NextNProgress
                     color="var(--red)"
                     options={{
                         trickleSpeed: 50,
@@ -31,7 +31,7 @@ export default function App({ Component, pageProps }: AppProps) {
                         speed: 300,
                     }}
                     // showAfterMs={300}
-                /> */}
+                />
                 <Provider store={rootStore}>
                     <Layout style={roboto.style}>
                         <Component {...pageProps} />

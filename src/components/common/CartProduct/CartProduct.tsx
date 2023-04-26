@@ -68,13 +68,15 @@ export const CartProduct = ({
                     <Htag tag="h3">{product.name}</Htag>
                     <div className={styles.description}>
                         <div className={styles.mobile}>
+                            <Link href={PRODUCT_ROUTE}>
                             <Atag
                                 aria-label="Узнать подробнее обо всех товарах"
                                 className={styles.link}
                                 arrow
                             >
-                                Все товары
+                                    Все товары
                             </Atag>
+                                </Link>
                             <Atag
                                 aria-label="Удалить товар"
                                 onClick={() => handleDelete(product)}

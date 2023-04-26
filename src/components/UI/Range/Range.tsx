@@ -36,7 +36,7 @@ export const Range = ({
     }, [])
 
     return (
-        <>
+        <div className={props.className}>
             <div className={styles.inputs}>
                 <Input onChange={(minVal: React.ChangeEvent<HTMLInputElement>) => setMinVal(+minVal.target.value)} value={value[0]} type="number" />
                 <p className={styles.separator}>
@@ -54,6 +54,6 @@ export const Range = ({
                 onChange={(v: any) => setVal(v)}
                 value={val}
             />
-        </>
+        </div>
     );
 };
