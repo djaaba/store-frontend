@@ -28,6 +28,12 @@
     --like: #e31235;
     --like-hover: #bd0f2c;
 
+    --delete: #e31235;
+    --delete-hover: #bd0f2c;
+
+    --success: #1ba948;
+    --success-hover: #168a3b;
+
     /* --red: #e31235; */
     /* --red-hover: #bd0f2c; */
     /* --red-click: #9c0c24; */
@@ -86,6 +92,14 @@ button {
 
 strong {
     color: var(--dark-gray)
+}
+
+button:disabled,
+button[disabled],
+button[disabled]:hover {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: auto;
 }
 
 /* default styles */

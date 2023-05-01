@@ -50,10 +50,9 @@ export const getAllDevices = async (typeId?: string | number | number[], brandId
     }
 }
 
-
-export const getDeviceBySlug = async (slug: string) => {
+export const getDeviceBySlug = async (slug: string, flag?: boolean) => {
     try {
-        const response = await $host.get(`device/${slug}`);
+        const response = await $host.get(`device/${slug}?flag=${flag}`);
         return response.data;
     } catch {
         return false;
@@ -72,9 +71,8 @@ export const updateDevice = async (device: FormData) => {
 export const deleteDevice = async (id: number) => {
     try {
         const { data } = await $authHost.post('device/delete/', {
-            id 
-        }
-        )
+            id
+        })
         return data;
     } catch {
         return false;

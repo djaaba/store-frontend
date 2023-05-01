@@ -12,6 +12,7 @@ import {
     faArrowUp,
     faTruck,
     faMicrophone,
+    faCheck,
     faHeart as faSolidHeart,
 } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -42,6 +43,7 @@ export const MagnifyingGlassIcon = faMagnifyingGlass;
 export const CartShoppingIcon = faCartShopping;
 export const LandmarkIcon = faLandmark;
 export const CheckDoubleIcon = faCheckDouble;
+export const CheckIcon = faCheck
 export const ShopIcon = faShop;
 export const TruckIcon = faTruck;
 export const ArrowUpIcon = faArrowUp;

@@ -6,6 +6,20 @@ export const createBrand = async (brand: any) => {
     return data;
 }
 
+export const deleteBrand = async (id: number) => {
+    const { data } = await $authHost.post('brand/delete/', { id })
+    return data;
+}
+
+export const updateBrand = async (brand: FormData) => {
+    try {
+        const { data } = await $authHost.post('brand/update', brand)
+        return data;
+    } catch {
+        return false;
+    }
+};
+
 export const getAllBrands = async () => {
     try {
         const response = await $host.get("brand/");

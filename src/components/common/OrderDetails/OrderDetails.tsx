@@ -14,7 +14,7 @@ import {
 import { selectUser } from "@/store/user/selector";
 import { getPrettyPrice, getPostfix, success } from "@/utils/";
 import { Button, Htag, ItemWithDots } from "@/components/UI";
-import { createCart } from "@/api";
+import { createOrder } from "@/api";
 import { IDevice } from "@/shared";
 import { toggleCart } from "@/store/cart/actions";
 
@@ -28,7 +28,7 @@ export const OrderDetails = ({ ...props }: OrderDetailsProps): JSX.Element => {
 
     const handleClick = () => {
         const order = String(Date.parse(String(new Date())))
-        createCart(cart, user._user.id, order)
+        createOrder(cart, user._user.id, order)
         toast.success('Спасибо за покупку!', success);
         cart.forEach((item: IDevice) => {
             dispatch(toggleCart(item))

@@ -13,3 +13,5 @@ export * from "./IDeviceInfo"
 export * from "./store";
 export * from "./IMeta";
 export * from "./IStoreInfo";
+export * from './IModal';
+export * from './IOrder';

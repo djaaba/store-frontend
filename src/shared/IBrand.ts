@@ -1,6 +1,5 @@
 export interface IBrand {
-    id?: number;
+    id: number;
     name: string;
     imgUrl: string;
-    linkIrl: string;
 }

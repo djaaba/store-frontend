@@ -16,8 +16,8 @@
 }
 
 .title {
-    white-space: nowrap;
     color: var(--gray-suit);
+    white-space: nowrap;
 }
 
 @media (max-width: 425px) {

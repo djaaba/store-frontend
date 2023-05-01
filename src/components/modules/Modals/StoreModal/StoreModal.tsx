@@ -3,11 +3,11 @@ import React from "react";
 import HyperModal from 'react-hyper-modal';
 import { toast } from "react-toastify";
 
-import styles from "./StoreModal.module.css";
+import styles from "../Modal.module.css";
 import { StoreModalProps } from "./StoreModal.props";
 
 import { useFile, useInput } from "@/hooks";
-import { Button, Input } from "@/components/UI";
+import { Button, Htag, Input } from "@/components/UI";
 import { updateStore } from "@/api";
 import { error, success } from "@/utils";
 
@@ -26,7 +26,9 @@ export const StoreModal = ({ storeInfo, ...props }: StoreModalProps): JSX.Elemen
     let addressError = address.isDirty && address.isEmpty;
     let emailError = email.isDirty && email.isEmpty;
 
-    let isDisabled = !name.inputValid || !file.inputValid || !phone.inputValid|| !address.inputValid|| !email.inputValid;
+    let valids = !name.inputValid || !phone.inputValid || !address.inputValid || !email.inputValid;
+
+    let isDisabled = storeInfo.name? valids : !file.inputValid || valids;
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -55,49 +57,61 @@ export const StoreModal = ({ storeInfo, ...props }: StoreModalProps): JSX.Elemen
             <Button color="red" size="big" onClick={() => setIsOpen(true)}>Управление информацией о магазине</Button>
             <HyperModal requestClose={() => setIsOpen(false)} isOpen={isOpen}>
                 <form onSubmit={handleSubmit}>
-                <h2>Введите название магазина</h2>
-                    <Input
-                        className={cn(styles.input, nameError ? "errorIndicator" : null)}
-                        placeholder="Введите название магазина"
-                        onBlur={name.onBlur}
-                        type="text"
-                        value={name.value}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => name.onChange(e)}
-                    />
-                    <h2>Введите адрес магазина</h2>
-                    <Input
-                        className={cn(styles.input, addressError ? "errorIndicator" : null)}
-                        placeholder="Введите адрес магазина"
-                        onBlur={address.onBlur}
-                        type="text"
-                        value={address.value}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => address.onChange(e)}
-                    />
-                    <h2>Введите номер телефона</h2>
-                    <Input
-                        className={cn(styles.input, phoneError ? "errorIndicator" : null)}
-                        placeholder="Введите номер телефона"
-                        onBlur={phone.onBlur}
-                        type="number"
-                        value={phone.value}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => phone.onChange(e)}
-                    />
-                    <h2>Введите email адрес</h2>
-                    <Input
-                        className={cn(styles.input, emailError ? "errorIndicator" : null)}
-                        placeholder="Введите email "
-                        onBlur={email.onBlur}
-                        type="email"
-                        value={email.value}
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => email.onChange(e)}
-                    />
-                    <h2>Выберите изображение</h2>
-                    <input
-                        className={cn(styles.input, fileError ? "errorIndicator" : null)}
-                        onBlur={file.onBlur}
-                        type="file"
-                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => file.onChange(e)}
-                    />
+                    <div className={styles.container}>
+                        <div>
+                            <Htag tag="h3">Выберите изображение</Htag>
+                            <input
+                                className={cn(styles.input, fileError ? "errorIndicator" : null)}
+                                onBlur={file.onBlur}
+                                type="file"
+                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => file.onChange(e)}
+                            />
+                        </div>
+                        <div>
+                            <Htag tag="h3">Введите название магазина</Htag>
+                            <Input
+                                className={cn(styles.input, nameError ? "errorIndicator" : null)}
+                                placeholder="Введите название магазина"
+                                onBlur={name.onBlur}
+                                type="text"
+                                value={name.value}
+                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => name.onChange(e)}
+                            />
+                        </div>
+                        <div>
+                            <Htag tag="h3">Введите адрес магазина</Htag>
+                            <Input
+                                className={cn(styles.input, addressError ? "errorIndicator" : null)}
+                                placeholder="Введите адрес магазина"
+                                onBlur={address.onBlur}
+                                type="text"
+                                value={address.value}
+                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => address.onChange(e)}
+                            />
+                        </div>
+                        <div>
+                            <Htag tag="h3">Введите номер телефона</Htag>
+                            <Input
+                                className={cn(styles.input, phoneError ? "errorIndicator" : null)}
+                                placeholder="Введите номер телефона"
+                                onBlur={phone.onBlur}
+                                type="number"
+                                value={phone.value}
+                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => phone.onChange(e)}
+                            />
+                        </div>
+                        <div>
+                            <Htag tag="h3">Введите email адрес</Htag>
+                            <Input
+                                className={cn(styles.input, emailError ? "errorIndicator" : null)}
+                                placeholder="Введите email "
+                                onBlur={email.onBlur}
+                                type="email"
+                                value={email.value}
+                                onChange={(e: React.ChangeEvent<HTMLInputElement>) => email.onChange(e)}
+                            />
+                        </div>
+                    </div>
                     <Button
                         disabled={isDisabled}
                         type="submit"

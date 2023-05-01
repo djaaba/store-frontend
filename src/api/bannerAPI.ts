@@ -6,6 +6,20 @@ export const createBanner = async (banner: FormData) => {
     return data;
 }
 
+export const deleteBanner = async (id: number) => {
+    const { data } = await $authHost.post('banners/delete/', { id })
+    return data;
+}
+
+export const updateBanner = async (banner: FormData) => {
+    try {
+        const { data } = await $authHost.post('banners/update', banner)
+        return data;
+    } catch {
+        return false;
+    }
+};
+
 export const getAllBanners = async () => {
     try {
         const response = await $host.get("banners/");

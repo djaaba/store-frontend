@@ -1,5 +1,5 @@
 export interface IBanner {
-    id?: number;
+    id: number;
     imgUrl: string;
-    linkUrl: string;
+    name: string;
 }
