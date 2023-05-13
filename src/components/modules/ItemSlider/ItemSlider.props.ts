@@ -1,7 +1,8 @@
 import { DetailedHTMLProps, HTMLAttributes } from "react";
-import { IDevice } from "../../../shared";
+import { IDevice } from "@/shared";
 
-export interface BestsellersProps
+export interface ItemSliderProps
     extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     items: IDevice[];
+    title: string;
 }

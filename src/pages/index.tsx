@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { Home } from '@/screens/home/Home';
-import { getAllBanners, getAllBrands, getAllTypes, getBestsellers, getMostViewed } from '@/api';
+import { getAllBanners, getAllBrands, getAllTypes, getBestsellers, getMostDiscounted, getMostViewed } from '@/api';
 
-function Main({ mostViewed, bestsellers, types, brands, banners }: any) {
+function Main({ mostViewed, mostDiscounted, bestsellers, types, brands, banners }: any) {
 
     return (
         <>
@@ -13,6 +13,7 @@ function Main({ mostViewed, bestsellers, types, brands, banners }: any) {
                 banners={banners}
                 mostViewed={mostViewed}
                 bestsellers={bestsellers}
+                mostDiscounted={mostDiscounted}
             />
         </>
     );
@@ -25,6 +26,7 @@ export async function getServerSideProps() {
     const brands = await getAllBrands();
     const banners = await getAllBanners();
     const mostViewed = await getMostViewed();
+    const mostDiscounted = await getMostDiscounted();
     const bestsellers = await getBestsellers();
 
     return {
@@ -34,6 +36,7 @@ export async function getServerSideProps() {
             banners,
             mostViewed,
             bestsellers,
+            mostDiscounted,
         },
     };
 }

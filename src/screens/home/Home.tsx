@@ -7,7 +7,7 @@ import styles from "./Home.module.css";
 
 import {
     Banner,
-    Bestsellers,
+    ItemSlider,
     Brands,
     Types,
     TopProduct,
@@ -18,7 +18,7 @@ import { IBanner, IBrand, IDevice, IType, IUserInfo } from "@/shared";
 import { login } from "@/store/user/actions";
 import { Meta } from '@/components/seo/Meta';
 
-export const Home = ({ mostViewed, bestsellers, types, brands, banners }: HomeProps) => {
+export const Home = ({ mostViewed, mostDiscounted, bestsellers, types, brands, banners }: HomeProps) => {
     const dispatch = useDispatch();
 
     React.useEffect(() => {
@@ -35,7 +35,9 @@ export const Home = ({ mostViewed, bestsellers, types, brands, banners }: HomePr
                 <TopProduct items={mostViewed} />
             </section>
             <WhiteWrapper className={cn(styles.container, "wrapper")}>
-                <Bestsellers items={bestsellers} />
+                <ItemSlider items={bestsellers} title="Хиты продаж"/>
+                <ItemSlider items={mostViewed} title="Самые просматриваемые"/>
+                <ItemSlider items={mostDiscounted} title="Самые выгодные"/>
                 <Types types={types} />
                 <Brands brands={brands} />
             </WhiteWrapper>
@@ -46,6 +48,7 @@ export const Home = ({ mostViewed, bestsellers, types, brands, banners }: HomePr
 interface HomeProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
     mostViewed: IDevice[];
     bestsellers: IDevice[];
+    mostDiscounted: IDevice[];
     types: IType[];
     brands: IBrand[];
     banners: IBanner[];

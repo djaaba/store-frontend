@@ -1,17 +1,18 @@
-import styles from "./Bestsellers.module.css";
-import { BestsellersProps } from "./Bestsellers.props";
+import styles from "./ItemSlider.module.css";
+import { ItemSliderProps } from "./ItemSlider.props";
 
 import { Htag } from "../../UI";
 import { Product, Scroll } from "..";
 
-export const Bestsellers = ({
+export const ItemSlider = ({
     items,
+    title,
     ...props
-}: BestsellersProps): JSX.Element => {
+}: ItemSliderProps): JSX.Element => {
     return (
         <>
             <section {...props} className={styles.container}>
-                <Htag tag="h1">Хиты продаж</Htag>
+                <Htag tag="h1">{title}</Htag>
                 <Scroll>
                     {items?.map((item, index) => (
                         <Product key={item.id} item={item} />

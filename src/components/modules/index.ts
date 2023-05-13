@@ -1,4 +1,4 @@
-export * from "./Bestsellers/Bestsellers";
+export * from "./ItemSlider/ItemSlider";
 export * from "./Brands/Brands";
 export * from "./Characteristics/Characteristics";
 export * from "./Product/Product";
