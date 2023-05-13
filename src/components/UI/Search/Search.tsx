@@ -37,12 +37,8 @@ export const Search = ({ placeholder, value, setValue }: SearchProps): JSX.Eleme
 
     return (
         <>
-            <div className={styles.container}
-
-            >
-                <div
-
-                >
+            <div className={styles.container}>
+                <div>
                     <input
                         type="text"
                         className={styles.input}
@@ -52,7 +48,7 @@ export const Search = ({ placeholder, value, setValue }: SearchProps): JSX.Eleme
                         onFocus={() => setOpen(true)}
                         onBlur={() => setTimeout(() => setOpen(false), 100)}
                     />
-                    <Dictaphone setText={setValue} className={styles.inputMicro} />
+                    <Dictaphone setOpen={setOpen} setText={setValue} className={styles.inputMicro} />
 
                     <FontAwesomeIcon
                         onClick={() => setValue("")}
@@ -72,13 +68,24 @@ export const Search = ({ placeholder, value, setValue }: SearchProps): JSX.Eleme
                 >
                     {
                         isOpen ?
-                            results.map((item: IDevice) => (
-                                <Link onClick={() => setValue("")} key={getId()} href={`${PRODUCT_ROUTE}${item.id}`}>
-                                    <li className={styles.result}>
-                                        {item.name}
-                                    </li>
-                                </Link>
-                            ))
+                            <>
+                                {
+                                    results.map((item: IDevice) => (
+                                        <Link onClick={() => setValue("")} key={getId()} href={`${PRODUCT_ROUTE}${item.id}`}>
+                                            <li className={styles.result}>
+                                                {item.name}
+                                            </li>
+                                        </Link>
+                                    ))
+                                }
+                                {
+                                    results.length == 0 && debouncedSearchTerm ?
+                                        <li className={styles.result}>
+                                            Товар не найден
+                                        </li>
+                                        : ''
+                                }
+                            </>
                             :
                             ''
                     }

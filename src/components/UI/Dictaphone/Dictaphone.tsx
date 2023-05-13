@@ -9,6 +9,7 @@ import { MicrophoneIcon, FontAwesomeIcon } from "../";
 export const Dictaphone = ({
     className,
     setText,
+    setOpen,
     ...props
 }: DictaphoneProps): JSX.Element => {
     const [isListening, setIsListening] = React.useState<boolean>(false);
@@ -22,6 +23,7 @@ export const Dictaphone = ({
     }, [transcript]);
 
     function handleClick() {
+        setOpen(true)
         setIsListening(!isListening);
         if (isListening == true) {
             console.log("startListening");
