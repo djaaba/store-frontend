@@ -34,7 +34,6 @@ const Login = ({ className, ...props }: LoginProps): JSX.Element => {
 
         login(email.value, password.value).then(data => {
             dispatch(userLogin(data as IUserInfo))
-            console.log(data);
             toast.success('Вы авторизованы!', success);
             router.push(MAIN_ROUTE)
         }).catch(err => {

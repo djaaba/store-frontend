@@ -13,6 +13,7 @@ import {
     faTruck,
     faMicrophone,
     faCheck,
+    faEye,
     faHeart as faSolidHeart,
 } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -48,6 +49,7 @@ export const ShopIcon = faShop;
 export const TruckIcon = faTruck;
 export const ArrowUpIcon = faArrowUp;
 export const MicrophoneIcon = faMicrophone;
+export const EyeIcon = faEye;
 
 export const SignalIcon = faSignal;
 export const SolidHeartIcon = faSolidHeart;

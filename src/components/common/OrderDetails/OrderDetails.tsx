@@ -46,7 +46,6 @@ export const OrderDetails = ({ ...props }: OrderDetailsProps): JSX.Element => {
             router.push(LOGIN_ROUTE);
 
         }
-        console.log()
     }
 
     return (
@@ -58,7 +57,7 @@ export const OrderDetails = ({ ...props }: OrderDetailsProps): JSX.Element => {
                 <div className={styles.content}>
                     <ItemWithDots
                         size="h4"
-                        title={`${sumCount}\xa0${getPostfix(sumCount)}`}
+                        title={`${sumCount}\xa0${getPostfix(sumCount, 'товаров', 'товара', 'товар', 'товаров')}`}
                         subtitle={getPrettyPrice(sum)}
                     />
                     <ItemWithDots

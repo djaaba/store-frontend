@@ -10,8 +10,8 @@ import styles from "./Product.module.css";
 
 import { IBrand, IDevice, IType } from "@/shared";
 import { getAllTypes, getAllBrands, getDeviceBySlug, deleteDevice } from "@/api";
-import { getPrettyPrice, getPrice, MAIN_ROUTE, searchById, success } from "@/utils";
-import { Atag, Breadcrumbs, Button, CartShoppingIcon, FavoriteLabel, FontAwesomeIcon, Htag, Ptag, RewriteIcon, TrashIcon, WhiteWrapper } from "@/components/UI";
+import { getPostfix, getPrettyPrice, getPrice, MAIN_ROUTE, searchById, success } from "@/utils";
+import { Atag, Breadcrumbs, Button, CartShoppingIcon, EyeIcon, FavoriteLabel, FontAwesomeIcon, Htag, Ptag, RewriteIcon, TrashIcon, WhiteWrapper } from "@/components/UI";
 import { toggleCart } from "@/store/cart/actions";
 import { Characteristics, Counter, DeviceModal } from "@/components/modules";
 import { Meta } from "@/components/seo/Meta";
@@ -25,8 +25,6 @@ const Item = ({ data, brands, types, ...props }: CatalogProps) => {
     const dispatch = useDispatch();
     const router = useRouter();
     const cart = useSelector(selectCart);
-
-    console.log(data)
 
     const curPrice = getPrice(device.price, device.discount);
 
@@ -129,12 +127,24 @@ const Item = ({ data, brands, types, ...props }: CatalogProps) => {
                             </div>
                             <div className={styles.mobile}>
                                 <WhiteWrapper className={styles.infowrapper}>
-                                    <p>
-                                        Просмотрен&nbsp;{device.viewCount}&nbsp;раз
-                                    </p>
-                                    <p>
-                                        Куплен&nbsp;{device.purchasesCount}&nbsp;раз
-                                    </p>
+                                    <div className={styles.mobile}>
+                                        <FontAwesomeIcon
+                                            icon={EyeIcon}
+                                            className={styles.curPrice}
+                                        />
+                                        <p>
+                                            Просмотрен&nbsp;{device.viewCount} {getPostfix(device.viewCount, 'раз', 'раза', 'раз', 'раз')}&nbsp;
+                                        </p>
+                                    </div>
+                                    <div className={styles.mobile}>
+                                        <FontAwesomeIcon
+                                            icon={CartShoppingIcon}
+                                            className={styles.curPrice}
+                                        />
+                                        <p>
+                                            Куплен&nbsp;{device.purchasesCount} {getPostfix(device.purchasesCount, 'раз', 'раза', 'раз', 'раз')}&nbsp;
+                                        </p>
+                                    </div>
                                 </WhiteWrapper>
                             </div>
                         </div>

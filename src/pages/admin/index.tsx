@@ -41,7 +41,6 @@ const Admin = ({ types, brands, info, banners, orders, className, ...props }: Ad
     }
 
     React.useEffect(() => {
-        getAllOrders().then(data => console.log(data))
         check().then(data => {
             dispatch(login(data as IUserInfo))
         }).catch(err => {
@@ -50,7 +49,6 @@ const Admin = ({ types, brands, info, banners, orders, className, ...props }: Ad
 
     const getInfo = (order: string) => {
         getOrderBySlug(order).then(devices => setDevices(devices))
-        console.log(devices)
         setOpen(modals.order)
     }
 
