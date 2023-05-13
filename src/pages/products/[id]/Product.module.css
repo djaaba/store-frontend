@@ -29,9 +29,21 @@
 }
 
 .btn{
-    
-    /* max-width: 20px; */
+
     box-sizing: content-box;
+}
+
+.active {
+    background: var(--white);
+    border: 1px solid var(--red);
+}
+
+.active svg {
+    color: var(--red);
+}
+
+.active:hover svg {
+    color: var(--white);
 }
 
 .btnGroup{
@@ -48,7 +60,6 @@
 
 .mobile{
     display: flex;
-    
 }
 
 .wrapper {
@@ -56,7 +67,7 @@
     grid-gap: 15px;
     display: flex;
     width: 100%;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 
 .characteristics {

@@ -21,13 +21,13 @@ const breadcrumbs = [
     { id: 1, name: "Главная", href: "/", active: false },
     {
         id: 2,
-        name: "Продукты",
+        name: "Поиск",
         href: "/",
         active: true,
     },
 ];
 
-const items: number[] = [1, 2, 10]
+const items: number[] = [3, 6, 9]
 
 const Products = ({ types, brands, device, ...props }: ProductProps): JSX.Element => {
     const [value, setValue] = React.useState<number[]>([0, 70000])

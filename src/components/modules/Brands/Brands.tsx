@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { useDispatch } from "react-redux";
+import cn from 'classnames';
 
 import styles from "./Brands.module.css";
 import { BrandsProps } from "./Brands.props";
@@ -23,13 +24,15 @@ export const Brands = ({ brands, ...props }: BrandsProps): JSX.Element => {
                         <div key={i} className={styles.content}>
                             {column.map((item: IBrand, j: number) => (
                                 <Link key={j} href={PRODUCT_ROUTE} onClick={() => dispatch(toggleBrand(item))}>
-                                    <Picture
-                                        className={styles.img}
-                                        alt={`Лого бренда ${item.name}`}
-                                        imgUrl={item.imgUrl}
-                                        width={90}
-                                        height={20} 
-                                    />
+                                    <div {...props} className={cn(styles.main)}>
+                                        <picture>
+                                            <img
+                                                className={styles.img}
+                                                src={item.imgUrl}
+                                                alt={`Лого бренда ${item.name}`}
+                                            />
+                                        </picture>
+                                    </div>
                                 </Link>
                             ))}
                         </div>
@@ -37,13 +40,15 @@ export const Brands = ({ brands, ...props }: BrandsProps): JSX.Element => {
                     : brands?.map((item: IBrand, i: number) => (
                         <div key={i} className={styles.content}>
                             <Link href={PRODUCT_ROUTE} onClick={() => dispatch(toggleBrand(item))}>
-                                <Picture
-                                    className={styles.img}
-                                    alt={`Лого бренда ${item.name}`}
-                                    imgUrl={item.imgUrl}
-                                    width={90}
-                                    height={25}
-                                />
+                                <div {...props} className={cn(styles.main)}>
+                                    <picture>
+                                        <img
+                                            className={styles.img}
+                                            src={item.imgUrl}
+                                            alt={`Лого бренда ${item.name}`}
+                                        />
+                                    </picture>
+                                </div>
                             </Link>
                         </div>
                     ))}

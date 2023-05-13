@@ -23,10 +23,12 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    max-width: 1033px;
+    width: 100%;
 }
 
 .card {
-    padding: 0 30px 30px;
+    padding: 30px;
 }
 
 .range{

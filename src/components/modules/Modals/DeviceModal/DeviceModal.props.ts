@@ -6,5 +6,6 @@ export interface DeviceModalProps extends DetailedHTMLProps<HTMLAttributes<HTMLD
     types: IType[];
     brands: IBrand[];
     device?: IDevice;
-    // setDevice: React.Dispatch<React.SetStateAction<IDevice>>;
+    setDevice?: React.Dispatch<React.SetStateAction<IDevice>>;
+    setOpen: React.Dispatch<React.SetStateAction<string>>;
 }

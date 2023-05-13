@@ -34,10 +34,11 @@ const Login = ({ className, ...props }: LoginProps): JSX.Element => {
 
         login(email.value, password.value).then(data => {
             dispatch(userLogin(data as IUserInfo))
+            console.log(data);
             toast.success('Вы авторизованы!', success);
             router.push(MAIN_ROUTE)
         }).catch(err => {
-            toast.error('Ошибка авторизации', error);
+            toast.error('Неверный логин или пароль', error);
         })
     }
 
@@ -74,7 +75,7 @@ const Login = ({ className, ...props }: LoginProps): JSX.Element => {
                             disabled={isDisabled}
                             type="submit"
                             className={styles.btn}
-                            color={isDisabled ? "gray" : "dark"}
+                            color={isDisabled ? "gray" : "red"}
                             size="big"
                         >
                             Продолжить

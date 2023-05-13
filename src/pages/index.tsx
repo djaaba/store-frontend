@@ -45,6 +45,7 @@ export async function getServerSideProps() {
 // next time aria-label="Aria Name" for buttons
 // next time use Omit, Record and etc
 // next time use primary root style
+// next time more often use spread operator 
 
 // Дальнейшие планы:
 // img => Image

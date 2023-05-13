@@ -9,20 +9,24 @@ import styles from "./Profile.module.css";
 // import { ProfileProps } from "./Profile.props";
 
 import { ADMIN_ROUTE, CART_ROUTE, FAVORITE_ROUTE, LOGIN_ROUTE, success } from "@/utils";
-import { Button, CartShoppingIcon, FontAwesomeIcon, Htag, SolidHeartIcon, WhiteWrapper } from "@/components/UI";
+import { Button, CartShoppingIcon, FontAwesomeIcon, Htag, RewriteIcon, SolidHeartIcon, WhiteWrapper } from "@/components/UI";
 import { selectUser } from "@/store/user/selector";
 import { selectFavorite } from "@/store/favorite/selector";
-import { selectCart } from "@/store/cart/selector";
+import { selectCart, sumCountCart } from "@/store/cart/selector";
 import { logout } from "@/store/user/actions";
 import { Meta } from "@/components/seo/Meta";
-import { ChangeInfoModal } from "@/components/modules";
+import { UserModal } from "@/components/modules";
+import HyperModal from "react-hyper-modal";
 
 const Profile = ({ className, ...props }: ProfileProps): JSX.Element => {
     const userInfo = useSelector(selectUser);
     const favorite = useSelector(selectFavorite);
+    const sumCount = useSelector(sumCountCart);
     const cart = useSelector(selectCart);
     const dispatch = useDispatch();
     const router = useRouter();
+
+    const [isOpen, setOpen] = React.useState(false);
 
     React.useEffect(() => {
         if (!userInfo.isAuth) router.push(LOGIN_ROUTE)
@@ -53,7 +57,7 @@ const Profile = ({ className, ...props }: ProfileProps): JSX.Element => {
                                         Администрирование
                                     </Button>
                                 </Link>
-                                : 
+                                :
                                 ''
                         }
                         <Link href={LOGIN_ROUTE}>
@@ -61,7 +65,12 @@ const Profile = ({ className, ...props }: ProfileProps): JSX.Element => {
                                 Выйти из аккаунта
                             </Button>
                         </Link>
-                        <ChangeInfoModal data={userInfo} className={styles.btn}/>
+                        <Button onClick={() => setOpen(true)} className={styles.btn} size="big" color="red">
+                            <FontAwesomeIcon icon={RewriteIcon} />
+                        </Button>
+                        <HyperModal requestClose={() => setOpen(false)} isOpen={isOpen}>
+                            <UserModal setOpen={setOpen} data={userInfo} />
+                        </HyperModal>
                     </div>
                 </WhiteWrapper>
                 <div className={cn(styles.wrapper, styles.padding)}>
@@ -84,7 +93,7 @@ const Profile = ({ className, ...props }: ProfileProps): JSX.Element => {
                             <FontAwesomeIcon className={styles.icon} icon={CartShoppingIcon} />
                             <Htag tag="h3">Корзина</Htag>
                             <p className={styles.count}>
-                                {cart.length}
+                                {sumCount}
                             </p>
                         </div>
                         <Link href={CART_ROUTE}>

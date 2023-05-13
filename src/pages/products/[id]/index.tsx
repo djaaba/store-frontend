@@ -4,30 +4,31 @@ import React from 'react'
 import cn from "classnames";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
+import HyperModal from "react-hyper-modal";
 
 import styles from "./Product.module.css";
 
 import { IBrand, IDevice, IType } from "@/shared";
 import { getAllTypes, getAllBrands, getDeviceBySlug, deleteDevice } from "@/api";
-import { getPrettyPrice, getPrice, MAIN_ROUTE, success } from "@/utils";
-import { Atag, Breadcrumbs, Button, FavoriteLabel, FontAwesomeIcon, Htag, Ptag, TrashIcon, WhiteWrapper } from "@/components/UI";
+import { getPrettyPrice, getPrice, MAIN_ROUTE, searchById, success } from "@/utils";
+import { Atag, Breadcrumbs, Button, CartShoppingIcon, FavoriteLabel, FontAwesomeIcon, Htag, Ptag, RewriteIcon, TrashIcon, WhiteWrapper } from "@/components/UI";
 import { toggleCart } from "@/store/cart/actions";
-import { ChangeDeviceModal, Characteristics, Counter } from "@/components/modules";
+import { Characteristics, Counter, DeviceModal } from "@/components/modules";
 import { Meta } from "@/components/seo/Meta";
 import { selectUser } from "@/store/user/selector";
-
-
+import { selectCart } from "@/store/cart/selector";
 
 const Item = ({ data, brands, types, ...props }: CatalogProps) => {
     const [device, setDevice] = React.useState<IDevice>(data);
+    const [isOpen, setOpen] = React.useState<string>('');
     const userInfo = useSelector(selectUser);
     const dispatch = useDispatch();
     const router = useRouter();
+    const cart = useSelector(selectCart);
 
     const curPrice = getPrice(device.price, device.discount);
 
     const handleClick = (id: number) => {
-        // console.log(id)
         deleteDevice(id).then(() => {
             toast.success('Вы удалили товар!', success);
             router.push(MAIN_ROUTE)
@@ -67,16 +68,21 @@ const Item = ({ data, brands, types, ...props }: CatalogProps) => {
                         {
                             userInfo._user?.role === "ADMIN" ?
                                 <div className={styles.btnGroup}>
-                                    <Button onClick={() => handleClick(data.id)} className={props.className} size="big" color="red">
+                                    <Button onClick={() => setOpen('device')} size="big" color="red">
+                                        <FontAwesomeIcon icon={RewriteIcon} />
+                                    </Button>
+                                    <Button onClick={() => handleClick(data.id)} size="big" color="red">
                                         <FontAwesomeIcon icon={TrashIcon} />
                                     </Button>
-                                    <ChangeDeviceModal
-                                        setDevice={setDevice}
-                                        types={types}
-                                        brands={brands}
-                                        data={device}
-                                        className={styles.btn}
-                                    />
+                                    <HyperModal requestClose={() => setOpen('')} isOpen={isOpen == 'device'}>
+                                        <DeviceModal
+                                            types={types}
+                                            brands={brands}
+                                            device={device}
+                                            setDevice={setDevice}
+                                            setOpen={setOpen}
+                                        />
+                                    </HyperModal>
                                 </div>
                                 :
                                 ''
@@ -100,12 +106,20 @@ const Item = ({ data, brands, types, ...props }: CatalogProps) => {
                                             ''
                                     }
                                 </div>
-                                <Button
+                                {/* <Button
                                     onClick={() => dispatch(toggleCart(device))}
                                     color="red"
                                     size="big"
                                 >
                                     В корзину
+                                </Button> */}
+                                <Button
+                                    onClick={() => dispatch(toggleCart(device))}
+                                    color="red"
+                                    size="big"
+                                    className={searchById(device, cart) ? styles.active : ''}
+                                >
+                                    <FontAwesomeIcon icon={CartShoppingIcon} />
                                 </Button>
                             </WhiteWrapper>
                             {

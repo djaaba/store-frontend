@@ -101,7 +101,7 @@ const Admin = ({ types, brands, info, banners, orders, className, ...props }: Ad
                 <WhiteWrapper>
                     <Button color="red" size="big" onClick={() => manageModal(modals.device)}>Добавить устройство</Button>
                     <HyperModal requestClose={() => setOpen('')} isOpen={isOpen == modals.device}>
-                        <DeviceModal brands={brands} types={types} />
+                        <DeviceModal setOpen={setOpen} brands={brands} types={types} />
                     </HyperModal>
                 </WhiteWrapper>
                 <WhiteWrapper>

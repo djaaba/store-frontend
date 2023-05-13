@@ -1,5 +1,6 @@
 import cn from "classnames";
 import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/router";
 import { toast } from "react-toastify";
 
 import styles from "./OrderDetails.module.css";
@@ -12,7 +13,7 @@ import {
     selectCart
 } from "@/store/cart/selector";
 import { selectUser } from "@/store/user/selector";
-import { getPrettyPrice, getPostfix, success } from "@/utils/";
+import { getPrettyPrice, getPostfix, success, error, LOGIN_ROUTE, PROFILE_ROUTE } from "@/utils/";
 import { Button, Htag, ItemWithDots } from "@/components/UI";
 import { createOrder } from "@/api";
 import { IDevice } from "@/shared";
@@ -25,14 +26,27 @@ export const OrderDetails = ({ ...props }: OrderDetailsProps): JSX.Element => {
     const cart = useSelector(selectCart);
     const discount = useSelector(discountCart);
     const sumCount = useSelector(sumCountCart);
+    const router = useRouter();
 
     const handleClick = () => {
         const order = String(Date.parse(String(new Date())))
-        createOrder(cart, user._user.id, order)
-        toast.success('Спасибо за покупку!', success);
-        cart.forEach((item: IDevice) => {
-            dispatch(toggleCart(item))
-        })
+        if (user.isAuth) {
+            if (user._user.phone && user._user.address) {
+                createOrder(cart, user._user.id, order)
+                toast.success('Спасибо за покупку!', success);
+                cart.forEach((item: IDevice) => {
+                    dispatch(toggleCart(item))
+                })
+            } else {
+                toast.error('Укажите ваш телефон и адрес!', error);
+                router.push(PROFILE_ROUTE);
+            }
+        } else {
+            toast.error('Войдите в профиль!', error);
+            router.push(LOGIN_ROUTE);
+
+        }
+        console.log()
     }
 
     return (
@@ -58,7 +72,7 @@ export const OrderDetails = ({ ...props }: OrderDetailsProps): JSX.Element => {
                         subtitle={getPrettyPrice(sum - discount)}
                     />
                 </div>
-                <Button onClick={() => handleClick()}size="big" color="red">
+                <Button onClick={() => handleClick()} size="big" color="red">
                     Купить!
                 </Button>
             </section>

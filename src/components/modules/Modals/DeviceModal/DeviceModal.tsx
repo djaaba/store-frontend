@@ -9,10 +9,10 @@ import { getId, error, success } from "@/utils";
 import { IBrand, IDeviceInfo, IType } from "@/shared";
 import { Button, FontAwesomeIcon, Htag, Input, Select, TrashIcon } from "@/components/UI";
 import { useInput, useFile } from "@/hooks";
-import { createDevice } from "@/api";
+import { createDevice, updateDevice } from "@/api";
 
-export const DeviceModal = ({ device, types, brands, ...props }: DeviceModalProps): JSX.Element => {
-    const [isOpen, setIsOpen] = React.useState(false);
+export const DeviceModal = ({ device, types, brands, setOpen, setDevice, ...props }: DeviceModalProps): JSX.Element => {
+    // const [isOpen, setIsOpen] = React.useState(false);
 
     const brandName = brands.filter(brand => brand.id == device?.brandId)[0]?.name;
     const typeName = types.filter(type => type.id == device?.typeId)[0]?.name;
@@ -25,7 +25,7 @@ export const DeviceModal = ({ device, types, brands, ...props }: DeviceModalProp
     const brand = useInput(brandName || '', { isEmpty: true })
     const file = useFile('', { isEmpty: true });
 
-    const [info, setInfo] = React.useState<IDeviceInfo[]>([])
+    const [info, setInfo] = React.useState<IDeviceInfo[]>(device?.info || [])
 
     let nameError = name.isDirty && name.isEmpty;
     let descriptionError = description.isDirty && description.isEmpty;
@@ -33,10 +33,10 @@ export const DeviceModal = ({ device, types, brands, ...props }: DeviceModalProp
     let fileError = file.isDirty && file.isEmpty;
     let discountError = discount.isDirty && discount.isEmpty;
 
-    let isDisabled = !name.inputValid || !description.inputValid || !price.inputValid || !discount.inputValid || !file.inputValid;
+    // let isDisabled = !name.inputValid || !description.inputValid || !price.inputValid || !discount.inputValid || !file.inputValid;
 
-    // let valids = !name.inputValid || !phone.inputValid || !address.inputValid || !email.inputValid;
-    // let isDisabled = storeInfo.name? valids : !file.inputValid || valids;
+    let valids = !name.inputValid || !description.inputValid || !price.inputValid || !discount.inputValid;
+    let isDisabled = device?.name? valids : !file.inputValid || valids;
 
     const addInfo = (e: React.FormEvent) => {
         e.preventDefault();
@@ -51,7 +51,33 @@ export const DeviceModal = ({ device, types, brands, ...props }: DeviceModalProp
         setInfo(info.map((i) => i.id === id ? { ...i, [key]: value } : i))
     }
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleUpdate = async (e: React.FormEvent) => {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('id', `${device?.id}`);
+        formData.append('imgUrl', file.value);
+        formData.append('description', description.value);
+        formData.append('name', name.value);
+        formData.append('price', price.value);
+        formData.append('discount', discount.value);
+        formData.append('typeId', String(types.find((item: IType) => item.name === type.value)?.id))
+        formData.append('brandId', String(brands.find((item: IBrand) => item.name === brand.value)?.id))
+        formData.append('info', JSON.stringify(info));
+
+        updateDevice(formData)
+            .then((dev) => {
+                setOpen('')
+                toast.success('Вы изменили информацию!', success);
+                // console.log(dev)
+                if (setDevice) setDevice(dev)
+                setOpen('')
+            })
+            .catch(err => {
+                toast.error('Ошибка изменения товара', error);
+            })
+    }
+
+    const handleCreate = async (e: React.FormEvent) => {
         e.preventDefault();
         const formData = new FormData();
         formData.append('imgUrl', file.value);
@@ -65,7 +91,6 @@ export const DeviceModal = ({ device, types, brands, ...props }: DeviceModalProp
 
         createDevice(formData)
             .then(() => {
-                setIsOpen(false)
                 toast.success('Вы добавили товар!', success);
                 name.reset();
                 description.reset();
@@ -73,6 +98,7 @@ export const DeviceModal = ({ device, types, brands, ...props }: DeviceModalProp
                 discount.reset();
                 file.reset();
                 setInfo([])
+                setOpen('')
             })
             .catch(err => {
                 toast.error('Ошибка добавления товара', error);
@@ -81,7 +107,7 @@ export const DeviceModal = ({ device, types, brands, ...props }: DeviceModalProp
 
     return (
         <>
-            <form onSubmit={handleSubmit}>
+            <form>
                 <div className={styles.container}>
                     <div>
                         <Htag tag="h3">Изображение товара</Htag>
@@ -184,19 +210,32 @@ export const DeviceModal = ({ device, types, brands, ...props }: DeviceModalProp
                     </div>
                 </div>
                 <div className={styles.operations}>
-                    <Button
-                        disabled={isDisabled}
-                        type="submit"
-                        color={isDisabled ? "gray" : "red"}
-                        size="big"
-                        onClick={(e: React.FormEvent) => handleSubmit(e)}
-                    >
-                        Добавить устройство
-                    </Button>
+                    {
+                        device?.name ?
+                            <Button
+                                disabled={isDisabled}
+                                type="submit"
+                                color={isDisabled ? "gray" : "red"}
+                                size="big"
+                                onClick={(e: React.FormEvent) => handleUpdate(e)}
+                            >
+                                Внести изменения
+                            </Button>
+                            :
+                            <Button
+                                disabled={isDisabled}
+                                type="submit"
+                                color={isDisabled ? "gray" : "red"}
+                                size="big"
+                                onClick={(e: React.FormEvent) => handleCreate(e)}
+                            >
+                                Добавить устройство
+                            </Button>
+                    }
                     <Button
                         color="red"
                         size="big"
-                        onClick={() => setIsOpen(false)}
+                        onClick={(e: React.FormEvent) => { e.preventDefault(); setOpen('') }}
                     >
                         Закрыть
                     </Button>

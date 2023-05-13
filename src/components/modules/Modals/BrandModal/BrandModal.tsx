@@ -84,6 +84,11 @@ export const BrandModal = ({ brand, setOpen, ...props }: BrandModalProps): JSX.E
     return (
         <>
             <form onSubmit={handleSubmit}>
+                <Htag className={styles.title} tag="h1">
+                    {
+                        brand.name ? "Изменение бренда" : "Добавление бренда"
+                    }
+                </Htag>
                 <div className={styles.container}>
                     <div>
                         <Htag tag="h3">Выберите изображение бренда</Htag>
@@ -112,7 +117,6 @@ export const BrandModal = ({ brand, setOpen, ...props }: BrandModalProps): JSX.E
                             <Button
                                 disabled={isDisabled}
                                 type="submit"
-                                className={styles.btn}
                                 color={isDisabled ? "gray" : "red"}
                                 size="big"
                                 onClick={(e: React.FormEvent) => handleUpdate(e)}
@@ -120,7 +124,6 @@ export const BrandModal = ({ brand, setOpen, ...props }: BrandModalProps): JSX.E
                                 Внести изменения
                             </Button>
                             <Button
-                                className={styles.btn}
                                 color="red"
                                 size="big"
                                 onClick={(e: React.FormEvent) => handleDelete(e)}
@@ -135,7 +138,6 @@ export const BrandModal = ({ brand, setOpen, ...props }: BrandModalProps): JSX.E
                             <Button
                                 disabled={isDisabled}
                                 type="submit"
-                                className={styles.btn}
                                 color={isDisabled ? "gray" : "red"}
                                 size="big"
                                 onClick={(e: React.FormEvent) => handleSubmit(e)}

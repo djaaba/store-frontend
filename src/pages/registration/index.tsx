@@ -33,19 +33,20 @@ const Registration = ({ className, ...props }: RegistrationProps): JSX.Element =
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        try {
-            const response = await registation(name.value, email.value, password.value)
-            dispatch(login(response as IUserInfo))
-            router.push(MAIN_ROUTE)
-            toast.success('Вы зарегистрировались!', success);
-        } catch (err) {
-            toast.error('Что-то пошло не так', error);
-        }
+        await registation(name.value, email.value, password.value)
+            .then((data) => {
+                dispatch(login(data as IUserInfo))
+                router.push(MAIN_ROUTE)
+                toast.success('Вы зарегистрировались!', success);
+            })
+            .catch((err) => {
+                toast.error(err.response?.data.message, error);
+            })
     }
 
     return (
         <main {...props} className={cn(styles.main, "wrapper")}>
-            <Meta title="Регистрация" description="Страница регистрации"/>
+            <Meta title="Регистрация" description="Страница регистрации" />
             <div className={styles.content}>
                 <Htag tag="h2">Регистрация</Htag>
                 <form onSubmit={(e) => handleSubmit(e)}>
@@ -85,7 +86,7 @@ const Registration = ({ className, ...props }: RegistrationProps): JSX.Element =
                     <Button
                         disabled={isDisabled}
                         type="submit"
-                        className={styles.btn} color={isDisabled ? "gray" : "dark"} size="big">
+                        className={styles.btn} color={isDisabled ? "gray" : "red"} size="big">
                         Продолжить
                     </Button>
                 </form>

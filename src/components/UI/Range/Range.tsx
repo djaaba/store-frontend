@@ -47,7 +47,7 @@ export const Range = ({
             <RangeSlider
                 onAfterChange={(v: any) => setValue(v) }
                 step={500}
-                max={100000}
+                max={200000}
                 className={styles.range}
                 range
                 allowCross={false}

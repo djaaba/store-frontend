@@ -108,7 +108,6 @@ export const TypeModal = ({ type, setOpen, ...props }: TypeModalProps): JSX.Elem
                             <Button
                                 disabled={isDisabled}
                                 type="submit"
-                                className={styles.btn}
                                 color={isDisabled ? "gray" : "red"}
                                 size="big"
                                 onClick={(e: React.FormEvent) => handleUpdate(e)}
@@ -116,7 +115,6 @@ export const TypeModal = ({ type, setOpen, ...props }: TypeModalProps): JSX.Elem
                                 Внести изменения
                             </Button>
                             <Button
-                                className={styles.btn}
                                 color="red"
                                 size="big"
                                 onClick={(e: React.FormEvent) => handleDelete(e)}
@@ -131,7 +129,6 @@ export const TypeModal = ({ type, setOpen, ...props }: TypeModalProps): JSX.Elem
                             <Button
                                 disabled={isDisabled}
                                 type="submit"
-                                className={styles.btn}
                                 color={isDisabled ? "gray" : "red"}
                                 size="big"
                                 onClick={(e: React.FormEvent) => handleSubmit(e)}
