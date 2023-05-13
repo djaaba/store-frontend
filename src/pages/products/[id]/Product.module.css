@@ -70,6 +70,10 @@
     /* justify-content: space-between; */
 }
 
+.infowrapper{
+    width: 100%;
+}
+
 .characteristics {
     margin: 15px 0;
 }

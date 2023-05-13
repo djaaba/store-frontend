@@ -26,6 +26,8 @@ const Item = ({ data, brands, types, ...props }: CatalogProps) => {
     const router = useRouter();
     const cart = useSelector(selectCart);
 
+    console.log(data)
+
     const curPrice = getPrice(device.price, device.discount);
 
     const handleClick = (id: number) => {
@@ -91,45 +93,50 @@ const Item = ({ data, brands, types, ...props }: CatalogProps) => {
                     <div>
                         <Htag tag="h1">{device.name}</Htag>
                         <FavoriteLabel product={device} icon />
-                        <div className={styles.wrapper}>
-                            <WhiteWrapper className={styles.mobileMenu}>
-                                <div className={styles.price}>
-                                    <Htag tag="h2" className={styles.curPrice}>
-                                        {getPrettyPrice(curPrice)}&nbsp;
-                                    </Htag>
-                                    {
-                                        device.discount > 0 ?
-                                            <p className={styles.prevPrice}>
-                                                {getPrettyPrice(device.price)} &nbsp;
-                                            </p>
-                                            :
-                                            ''
-                                    }
-                                </div>
-                                {/* <Button
-                                    onClick={() => dispatch(toggleCart(device))}
-                                    color="red"
-                                    size="big"
-                                >
-                                    В корзину
-                                </Button> */}
-                                <Button
-                                    onClick={() => dispatch(toggleCart(device))}
-                                    color="red"
-                                    size="big"
-                                    className={searchById(device, cart) ? styles.active : ''}
-                                >
-                                    <FontAwesomeIcon icon={CartShoppingIcon} />
-                                </Button>
-                            </WhiteWrapper>
-                            {
-                                device.discount > 0 ?
-                                    <WhiteWrapper className={styles.mobile}>
-                                        <Counter price={device.price} curPrice={curPrice} />
-                                    </WhiteWrapper>
-                                    :
-                                    ''
-                            }
+                        <div>
+                            <div className={styles.wrapper}>
+                                <WhiteWrapper className={styles.mobileMenu}>
+                                    <div className={styles.price}>
+                                        <Htag tag="h2" className={styles.curPrice}>
+                                            {getPrettyPrice(curPrice)}&nbsp;
+                                        </Htag>
+                                        {
+                                            device.discount > 0 ?
+                                                <p className={styles.prevPrice}>
+                                                    {getPrettyPrice(device.price)} &nbsp;
+                                                </p>
+                                                :
+                                                ''
+                                        }
+                                    </div>
+                                    <Button
+                                        onClick={() => dispatch(toggleCart(device))}
+                                        color="red"
+                                        size="big"
+                                        className={searchById(device, cart) ? styles.active : ''}
+                                    >
+                                        <FontAwesomeIcon icon={CartShoppingIcon} />
+                                    </Button>
+                                </WhiteWrapper>
+                                {
+                                    device.discount > 0 ?
+                                        <WhiteWrapper className={styles.mobile}>
+                                            <Counter price={device.price} curPrice={curPrice} />
+                                        </WhiteWrapper>
+                                        :
+                                        ''
+                                }
+                            </div>
+                            <div className={styles.mobile}>
+                                <WhiteWrapper className={styles.infowrapper}>
+                                    <p>
+                                        Просмотрен&nbsp;{device.viewCount}&nbsp;раз
+                                    </p>
+                                    <p>
+                                        Куплен&nbsp;{device.purchasesCount}&nbsp;раз
+                                    </p>
+                                </WhiteWrapper>
+                            </div>
                         </div>
                         <Characteristics
                             className={styles.characteristics}
@@ -154,7 +161,7 @@ const Item = ({ data, brands, types, ...props }: CatalogProps) => {
                     <Characteristics characteristics={device.info} />
                 </div>
             </main>
-        </React.Fragment>
+        </React.Fragment >
     );
 }
 
