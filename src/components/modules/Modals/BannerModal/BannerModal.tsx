@@ -108,7 +108,6 @@ export const BannerModal = ({ banner, setOpen, ...props }: BannerModalProps): JS
                             <Button
                                 disabled={isDisabled}
                                 type="submit"
-                                className={styles.btn}
                                 color={isDisabled ? "gray" : "red"}
                                 size="big"
                                 onClick={(e: React.FormEvent) => handleUpdate(e)}
@@ -116,7 +115,6 @@ export const BannerModal = ({ banner, setOpen, ...props }: BannerModalProps): JS
                                 Внести изменения
                             </Button>
                             <Button
-                                className={styles.btn}
                                 color="red"
                                 size="big"
                                 onClick={(e: React.FormEvent) => handleDelete(e)}

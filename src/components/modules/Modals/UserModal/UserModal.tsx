@@ -42,7 +42,7 @@ export const UserModal = ({ data, setOpen, ...props }: UserModalProps): JSX.Elem
 
         changeInfo(formData)
             .then((data) => {
-                setOpen(false)
+                setOpen('')
                 toast.success('Вы изменили информацию!', success);
                 dispatch(login(data as IUserInfo))
             })

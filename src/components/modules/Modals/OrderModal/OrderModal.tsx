@@ -1,4 +1,5 @@
 import { toast } from "react-toastify";
+import { useSelector } from "react-redux";
 import cn from "classnames";
 import React from "react";
 
@@ -8,9 +9,12 @@ import { OrderModalProps } from "./OrderModal.props";
 import { Button, CheckIcon, FontAwesomeIcon, Htag, ItemWithDots, TrashIcon } from "@/components/UI";
 import { success } from "@/utils";
 import { deleteOrder, deleteOrderItem, updateOrder } from "@/api";
+import { selectUser } from "@/store/user/selector";
 
 
 export const OrderModal = ({ devices, ...props }: OrderModalProps): JSX.Element => {
+    const userInfo = useSelector(selectUser);
+    const isDisabled = devices[0]?.status;
 
     const handleDeleteOrder = (order: string) => {
         deleteOrder(order)
@@ -27,8 +31,6 @@ export const OrderModal = ({ devices, ...props }: OrderModalProps): JSX.Element 
         toast.success('Вы удалили позицию!', success);
     }
 
-    const isDisabled = devices[0]?.status;
-
     return (
         <>
             <Htag tag="h2">Заказ №{devices[0]?.order}</Htag>
@@ -37,45 +39,54 @@ export const OrderModal = ({ devices, ...props }: OrderModalProps): JSX.Element 
                     devices.map(elem => (
                         <li className={styles.order} key={elem.id}>
                             <ItemWithDots size="p" title={elem.device.name} subtitle={elem.count} />
-                            <Button
-                                className={styles.btn}
-                                color="red"
-                                size="small"
-                                disabled={isDisabled}
-                                onClick={() => handleDeleteitem(elem.id)}
-                            >
-                                <FontAwesomeIcon
-                                    icon={TrashIcon}
-                                />
-                            </Button>
-
+                            {
+                                userInfo._user?.role === "ADMIN" ?
+                                    <Button
+                                        className={styles.btn}
+                                        color="red"
+                                        size="small"
+                                        disabled={isDisabled}
+                                        onClick={() => handleDeleteitem(elem.id)}
+                                    >
+                                        <FontAwesomeIcon
+                                            icon={TrashIcon}
+                                        />
+                                    </Button>
+                                    :
+                                    ''
+                            }
                         </li>
                     ))
                 }
             </ul>
-            <div className={styles.operations}>
-                <Button
-                    className={styles.delete}
-                    color="red"
-                    size="small"
-                    onClick={() => handleDeleteOrder(devices[0]?.order)}
-                >
-                    <FontAwesomeIcon
-                        icon={TrashIcon}
-                    />
-                </Button>
-                <Button
-                    className={styles.success}
-                    color="red"
-                    size="small"
-                    disabled={isDisabled}
-                    onClick={() => handleCloseOrder(devices[0]?.order)}
-                >
-                    <FontAwesomeIcon
-                        icon={CheckIcon}
-                    />
-                </Button>
-            </div>
+            {
+                userInfo._user?.role === "ADMIN" ?
+                    <div className={styles.operations}>
+                        <Button
+                            className={styles.delete}
+                            color="red"
+                            size="small"
+                            onClick={() => handleDeleteOrder(devices[0]?.order)}
+                        >
+                            <FontAwesomeIcon
+                                icon={TrashIcon}
+                            />
+                        </Button>
+                        <Button
+                            className={styles.success}
+                            color="red"
+                            size="small"
+                            disabled={isDisabled}
+                            onClick={() => handleCloseOrder(devices[0]?.order)}
+                        >
+                            <FontAwesomeIcon
+                                icon={CheckIcon}
+                            />
+                        </Button>
+                    </div>
+                    :
+                    ''
+            }
         </>
     );
 };

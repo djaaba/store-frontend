@@ -25,6 +25,15 @@ export const getOrderBySlug = async (slug: string) => {
     }
 };
 
+export const getOrderByUserId = async (slug: string) => {
+    try {
+        const response = await $host.get(`order/order/${slug}`);
+        return response.data;
+    } catch {
+        return false;
+    }
+};
+
 export const updateOrder = async (order: string) => {
     try {
         const { data } = await $authHost.post('order/update', { order })
