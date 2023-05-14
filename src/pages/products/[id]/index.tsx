@@ -18,6 +18,7 @@ import { Meta } from "@/components/seo/Meta";
 import { selectUser } from "@/store/user/selector";
 import { selectCart } from "@/store/cart/selector";
 import { toggleRecommendation } from "@/store/recommendation/actions";
+import { addView } from "@/store/view/actions";
 
 const Item = ({ data, brands, types, ...props }: CatalogProps) => {
     const [device, setDevice] = React.useState<IDevice>(data);
@@ -31,6 +32,7 @@ const Item = ({ data, brands, types, ...props }: CatalogProps) => {
     
     React.useEffect(() => {
         dispatch(toggleRecommendation(device))
+        dispatch(addView(device))
     }, [])
 
     const handleClick = (id: number) => {

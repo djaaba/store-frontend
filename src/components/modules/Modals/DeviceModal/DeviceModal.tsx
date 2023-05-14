@@ -68,7 +68,6 @@ export const DeviceModal = ({ device, types, brands, setOpen, setDevice, ...prop
             .then((dev) => {
                 setOpen('')
                 toast.success('Вы изменили информацию!', success);
-                // console.log(dev)
                 if (setDevice) setDevice(dev)
                 setOpen('')
             })

@@ -5,10 +5,12 @@ import { getAllBanners, getAllBrands, getAllTypes, getBestsellers, getMostDiscou
 import { selectRecommendation } from '@/store/recommendation/selector';
 import { Home } from '@/screens/home/Home';
 import { IDevice } from '@/shared';
+import { selectView } from '@/store/view/selector';
 
 function Main({ mostViewed, mostDiscounted, bestsellers, types, brands, banners }: any) {
     const [recommendation, setRecommendation] = React.useState<IDevice[]>([])
     const recommended = useSelector(selectRecommendation);
+    const recentlyViewed = useSelector(selectView);
 
     React.useEffect(() => {
         getRecommended(recommended).then((data) => setRecommendation(data))
@@ -21,6 +23,7 @@ function Main({ mostViewed, mostDiscounted, bestsellers, types, brands, banners 
                 brands={brands}
                 banners={banners}
                 mostViewed={mostViewed}
+                recentlyViewed={recentlyViewed}
                 bestsellers={bestsellers}
                 mostDiscounted={mostDiscounted}
                 recommended={recommendation}

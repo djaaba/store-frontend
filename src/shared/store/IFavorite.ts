@@ -1,6 +1,6 @@
 import { IDevice } from "../IDevice";
 
-export type FavoriteAction = {
+export type favoriteAction = {
     type: typesFavoriteAction;
     body: IDevice;
 };
