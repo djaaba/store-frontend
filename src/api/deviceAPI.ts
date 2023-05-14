@@ -1,5 +1,6 @@
 import { $authHost, $host } from "./"
-// import { IDevice } from "@/shared";
+
+import { IDevice } from "@/shared";
 
 export const createDevice = async (device: any) => {
     const { data } = await $authHost.post('device', device)
@@ -31,6 +32,15 @@ export const getByMatch = async (word: string) => {
                 word
             }
         });
+        return response.data;
+    } catch (error) {
+        return [];
+    }
+}
+
+export const getRecommended = async (devices: IDevice[]) => {
+    try {
+        const response = await $host.post("device/recommended", { devices });
         return response.data;
     } catch (error) {
         return [];

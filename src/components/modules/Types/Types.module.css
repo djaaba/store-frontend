@@ -1,6 +1,10 @@
 .container {
 }
 
+.justifiedContainer div[class~="react-horizontal-scrolling-menu--scroll-container"]{
+    justify-content: space-between;
+}
+
 .p {
     text-align: center;
     margin-top: 12px;

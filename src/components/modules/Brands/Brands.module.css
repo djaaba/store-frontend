@@ -2,6 +2,10 @@
     user-select: none;
 }
 
+.justifiedContainer div[class~="react-horizontal-scrolling-menu--scroll-container"]{
+    justify-content: space-between;
+}
+
 .content {
     width: 260px;
     height: 100%;
@@ -15,6 +19,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.main:hover{
+    box-shadow: 0 0px 10px #0000003a;
 }
 
 .img {

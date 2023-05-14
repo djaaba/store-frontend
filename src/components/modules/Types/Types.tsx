@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { useDispatch } from "react-redux";
+import cn from 'classnames';
 
 import styles from "./Types.module.css";
 import { TypesProps } from "./Types.props";
@@ -16,7 +17,7 @@ export const Types = ({
 }: TypesProps): JSX.Element => {
     const dispatch = useDispatch();
     return (
-        <section {...props} className={styles.container}>
+        <section {...props} className={cn(styles.container, types.length > 4? styles.justifiedContainer : '')}>
             <Htag tag="h1">Популярные категории</Htag>
             <Scroll>
                 {types?.map((item, index) => (

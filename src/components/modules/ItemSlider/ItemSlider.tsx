@@ -11,7 +11,7 @@ export const ItemSlider = ({
 }: ItemSliderProps): JSX.Element => {
     return (
         <>
-            <section {...props} className={styles.container}>
+            <section {...props} className={items.length < 5? styles.justifiedContainer : styles.container}>
                 <Htag tag="h1">{title}</Htag>
                 <Scroll>
                     {items?.map((item, index) => (

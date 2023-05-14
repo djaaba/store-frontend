@@ -1,0 +1,1 @@
+export const selectRecommendation = (state: any) => state.recommendation;

@@ -17,6 +17,7 @@ import { Characteristics, Counter, DeviceModal } from "@/components/modules";
 import { Meta } from "@/components/seo/Meta";
 import { selectUser } from "@/store/user/selector";
 import { selectCart } from "@/store/cart/selector";
+import { toggleRecommendation } from "@/store/recommendation/actions";
 
 const Item = ({ data, brands, types, ...props }: CatalogProps) => {
     const [device, setDevice] = React.useState<IDevice>(data);
@@ -27,6 +28,10 @@ const Item = ({ data, brands, types, ...props }: CatalogProps) => {
     const cart = useSelector(selectCart);
 
     const curPrice = getPrice(device.price, device.discount);
+    
+    React.useEffect(() => {
+        dispatch(toggleRecommendation(device))
+    }, [])
 
     const handleClick = (id: number) => {
         deleteDevice(id).then(() => {

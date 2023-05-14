@@ -1,9 +1,18 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
+import { getAllBanners, getAllBrands, getAllTypes, getBestsellers, getMostDiscounted, getMostViewed, getRecommended } from '@/api';
+import { selectRecommendation } from '@/store/recommendation/selector';
 import { Home } from '@/screens/home/Home';
-import { getAllBanners, getAllBrands, getAllTypes, getBestsellers, getMostDiscounted, getMostViewed } from '@/api';
+import { IDevice } from '@/shared';
 
 function Main({ mostViewed, mostDiscounted, bestsellers, types, brands, banners }: any) {
+    const [recommendation, setRecommendation] = React.useState<IDevice[]>([])
+    const recommended = useSelector(selectRecommendation);
+
+    React.useEffect(() => {
+        getRecommended(recommended).then((data) => setRecommendation(data))
+    }, [])
 
     return (
         <>
@@ -14,11 +23,12 @@ function Main({ mostViewed, mostDiscounted, bestsellers, types, brands, banners 
                 mostViewed={mostViewed}
                 bestsellers={bestsellers}
                 mostDiscounted={mostDiscounted}
+                recommended={recommendation}
             />
         </>
     );
 }
- 
+
 export default Main;
 
 export async function getServerSideProps() {

@@ -16,7 +16,7 @@ export const Brands = ({ brands, ...props }: BrandsProps): JSX.Element => {
     const dispatch = useDispatch();
 
     return (
-        <section {...props} className={styles.container}>
+        <section {...props} className={cn(styles.container, brands.length > 4? styles.justifiedContainer : '')}>
             <Htag tag="h1">Популярные бренды</Htag>
             <Scroll>
                 {brands?.length > 10

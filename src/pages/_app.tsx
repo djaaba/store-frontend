@@ -19,26 +19,24 @@ const roboto = Roboto({
 })
 
 export default function App({ Component, pageProps }: AppProps) {
-    
+
     return (
         <>
-            <React.StrictMode>
-                <NextNProgress
-                    color="var(--red)"
-                    options={{
-                        trickleSpeed: 50,
-                        showSpinner: false,
-                        speed: 300,
-                    }}
-                    // showAfterMs={300}
-                />
-                <Provider store={rootStore}>
-                    <Layout style={roboto.style}>
-                        <Component {...pageProps} />
-                    </Layout>
-                </Provider>
-                <ToastContainer />
-            </React.StrictMode>
+            <NextNProgress
+                color="var(--red)"
+                options={{
+                    trickleSpeed: 50,
+                    showSpinner: false,
+                    speed: 300,
+                }}
+            // showAfterMs={300}
+            />
+            <Provider store={rootStore}>
+                <Layout style={roboto.style}>
+                    <Component {...pageProps} />
+                </Layout>
+            </Provider>
+            <ToastContainer />
         </>
     );
 }

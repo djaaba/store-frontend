@@ -18,7 +18,7 @@ import { IBanner, IBrand, IDevice, IType, IUserInfo } from "@/shared";
 import { login } from "@/store/user/actions";
 import { Meta } from '@/components/seo/Meta';
 
-export const Home = ({ mostViewed, mostDiscounted, bestsellers, types, brands, banners }: HomeProps) => {
+export const Home = ({ mostViewed, mostDiscounted, bestsellers, recommended, types, brands, banners }: HomeProps) => {
     const dispatch = useDispatch();
 
     React.useEffect(() => {
@@ -35,9 +35,10 @@ export const Home = ({ mostViewed, mostDiscounted, bestsellers, types, brands, b
                 <TopProduct items={mostViewed} />
             </section>
             <WhiteWrapper className={cn(styles.container, "wrapper")}>
-                <ItemSlider items={bestsellers} title="Хиты продаж"/>
+                <ItemSlider items={bestsellers} title="Самые продаваемые"/>
                 <ItemSlider items={mostViewed} title="Самые просматриваемые"/>
                 <ItemSlider items={mostDiscounted} title="Самые выгодные"/>
+                <ItemSlider items={recommended} title="Специально для Вас"/>
                 <Types types={types} />
                 <Brands brands={brands} />
             </WhiteWrapper>
@@ -49,6 +50,7 @@ interface HomeProps extends React.DetailedHTMLProps<React.HTMLAttributes<HTMLDiv
     mostViewed: IDevice[];
     bestsellers: IDevice[];
     mostDiscounted: IDevice[];
+    recommended: IDevice[];
     types: IType[];
     brands: IBrand[];
     banners: IBanner[];

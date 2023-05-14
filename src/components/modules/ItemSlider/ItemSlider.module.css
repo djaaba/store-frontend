@@ -1,5 +1,4 @@
-.container {
-}
+.container {}
 
 .container div[class~="react-horizontal-scrolling-menu--item"] {
     margin-right: 40px;
@@ -9,8 +8,17 @@
     justify-content: space-between;
 }
 
+.justifiedContainer div[class~="react-horizontal-scrolling-menu--item"] {
+    margin-right: 40px;
+}
+
 @media (max-width: 425px) {
     .container {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .justifiedContainer {
         padding-top: 20px;
         padding-bottom: 20px;
     }
