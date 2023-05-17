@@ -1,7 +1,9 @@
 import cn from "classnames";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { toast } from "react-toastify";
+import HyperModal from "react-hyper-modal";
 
 import styles from "./OrderDetails.module.css";
 import { OrderDetailsProps } from "./OrderDetails.props";
@@ -18,6 +20,7 @@ import { Button, Htag, ItemWithDots } from "@/components/UI";
 import { createOrder } from "@/api";
 import { IDevice } from "@/shared";
 import { toggleCart } from "@/store/cart/actions";
+import { UserModal } from "@/components/modules";
 
 export const OrderDetails = ({ ...props }: OrderDetailsProps): JSX.Element => {
     const dispatch = useDispatch();
@@ -27,6 +30,7 @@ export const OrderDetails = ({ ...props }: OrderDetailsProps): JSX.Element => {
     const discount = useSelector(discountCart);
     const sumCount = useSelector(sumCountCart);
     const router = useRouter();
+    const [isOpen, setOpen] = React.useState<string>('');
 
     const handleClick = () => {
         const order = String(Date.parse(String(new Date())))
@@ -39,12 +43,11 @@ export const OrderDetails = ({ ...props }: OrderDetailsProps): JSX.Element => {
                 })
             } else {
                 toast.error('Укажите ваш телефон и адрес!', error);
-                router.push(PROFILE_ROUTE);
+                setOpen('user')
             }
         } else {
             toast.error('Войдите в профиль!', error);
             router.push(LOGIN_ROUTE);
-
         }
     }
 
@@ -74,6 +77,9 @@ export const OrderDetails = ({ ...props }: OrderDetailsProps): JSX.Element => {
                 <Button onClick={() => handleClick()} size="big" color="red">
                     Купить!
                 </Button>
+                <HyperModal requestClose={() => setOpen('')} isOpen={isOpen == 'user'}>
+                    <UserModal setOpen={setOpen} data={user} />
+                </HyperModal>
             </section>
         </>
     );

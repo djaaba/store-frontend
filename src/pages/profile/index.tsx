@@ -115,21 +115,22 @@ const Profile = ({ className, ...props }: ProfileProps): JSX.Element => {
                     </WhiteWrapper>
                 </div>
                 <WhiteWrapper className={cn(styles.padding)}>
-                    <p className={styles.title}>
-                        Ваши заказы:
-                    </p>
-                    <div>
-                        {
-                            order?.map((item: any) => (
+                    <Htag tag="h3">Мои заказы: </Htag>
+                    {
+                        order.lenght != 0 ?
+                            order.map((item: any) => (
                                 <p
                                     onClick={() => getInfo(item.orders[0])}
                                     key={getId()}
                                 >
-                                    {item.orders[0]}
+                                    №{item.orders[0]}
                                 </p>
                             ))
-                        }
-                    </div>
+                            :
+                            <p className={styles.title}>
+                                Список заказов пока еще пустой!
+                            </p>
+                    }
                     <HyperModal requestClose={() => setOpen('')} isOpen={isOpen == 'order'}>
                         <OrderModal setOpen={setOpen} devices={devices} />
                     </HyperModal>

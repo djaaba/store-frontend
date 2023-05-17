@@ -21,7 +21,12 @@
     margin-top: 20px;
 }
 
-.orders {
+.process {
+    color: var(--success)
+}
+
+.processed{
+    color: var(--delete)
 }
 
 .order:last-child {

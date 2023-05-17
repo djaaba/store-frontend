@@ -34,31 +34,40 @@ export const OrderModal = ({ devices, ...props }: OrderModalProps): JSX.Element 
     return (
         <>
             <Htag tag="h2">Заказ №{devices[0]?.order}</Htag>
-            <ul className={styles.orders}>
-                {
-                    devices.map(elem => (
-                        <li className={styles.order} key={elem.id}>
-                            <ItemWithDots size="p" title={elem.device.name} subtitle={elem.count} />
-                            {
-                                userInfo._user?.role === "ADMIN" ?
-                                    <Button
-                                        className={styles.btn}
-                                        color="red"
-                                        size="small"
-                                        disabled={isDisabled}
-                                        onClick={() => handleDeleteitem(elem.id)}
-                                    >
-                                        <FontAwesomeIcon
-                                            icon={TrashIcon}
-                                        />
-                                    </Button>
-                                    :
-                                    ''
-                            }
-                        </li>
-                    ))
-                }
-            </ul>
+            <div>
+
+                <ul className={styles.orders}>
+                    {
+                        devices.map(elem => (
+                            <li className={styles.order} key={elem.id}>
+                                <ItemWithDots size="p" title={elem.device.name} subtitle={elem.count} />
+                                {
+                                    userInfo._user?.role === "ADMIN" ?
+                                        <Button
+                                            className={styles.btn}
+                                            color="red"
+                                            size="small"
+                                            disabled={isDisabled}
+                                            onClick={() => handleDeleteitem(elem.id)}
+                                        >
+                                            <FontAwesomeIcon
+                                                icon={TrashIcon}
+                                            />
+                                        </Button>
+                                        :
+                                        ''
+                                }
+                            </li>
+                        ))
+                    }
+                </ul>
+                <p
+                    className={devices[0]?.status ? styles.process : styles.processed}
+                    // tag="h3"
+                >
+                    {devices[0]?.status ? 'Заказ обработан' : 'Заказ обрабатывается'}
+                </p>
+            </div>
             {
                 userInfo._user?.role === "ADMIN" ?
                     <div className={styles.operations}>

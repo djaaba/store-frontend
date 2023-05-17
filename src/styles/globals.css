@@ -70,8 +70,13 @@ a {
     /* color: black; */
 }
 
-a:hover {
+span > a:hover {
     color: inherit;
+    text-decoration: underline;
+}
+
+span > a:visited {
+    color: var(--red)
 }
 
 p,

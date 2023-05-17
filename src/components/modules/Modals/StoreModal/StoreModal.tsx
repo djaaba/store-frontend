@@ -115,7 +115,6 @@ export const StoreModal = ({ storeInfo, ...props }: StoreModalProps): JSX.Elemen
                     <Button
                         disabled={isDisabled}
                         type="submit"
-                        className={styles.btn}
                         color={isDisabled ? "gray" : "red"}
                         size="big"
                         onClick={(e: React.FormEvent) => handleSubmit(e)}

@@ -55,7 +55,7 @@ const Products = ({ types, brands, device, ...props }: ProductProps): JSX.Elemen
 
     return (
         <React.Fragment {...props}>
-            <Meta title="Товары" description="Список товаров" />
+            <Meta title="Поиск" description="Поиск товаров" />
             <main className={cn(styles.main, "wrapper")}>
                 <Breadcrumbs list={breadcrumbs} />
                 <div className={styles.content}>
