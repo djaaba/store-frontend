@@ -1,0 +1,47 @@
+[
+    {
+        "id": 3,
+        "name": "Дмитрий",
+        "email": "admin@admin.ru",
+        "password": "$2b$05$YFNier4gCuizWX52YHu00.aY09Byu3YthlzUfB2JK1L8a3AlTeWVG",
+        "address": "г. Ростов-на-Дону, ул.Релизная, 42",
+        "role": "USER",
+        "phone": ""
+    },
+    {
+        "id": 5,
+        "name": "Артур",
+        "email": "artur@artur.artur",
+        "password": "$2b$05$wwBX7LMsuXrmwUGSInD68.L4wFOcEe3muG8AteEECqbd6YZt8S.Fu",
+        "address": "",
+        "role": "USER",
+        "phone": ""
+    },
+    {
+        "id": 6,
+        "name": "Даниил",
+        "email": "user@user.user",
+        "password": "$2b$05$.5uVgh9lrmd8m2f06grFJ.uwl71kEpKgY7XBvA3mQ8tOO1fREmu.G",
+        "address": "г. Ростов-на-Дону",
+        "role": "USER",
+        "phone": "9"
+    },
+    {
+        "id": 2,
+        "name": "Даниил",
+        "email": "admin@admin.admin",
+        "password": "$2b$05$tg.Cw5KhwxWUBGaQ08zGX.vD4TkZCOAko/TxnsBpMdZIwNS3hFMZu",
+        "address": "г. Ростов-на-Дону, ул. Оганова",
+        "role": "ADMIN",
+        "phone": "98887776655"
+    },
+    {
+        "id": 4,
+        "name": "Даниил",
+        "email": "admin@admin.adminru",
+        "password": "$2b$05$EO8MQW16uLQ0kTRtGfe1BurJ8yyY7G/A681X0W6QItZ8Bt5W/syS2",
+        "address": "г. Ростов-на-Дону",
+        "role": "USER",
+        "phone": "87776665544"
+    }
+]

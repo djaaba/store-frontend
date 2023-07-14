@@ -36,7 +36,7 @@ export const DeviceModal = ({ device, types, brands, setOpen, setDevice, ...prop
     // let isDisabled = !name.inputValid || !description.inputValid || !price.inputValid || !discount.inputValid || !file.inputValid;
 
     let valids = !name.inputValid || !description.inputValid || !price.inputValid || !discount.inputValid;
-    let isDisabled = device?.name? valids : !file.inputValid || valids;
+    let isDisabled = device?.name ? valids : !file.inputValid || valids;
 
     const addInfo = (e: React.FormEvent) => {
         e.preventDefault();
@@ -107,6 +107,11 @@ export const DeviceModal = ({ device, types, brands, setOpen, setDevice, ...prop
     return (
         <>
             <form>
+                <Htag className={styles.title} tag="h1">
+                    {
+                        device?.name ? "Изменение устройства" : "Добавление устройства"
+                    }
+                </Htag>
                 <div className={styles.container}>
                     <div>
                         <Htag tag="h3">Изображение товара</Htag>

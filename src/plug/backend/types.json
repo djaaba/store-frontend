@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "imgUrl": "http://localhost:7000/type/da66ce00-a615-4a68-9973-6079ae80122c.jpg",
+        "name": "Телевизоры"
+    },
+    {
+        "id": 2,
+        "imgUrl": "http://localhost:7000/type/216e4fbe-97a7-4583-b3f8-df0637141388.jpg",
+        "name": "Холодильники"
+    },
+    {
+        "id": 3,
+        "imgUrl": "http://localhost:7000/type/eb291d99-8b6b-4eeb-b58e-6910ba13c56c.jpg",
+        "name": "Стиральные машины"
+    },
+    {
+        "id": 4,
+        "imgUrl": "http://localhost:7000/type/0fe8481c-6e24-4318-bbf7-231df6a315cb.jpg",
+        "name": "Смартфоны"
+    },
+    {
+        "id": 5,
+        "imgUrl": "http://localhost:7000/type/de622388-57e8-43c7-ad3b-735c8a9a15fa.jpg",
+        "name": "Ноутбуки"
+    },
+    {
+        "id": 6,
+        "imgUrl": "http://localhost:7000/type/8ce8ad5e-803f-4e34-8f2c-36c0586050d4.jpg",
+        "name": "Планшеты"
+    },
+    {
+        "id": 7,
+        "imgUrl": "http://localhost:7000/type/72fdf334-b5ee-4890-b2a7-0a3d269ff5f7.jpg",
+        "name": "Пылесосы"
+    }
+]
