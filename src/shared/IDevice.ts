@@ -1,19 +1,19 @@
 import { ICharacteristic } from "./ICharacteristic";
 
 export interface IDevice {
-    price: number;
-    discount: number;
-    name: string;
+    id: number;
+    count: number;
     description: string;
     imgUrl: string;
-    brandId: number;
-    typeId: number;
-    count: number;
-    id: number;
+    name: string;
+    price: number;
     info: ICharacteristic[];
-    viewCount: number;
+    discount: number;
     discountPrice: number;
+    viewCount: number;
     purchasesCount: number;
+    typeId: number;
+    brandId: number;
 }
 
 export interface IPaginationDevice {

@@ -1,27 +1,27 @@
 [
     {
         "id": 1,
-        "imgUrl": "http://localhost:7000/brand/a7c802a2-637c-4d87-9e95-33cf3cf58621.jpg",
+        "imgUrl": "/assets/img/brand/a7c802a2-637c-4d87-9e95-33cf3cf58621.jpg",
         "name": "Samsung"
     },
     {
         "id": 4,
-        "imgUrl": "http://localhost:7000/brand/bdda934c-8573-4dc7-8078-cd59eda2b635.jpg",
+        "imgUrl": "/assets/img/brand/bdda934c-8573-4dc7-8078-cd59eda2b635.jpg",
         "name": "Huawei"
     },
     {
         "id": 5,
-        "imgUrl": "http://localhost:7000/brand/919ad238-1f2c-46d5-8684-c735a32d3bb6.jpg",
+        "imgUrl": "/assets/img/brand/919ad238-1f2c-46d5-8684-c735a32d3bb6.jpg",
         "name": "LG"
     },
     {
         "id": 6,
-        "imgUrl": "http://localhost:7000/brand/523974e9-9f9f-42e2-8fbf-4b38312ffbfb.jpg",
+        "imgUrl": "/assets/img/brand/523974e9-9f9f-42e2-8fbf-4b38312ffbfb.jpg",
         "name": "Xiaomi"
     },
     {
         "id": 3,
-        "imgUrl": "http://localhost:7000/brand/7eaa99ed-7591-4764-a895-6c884e734d13.jpg",
+        "imgUrl": "/assets/img/brand/7eaa99ed-7591-4764-a895-6c884e734d13.jpg",
         "name": "Honor"
     }
 ]

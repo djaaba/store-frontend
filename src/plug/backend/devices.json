@@ -5,9 +5,77 @@
             "id": 23,
             "count": 1,
             "description": "Холодильник Samsung RS62R50312C принадлежит к классу Side-by-Side. Его вместительная вертикальная морозилка расположена параллельно основному отсеку. В ней найдётся место для хранения часто используемых полуфабрикатов и долгосрочных заготовок. В устройстве установлен надёжный, экономичный и тихий инверторный компрессор. Для управления температурой используется сенсорная панель, распознающая лёгкие прикосновения.",
-            "imgUrl": "http://localhost:7000/device/0b43b8d9-2fd1-4529-85fd-bbbd113a29da.jpg",
+            "imgUrl": "/assets/img/device/0b43b8d9-2fd1-4529-85fd-bbbd113a29da.jpg",
             "name": "Холодильник Samsung RS62R50312C",
             "price": 158500,
+            "info": [
+                {
+                    "id": 211,
+                    "title": "Объем холодильной камеры",
+                    "description": "418 л",
+                    "deviceId": 23
+                },
+                {
+                    "id": 212,
+                    "title": "Объем морозильной камеры",
+                    "description": "229 л",
+                    "deviceId": 23
+                },
+                {
+                    "id": 213,
+                    "title": "Фирменные технологии",
+                    "description": "Metal Cooling",
+                    "deviceId": 23
+                },
+                {
+                    "id": 214,
+                    "title": "Управление с телефона",
+                    "description": "Да",
+                    "deviceId": 23
+                },
+                {
+                    "id": 215,
+                    "title": "Защита от детей",
+                    "description": "Да",
+                    "deviceId": 23
+                },
+                {
+                    "id": 216,
+                    "title": "Вес",
+                    "description": "110 кг",
+                    "deviceId": 23
+                },
+                {
+                    "id": 217,
+                    "title": "Высота",
+                    "description": "178 см",
+                    "deviceId": 23
+                },
+                {
+                    "id": 218,
+                    "title": "Глубина",
+                    "description": "92 см",
+                    "deviceId": 23
+                },
+                {
+                    "id": 219,
+                    "title": "Ширина",
+                    "description": "71 см",
+                    "deviceId": 23
+                },
+                {
+                    "id": 220,
+                    "title": "Зона свежести",
+                    "description": "Да",
+                    "deviceId": 23
+                },
+                {
+                    "id": 221,
+                    "title": "Страна",
+                    "description": "Китай",
+                    "deviceId": 23
+                }
+            ],
             "discount": 0,
             "discountPrice": 158500,
             "viewCount": 0,
@@ -19,9 +87,65 @@
             "id": 21,
             "count": 1,
             "description": "Трехдверный холодильник Samsung RH62A50F1B4, черный оснащен тихим инверторным компрессором, который работает от хладагента R600A. Для эффективного охлаждения продуктов используется металлическая задняя стенка внутри каждой камеры. Устройство может замораживать до 14 кг продуктов в сутки, поддерживает функции быстрого охлаждения, суперзамораживания и режим «Отпуск».",
-            "imgUrl": "http://localhost:7000/device/e6b805e9-2bcb-4b50-a92f-f3a81b65c75d.jpg",
+            "imgUrl": "/assets/img/device/e6b805e9-2bcb-4b50-a92f-f3a81b65c75d.jpg",
             "name": "Холодильник многодверный Samsung RH62A50F1B4",
             "price": 189999,
+            "info": [
+                {
+                    "id": 268,
+                    "title": "Гарантия",
+                    "description": "1 год",
+                    "deviceId": 21
+                },
+                {
+                    "id": 269,
+                    "title": "Страна",
+                    "description": "Китай",
+                    "deviceId": 21
+                },
+                {
+                    "id": 270,
+                    "title": "Срок службы",
+                    "description": "10 лет",
+                    "deviceId": 21
+                },
+                {
+                    "id": 271,
+                    "title": "Объем холодильной камеры",
+                    "description": "411 л",
+                    "deviceId": 21
+                },
+                {
+                    "id": 272,
+                    "title": "Объем морозильной камеры",
+                    "description": "229 л",
+                    "deviceId": 21
+                },
+                {
+                    "id": 273,
+                    "title": "Материал полок",
+                    "description": "Пластик",
+                    "deviceId": 21
+                },
+                {
+                    "id": 274,
+                    "title": "Высота",
+                    "description": "178 см",
+                    "deviceId": 21
+                },
+                {
+                    "id": 275,
+                    "title": "Ширина",
+                    "description": "91 см",
+                    "deviceId": 21
+                },
+                {
+                    "id": 276,
+                    "title": "Глубина",
+                    "description": "72 см",
+                    "deviceId": 21
+                }
+            ],
             "discount": 25,
             "discountPrice": 142499,
             "viewCount": 4,
@@ -33,9 +157,65 @@
             "id": 22,
             "count": 1,
             "description": "Продуманная система хранения 20 внутренних перегородок позволяют организовать удобное хранение любых продуктов. Узкий и вместительный Глубина холодильника всего 666 мм. Его можно удобно интегрировать в кухонный гарнитур, оставив больше свободного пространства на кухне. При этом емкость холодильника составляет 502 л и позволяет удобно разместить большое количество продуктов для всей семьи. Антибактериальный эффект Технология воздействия ионов серебра сдерживает рост бактерий и позволяет дольше сохранить продукты свежими.",
-            "imgUrl": "http://localhost:7000/device/715dabc9-590a-41da-a10a-b5f49824ace9.jpg",
+            "imgUrl": "/assets/img/device/715dabc9-590a-41da-a10a-b5f49824ace9.jpg",
             "name": "Холодильник Xiaomi BCD-502WGSA",
             "price": 119999,
+            "info": [
+                {
+                    "id": 202,
+                    "title": "Общий объем",
+                    "description": "502 л",
+                    "deviceId": 22
+                },
+                {
+                    "id": 203,
+                    "title": "Количество дверей",
+                    "description": "2",
+                    "deviceId": 22
+                },
+                {
+                    "id": 204,
+                    "title": "Количество камер",
+                    "description": "Да",
+                    "deviceId": 22
+                },
+                {
+                    "id": 205,
+                    "title": "Система No Frost",
+                    "description": "Да",
+                    "deviceId": 22
+                },
+                {
+                    "id": 206,
+                    "title": "Объем холодильной камеры",
+                    "description": "301 л",
+                    "deviceId": 22
+                },
+                {
+                    "id": 207,
+                    "title": "Вес",
+                    "description": "86 кг",
+                    "deviceId": 22
+                },
+                {
+                    "id": 208,
+                    "title": "Высота",
+                    "description": "178 см",
+                    "deviceId": 22
+                },
+                {
+                    "id": 209,
+                    "title": "Глубина",
+                    "description": "67 см",
+                    "deviceId": 22
+                },
+                {
+                    "id": 210,
+                    "title": "Ширина",
+                    "description": "84 см",
+                    "deviceId": 22
+                }
+            ],
             "discount": 0,
             "discountPrice": 119999,
             "viewCount": 0,
@@ -47,9 +227,77 @@
             "id": 11,
             "count": 1,
             "description": "Экран телевизора LG OLED55C1RLA собран из 8 млн самоподсвечивающихся пикселей, которые могут включаться и выключаться независимо от соседних. Он показывает невероятно реалистичное изображение с яркими, насыщенными красками, бесконечной глубиной чёрного цвета и кристально чистым белым. Плавные переходы между оттенками позволяют вам оценить экзотическую красоту тропических пляжей, ночные панорамы городов и даже фантастические битвы в космосе.",
-            "imgUrl": "http://localhost:7000/device/a6d0b953-9068-4578-81bc-ec49589c5fd6.jpg",
+            "imgUrl": "/assets/img/device/a6d0b953-9068-4578-81bc-ec49589c5fd6.jpg",
             "name": "LG OLED55C1RLA",
             "price": 169999,
+            "info": [
+                {
+                    "id": 90,
+                    "title": "Гарантия",
+                    "description": "1 год",
+                    "deviceId": 11
+                },
+                {
+                    "id": 91,
+                    "title": "Страна",
+                    "description": "Россия",
+                    "deviceId": 11
+                },
+                {
+                    "id": 92,
+                    "title": "Срок службы",
+                    "description": "5 лет",
+                    "deviceId": 11
+                },
+                {
+                    "id": 93,
+                    "title": "Смарт ТВ",
+                    "description": "Да",
+                    "deviceId": 11
+                },
+                {
+                    "id": 94,
+                    "title": "Частота",
+                    "description": "120 Гц",
+                    "deviceId": 11
+                },
+                {
+                    "id": 95,
+                    "title": "Экран",
+                    "description": "55\"/3840x2160 Пикс",
+                    "deviceId": 11
+                },
+                {
+                    "id": 96,
+                    "title": "HDMI ARC",
+                    "description": "Да",
+                    "deviceId": 11
+                },
+                {
+                    "id": 97,
+                    "title": "Звук",
+                    "description": "OLED Surround",
+                    "deviceId": 11
+                },
+                {
+                    "id": 98,
+                    "title": "Ultra HD",
+                    "description": "Да",
+                    "deviceId": 11
+                },
+                {
+                    "id": 99,
+                    "title": "Диагональ ",
+                    "description": "139 см",
+                    "deviceId": 11
+                },
+                {
+                    "id": 100,
+                    "title": "ОС",
+                    "description": "WebOS",
+                    "deviceId": 11
+                }
+            ],
             "discount": 30,
             "discountPrice": 118999,
             "viewCount": 1,
@@ -61,9 +309,65 @@
             "id": 6,
             "count": 1,
             "description": "Планшетный компьютер Samsung Galaxy Tab S8 Ultra LTE Graphite — модель с экраном диагональю 14,6 дюйма, выполненным по технологии Super AMOLED. В сочетании с разрешением 2960x1848 пикселей это обеспечивает яркое, насыщенное и четкое изображением с высокой детализацией. Отображается до 16 млн цветов. Поддерживается перо S Pen, которое упрощает управление и позволяет рисовать и делать заметки, словно в обычной записной книжке",
-            "imgUrl": "http://localhost:7000/device/8896801f-6ea5-4687-8db3-db0c50edfda0.jpg",
+            "imgUrl": "/assets/img/device/8896801f-6ea5-4687-8db3-db0c50edfda0.jpg",
             "name": "Samsung Galaxy Tab S8 Ultra 8",
             "price": 99999,
+            "info": [
+                {
+                    "id": 44,
+                    "title": "Гарантия",
+                    "description": "1 год",
+                    "deviceId": 6
+                },
+                {
+                    "id": 45,
+                    "title": "Страна",
+                    "description": "Вьетнам",
+                    "deviceId": 6
+                },
+                {
+                    "id": 46,
+                    "title": "Экран",
+                    "description": "14.6\"",
+                    "deviceId": 6
+                },
+                {
+                    "id": 47,
+                    "title": "Тип экрана",
+                    "description": "Super AMOLED",
+                    "deviceId": 6
+                },
+                {
+                    "id": 48,
+                    "title": "ROM",
+                    "description": "128 ГБ",
+                    "deviceId": 6
+                },
+                {
+                    "id": 49,
+                    "title": "RAM",
+                    "description": "8 ГБ",
+                    "deviceId": 6
+                },
+                {
+                    "id": 50,
+                    "title": "eMMC",
+                    "description": "128 ГБ",
+                    "deviceId": 6
+                },
+                {
+                    "id": 51,
+                    "title": "Ядра",
+                    "description": "8",
+                    "deviceId": 6
+                },
+                {
+                    "id": 52,
+                    "title": " камера МПикс",
+                    "description": "13/6",
+                    "deviceId": 6
+                }
+            ],
             "discount": 0,
             "discountPrice": 99999,
             "viewCount": 0,
@@ -75,9 +379,65 @@
             "id": 1,
             "count": 1,
             "description": "Смартфон Samsung Galaxy Z Fold 4 черного цвета выполнен в раскладном металлическом корпусе со стеклянной задней панелью и оснащен 256 Гб памяти для хранения данных. Объем оперативной памяти — 12 Гб. Корпус устройства защищен от попадания влаги и пыли по классу IPX8.",
-            "imgUrl": "http://localhost:7000/device/8e55d1ff-9ff7-4376-a711-2c0029c9940f.jpg",
+            "imgUrl": "/assets/img/device/8e55d1ff-9ff7-4376-a711-2c0029c9940f.jpg",
             "name": "Samsung Galaxy Z",
             "price": 90999,
+            "info": [
+                {
+                    "id": 259,
+                    "title": "Гарантия",
+                    "description": "1 год",
+                    "deviceId": 1
+                },
+                {
+                    "id": 260,
+                    "title": "Страна",
+                    "description": "Китай",
+                    "deviceId": 1
+                },
+                {
+                    "id": 261,
+                    "title": "Год выпуска",
+                    "description": "2022",
+                    "deviceId": 1
+                },
+                {
+                    "id": 262,
+                    "title": "Частота",
+                    "description": "120 Гц",
+                    "deviceId": 1
+                },
+                {
+                    "id": 263,
+                    "title": "Безрамочный",
+                    "description": "Да",
+                    "deviceId": 1
+                },
+                {
+                    "id": 264,
+                    "title": "Тип стекла",
+                    "description": "закалённое",
+                    "deviceId": 1
+                },
+                {
+                    "id": 265,
+                    "title": "ОС",
+                    "description": "Android",
+                    "deviceId": 1
+                },
+                {
+                    "id": 266,
+                    "title": "Экран",
+                    "description": "Dynamic AMOLED",
+                    "deviceId": 1
+                },
+                {
+                    "id": 267,
+                    "title": "Модель",
+                    "description": "SM-F936B",
+                    "deviceId": 1
+                }
+            ],
             "discount": 0,
             "discountPrice": 90999,
             "viewCount": 89,
@@ -89,9 +449,59 @@
             "id": 8,
             "count": 1,
             "description": "Ноутбук Huawei MateBook E DRC-W56 оборудован четырехъядерным процессором Intel Core i5 1130G7 с тактовой частотой 1,8 ГГц. Кэш-память, которая отвечает за хранение копий данных, равна 8 Мб. Для обработки и подготовки графики к выводу на дисплей предусмотрен видеопроцессор Intel Iris Xe Graphics. Оперативная память объемом 16 Гб относится к типу LPDDR4X. Частота памяти составляет 3733 МГц. В качестве накопителя выступает SSD на 512 Гб. За безопасность отвечает встроенный сканер отпечатков пальцев.",
-            "imgUrl": "http://localhost:7000/device/4c4b7801-c003-4d84-9c3a-cb184785c3c6.jpg",
+            "imgUrl": "/assets/img/device/4c4b7801-c003-4d84-9c3a-cb184785c3c6.jpg",
             "name": "HUAWEI MateBook E",
             "price": 89999,
+            "info": [
+                {
+                    "id": 62,
+                    "title": "Гарантия",
+                    "description": "1 год",
+                    "deviceId": 8
+                },
+                {
+                    "id": 63,
+                    "title": "Страна",
+                    "description": "Китай",
+                    "deviceId": 8
+                },
+                {
+                    "id": 64,
+                    "title": "Срок службы",
+                    "description": "3 года",
+                    "deviceId": 8
+                },
+                {
+                    "id": 65,
+                    "title": "ОС",
+                    "description": "Windows 11",
+                    "deviceId": 8
+                },
+                {
+                    "id": 66,
+                    "title": "Процессор",
+                    "description": "Intel Core i5",
+                    "deviceId": 8
+                },
+                {
+                    "id": 67,
+                    "title": "Ядра",
+                    "description": "4",
+                    "deviceId": 8
+                },
+                {
+                    "id": 68,
+                    "title": "Экран",
+                    "description": "12.6\"",
+                    "deviceId": 8
+                },
+                {
+                    "id": 69,
+                    "title": "Тип экрана",
+                    "description": "OLED",
+                    "deviceId": 8
+                }
+            ],
             "discount": 0,
             "discountPrice": 89999,
             "viewCount": 35,
@@ -103,9 +513,65 @@
             "id": 7,
             "count": 1,
             "description": "Ультрабук Honor MagicBook View 14 предоставляет широкие возможности для работы и развлечений. Его характерная особенность – 14,2-дюймовый сенсорный экран FullView с разрешением 2520 х 1680 пикселей. Он создан по технологии IPS, занимает 90,5% от площади крышки и воспроизводит яркую, детализированную картинку с безупречно реалистичными цветами.",
-            "imgUrl": "http://localhost:7000/device/37f8f442-fd82-4a0a-95d7-b7df466a6426.jpg",
+            "imgUrl": "/assets/img/device/37f8f442-fd82-4a0a-95d7-b7df466a6426.jpg",
             "name": "Honor MagicBook View 14",
             "price": 104999,
+            "info": [
+                {
+                    "id": 53,
+                    "title": "Гарантия",
+                    "description": "1 год",
+                    "deviceId": 7
+                },
+                {
+                    "id": 54,
+                    "title": "Страна",
+                    "description": "Китай",
+                    "deviceId": 7
+                },
+                {
+                    "id": 55,
+                    "title": "ОС",
+                    "description": "Windows 11",
+                    "deviceId": 7
+                },
+                {
+                    "id": 56,
+                    "title": "Процессор",
+                    "description": "Intel Core i5",
+                    "deviceId": 7
+                },
+                {
+                    "id": 57,
+                    "title": "Кэш-память",
+                    "description": "8 МБ",
+                    "deviceId": 7
+                },
+                {
+                    "id": 58,
+                    "title": "Ядра",
+                    "description": "4",
+                    "deviceId": 7
+                },
+                {
+                    "id": 59,
+                    "title": "Экран",
+                    "description": "14.2\"",
+                    "deviceId": 7
+                },
+                {
+                    "id": 60,
+                    "title": "Частота ",
+                    "description": "90 Гц",
+                    "deviceId": 7
+                },
+                {
+                    "id": 61,
+                    "title": "Сенсорный экран",
+                    "description": "Да",
+                    "deviceId": 7
+                }
+            ],
             "discount": 20,
             "discountPrice": 83999,
             "viewCount": 8,
@@ -117,9 +583,65 @@
             "id": 16,
             "count": 1,
             "description": "Стиральная машина LG F2V5GG2S 8.5/5 оснащена сушкой, вмещает до 8,5 кг белья (5 кг для сушки). Машина снабжена 14 программами для различных типов тканей и степеней загрязнений, режимами для разной степени остаточной влажности. Пять дополнительных функций: интенсивная стирка, добавление белья после начала цикла, предварительная стирка, полоскание, таймер отсрочки запуска (от 3 до 19 часов).",
-            "imgUrl": "http://localhost:7000/device/c104ac44-b72a-4300-89ff-8d93bdbb7921.jpg",
+            "imgUrl": "/assets/img/device/c104ac44-b72a-4300-89ff-8d93bdbb7921.jpg",
             "name": "Стиральная машина с сушкой LG F2V5GG2S",
             "price": 79999,
+            "info": [
+                {
+                    "id": 138,
+                    "title": "Гарантия",
+                    "description": "1 год",
+                    "deviceId": 16
+                },
+                {
+                    "id": 139,
+                    "title": "Страна",
+                    "description": "Китай",
+                    "deviceId": 16
+                },
+                {
+                    "id": 140,
+                    "title": "Срок службы",
+                    "description": "8 лет",
+                    "deviceId": 16
+                },
+                {
+                    "id": 141,
+                    "title": "Глубина",
+                    "description": "47.5 см",
+                    "deviceId": 16
+                },
+                {
+                    "id": 142,
+                    "title": "Ширина",
+                    "description": "60 см",
+                    "deviceId": 16
+                },
+                {
+                    "id": 143,
+                    "title": "Высота",
+                    "description": "85 см",
+                    "deviceId": 16
+                },
+                {
+                    "id": 144,
+                    "title": "Мотор",
+                    "description": "инверторный",
+                    "deviceId": 16
+                },
+                {
+                    "id": 145,
+                    "title": "Максимальная загрузка",
+                    "description": "8.5 кг",
+                    "deviceId": 16
+                },
+                {
+                    "id": 146,
+                    "title": "Загрузка при сушке",
+                    "description": "5 кг",
+                    "deviceId": 16
+                }
+            ],
             "discount": 0,
             "discountPrice": 79999,
             "viewCount": 0,
@@ -131,9 +653,71 @@
             "id": 12,
             "count": 1,
             "description": "Телевизор LG 55QNED816QA оснащен экраном 55 дюймов с разрешением 3840 х 2160 пикселей и частотой обновления 120 Гц. Для улучшения изображения предусмотрены технология HDR 10 Pro, цифровое шумоподавление и масштабирование до формата 4K.  За звук отвечают два фронтальных динамика с поддержкой Ai Sound Pro. Их суммарная мощность — 20 Вт. Модель работает под управлением операционной системы webOS. Для выбора каналов и изменения настроек на расстоянии есть Bluetooth-пульт.",
-            "imgUrl": "http://localhost:7000/device/bebde231-53d2-4c7c-b687-c62624a12955.jpg",
+            "imgUrl": "/assets/img/device/bebde231-53d2-4c7c-b687-c62624a12955.jpg",
             "name": "LG 55QNED816QA",
             "price": 77499,
+            "info": [
+                {
+                    "id": 101,
+                    "title": "Гарантия",
+                    "description": "1 год",
+                    "deviceId": 12
+                },
+                {
+                    "id": 102,
+                    "title": "Страна",
+                    "description": "Индонезия",
+                    "deviceId": 12
+                },
+                {
+                    "id": 103,
+                    "title": "Срок службы",
+                    "description": "5 лет",
+                    "deviceId": 12
+                },
+                {
+                    "id": 104,
+                    "title": "Диагональ",
+                    "description": "55\"",
+                    "deviceId": 12
+                },
+                {
+                    "id": 105,
+                    "title": "Диагональ экрана",
+                    "description": "139 см",
+                    "deviceId": 12
+                },
+                {
+                    "id": 106,
+                    "title": "Ultra HD",
+                    "description": "Да",
+                    "deviceId": 12
+                },
+                {
+                    "id": 107,
+                    "title": "HDR",
+                    "description": "Да",
+                    "deviceId": 12
+                },
+                {
+                    "id": 108,
+                    "title": "HDMI ARC",
+                    "description": "Да",
+                    "deviceId": 12
+                },
+                {
+                    "id": 109,
+                    "title": "Звук",
+                    "description": "AI Sound Pro",
+                    "deviceId": 12
+                },
+                {
+                    "id": 110,
+                    "title": "ОС",
+                    "description": "WebOS",
+                    "deviceId": 12
+                }
+            ],
             "discount": 0,
             "discountPrice": 77499,
             "viewCount": 1,
@@ -145,9 +729,77 @@
             "id": 9,
             "count": 1,
             "description": "Телевизор Samsung UE55BU8000U черного цвета поддерживает технологию Dynamic Crystal Color, которая обеспечивает динамичные, естественные цвета. Модель снабжена экраном диагональю 55 дюймов, разрешение матрицы — 3840х2160 пикселей, частота кадров — 50 Гц. Поддерживается HDR и цифровое шумоподавление. Звуковая система состоит из двух динамиков мощностью по 10 Вт. Модель подходит для геймеров: Motion Xcelerator оптимизирует качество каждого кадра, режим ALLM автоматически снижает задержку при вводе команд с игрового контроллера.",
-            "imgUrl": "http://localhost:7000/device/42078a5a-4ce6-4016-a35d-bd76fef96548.jpg",
+            "imgUrl": "/assets/img/device/42078a5a-4ce6-4016-a35d-bd76fef96548.jpg",
             "name": "Samsung UE55BU8000U",
             "price": 74999,
+            "info": [
+                {
+                    "id": 70,
+                    "title": "Гарантия",
+                    "description": "1 год",
+                    "deviceId": 9
+                },
+                {
+                    "id": 71,
+                    "title": "Страна",
+                    "description": "Узбекистан",
+                    "deviceId": 9
+                },
+                {
+                    "id": 72,
+                    "title": "Срок службы",
+                    "description": "5 лет",
+                    "deviceId": 9
+                },
+                {
+                    "id": 73,
+                    "title": "Диагональ",
+                    "description": "55\"",
+                    "deviceId": 9
+                },
+                {
+                    "id": 74,
+                    "title": "Ultra HD",
+                    "description": "Да",
+                    "deviceId": 9
+                },
+                {
+                    "id": 75,
+                    "title": "Формат экрана",
+                    "description": "16:9",
+                    "deviceId": 9
+                },
+                {
+                    "id": 76,
+                    "title": "Экрана",
+                    "description": "LED",
+                    "deviceId": 9
+                },
+                {
+                    "id": 77,
+                    "title": "HDR",
+                    "description": "Да",
+                    "deviceId": 9
+                },
+                {
+                    "id": 78,
+                    "title": "ОС",
+                    "description": "Tizen",
+                    "deviceId": 9
+                },
+                {
+                    "id": 79,
+                    "title": "Smart TV",
+                    "description": "Да",
+                    "deviceId": 9
+                },
+                {
+                    "id": 80,
+                    "title": "Sleep-таймер",
+                    "description": "Да",
+                    "deviceId": 9
+                }
+            ],
             "discount": 0,
             "discountPrice": 74999,
             "viewCount": 0,
@@ -159,8 +811,64 @@
             "id": 2,
             "count": 1,
             "description": "Смартфон Samsung Galaxy S23+ Light Pink — модель с безрамочным экраном диагональю 6,6 дюйма, выполненным по технологии Dynamic AMOLED 2X. Разрешение — 2340x1080 пикселей, частота обновления — 120 Гц. Отображается 16 млн цветов. Надежную защиту дисплея обеспечивает стекло Corning Gorilla Glass 8. Высокую производительность девайса гарантируют восьмиядерный процессор Qualcomm Snapdragon 8 Gen 2 и 8 Гб оперативной памяти. Для установки приложений, хранения изображений, музыки видео и документов используется хранилище объемом 256 Гб.",
-            "imgUrl": "http://localhost:7000/device/ada872c3-0a7a-4871-9f9a-a920e1d9e7fd.jpg",
+            "imgUrl": "/assets/img/device/ada872c3-0a7a-4871-9f9a-a920e1d9e7fd.jpg",
             "name": "Samsung Galaxy S23+",
+            "info": [
+                {
+                    "id": 10,
+                    "title": "Гарантия",
+                    "description": "1 год",
+                    "deviceId": 2
+                },
+                {
+                    "id": 11,
+                    "title": "Страна",
+                    "description": "Вьетнам",
+                    "deviceId": 2
+                },
+                {
+                    "id": 12,
+                    "title": "Год выпуска",
+                    "description": "2023",
+                    "deviceId": 2
+                },
+                {
+                    "id": 13,
+                    "title": "Модель",
+                    "description": "SM-S916",
+                    "deviceId": 2
+                },
+                {
+                    "id": 14,
+                    "title": "ОС",
+                    "description": "Android 13",
+                    "deviceId": 2
+                },
+                {
+                    "id": 15,
+                    "title": "Экран",
+                    "description": "6.6\"",
+                    "deviceId": 2
+                },
+                {
+                    "id": 16,
+                    "title": "Безрамочный",
+                    "description": "Да",
+                    "deviceId": 2
+                },
+                {
+                    "id": 17,
+                    "title": "RAM",
+                    "description": "8 ГБ",
+                    "deviceId": 2
+                },
+                {
+                    "id": 18,
+                    "title": "ROM",
+                    "description": "256 ГБ",
+                    "deviceId": 2
+                }
+            ],
             "price": 90000,
             "discount": 17,
             "discountPrice": 74700,
@@ -173,9 +881,65 @@
             "id": 10,
             "count": 1,
             "description": "Телевизор Samsung QE55Q60BAUXCE в черном корпусе поставляется в комплекте с настольной подставкой. Диагональ его экрана — 55 дюймов. Он произведен на основе технологии QLED. Есть система обработки изображения до формата 4K Ultra HD. В телевизоре установлена операционная система Tizen OS. Есть модуль Bluetooth и Wi-Fi.",
-            "imgUrl": "http://localhost:7000/device/4e67bb82-bc80-47c6-ad7d-bddadc34c62c.jpg",
+            "imgUrl": "/assets/img/device/4e67bb82-bc80-47c6-ad7d-bddadc34c62c.jpg",
             "name": "Samsung QE55Q60BAU",
             "price": 87999,
+            "info": [
+                {
+                    "id": 81,
+                    "title": "Гарантия",
+                    "description": "1 год",
+                    "deviceId": 10
+                },
+                {
+                    "id": 82,
+                    "title": "Страна",
+                    "description": "Россия",
+                    "deviceId": 10
+                },
+                {
+                    "id": 83,
+                    "title": "Срок службы",
+                    "description": "5 лет",
+                    "deviceId": 10
+                },
+                {
+                    "id": 84,
+                    "title": "Диагональ",
+                    "description": "55\"",
+                    "deviceId": 10
+                },
+                {
+                    "id": 85,
+                    "title": "Ultra HD",
+                    "description": "Да",
+                    "deviceId": 10
+                },
+                {
+                    "id": 86,
+                    "title": "Формат экрана",
+                    "description": "16:9",
+                    "deviceId": 10
+                },
+                {
+                    "id": 87,
+                    "title": "QLED",
+                    "description": "Да",
+                    "deviceId": 10
+                },
+                {
+                    "id": 88,
+                    "title": "HDR",
+                    "description": "Да",
+                    "deviceId": 10
+                },
+                {
+                    "id": 89,
+                    "title": "ОС",
+                    "description": "Tizen",
+                    "deviceId": 10
+                }
+            ],
             "discount": 25,
             "discountPrice": 65999,
             "viewCount": 1,
@@ -187,9 +951,65 @@
             "id": 4,
             "count": 1,
             "description": "Huawei P50 Pro — смартфон премиум-класса, в котором установлен восьмиядерный процессор Qualcomm Snapdragon 888. Он работает под управлением фирменной операционной системы Android EMUI 12. В этой модели не поддерживаются сервисы Google, но все необходимые программы и приложения можно найти в AppGallery.",
-            "imgUrl": "http://localhost:7000/device/fbc3895b-d6b5-445a-82fb-2e79651e2e4e.jpg",
+            "imgUrl": "/assets/img/device/fbc3895b-d6b5-445a-82fb-2e79651e2e4e.jpg",
             "name": "HUAWEI P13 Pro",
             "price": 64999,
+            "info": [
+                {
+                    "id": 184,
+                    "title": "Гарантия",
+                    "description": "1 год",
+                    "deviceId": 4
+                },
+                {
+                    "id": 185,
+                    "title": "Страна",
+                    "description": "Китай",
+                    "deviceId": 4
+                },
+                {
+                    "id": 186,
+                    "title": "ОС",
+                    "description": "Android EMUI 12",
+                    "deviceId": 4
+                },
+                {
+                    "id": 187,
+                    "title": "Экран",
+                    "description": "6.6\"",
+                    "deviceId": 4
+                },
+                {
+                    "id": 188,
+                    "title": "Тип экрана",
+                    "description": "OLED",
+                    "deviceId": 4
+                },
+                {
+                    "id": 189,
+                    "title": "Частота ",
+                    "description": "120 Гц",
+                    "deviceId": 4
+                },
+                {
+                    "id": 190,
+                    "title": "RAM",
+                    "description": "8 ГБ",
+                    "deviceId": 4
+                },
+                {
+                    "id": 191,
+                    "title": "ROM",
+                    "description": "256 ГБ",
+                    "deviceId": 4
+                },
+                {
+                    "id": 192,
+                    "title": "Камера МПикс",
+                    "description": "50/13/12",
+                    "deviceId": 4
+                }
+            ],
             "discount": 2,
             "discountPrice": 63699,
             "viewCount": 95,
@@ -201,9 +1021,71 @@
             "id": 18,
             "count": 1,
             "description": "Стиральная машина Samsung WW70R62LVTW белого цвета, несмотря на небольшие габариты, за один раз вмещает в себя 7 кг белья. Загрузка вещей осуществляется через круглый люк, расположенный спереди. Благодаря электронному типу управления пользователю нужно лишь ввести несколько параметров и наслаждаться результатом. А с помощью искусственного интеллекта Bixby управлять процессом стирки можно даже не вставая с дивана.",
-            "imgUrl": "http://localhost:7000/device/aac54ef1-f1c8-4236-8258-f37e29726eea.jpg",
+            "imgUrl": "/assets/img/device/aac54ef1-f1c8-4236-8258-f37e29726eea.jpg",
             "name": "Стиральная машина Samsung WW70R62LVTW",
             "price": 58720,
+            "info": [
+                {
+                    "id": 157,
+                    "title": "Гарантия",
+                    "description": "1 год",
+                    "deviceId": 18
+                },
+                {
+                    "id": 158,
+                    "title": "Страна",
+                    "description": "Китай",
+                    "deviceId": 18
+                },
+                {
+                    "id": 159,
+                    "title": "Тип загрузки",
+                    "description": "Фронтальная",
+                    "deviceId": 18
+                },
+                {
+                    "id": 160,
+                    "title": "Максимальная загрузка",
+                    "description": "7 кг",
+                    "deviceId": 18
+                },
+                {
+                    "id": 161,
+                    "title": "Срок службы",
+                    "description": "7 лет",
+                    "deviceId": 18
+                },
+                {
+                    "id": 162,
+                    "title": "Глубина",
+                    "description": "55 см",
+                    "deviceId": 18
+                },
+                {
+                    "id": 163,
+                    "title": "Ширина",
+                    "description": "80 см",
+                    "deviceId": 18
+                },
+                {
+                    "id": 164,
+                    "title": "Высота",
+                    "description": "85 см",
+                    "deviceId": 18
+                },
+                {
+                    "id": 165,
+                    "title": "Мотор",
+                    "description": "инверторный",
+                    "deviceId": 18
+                },
+                {
+                    "id": 166,
+                    "title": "Сушка по таймеру",
+                    "description": "Да",
+                    "deviceId": 18
+                }
+            ],
             "discount": 0,
             "discountPrice": 58720,
             "viewCount": 0,
@@ -215,9 +1097,59 @@
             "id": 19,
             "count": 1,
             "description": "Samsung RB37A5200EL/WT — холодильник с инверторным компрессором. Объем основного отделения — 269 л, морозильника — 118 л. Есть зона сохранения свежести. Для хранения продуктов предусмотрены полки из закаленного стекла и пластиковые ящики. Максимальный уровень шума — 37 дБ.",
-            "imgUrl": "http://localhost:7000/device/f0612bf4-7dcb-4386-b70d-9056d30e8f8a.jpg",
+            "imgUrl": "/assets/img/device/f0612bf4-7dcb-4386-b70d-9056d30e8f8a.jpg",
             "name": "Холодильник Samsung RB37A5200EL",
             "price": 59999,
+            "info": [
+                {
+                    "id": 167,
+                    "title": "Гарантия",
+                    "description": "1 год",
+                    "deviceId": 19
+                },
+                {
+                    "id": 168,
+                    "title": "Страна",
+                    "description": "Узбекистан",
+                    "deviceId": 19
+                },
+                {
+                    "id": 169,
+                    "title": "Высота",
+                    "description": "201 см",
+                    "deviceId": 19
+                },
+                {
+                    "id": 170,
+                    "title": "Ширина",
+                    "description": "60 см",
+                    "deviceId": 19
+                },
+                {
+                    "id": 171,
+                    "title": "Глубина",
+                    "description": "67 см",
+                    "deviceId": 19
+                },
+                {
+                    "id": 172,
+                    "title": "Объем холодильной камеры",
+                    "description": "269 л",
+                    "deviceId": 19
+                },
+                {
+                    "id": 173,
+                    "title": "Объем морозильной камеры",
+                    "description": "98 л",
+                    "deviceId": 19
+                },
+                {
+                    "id": 174,
+                    "title": "Материал полок",
+                    "description": "Пластик",
+                    "deviceId": 19
+                }
+            ],
             "discount": 15,
             "discountPrice": 50999,
             "viewCount": 13,
@@ -229,7 +1161,7 @@
             "id": 20,
             "count": 1,
             "description": "Холодильник LG GA-B459CLCL оснащен функцией Door Cooling+, обеспечивающей равномерное охлаждение. Благодаря уровню шума 36 дБ модель не помешает отдыху в ночное время. Морозильная камера расположилась снизу, ее объем — 107 л. При возникновении неполадок, можно провести «умную» диагностику. Габариты устройства — 59,5 х 68,2 х 186 см. Годовое энергопотребление — 309 кВт*ч в год.",
-            "imgUrl": "http://localhost:7000/device/76518684-2997-43fb-954a-87f246b2d7e3.jpg",
+            "imgUrl": "/assets/img/device/76518684-2997-43fb-954a-87f246b2d7e3.jpg",
             "name": "Холодильник LG GA-B459CLCL",
             "price": 54999,
             "discount": 10,
@@ -243,9 +1175,71 @@
             "id": 25,
             "count": 1,
             "description": "Смартфон Huawei Mate 50 в корпусе цвета Black оснащен 8 Гб оперативной памяти и встроенным хранилищем объемом 256 Гб. Последнее можно увеличить вдвое с помощью карты NM Card. Устройство работает плавно и уверенно справляется с многозадачным режимом благодаря восьмиядерному процессору Qualcomm Snapdragon 8+ Gen 1.",
-            "imgUrl": "http://localhost:7000/device/97b6a17b-0b91-4d0c-9b87-2bcd95356453.jpg",
+            "imgUrl": "/assets/img/device/97b6a17b-0b91-4d0c-9b87-2bcd95356453.jpg",
             "name": "HUAWEI Mate 50 ",
             "price": 59999,
+            "info": [
+                {
+                    "id": 231,
+                    "title": "Гарантия",
+                    "description": "1 год",
+                    "deviceId": 25
+                },
+                {
+                    "id": 232,
+                    "title": "Страна",
+                    "description": "Китай",
+                    "deviceId": 25
+                },
+                {
+                    "id": 233,
+                    "title": "Важная особенность",
+                    "description": "Ультракамера XMAGE",
+                    "deviceId": 25
+                },
+                {
+                    "id": 234,
+                    "title": "ОС",
+                    "description": "Android EMUI 13",
+                    "deviceId": 25
+                },
+                {
+                    "id": 235,
+                    "title": "Технология экрана",
+                    "description": "OLED",
+                    "deviceId": 25
+                },
+                {
+                    "id": 236,
+                    "title": "Процессор",
+                    "description": "Qualcomm Snapdragon 8+ Gen",
+                    "deviceId": 25
+                },
+                {
+                    "id": 237,
+                    "title": "Количество ядер",
+                    "description": "8",
+                    "deviceId": 25
+                },
+                {
+                    "id": 238,
+                    "title": "RAM",
+                    "description": "8 ГБ",
+                    "deviceId": 25
+                },
+                {
+                    "id": 239,
+                    "title": "ROM",
+                    "description": "256 ГБ",
+                    "deviceId": 25
+                },
+                {
+                    "id": 240,
+                    "title": "Основная камера МПикс",
+                    "description": "50/13/12",
+                    "deviceId": 25
+                }
+            ],
             "discount": 23,
             "discountPrice": 46199,
             "viewCount": 0,
@@ -257,9 +1251,71 @@
             "id": 17,
             "count": 1,
             "description": "Стиральная машина LG F2J3WS0W, белая — компактная модель габаритами 85х60х44 см, барабан которой вмещает до 6,5 кг белья. В основе прибора — инверторный мотор с прямым приводом, который отличается высокой надежностью, экономичным энергопотреблением (1,09 кВт*ч, класс А) и низким уровнем шума: до 55 дБ при стирке, до 74 дБ при отжиме.",
-            "imgUrl": "http://localhost:7000/device/14e6d6b7-4e81-4c4b-986b-373fa33dab92.jpg",
+            "imgUrl": "/assets/img/device/14e6d6b7-4e81-4c4b-986b-373fa33dab92.jpg",
             "name": "Стиральная машина узкая LG F2J3WS0W",
             "price": 39999,
+            "info": [
+                {
+                    "id": 147,
+                    "title": "Гарантия",
+                    "description": "1 год",
+                    "deviceId": 17
+                },
+                {
+                    "id": 148,
+                    "title": "Страна",
+                    "description": "Китай",
+                    "deviceId": 17
+                },
+                {
+                    "id": 149,
+                    "title": "Срок службы",
+                    "description": "8 лет",
+                    "deviceId": 17
+                },
+                {
+                    "id": 150,
+                    "title": "Высота",
+                    "description": "85 см",
+                    "deviceId": 17
+                },
+                {
+                    "id": 151,
+                    "title": "Глубина",
+                    "description": "44 см",
+                    "deviceId": 17
+                },
+                {
+                    "id": 152,
+                    "title": "Ширина",
+                    "description": "60 см",
+                    "deviceId": 17
+                },
+                {
+                    "id": 153,
+                    "title": "Мотор",
+                    "description": "инверторный",
+                    "deviceId": 17
+                },
+                {
+                    "id": 154,
+                    "title": "Загрузка",
+                    "description": "6.5 кг",
+                    "deviceId": 17
+                },
+                {
+                    "id": 155,
+                    "title": "Объем барабана",
+                    "description": "44 л",
+                    "deviceId": 17
+                },
+                {
+                    "id": 156,
+                    "title": "Полоскание+Отжим",
+                    "description": "Да",
+                    "deviceId": 17
+                }
+            ],
             "discount": 0,
             "discountPrice": 39999,
             "viewCount": 0,
@@ -271,8 +1327,52 @@
             "id": 3,
             "count": 1,
             "description": "Смартфон Huawei nova 10 pro обладает оперативной памятью 8 Гб и встроенной — 256 Гб. Корпус произведен из стекла и металла черного цвета. В основе работы лежит операционная система Android EMUI 12. Сенсорный 6,67-дюймовый безрамочный экран типа OLED выдает насыщенную, яркую картинку разрешением 2400х1080 пикселей. Частота обновления составляет 120 Гц, что исключает вероятность возникновения искажений в динамичных сценах. Есть возможность использования двух карт nano-SIM.",
-            "imgUrl": "http://localhost:7000/device/302c6041-08e0-4f78-8269-679bc1c4d5bb.jpg",
+            "imgUrl": "/assets/img/device/302c6041-08e0-4f78-8269-679bc1c4d5bb.jpg",
             "name": "HUAWEI nova 10 pro",
+            "info": [
+                {
+                    "id": 19,
+                    "title": "Гарантия",
+                    "description": "1 год",
+                    "deviceId": 3
+                },
+                {
+                    "id": 20,
+                    "title": "Страна",
+                    "description": "Китай",
+                    "deviceId": 3
+                },
+                {
+                    "id": 21,
+                    "title": "Тип экрана",
+                    "description": "OLED",
+                    "deviceId": 3
+                },
+                {
+                    "id": 22,
+                    "title": "Частота ",
+                    "description": "120 Гц",
+                    "deviceId": 3
+                },
+                {
+                    "id": 23,
+                    "title": "Экран",
+                    "description": "6.78\"",
+                    "deviceId": 3
+                },
+                {
+                    "id": 24,
+                    "title": "RAM",
+                    "description": "8 ГБ",
+                    "deviceId": 3
+                },
+                {
+                    "id": 25,
+                    "title": "ROM",
+                    "description": "256 ГБ",
+                    "deviceId": 3
+                }
+            ],
             "price": 39999,
             "discount": 0,
             "discountPrice": 39999,
@@ -285,9 +1385,65 @@
             "id": 13,
             "count": 1,
             "description": "Робот-пылесос Xiaomi Robot Vacuum S10+ EU выполнен в белом цвете. Прибор тихий, максимальный уровень шума не превышает 36 дБ. Мощность всасывания достигает 4000 Па. Модель предназначена для сухой и влажной уборки в помещениях площадью до 150 м². Объем контейнера для пыли — 0,45 л, резервуара для воды — 0,2 л.",
-            "imgUrl": "http://localhost:7000/device/24296beb-f701-4776-9338-7561932f15f6.jpg",
+            "imgUrl": "/assets/img/device/24296beb-f701-4776-9338-7561932f15f6.jpg",
             "name": "Робот-пылесос Xiaomi Robot Vacuum S10",
             "price": 35999,
+            "info": [
+                {
+                    "id": 111,
+                    "title": "Гарантия",
+                    "description": "1 год",
+                    "deviceId": 13
+                },
+                {
+                    "id": 112,
+                    "title": "Страна",
+                    "description": "Китай",
+                    "deviceId": 13
+                },
+                {
+                    "id": 113,
+                    "title": "Рекомендуемая площадь",
+                    "description": "150 м2",
+                    "deviceId": 13
+                },
+                {
+                    "id": 114,
+                    "title": "Сухая уборка",
+                    "description": "Да",
+                    "deviceId": 13
+                },
+                {
+                    "id": 115,
+                    "title": "Влажная уборка",
+                    "description": "Да",
+                    "deviceId": 13
+                },
+                {
+                    "id": 116,
+                    "title": "Турборежим",
+                    "description": "Да",
+                    "deviceId": 13
+                },
+                {
+                    "id": 117,
+                    "title": "Wi-Fi",
+                    "description": "802.11 b/g/n",
+                    "deviceId": 13
+                },
+                {
+                    "id": 118,
+                    "title": "Датчики препятствий",
+                    "description": "Да",
+                    "deviceId": 13
+                },
+                {
+                    "id": 119,
+                    "title": "Мощность всасывания",
+                    "description": "4000 Па",
+                    "deviceId": 13
+                }
+            ],
             "discount": 0,
             "discountPrice": 35999,
             "viewCount": 0,
@@ -299,9 +1455,65 @@
             "id": 24,
             "count": 1,
             "description": "Samsung Galaxy A34 в корпусе цвета Black оснащен 8 Гб оперативной памяти и встроенным хранилищем объемом 128 Гб. Последнее можно увеличить вдвое с помощью карты NM Card. Устройство работает плавно и уверенно справляется с многозадачным режимом благодаря восьмиядерному процессору Mediatek Dimensity 1080. Изображение четкое и яркое при любом освещении. Дисплей потребляет энергии меньше, чем аналоги, выполненные на матрицах предыдущих поколений.",
-            "imgUrl": "http://localhost:7000/device/be53eb24-820e-4d0a-8b34-eb60e75e77d2.jpg",
+            "imgUrl": "/assets/img/device/be53eb24-820e-4d0a-8b34-eb60e75e77d2.jpg",
             "name": "Samsung Galaxy A34",
             "price": 35999,
+            "info": [
+                {
+                    "id": 250,
+                    "title": "Гарантия",
+                    "description": "1 год",
+                    "deviceId": 24
+                },
+                {
+                    "id": 251,
+                    "title": "Страна",
+                    "description": "Вьетнам",
+                    "deviceId": 24
+                },
+                {
+                    "id": 252,
+                    "title": "ОС",
+                    "description": "Android 13",
+                    "deviceId": 24
+                },
+                {
+                    "id": 253,
+                    "title": "Экран",
+                    "description": "6.6\"/2340x1080 Пикс",
+                    "deviceId": 24
+                },
+                {
+                    "id": 254,
+                    "title": "Частота обновления",
+                    "description": "120 Гц",
+                    "deviceId": 24
+                },
+                {
+                    "id": 255,
+                    "title": "Процессор",
+                    "description": "Mediatek Dimensity 1080",
+                    "deviceId": 24
+                },
+                {
+                    "id": 256,
+                    "title": "RAM",
+                    "description": "6 ГБ",
+                    "deviceId": 24
+                },
+                {
+                    "id": 257,
+                    "title": "Количество ядер",
+                    "description": "8",
+                    "deviceId": 24
+                },
+                {
+                    "id": 258,
+                    "title": "ROM",
+                    "description": "128 ГБ",
+                    "deviceId": 24
+                }
+            ],
             "discount": 10,
             "discountPrice": 32399,
             "viewCount": 3,
@@ -313,9 +1525,65 @@
             "id": 5,
             "count": 1,
             "description": "Серый планшет Honor Pad 8 (HEY-W09) оснащен модулем Wi-Fi 802.11 и работает на основе процессора Qualcomm Snapdragon 680 с 6/128 Гб памяти. В качестве предустановленной платформы используется ОС Android 11. Автономность обеспечена аккумулятором емкостью 7250 мА*ч, заряда которого достаточно для 10 часов функционирования.",
-            "imgUrl": "http://localhost:7000/device/756b1188-0761-4501-823e-c66edf2604f7.jpg",
+            "imgUrl": "/assets/img/device/756b1188-0761-4501-823e-c66edf2604f7.jpg",
             "name": "Honor Pad 8",
             "price": 23999,
+            "info": [
+                {
+                    "id": 35,
+                    "title": "Гарантия",
+                    "description": "1 год",
+                    "deviceId": 5
+                },
+                {
+                    "id": 36,
+                    "title": "Страна",
+                    "description": "Китай",
+                    "deviceId": 5
+                },
+                {
+                    "id": 37,
+                    "title": "Год выпуска",
+                    "description": "2022",
+                    "deviceId": 5
+                },
+                {
+                    "id": 38,
+                    "title": "Экран",
+                    "description": "IPS",
+                    "deviceId": 5
+                },
+                {
+                    "id": 39,
+                    "title": "ROM",
+                    "description": "128 ГБ",
+                    "deviceId": 5
+                },
+                {
+                    "id": 40,
+                    "title": "RAM",
+                    "description": "6 ГБ",
+                    "deviceId": 5
+                },
+                {
+                    "id": 41,
+                    "title": "Частота ",
+                    "description": "1.9 ГГц",
+                    "deviceId": 5
+                },
+                {
+                    "id": 42,
+                    "title": "ОС",
+                    "description": "Android 11",
+                    "deviceId": 5
+                },
+                {
+                    "id": 43,
+                    "title": "Камера МПикс",
+                    "description": "5",
+                    "deviceId": 5
+                }
+            ],
             "discount": 5,
             "discountPrice": 22799,
             "viewCount": 6,
@@ -327,9 +1595,65 @@
             "id": 14,
             "count": 1,
             "description": "Ручной пылесос Xiaomi Vacuum Cleaner G11 оснащен щеточным DC-мотором 500 Вт. Инфракрасный датчик определяет количество мусора и автоматически регулирует мощность всасывания. Емкость контейнера для загрязнений — 300 мл.  Выходной фильтр задерживает частицы размерами до 0,3 мкр и улавливает до 99,5% пыли и аллергенов. Источник питания — аккумулятор. Время автономной работы — до 60 минут. Уровень оставшегося заряда отображается на LED-дисплее. Доступны три рабочих режима — «Авто», «Турбо» и «Эко». Размеры устройства — 341,5 х 100 х 266,5 мм, вес — 1,6 кг.",
-            "imgUrl": "http://localhost:7000/device/4fed3610-d389-46c8-ba3e-4425c8da95b9.jpg",
+            "imgUrl": "/assets/img/device/4fed3610-d389-46c8-ba3e-4425c8da95b9.jpg",
             "name": "Пылесос ручной Xiaomi Vacuum Cleaner G11",
             "price": 21499,
+            "info": [
+                {
+                    "id": 120,
+                    "title": "Гарантия",
+                    "description": "1 год",
+                    "deviceId": 14
+                },
+                {
+                    "id": 121,
+                    "title": "Страна",
+                    "description": "Китай",
+                    "deviceId": 14
+                },
+                {
+                    "id": 122,
+                    "title": "Срок службы",
+                    "description": "2 года",
+                    "deviceId": 14
+                },
+                {
+                    "id": 123,
+                    "title": "Сухая уборка",
+                    "description": "Да",
+                    "deviceId": 14
+                },
+                {
+                    "id": 124,
+                    "title": "Мощность",
+                    "description": "500 Вт",
+                    "deviceId": 14
+                },
+                {
+                    "id": 125,
+                    "title": "Время работы ",
+                    "description": "60 мин",
+                    "deviceId": 14
+                },
+                {
+                    "id": 126,
+                    "title": "Уровень шума",
+                    "description": "70 дБ",
+                    "deviceId": 14
+                },
+                {
+                    "id": 127,
+                    "title": "Насадки",
+                    "description": "4 шт",
+                    "deviceId": 14
+                },
+                {
+                    "id": 128,
+                    "title": "Выходной фильтр",
+                    "description": "Моющийся",
+                    "deviceId": 14
+                }
+            ],
             "discount": 5,
             "discountPrice": 20424,
             "viewCount": 1,
@@ -341,9 +1665,65 @@
             "id": 15,
             "count": 1,
             "description": "Samsung VC15K4116VR/EV — пылесос с контейнером для пыли 1,3 л и максимальной мощностью всасывания 390 Вт. Предельный уровень шума — 86 дБ. Длина сетевого шнура — 7 м, в сочетании с телескопической трубкой из нержавеющей стали радиус действия достигает 10 м.",
-            "imgUrl": "http://localhost:7000/device/55f166a4-04e0-4bd5-a78a-fbe6a69c4d89.jpg",
+            "imgUrl": "/assets/img/device/55f166a4-04e0-4bd5-a78a-fbe6a69c4d89.jpg",
             "name": "Samsung VC15K4116VR",
             "price": 12999,
+            "info": [
+                {
+                    "id": 129,
+                    "title": "Гарантия",
+                    "description": "1 год",
+                    "deviceId": 15
+                },
+                {
+                    "id": 130,
+                    "title": "Страна",
+                    "description": "Вьетнам",
+                    "deviceId": 15
+                },
+                {
+                    "id": 131,
+                    "title": "Вьетнам",
+                    "description": "Да",
+                    "deviceId": 15
+                },
+                {
+                    "id": 132,
+                    "title": "Радиус действия",
+                    "description": "10 м",
+                    "deviceId": 15
+                },
+                {
+                    "id": 133,
+                    "title": "Уровень шума",
+                    "description": "86 дБ",
+                    "deviceId": 15
+                },
+                {
+                    "id": 134,
+                    "title": "Мощность",
+                    "description": "1500 Вт",
+                    "deviceId": 15
+                },
+                {
+                    "id": 135,
+                    "title": "Длина шнура",
+                    "description": "7 м",
+                    "deviceId": 15
+                },
+                {
+                    "id": 136,
+                    "title": "Циклонный фильтр",
+                    "description": "Да",
+                    "deviceId": 15
+                },
+                {
+                    "id": 137,
+                    "title": "Управление",
+                    "description": "Механическое",
+                    "deviceId": 15
+                }
+            ],
             "discount": 7,
             "discountPrice": 12089,
             "viewCount": 1,

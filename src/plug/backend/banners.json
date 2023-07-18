@@ -1,17 +1,17 @@
 [
     {
         "id": 3,
-        "name": "Скидка на холодильники ",
-        "imgUrl": "http://localhost:7000/banner/4faab062-afb9-4f5e-ad23-da9f7b2f0341.jpg"
+        "name": "Скидка на холодильники",
+        "imgUrl": "/assets/img/banner/4faab062-afb9-4f5e-ad23-da9f7b2f0341.jpg"
     },
     {
         "id": 1,
         "name": "Скидка на телевизоры",
-        "imgUrl": "http://localhost:7000/banner/ba960017-40ca-48a4-ada3-2f71dc1dfc86.jpg"
+        "imgUrl": "/assets/img/banner/ba960017-40ca-48a4-ada3-2f71dc1dfc86.jpg"
     },
     {
         "id": 2,
         "name": "Скидка на samsung",
-        "imgUrl": "http://localhost:7000/banner/83334b26-5c13-4c25-89c4-aac3c94752dd.jpg"
+        "imgUrl": "/assets/img/banner/83334b26-5c13-4c25-89c4-aac3c94752dd.jpg"
     }
 ]

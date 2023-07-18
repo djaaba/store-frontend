@@ -14,42 +14,58 @@ import { PRODUCT_ROUTE } from "@/utils";
 import { toggleType } from "@/store/filter/types/actions";
 import { toggleBrand } from "@/store/filter/brands/actions";
 
-export const HeaderBottom = forwardRef(({ className, ...props }: HeaderBottomProps, ref: ForwardedRef<HTMLElement>): JSX.Element => {
-    const dispatch = useDispatch();
+import typesPlug from "@/plug/backend/types.json";
+import brandsPlug from "@/plug/backend/brands.json";
 
-    const [types, setTypes] = React.useState<IType[]>([])
-    const [brands, setBrands] = React.useState<IBrand[]>([])
+export const HeaderBottom = forwardRef(
+	(
+		{ className, ...props }: HeaderBottomProps,
+		ref: ForwardedRef<HTMLElement>
+	): JSX.Element => {
+		const dispatch = useDispatch();
 
-    React.useEffect(() => {
-        getAllBrands().then(data => setBrands(data))
-        getAllTypes().then(data => setTypes(data))
-    }, [])
+		const [types, setTypes] = React.useState<IType[]>([]);
+		const [brands, setBrands] = React.useState<IBrand[]>([]);
 
-    return (
-        <>
-            <section
-                {...props}
-                className={cn("wrapper", className)}
-                ref={ref}
-            >
-                {
-                    (types.length > 0) && (brands.length > 0) ?
-                        <Scroll>
-                            {types.map((item) => (
-                                <Link key={item.id} href={PRODUCT_ROUTE} onClick={() => dispatch(toggleType(item))}>
-                                    <HeaderNavCard title={item.name} />
-                                </Link>
-                            ))}
-                            {brands.map((item) => (
-                                <Link key={item.id} href={PRODUCT_ROUTE} onClick={() => dispatch(toggleBrand(item))}>
-                                    <HeaderNavCard title={item.name} />
-                                </Link>
-                            ))}
-                        </Scroll>
-                        : null
-                }
-            </section>
-        </>
-    );
-}
+		React.useEffect(() => {
+			// getAllBrands().then(data => setBrands(data))
+			// getAllTypes().then(data => setTypes(data))
+
+			setTypes(typesPlug);
+			setBrands(brandsPlug);
+		}, []);
+
+		return (
+			<>
+				<section
+					{...props}
+					className={cn("wrapper", className)}
+					ref={ref}
+				>
+					{types.length > 0 && brands.length > 0 ? (
+						<Scroll>
+							{types.map((item) => (
+								<Link
+									key={item.id}
+									href={PRODUCT_ROUTE}
+									onClick={() => dispatch(toggleType(item))}
+								>
+									<HeaderNavCard title={item.name} />
+								</Link>
+							))}
+							{brands.map((item) => (
+								<Link
+									key={item.id}
+									href={PRODUCT_ROUTE}
+									onClick={() => dispatch(toggleBrand(item))}
+								>
+									<HeaderNavCard title={item.name} />
+								</Link>
+							))}
+						</Scroll>
+					) : null}
+				</section>
+			</>
+		);
+	}
 );
