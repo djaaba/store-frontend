@@ -25,7 +25,7 @@
 -   [react-countup](https://github.com/glennreyes/react-countup)
 -   [react-hyper-modal](https://github.com/alekseymakhankov/hyper-modal)
 -   [react-toastify](https://github.com/fkhadra/react-toastify)
--   [react-horizontal-scrolling-menu](https://github.com/asmyshlyaev177/
+-   [react-horizontal-scrolling-menu](https://github.com/asmyshlyaev177/)
 -   [swiper](https://github.com/nolimits4web/swiper)
 -   [react-speech-recognition](https://github.com/JamesBrill/react-speech-recognition)
 -   [normalize.css](https://github.com/necolas/normalize.css)
