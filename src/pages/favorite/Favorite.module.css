@@ -1,0 +1,41 @@
+.main {
+    padding-bottom: 40px;
+    background-color: var(--background);
+    height: 100vh;
+}
+.title {
+    display: flex;
+    align-items: flex-end;
+    column-gap: 10px;
+    line-height: 28px;
+}
+
+.title h1 {
+    margin-bottom: 0;
+}
+
+.count {
+    color: var(--pearl-gray);
+}
+
+.ul {
+    margin: 25px 0;
+}
+
+.li {
+    border-bottom: 1px solid var(--pearl-gray);
+}
+
+.li:first-child {
+    border-top: 1px solid var(--pearl-gray);
+}
+
+.i {
+    width: 15px;
+    height: 15px;
+    margin-left: 8px;
+}
+
+/* .li:last-child {
+    border-bottom: ;
+} */

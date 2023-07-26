@@ -1,0 +1,28 @@
+.main {
+    min-height: 100vh;
+}
+
+.content {
+    padding: 40px 32px;
+    margin: 0 auto;
+    border-radius: 0.8rem;
+    width: 300px;
+    text-align: center;
+}
+
+.btn,
+.content {
+    border: 1px solid var(--pearl-gray);
+}
+
+.input {
+    margin: 24px 0;
+}
+
+.container{
+    position: relative;
+}
+
+.option{
+    margin-top: 24px;
+}
